@@ -1,0 +1,17 @@
+export { default as VerdantLightLogo } from "./verdant-white-logo.png";
+export { default as VerdantGreenLogo } from "./verdant-green-logo.svg";
+export { default as HeroBg } from "./hero-bg.png";
+export { default as Highlight1 } from "./highlight-1.jpg";
+export { default as Highlight2 } from "./highlight-2.png";
+export { default as Highlight3 } from "./highlight-3.png";
+export { default as VerdantLogo } from "./VerdantLogo.png";
+export { default as ImageTestimonial1 } from "./image-testimonial-1.png";
+export { default as ImageTestimonial2 } from "./image-testimonial-2.png";
+export { default as ImageTestimonial3 } from "./image-testimonial-3.png";
+export { default as TextTestimonial1 } from "./text-testimonial-1.png";
+export { default as TextTestimonial2 } from "./text-testimonial-2.png";
+
+export { default as Blog1 } from "./blog-1.png";
+export { default as Blog2 } from "./blog-2.png";
+export { default as Blog3 } from "./blog-3.png";
+export { default as Arrow } from "./arrow.svg";

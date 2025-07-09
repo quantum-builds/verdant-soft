@@ -1,10 +1,37 @@
 @import "tailwindcss";
+@import "@fontsource/inter";
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/autoplay";
+
+@theme {
+  --color-gray: #f9f9f9;
+  --font-inter: "Inter";
+  --color-black: #1b1b1b;
+  --color-white: #ffffff;
 }
 
+@layer utilities {
+  .text-green-gradient {
+    background-image: linear-gradient(102.32deg, #416d95 0%, #74afad 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+:root {
+  --font-inter: "Inter";
+}
+
+.inter {
+  font-family: var(--font-inter);
+}
+
+/*
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -18,9 +45,17 @@
     --foreground: #ededed;
   }
 }
-
+ */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}

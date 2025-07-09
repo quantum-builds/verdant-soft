@@ -1,3 +1,92 @@
 {
-    
+  "HeroSection": {
+    "headline": "Empowering <highlight>Businesses</highlight> <highlight>Through</highlight> Technology",
+    "subheadline": "Innovative software solutions tailored to empower businesses and streamline operations. Committed to excellence in technology and customer satisfaction.",
+    "primaryCTA": "Book a Meeting",
+    "secondaryCTA": "Hire an Expert"
+  },
+  "Navigation": {
+    "projects": "Projects",
+    "services": "Services",
+    "features": "Features",
+    "workflow": "Workflow",
+    "blog": "Blog",
+    "getInTouch": "Get in touch"
+  },
+  "HighlightSection": {
+    "sectionTitle": "Our Work <highlight>Highlights</highlight>",
+    "cardTitle": "Work Highlights",
+    "cardSubtitle": "Click to see more"
+  },
+  "ServicesSection": {
+    "headline": " <highlight>Not just services - we deliver</highlight>",
+    "subheadline": "growth, clarity, <highlight>and</highlight> real impact.",
+    "services": [
+      {
+        "title": "Cloud & Dev Ops",
+        "description": "We create impactful brand identities that differentiate your business and connect with your audience."
+      },
+      {
+        "title": "Web Development",
+        "description": "We build fast, scalable, and secure web and mobile applications tailored to your business goals."
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "We design and develop responsive, user-friendly websites that enhance your online presence."
+      },
+      {
+        "title": "IT Team Outsourcing",
+        "description": "Our team offers ongoing design assistance to ensure your visual assets remain consistent and effective."
+      }
+    ],
+    "cta": {
+      "text": "Ready to Start?",
+      "button": "Get in touch"
+    }
+  },
+  "WorkFlowSection": {
+    "headline": "<highlight>No guesswork, just a clear</highlight>",
+    "subheadline": "<highlight>path from</highlight> ideas → results."
+  },
+  "FAQSection": {
+    "headline": "<highlight>Smarter decisions start with</highlight> clear answers.",
+    "questions": [
+      { "question": "How long does a typical project take?" },
+      { "question": "What if I don’t know exactly what I need?" },
+      { "question": "Can I request just one service?" },
+      { "question": "How do payments work?" },
+      { "question": "What if I need changes after a project ends?" }
+    ]
+  },
+  "BlogSection": {
+    "headline": "Stories, strategies, <highlight>and</highlight> creative perspectives <highlight>from the team.</highlight>",
+    "cta": {
+      "text": "All Blogs",
+      "link": "/blogs"
+    },
+    "blogs": {
+      "blog1": "Why a strong brand identity is essential",
+      "blog2": "The power of consistent design",
+      "blog3": "How to nail your website strategy"
+    }
+  },
+  "FooterSection": {
+    "headline": "Your brand deserves better.",
+    "subheadline": "Let’s build it right.",
+    "Navigation": {
+      "projects": "Projects",
+      "services": "Services",
+      "features": "Features",
+      "workflow": "Workflow",
+      "contact": "Contact"
+    },
+    "Links": {
+      "privacy": "Privacy",
+      "terms": "Terms"
+    },
+    "Contact": {
+      "email": "Email",
+      "phone": "Phone"
+    }
+  }
 }

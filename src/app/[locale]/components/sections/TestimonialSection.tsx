@@ -93,7 +93,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const slideFromBottom = {
-  hidden: { opacity: 0, y: 200 },
+  hidden: { opacity: 0, y: 100 },
   visible: {
     opacity: 1,
     y: 0,
@@ -108,20 +108,20 @@ export const slideFromLeft = {
 };
 export default function TestimonialsSection() {
   return (
-    <section className="overflow-hidden scroll-mt-28 mb-28 w-full h-[67vh] flex flex-col gap-16">
+    <section className="overflow-hidden scroll-mt-28 mb-28 w-full min-h-[60vh] flex flex-col gap-16">
       <div className="w-11/12 mx-auto flex flex-col gap-12">
         <p className="font-semibold text-2xl">[04 Testimonials]</p>
         <div className="w-full flex justify-end">
           <motion.h2
-            className="w-full sm:w-4/5 md:w-3/4 lg:w-[57%] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black leading-tight text-end break-words"
+            className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-end break-words"
             variants={slideFromRight}
             transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
           >
-            Real stories. Real winners.
-            <span className="block text-green-gradient">
+            Real stories. Real winners.{" "}
+            <span className="text-green-gradient">
               Straight from our clients
             </span>
           </motion.h2>
@@ -182,7 +182,7 @@ function ImageCard({ testimonial }: { testimonial: Testimonial }) {
         style={{ filter: "brightness(0.5)" }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl" />
-      <div className="absolute bottom-4 right-4 flex items-center gap-2">
+      <div className="absolute bottom-20  md:bottom-4 right-4 flex items-center gap-2">
         <Stars rating={testimonial.rating} />
       </div>
       <div className="absolute bottom-4 left-4">
@@ -204,7 +204,7 @@ function VideoCard({ testimonial }: { testimonial: Testimonial }) {
       <video
         ref={videoRef}
         src={testimonial.image as string}
-        className="object-cover w-full h-full rounded-2xl"
+        className="object-fill w-full h-full rounded-2xl"
         controls
         preload="metadata"
         onPlay={() => {
@@ -234,7 +234,7 @@ function VideoCard({ testimonial }: { testimonial: Testimonial }) {
 function TextCard({ testimonial }: { testimonial: Testimonial }) {
   return (
     <div className="flex flex-col  justify-between w-full h-full bg-[#F9F9F9D9] rounded-2xl px-6 py-12">
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex flex-col md:flex-row  items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <Image
             src={testimonial.image}
@@ -243,19 +243,23 @@ function TextCard({ testimonial }: { testimonial: Testimonial }) {
             height={100}
             className="object-cover rounded-lg"
           />
-          <div>
-            <h4 className=" font-semibold text-2xl">{testimonial.name}</h4>
-            <p className="text-[#707070] text-xl">{testimonial.title}</p>
+          <div className="w-full">
+            <h4 className=" font-semibold text-xl  md:text-2xl">
+              {testimonial.name}
+            </h4>
+            <p className="text-[#707070] text-lg md:text-xl ">
+              {testimonial.title}
+            </p>
           </div>
         </div>
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-start md:items-center gap-2 mb-4">
           <Stars rating={testimonial.rating} />
           <span className="text-white/80 text-sm font-medium">
             {testimonial.score}
           </span>
         </div>
       </div>
-      <p className=" text-black text-2xl font-semibold leading-tight tracking-normal">
+      <p className=" text-black text-md md:text-2xl md:font-semibold leading-tight tracking-normal">
         {testimonial.testimonial}
       </p>
     </div>

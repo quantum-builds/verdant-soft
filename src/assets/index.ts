@@ -4,7 +4,9 @@ export { default as HeroBg } from "./hero-bg.png";
 export { default as Highlight1 } from "./highlight-1.jpg";
 export { default as Highlight2 } from "./highlight-2.png";
 export { default as Highlight3 } from "./highlight-3.png";
-export { default as VerdantLogo } from "./VerdantLogo.png";
+export { default as VerdantLogoLeft } from "./VerdantLogoLeft.png";
+export { default as VerdantLogoRight } from "./VerdantLogoRight.png";
+
 export { default as ImageTestimonial1 } from "./image-testimonial-1.png";
 export { default as ImageTestimonial2 } from "./image-testimonial-2.png";
 export { default as ImageTestimonial3 } from "./image-testimonial-3.png";

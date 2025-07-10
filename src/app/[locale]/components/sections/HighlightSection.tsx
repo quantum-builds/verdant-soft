@@ -40,7 +40,7 @@ export default function HighlightSection() {
       className="h-[75vh] mb-28 flex flex-col gap-16 w-full overflow-hidden"
     >
       <motion.p
-        className="text-center text-2xl lg:text-[40px] font-semibold"
+        className="text-center text-2xl sm:text-3xl lg:text-[40px] font-semibold"
         initial="hidden"
         whileInView="visible"
         variants={slideFromLeft}
@@ -91,8 +91,10 @@ export default function HighlightSection() {
                 />
                 <div className="absolute inset-0 bg-white/80" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 text-center">
-                  <p className="text-[28px] font-semibold">{highlight.text}</p>
-                  <a className="text-xl text-[#74AFAD] cursor-pointer">
+                  <p className="text-2xl md:text-3xl font-semibold">
+                    {highlight.text}
+                  </p>
+                  <a className="text-lg md:text-xl text-[#74AFAD] cursor-pointer">
                     {t("cardSubtitle")}
                   </a>
                 </div>

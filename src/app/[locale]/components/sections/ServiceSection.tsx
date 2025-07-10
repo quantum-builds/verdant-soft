@@ -3,7 +3,8 @@ import { useIsMobile } from "@/hook/useIsMobile";
 import { slideFromLeft } from "@/uitls/sliderAnimation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useLayoutEffect, useRef, useState } from "react";
 
 interface Services {
   title: string;
@@ -12,7 +13,9 @@ interface Services {
 
 export default function ServiceSection() {
   const t = useTranslations("ServicesSection");
+
   const services = t.raw("services") as Services[];
+  const router = useRouter();
   const isMobile = useIsMobile();
   const [isHovered, setIsHovered] = useState(false);
   const [activeService, setActiveService] = useState<number | null>(null);
@@ -46,35 +49,36 @@ export default function ServiceSection() {
     exit: { opacity: 0, x: 100 },
   };
 
+  const ctaTextRef = useRef<HTMLParagraphElement>(null);
+  const [ctaWidth, setCtaWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    if (ctaTextRef.current) {
+      const rect = ctaTextRef.current.getBoundingClientRect();
+      setCtaWidth(rect.width / 2);
+    }
+  }, [t]);
+
   return (
     <div
       id="services"
-      className="overflow-hidden h-[97vh] w-11/12 mx-auto flex flex-col mb-28 gap-12"
+      className="overflow-hidden min-h-[100vh] w-11/12 mx-auto flex flex-col mb-28 gap-12"
     >
-      <p className="font-semibold text-2xl">[01 Services]</p>
-      <motion.div
-        className="flex flex-col gap-2"
+      <p className="font-semibold text-xl md:text-2xl">[01 Services]</p>
+      <motion.p
+        className="w-11/12 md:w-3/4 lg:w-2/3 xl:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-semibold"
         initial="hidden"
         whileInView="visible"
         variants={slideFromLeft}
         transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <p className="w-10/12 lg:w-2/3 text-2xl lg:text-4xl xl:text-7xl font-semibold">
-          {t.rich("headline", {
-            highlight: (chunks) => (
-              <span className="text-green-gradient">{chunks}</span>
-            ),
-          })}
-        </p>
-        <p className="w-10/12 lg:w-2/3 text-2xl lg:text-4xl xl:text-7xl font-semibold">
-          {t.rich("subheadline", {
-            highlight: (chunks) => (
-              <span className="text-green-gradient">{chunks}</span>
-            ),
-          })}
-        </p>
-      </motion.div>
+        {t.rich("headline", {
+          highlight: (chunks) => (
+            <span className="text-green-gradient">{chunks}</span>
+          ),
+        })}
+      </motion.p>
       <motion.div
         className="flex flex-col gap-6"
         variants={staggerContainer}
@@ -82,83 +86,144 @@ export default function ServiceSection() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            className="group flex justify-between items-center bg-gray w-full py-12 px-6 rounded-xl overflow-hidden relative h-[120px]"
-            variants={itemAnimation}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            onMouseEnter={() => !isMobile && setActiveService(index)}
-            onMouseLeave={() => !isMobile && setActiveService(null)}
-            onClick={() =>
-              isMobile &&
-              setActiveService((prev) => (prev === index ? null : index))
-            }
-          >
-            <p
-              className={`flex-1 text-[40px] font-semibold z-10 transition-colors duration-300 ${
-                activeService === index ? "text-green-gradient" : "text-black"
-              }`}
-            >
-              {service.title}
-            </p>
+        {services.map((service, index) => {
+          const isActive = activeService === index;
 
-            <AnimatePresence>
-              {activeService === index && (
+          return (
+            <motion.div
+              key={index}
+              className={`group flex flex-col md:flex-row justify-between items-start md:items-center bg-gray w-full py-6 md:py-8 px-4 md:px-6 rounded-xl overflow-hidden relative`}
+              variants={itemAnimation}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              onMouseEnter={() => !isMobile && setActiveService(index)}
+              onMouseLeave={() => !isMobile && setActiveService(null)}
+              onClick={() =>
+                isMobile &&
+                setActiveService((prev) => (prev === index ? null : index))
+              }
+            >
+              {!isMobile && (
+                <p
+                  className={`flex-1 text-3xl md:text-[40px] font-semibold z-10 transition-colors duration-300 ${
+                    isActive ? "text-green-gradient" : "text-black"
+                  }`}
+                >
+                  {service.title}
+                </p>
+              )}
+
+              {isMobile && !isActive && (
                 <motion.p
-                  key="description"
-                  className=" text-lg text-[#707070] flex-1 z-0"
-                  variants={descriptionMotion}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  key="mobile-title"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="flex-1 text-3xl font-semibold z-10 text-black"
+                >
+                  {service.title}
+                </motion.p>
+              )}
+
+              <AnimatePresence>
+                {!isMobile && isActive && (
+                  <motion.div
+                    key="desktop-description"
+                    className=" flex-1 z-0 cursor-none"
+                    variants={descriptionMotion}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                  >
+                    <p className="lg:text-[12px] xl:text-sm text-[#707070] text-left">
+                      {service.description}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {isMobile && isActive && (
+                <motion.p
+                  key="mobile-description"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="mt-3 text-lg text-[#707070] w-full"
                 >
                   {service.description}
                 </motion.p>
               )}
-            </AnimatePresence>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </motion.div>
+
       <motion.div
-        className="relative group w-full py-12 px-6 rounded-xl flex justify-center items-center overflow-hidden bg-black"
+        className="relative group w-full py-12 px-6 rounded-xl flex justify-center items-center overflow-hidden bg-black cursor-pointer"
         initial="hidden"
         whileInView="visible"
         variants={slideFromBottom}
         transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={() => !isMobile && setIsHovered(true)}
+        onMouseLeave={() => !isMobile && setIsHovered(false)}
+        onClick={() => {
+          if (isMobile) setIsHovered((prev) => !prev);
+          router.push("/contact-us");
+        }}
       >
-        {/* Gradient Layer with Opacity Transition */}
-        <motion.div
-          className="absolute inset-0 bg-green-gradient z-0"
-          initial={{ opacity: 0 }}
-          animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        />
-
-        {/* Content Layer */}
-        <div className=" z-10 flex items-center justify-between w-full px-6">
+        {isMobile ? (
           <motion.p
-            className="text-white text-4xl font-semibold"
-            initial={{ x: 0 }}
-            animate={isHovered ? { x: -600, opacity: 0 } : { x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            {t("cta.text")}
-          </motion.p>
-
-          <motion.p
-            className="text-white text-4xl font-semibold "
-            initial={{ opacity: 0 }}
-            animate={isHovered ? { opacity: 1, x: -800 } : { opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="z-10 text-white text-3xl font-semibold text-center bg-green-gradient px-6 py-4 rounded-xl"
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             {t("cta.button")}
           </motion.p>
-        </div>
+        ) : (
+          <>
+            {/* Gradient Layer with Opacity Transition */}
+            <motion.div
+              className="absolute inset-0 bg-green-gradient z-0"
+              initial={{ opacity: 0 }}
+              animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            />
+            <div
+              className="z-10 flex items-center justify-between w-full px-6"
+              ref={ctaTextRef}
+            >
+              <motion.p
+                className="text-white text-4xl font-semibold"
+                initial={{ x: 0 }}
+                animate={
+                  isHovered
+                    ? { x: -ctaWidth, opacity: 0 }
+                    : { x: 0, opacity: 1 }
+                }
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              >
+                {t("cta.text")}
+              </motion.p>
+
+              <motion.p
+                className="text-white text-4xl font-semibold"
+                initial={{ opacity: 0, x: 0 }}
+                animate={
+                  isHovered
+                    ? { opacity: 1, x: -ctaWidth }
+                    : { opacity: 1, x: 0 }
+                }
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              >
+                {t("cta.button")}
+              </motion.p>
+            </div>
+          </>
+        )}
       </motion.div>
     </div>
   );

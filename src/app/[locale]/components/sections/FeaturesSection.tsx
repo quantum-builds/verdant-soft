@@ -8,15 +8,15 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="overflow-hidden scroll-mt-28 mb-28  min-h-[140vh] w-11/12 mx-auto flex flex-col gap-16"
+      className="overflow-hidden scroll-mt-28 mb-28 min-h-[120vh] w-11/12 mx-auto flex flex-col gap-16"
     >
       <div className=" flex flex-col gap-12">
         <p className="font-semibold text-2xl">[02 Features]</p>
         <div className="w-full flex justify-end">
           <motion.h2
-            className="w-full sm:w-4/5 md:w-3/4 lg:w-[55%] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black leading-tight text-end break-words"
+            className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-end break-words"
             variants={slideFromRight}
-            transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
@@ -28,7 +28,7 @@ export default function FeaturesSection() {
           </motion.h2>
         </div>
       </div>
-      <div className="flex-1 flex w-full gap-6 justify-between overflow-x-auto">
+      <div className="flex-1 flex w-full gap-6 justify-between ">
         <div className="flex-2/3 flex flex-col gap-6 flex-grow ">
           <div className="flex-2/3 w-full rounded-xl px-8 bg-[#F9F9F9] flex justify-between items-end gap-6">
             {/* Left Content */}
@@ -47,11 +47,11 @@ export default function FeaturesSection() {
               </div>
             </div>
 
-            <div className="relative w-[55%] h-full flex items-center justify-center">
+            <div className="relative w-[55%] h-full flex items-end  justify-end">
               <Image
                 src={PhoneImage}
                 alt="Phone"
-                className="w-full h-full object-contain"
+                className="w-full h-auto object-contain self-end"
               />
               <div className="absolute top-1/3 -left-5 -translate-y-1/2 rounded-lg px-3 py-2 text-sm font-semibold bg-white shadow">
                 Just saw the first draft - this is 🔥🔥🔥
@@ -88,32 +88,30 @@ export default function FeaturesSection() {
             </div>
           </div>
         </div>
-        <div className="flex-1/3 flex flex-col justify-between gap-6 flex-grow">
-          <div className="flex-1 flex flex-col gap-3 bg-[#F9F9F9] rounded-xl px-6 py-16">
-            <p className="text-[#1B1B1B] font-semibold text-3xl ">
+        <div className="flex-1/3 flex flex-col justify-between gap-3 flex-grow">
+          <div className="flex-1/2 flex flex-col gap-0 bg-[#F9F9F9] rounded-xl px-6 pt-8">
+            <p className="text-[#1B1B1B] font-semibold text-3xl mb-1">
               Happy Client Rates
             </p>
-            <p className="text-6xl text-green-gradient">92%</p>
-            <div className="w-full flex items-center justify-center">
-              <Image
-                src={GraphImage}
-                alt="Graph"
-                className="w-2/3 h-full object-cover "
-              />
+            <p className="text-6xl text-green-gradient font-semibold">92%</p>
+            <div className="flex items-center justify-center">
+              <Image src={GraphImage} alt="Graph" width={250} height={280} />
             </div>
           </div>
-          <div className="flex-1 flex flex-col  gap-5 bg-[#F9F9F9] rounded-xl px-6 py-16">
-            <p className="font-semibold text-3xl">Stronger Presence</p>
+          <div className="flex-1/2 flex flex-col  gap-3 bg-[#F9F9F9] rounded-xl px-6 pt-8">
+            <p className="font-semibold text-3xl text-[#1B1B1B]">
+              Stronger Presence
+            </p>
             <p className="text-lg text-green-gradient ">
               Rank higher, get found faster, and stay top-of-mind.
             </p>
-            <div className="flex flex-col gap-28 relative w-full">
+            <div className="flex flex-col gap-10 relative w-full h-full">
               <div className="absolute left-1/2 -translate-x-1/2 text-xl font-semibold px-4 py-2 bg-white w-fit rounded-xl">
                 <span className="text-green-gradient">90+</span> Completed
                 projects
               </div>
 
-              <div className="absolute left-16 top-24 text-xl font-semibold px-4 py-2 bg-white w-fit rounded-xl -rotate-[10deg]">
+              <div className="absolute left-16 top-24  text-xl font-semibold px-4 py-2 bg-white w-fit rounded-xl -rotate-[10deg]">
                 <span className="text-green-gradient">5+</span> Years of
                 experience
               </div>

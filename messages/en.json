@@ -19,8 +19,7 @@
     "cardSubtitle": "Click to see more"
   },
   "ServicesSection": {
-    "headline": " <highlight>Not just services - we deliver</highlight>",
-    "subheadline": "growth, clarity, <highlight>and</highlight> real impact.",
+    "headline": " <highlight>Not just services - we deliver</highlight> growth, clarity, <highlight>and</highlight> real impact.",
     "services": [
       {
         "title": "UI/UX Design",
@@ -86,8 +85,7 @@
     }
   },
   "FooterSection": {
-    "headline": "Your brand deserves better.",
-    "subheadline": "Let’s build it right.",
+    "headline": "<highlight>Your brand deserves better.</highlight> Let’s build it right.",
     "Navigation": {
       "projects": "Projects",
       "services": "Services",

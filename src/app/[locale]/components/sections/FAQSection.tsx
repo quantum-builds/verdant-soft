@@ -1,4 +1,6 @@
 "use client";
+
+import { useIsMobile } from "@/hook/useIsMobile";
 import { slideFromBottom } from "@/uitls/sliderAnimation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
@@ -15,6 +17,7 @@ export default function FAQSection() {
   const QUESTIONS = t.raw("questions") as IQuestions[];
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const isMobile = useIsMobile();
 
   const staggerContainer = {
     hidden: {},
@@ -31,29 +34,29 @@ export default function FAQSection() {
     visible: { opacity: 1, x: 0 },
   };
 
+  const handleToggle = (index: number) => {
+    setActiveIndex((prev) => (prev === index ? null : index));
+  };
+
   return (
     <div className="overflow-hidden flex flex-col gap-12 md:min-h-[70vh] w-11/12 mx-auto mb-28">
       <p className="font-semibold text-2xl">[05 FAQ]</p>
 
       <div className="flex flex-col md:flex-row gap-12">
-        <motion.div
-          className="w-full md:w-2/5 flex justify-start items-start"
+        <motion.p
+          className="w-11/12 md:w-2/5 text-2xl md:text-3xl lg:text-4xl xl:text-7xl font-semibold leading-tight font-inter text-start"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}
           transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="w-full">
-            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-7xl font-semibold leading-tight font-inter text-start">
-              {t.rich("headline", {
-                highlight: (chunks) => (
-                  <span className="text-green-gradient">{chunks}</span>
-                ),
-              })}
-            </p>
-          </div>
-        </motion.div>
+          {t.rich("headline", {
+            highlight: (chunks) => (
+              <span className="text-green-gradient">{chunks}</span>
+            ),
+          })}
+        </motion.p>
 
         <motion.div
           className="w-full md:w-3/5 flex flex-col justify-between gap-6"
@@ -68,8 +71,15 @@ export default function FAQSection() {
               variants={itemAnimation}
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="group bg-[#F9F9F9] rounded-xl p-10 cursor-pointer transition-colors duration-300 hover:bg-[#F2F2F2]"
-              onMouseEnter={() => setActiveIndex(index)}
-              onMouseLeave={() => setActiveIndex(null)}
+              onMouseEnter={() => {
+                if (!isMobile) setActiveIndex(index);
+              }}
+              onMouseLeave={() => {
+                if (!isMobile) setActiveIndex(null);
+              }}
+              onClick={() => {
+                if (isMobile) handleToggle(index);
+              }}
             >
               <div className="flex justify-between items-center">
                 <p

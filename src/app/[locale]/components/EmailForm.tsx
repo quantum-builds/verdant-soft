@@ -35,7 +35,7 @@ export default function EmailForm() {
           type="text"
           placeholder="Name*"
           {...register("name")}
-          className="w-full bg-[#F4F4F5] text-xl font-medium px-4 py-8 rounded-lg max-w-3xl"
+          className="w-full bg-[#F4F4F5]  text-lg lg:text-xl font-medium px-3 py-6 xl:px-4 xl:py-8 focus:outline-none focus:ring-0 focus:border-transparent rounded-lg max-w-3xl placeholder:text-md lg:placeholder:text-lg"
         />
         {errors.name && (
           <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
@@ -47,7 +47,7 @@ export default function EmailForm() {
           type="email"
           placeholder="Email*"
           {...register("email")}
-          className="w-full bg-[#F4F4F5] text-xl font-medium px-4 py-8 rounded-lg max-w-3xl"
+          className="w-full bg-[#F4F4F5] text-lg lg:text-xl font-medium px-3 py-6 xl:px-4 xl:py-8  max-w-3xl focus:outline-none focus:ring-0 focus:border-transparent rounded-lg placeholder:text-md lg:placeholder:text-lg"
         />
         {errors.email && (
           <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -58,7 +58,7 @@ export default function EmailForm() {
         <textarea
           placeholder="Message* (Tell us about your project)"
           {...register("message")}
-          className="w-full bg-[#F4F4F5] text-xl font-medium px-4 py-8 rounded-lg max-w-3xl"
+          className="w-full bg-[#F4F4F5] text-lg lg:text-xl font-medium px-3 py-6 xl:px-4 xl:py-8 rounded-lg focus:outline-none focus:ring-0 focus:border-transparent  max-w-3xl placeholder:text-md lg:placeholder:text-lg"
           rows={4}
         ></textarea>
         {errors.message && (
@@ -69,7 +69,7 @@ export default function EmailForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full text-2xl font-semibold bg-black text-white py-6 rounded-lg hover:bg-gray-800 transition-colors max-w-3xl"
+        className="w-full text-2xl font-semibold bg-black text-white py-4 xl:py-6 rounded-lg hover:bg-gray-800 transition-colors max-w-3xl"
       >
         {isSubmitting ? "Submitting..." : "Submit"}
       </button>

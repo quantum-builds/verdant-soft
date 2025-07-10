@@ -10,13 +10,16 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
+    "@hookform/resolvers": "^5.1.1",
     "framer-motion": "^12.20.5",
     "lucide-react": "^0.511.0",
     "next": "15.3.4",
     "next-intl": "^4.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "swiper": "^11.2.10"
+    "react-hook-form": "^7.60.0",
+    "swiper": "^11.2.10",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

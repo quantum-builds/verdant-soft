@@ -13,6 +13,7 @@ import { Star } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { slideFromRight } from "@/uitls/sliderAnimation";
 
 interface Testimonial {
   id: number;
@@ -99,7 +100,7 @@ const slideFromBottom = {
   },
 };
 export const slideFromLeft = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -100 },
   visible: {
     opacity: 1,
     x: 0,
@@ -107,67 +108,65 @@ export const slideFromLeft = {
 };
 export default function TestimonialsSection() {
   return (
-    <section className="overflow-hidden scroll-mt-28 mb-28 w-full h-[67vh]">
-      <div className="flex flex-col gap-16">
-        <div className="w-11/12 mx-auto flex flex-col gap-12">
-          <p className="font-semibold text-2xl">[04 Testimonials]</p>
-          <div className="w-full flex justify-end">
-            <motion.h2
-              className="w-full sm:w-4/5 md:w-3/4 lg:w-[57%] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black leading-tight text-end break-words"
-              variants={slideFromLeft}
-              transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.4 }}
-            >
-              Real stories. Real winners.
-              <span className="block text-green-gradient">
-                Straight from our clients
-              </span>
-            </motion.h2>
-          </div>
-        </div>
-        <motion.div
-          variants={slideFromBottom}
-          transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
-        >
-          <Swiper
-            spaceBetween={24}
-            slidesPerView="auto"
-            loop={true}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            mousewheel={{ forceToAxis: true }}
-            modules={[Autoplay, Pagination, Mousewheel]}
-            className="w-full px-6"
+    <section className="overflow-hidden scroll-mt-28 mb-28 w-full h-[67vh] flex flex-col gap-16">
+      <div className="w-11/12 mx-auto flex flex-col gap-12">
+        <p className="font-semibold text-2xl">[04 Testimonials]</p>
+        <div className="w-full flex justify-end">
+          <motion.h2
+            className="w-full sm:w-4/5 md:w-3/4 lg:w-[57%] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black leading-tight text-end break-words"
+            variants={slideFromRight}
+            transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
           >
-            {testimonials.map((testimonial) => (
-              <SwiperSlide
-                key={testimonial.id}
-                className="!w-[300px]  md:!w-[700px] flex-shrink-0"
-              >
-                <div
-                  className={`h-[300px] md:h-[350px] rounded-2xl backdrop-blur-sm border border-white/10`}
-                >
-                  {testimonial.type === "image" ? (
-                    <ImageCard testimonial={testimonial} />
-                  ) : testimonial.type === "video" ? (
-                    <VideoCard testimonial={testimonial} />
-                  ) : (
-                    <TextCard testimonial={testimonial} />
-                  )}
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
+            Real stories. Real winners.
+            <span className="block text-green-gradient">
+              Straight from our clients
+            </span>
+          </motion.h2>
+        </div>
       </div>
+      <motion.div
+        variants={slideFromBottom}
+        transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+      >
+        <Swiper
+          spaceBetween={24}
+          slidesPerView="auto"
+          loop={true}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          mousewheel={{ forceToAxis: true }}
+          modules={[Autoplay, Pagination, Mousewheel]}
+          className="w-full px-6"
+        >
+          {testimonials.map((testimonial) => (
+            <SwiperSlide
+              key={testimonial.id}
+              className="!w-[300px]  md:!w-[700px] flex-shrink-0"
+            >
+              <div
+                className={`h-[300px] md:h-[350px] rounded-2xl backdrop-blur-sm border border-white/10`}
+              >
+                {testimonial.type === "image" ? (
+                  <ImageCard testimonial={testimonial} />
+                ) : testimonial.type === "video" ? (
+                  <VideoCard testimonial={testimonial} />
+                ) : (
+                  <TextCard testimonial={testimonial} />
+                )}
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </motion.div>
     </section>
   );
 }

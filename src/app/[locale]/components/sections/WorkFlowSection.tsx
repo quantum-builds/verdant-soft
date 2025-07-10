@@ -1,5 +1,7 @@
 "use client";
 
+import { slideFromBottom, slideFromLeft } from "@/uitls/sliderAnimation";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
@@ -43,10 +45,20 @@ const STEPS: IStepCircle[] = [
 export default function WorkFlowSection() {
   const t = useTranslations("WorkFlowSection");
   return (
-    <div className="h-[70vh] w-11/12 mx-auto flex flex-col gap-12 mb-28">
+    <div
+      id="workflow"
+      className="h-[75vh] w-11/12 mx-auto flex flex-col gap-12 mb-28 overflow-hidden"
+    >
       <p className="font-semibold text-2xl">[03 Workflow]</p>
       <div className="flex flex-col gap-20 flex-1">
-        <div className="flex flex-col gap-2">
+        <motion.div
+          className="flex flex-col gap-2"
+          initial="hidden"
+          whileInView="visible"
+          variants={slideFromLeft}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <p className="w-10/12 lg:w-2/3 text-2xl lg:text-4xl xl:text-6xl font-semibold">
             {t.rich("headline", {
               highlight: (chunks) => (
@@ -61,8 +73,15 @@ export default function WorkFlowSection() {
               ),
             })}
           </p>
-        </div>
-        <div className="w-full xl:w-3/4 lg:w-4/5 mx-auto flex-1 relative h-[400px]">
+        </motion.div>
+        <motion.div
+          className="w-full xl:w-3/4 lg:w-4/5 mx-auto flex-1 relative h-[400px] p-3"
+          initial="hidden"
+          whileInView="visible"
+          variants={slideFromBottom}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <div className="flex justify-between h-full w-full ">
             {STEPS.map((step, index) => (
               <div
@@ -79,7 +98,12 @@ export default function WorkFlowSection() {
               </div>
             ))}
           </div>
-        </div>
+          {/* <Image
+            src={WorkFlowImage}
+            alt="workflow"
+            className="w-full object-cover"
+          /> */}
+        </motion.div>
       </div>
     </div>
   );

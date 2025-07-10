@@ -9,6 +9,8 @@ import { useState } from "react";
 import "swiper/css";
 import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
+import { motion } from "framer-motion";
+import { slideFromBottom, slideFromLeft } from "@/uitls/sliderAnimation";
 
 interface Highlights {
   text: string;
@@ -33,53 +35,72 @@ export default function HighlightSection() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <div className="h-[75vh] mb-28 flex flex-col gap-16 w-full overflow-hidden">
-      <p className="text-center text-2xl lg:text-[40px] font-semibold">
+    <div
+      id="projects"
+      className="h-[75vh] mb-28 flex flex-col gap-16 w-full overflow-hidden"
+    >
+      <motion.p
+        className="text-center text-2xl lg:text-[40px] font-semibold"
+        initial="hidden"
+        whileInView="visible"
+        variants={slideFromLeft}
+        transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         {t.rich("sectionTitle", {
           highlight: (chunks) => (
             <span className="text-green-gradient">{chunks}</span>
           ),
         })}
-      </p>
+      </motion.p>
 
-      <Swiper
-        spaceBetween={24}
-        slidesPerView="auto"
-        loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
-        mousewheel={{ forceToAxis: true }}
-        modules={[Autoplay, Mousewheel, Pagination]}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={slideFromBottom}
+        transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
         className="w-full px-6 flex-10/12"
       >
-        {highlights.map((highlight, index) => (
-          <SwiperSlide
-            key={index}
-            className="!w-10/12 lg:!w-2/3 xl:!w-1/2 2xl:!w-2/5 flex-shrink-0"
-          >
-            <div className="relative h-full w-full rounded-xl overflow-hidden">
-              <Image
-                src={highlight.image}
-                alt={`highlight-${index}`}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-white/80" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 text-center">
-                <p className="text-[28px] font-semibold">{highlight.text}</p>
-                <a className="text-xl text-[#74AFAD] cursor-pointer">
-                  {t("cardSubtitle")}
-                </a>
+        <Swiper
+          spaceBetween={24}
+          slidesPerView="auto"
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
+          mousewheel={{ forceToAxis: true }}
+          modules={[Autoplay, Mousewheel, Pagination]}
+          className="w-full h-full"
+        >
+          {highlights.map((highlight, index) => (
+            <SwiperSlide
+              key={index}
+              className="!w-10/12 lg:!w-2/3 xl:!w-1/2 2xl:!w-2/5 flex-shrink-0"
+            >
+              <div className="relative h-full w-full rounded-xl overflow-hidden">
+                <Image
+                  src={highlight.image}
+                  alt={`highlight-${index}`}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-white/80" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 text-center">
+                  <p className="text-[28px] font-semibold">{highlight.text}</p>
+                  <a className="text-xl text-[#74AFAD] cursor-pointer">
+                    {t("cardSubtitle")}
+                  </a>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </motion.div>
 
       <div className="flex justify-center gap-2 mt-2">
         {highlights.map((_, index) => (

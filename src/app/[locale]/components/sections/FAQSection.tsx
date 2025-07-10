@@ -1,19 +1,49 @@
+"use client";
+import { slideFromBottom } from "@/uitls/sliderAnimation";
+import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 interface IQuestions {
   question: string;
+  answer: string;
 }
 
 export default function FAQSection() {
   const t = useTranslations("FAQSection");
   const QUESTIONS = t.raw("questions") as IQuestions[];
 
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const staggerContainer = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemAnimation = {
+    hidden: { opacity: 0, x: 200 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
-    <div className="flex flex-col gap-12  md:h-[75vh]  w-11/12 mx-auto mb-28 ">
+    <div className="overflow-hidden flex flex-col gap-12 md:min-h-[70vh] w-11/12 mx-auto mb-28">
       <p className="font-semibold text-2xl">[05 FAQ]</p>
+
       <div className="flex flex-col md:flex-row gap-12">
-        <div className="w-full md:w-2/5 flex justify-start items-start">
+        <motion.div
+          className="w-full md:w-2/5 flex justify-start items-start"
+          initial="hidden"
+          whileInView="visible"
+          variants={slideFromBottom}
+          transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <div className="w-full">
             <p className="text-2xl md:text-3xl lg:text-4xl xl:text-7xl font-semibold leading-tight font-inter text-start">
               {t.rich("headline", {
@@ -23,21 +53,68 @@ export default function FAQSection() {
               })}
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="w-full md:w-3/5 flex flex-col gap-6">
+        <motion.div
+          className="w-full md:w-3/5 flex flex-col justify-between gap-6"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {QUESTIONS.map((question, index) => (
-            <div
-              className="flex justify-between items-center bg-[#F9F9F9] rounded-xl py-10 px-5"
+            <motion.div
               key={index}
+              variants={itemAnimation}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="group bg-[#F9F9F9] rounded-xl p-10 cursor-pointer transition-colors duration-300 hover:bg-[#F2F2F2]"
+              onMouseEnter={() => setActiveIndex(index)}
+              onMouseLeave={() => setActiveIndex(null)}
             >
-              <p className="text-xl md:text-2xl font-semibold pr-4">
-                {question.question}
-              </p>
-              <Plus className="text-green-gradient h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-            </div>
+              <div className="flex justify-between items-center">
+                <p
+                  className={`text-xl md:text-2xl font-semibold transition-colors duration-300 ${
+                    activeIndex === index ? "text-blue" : "text-black"
+                  }`}
+                >
+                  {question.question}
+                </p>
+                <motion.div
+                  className="transition-transform duration-300"
+                  animate={{ rotate: activeIndex === index ? 45 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Plus className="text-green-gradient h-5 w-5 flex-shrink-0" />
+                </motion.div>
+              </div>
+
+              <AnimatePresence>
+                {activeIndex === index && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0, y: 20 }}
+                    animate={{ opacity: 1, height: "auto", y: 0 }}
+                    exit={{ opacity: 0, height: 0, y: 20 }}
+                    transition={{
+                      duration: 0.4,
+                      ease: [0.1, 0.62, 0.23, 0.98],
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <motion.div
+                      initial={{ y: -5, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -5, opacity: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                      className="py-2 text-sm sm:text-base text-gray-600 leading-relaxed"
+                    >
+                      {question.answer}
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

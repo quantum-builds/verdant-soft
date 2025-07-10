@@ -1,4 +1,5 @@
 import { VerdantGreenLogo } from "@/assets";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -16,9 +17,9 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray backdrop-blur-sm font-inter">
       <div className="lg:max-w-11/12   mx-auto ">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <div className="flex items-center gap-2">
+          <Link className="flex items-center gap-2" href={"/"}>
             <Image src={VerdantGreenLogo} alt="logo-white" />
-          </div>
+          </Link>
           <div className="hidden lg:flex items-center lg:space-x-6 xl:space-x-10">
             {navItems.map((item) => (
               <a
@@ -30,9 +31,12 @@ export default function Navbar() {
               </a>
             ))}
           </div>
-          <button className="hidden lg:flex bg-black hover:bg-black text-white lg:px-6 lg:py-2  xl:px-7 xl:py-3 rounded-lg items-center  transition-all duration-200 text-xl ">
+          <Link
+            href={"/contact-us"}
+            className="hidden lg:flex bg-black hover:bg-black text-white lg:px-6 lg:py-2  xl:px-7 xl:py-3 rounded-lg items-center  transition-all duration-200 text-xl "
+          >
             {t("getInTouch")}
-          </button>
+          </Link>
         </div>
       </div>
     </nav>

@@ -1,4 +1,7 @@
+"use client";
 import { Arrow, Blog1, Blog2, Blog3 } from "@/assets";
+import { slideFromBottom, slideFromTop } from "@/uitls/sliderAnimation";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
@@ -28,9 +31,19 @@ export default function BlogSection() {
     },
   ];
   return (
-    <div className="h-[75vh] w-11/12 mx-auto mb-28 flex flex-col gap-12">
+    <div
+      id="blog"
+      className="h-[75vh] w-11/12 mx-auto mb-28 flex flex-col gap-12 overflow-hidden"
+    >
       <p className="font-semibold text-2xl">[06 Blog]</p>
-      <div className="w-full flex justify-end">
+      <motion.div
+        className="w-full flex justify-end"
+        initial="hidden"
+        whileInView="visible"
+        variants={slideFromTop}
+        transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         <div className="w-2/3">
           <p className="text-2xl md:text-3xl xl:text-7xl font-semibold leading-tight font-inter text-end">
             {t.rich("headline", {
@@ -40,7 +53,7 @@ export default function BlogSection() {
             })}
           </p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="flex gap-2 cursor-pointer items-center ">
         <p className="text-[#707070] text-xl  md:text-2xl xl:text-4xl font-semibold">
@@ -48,7 +61,14 @@ export default function BlogSection() {
         </p>
         <Image src={Arrow} alt="arrow" width={30} />
       </div>
-      <div className="flex-1 flex gap-8 overflow-z-auto scroll-smooth scrollbar-hide cursor-pointer">
+      <motion.div
+        className="flex-1 flex gap-8 overflow-z-auto scroll-smooth scrollbar-hide cursor-pointer"
+        initial="hidden"
+        whileInView="visible"
+        variants={slideFromBottom}
+        transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         {BLOGS.map((blog, index) => (
           <div
             key={index}
@@ -62,7 +82,7 @@ export default function BlogSection() {
             <p className="text-2xl font-semibold text-center">{blog.title}</p>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

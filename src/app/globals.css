@@ -11,6 +11,10 @@
   --font-inter: "Inter";
   --color-black: #1b1b1b;
   --color-white: #ffffff;
+
+  --breakpoint-3xl: 101.875rem;
+  --breakpoint-4xl: 113.98rem;
+  --breakpoint-5xl: 138.125rem;
 }
 
 @layer utilities {

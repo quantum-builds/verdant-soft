@@ -39,7 +39,7 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="overflow-hidden flex flex-col gap-12 md:min-h-[70vh] w-11/12 mx-auto mb-28">
+    <div className="overflow-hidden flex flex-col gap-12 md:min-h-[70vh] 3xl:min-h-[50vh] w-11/12 mx-auto mb-28">
       <p className="font-semibold text-2xl">[05 FAQ]</p>
 
       <div className="flex flex-col md:flex-row gap-12">

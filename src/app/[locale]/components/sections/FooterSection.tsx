@@ -1,13 +1,25 @@
 "use client";
-import { VerdantLightLogo, VerdantLogoLeft, VerdantLogoRight } from "@/assets";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  VerdantLightLogo,
+  VerdantLogoLeft,
+  VerdantLogoRight,
+} from "@/assets";
 import { slideFromBack, slideFromRight } from "@/uitls/sliderAnimation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 
 interface TextLinks {
   text: string;
+  link: string;
+}
+
+interface SocialLinks {
+  image: StaticImageData;
   link: string;
 }
 
@@ -49,9 +61,13 @@ export default function FooterSection() {
     },
   ];
 
-  const SOCIAL_LINKS: TextLinks[] = [
-    { text: "Twitter", link: "www.twitter.com" },
-    { text: "Instagram", link: "www.instagram.com" },
+  const SOCIAL_LINKS: SocialLinks[] = [
+    { image: LinkedInIcon, link: "https://www.linkedin.com/company/101573750" },
+    {
+      image: FacebookIcon,
+      link: "https://www.facebook.com/people/Verdant-Soft/61572806245482/",
+    },
+    { image: InstagramIcon, link: "https://www.instagram.com/verdant_soft/" },
   ];
 
   const slideFromBottom = {
@@ -105,7 +121,7 @@ export default function FooterSection() {
       </motion.div>
 
       <div className="px-4 lg:w-11/12 mx-auto flex flex-col justify-between h-full">
-        <div className="h-20 flex lg:justify-between md:justify-around w-2/5 lg:w-full gap-10  lg:gap-20 ">
+        <div className="h-20 flex justify-between  lg:w-full gap-7 sm:gap-10 md:gap-20 ">
           <motion.div
             className="flex flex-col lg:flex-row gap-4 lg:gap-12"
             initial="hidden"
@@ -125,7 +141,7 @@ export default function FooterSection() {
             ))}
           </motion.div>
           <motion.div
-            className="flex flex-col lg:flex-row gap-4 lg:gap-12"
+            className="flex flex-row gap-4 lg:gap-7"
             initial="hidden"
             whileInView="visible"
             variants={slideFromRight}
@@ -135,10 +151,15 @@ export default function FooterSection() {
             {SOCIAL_LINKS.map((socialLink, index) => (
               <a
                 href={socialLink.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 key={index}
-                className="text-white text-lg md:text-xl"
               >
-                {socialLink.text}
+                <Image
+                  src={socialLink.image}
+                  alt="social-image"
+                  className="w-8 h-8 lg:w-10 lg:h-10"
+                />
               </a>
             ))}
           </motion.div>
@@ -162,24 +183,23 @@ export default function FooterSection() {
 
         {/* {for tablet and above} */}
         <motion.div
-          className="hidden md:flex justify-between"
+          className="hidden md:flex justify-between items-end"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}
           transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="flex-1 flex items-end">
+          <div className="flex-1 flex justify-start items-end">
             <Image
               src={VerdantLightLogo}
               alt="logo-white"
-              className="cursor-pointer"
-              width={260}
-              height={60}
+              className="cursor-pointer self-end"
               onClick={() => router.replace("/")}
             />
           </div>
-          <div className="flex-1 flex justify-center items-end gap-12 ">
+
+          <div className="flex-1 flex justify-center items-end gap-12">
             {PAGES_LINKS.map((pageLink, index) => (
               <a
                 href={pageLink.link}
@@ -191,7 +211,7 @@ export default function FooterSection() {
             ))}
           </div>
 
-          <div className="flex-1 flex flex-col 2xl:flex-row justify-end  gap-2 2xl:gap-8 font-semibold ">
+          <div className="flex-1 flex flex-col 2xl:flex-row justify-end  2xl:items-end gap-2 2xl:gap-8 font-semibold">
             <div className="flex flex-col gap-1">
               <p className="text-[#707070] text-xl">{t("Contact.email")}</p>
               <p className="text-white text-xl lg:text-2xl">
@@ -245,7 +265,7 @@ export default function FooterSection() {
               </a>
             ))}
           </div>
-          <div className="flex-1 flex items-end justify-center">
+          <div className="flex-1 flex items-end justify-center ">
             <Image
               src={VerdantLightLogo}
               alt="logo-white"

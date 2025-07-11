@@ -33,7 +33,7 @@ export default function BlogSection() {
   return (
     <div
       id="blog"
-      className="min-h-[70vh] w-11/12 mx-auto mb-28 flex flex-col gap-12 overflow-hidden"
+      className="min-h-[70vh] 3xl:min-h-[50vh] w-11/12 mx-auto mb-28 flex flex-col gap-12 overflow-hidden"
     >
       <p className="font-semibold text-2xl">[06 Blog]</p>
       <div className="w-full flex justify-end">

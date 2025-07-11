@@ -1,4 +1,4 @@
-export { default as VerdantLightLogo } from "./verdant-white-logo.png";
+export { default as VerdantLightLogo } from "./verdant-white-logo.svg";
 export { default as VerdantGreenLogo } from "./verdant-green-logo.svg";
 export { default as HeroBg } from "./hero-bg.png";
 export { default as Highlight1 } from "./highlight-1.jpg";
@@ -20,3 +20,12 @@ export { default as Arrow } from "./arrow.svg";
 export { default as DottedBG } from "./dotted-bg.svg";
 export { default as PhoneImage } from "./phone.png";
 export { default as GraphImage } from "./graph.svg";
+
+export { default as LowerElipse } from "./lower-elipse.svg";
+export { default as UpperElipse } from "./upper-elipse.svg";
+export { default as LeftLine } from "./left-line.svg";
+export { default as RightLine } from "./right-line.svg";
+
+export { default as LinkedInIcon } from "./Linkedin.svg";
+export { default as InstagramIcon } from "./Instagram.svg";
+export { default as FacebookIcon } from "./Facebook.svg";

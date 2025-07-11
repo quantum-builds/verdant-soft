@@ -62,7 +62,7 @@ export default function ServiceSection() {
   return (
     <div
       id="services"
-      className="overflow-hidden min-h-[100vh] w-11/12 mx-auto flex flex-col mb-28 gap-12"
+      className="overflow-hidden min-h-[100vh] 3xl:min-h-[70vh] w-11/12 mx-auto flex flex-col mb-28 gap-12"
     >
       <p className="font-semibold text-xl md:text-2xl">[01 Services]</p>
       <motion.p
@@ -161,7 +161,9 @@ export default function ServiceSection() {
       </motion.div>
 
       <motion.div
-        className="relative group w-full py-12 px-6 rounded-xl flex justify-center items-center overflow-hidden bg-black cursor-pointer"
+        className={`relative group w-full py-12 px-6 rounded-xl flex justify-center items-center overflow-hidden  cursor-pointer ${
+          isMobile ? "bg-green-gradient" : "bg-black"
+        }`}
         initial="hidden"
         whileInView="visible"
         variants={slideFromBottom}
@@ -175,14 +177,9 @@ export default function ServiceSection() {
         }}
       >
         {isMobile ? (
-          <motion.p
-            className="z-10 text-white text-3xl font-semibold text-center bg-green-gradient px-6 py-4 rounded-xl"
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          >
+          <p className="z-10 text-white text-3xl font-semibold text-center ">
             {t("cta.button")}
-          </motion.p>
+          </p>
         ) : (
           <>
             {/* Gradient Layer with Opacity Transition */}
@@ -214,7 +211,7 @@ export default function ServiceSection() {
                 initial={{ opacity: 0, x: 0 }}
                 animate={
                   isHovered
-                    ? { opacity: 1, x: -ctaWidth }
+                    ? { opacity: 1, x: -ctaWidth / 1.2 }
                     : { opacity: 1, x: 0 }
                 }
                 transition={{ duration: 0.5, ease: "easeInOut" }}

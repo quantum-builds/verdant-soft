@@ -63,12 +63,12 @@ export default function WorkFlowSection() {
   return (
     <div
       id="workflow"
-      className="h-[67vh] md:h-[66vh] lg:h-[74vh] xl:h-[82vh] 2xl:h-[85vh]  3xl:h-[78vh] 5xl:h-[52vh] w-11/12 mx-auto flex flex-col gap-12 mb-28 overflow-hidden"
+      className="scroll-mt-36 h-[67vh] md:h-[66vh] lg:h-[74vh] xl:h-[82vh] 2xl:h-[85vh]  3xl:h-[78vh] 5xl:h-[52vh] w-11/12 mx-auto flex flex-col gap-12 mb-28 overflow-hidden"
     >
       <p className="font-semibold text-2xl">[03 Workflow]</p>
       <div className="flex flex-col gap-20 flex-1">
         <motion.p
-          className="w-11/12 md:w-3/4 lg:w-2/3 xl:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-semibold"
+          className="w-11/12 md:w-3/4 lg:w-2/3 xl:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold"
           initial="hidden"
           whileInView="visible"
           variants={slideFromLeft}

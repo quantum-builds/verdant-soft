@@ -39,12 +39,12 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="overflow-hidden flex flex-col gap-12 md:min-h-[70vh] 3xl:min-h-[50vh] w-11/12 mx-auto mb-28">
+    <div className="scroll-mt-28 overflow-hidden flex flex-col gap-12 md:min-h-[70vh] 3xl:min-h-[50vh] w-11/12 mx-auto mb-28">
       <p className="font-semibold text-2xl">[05 FAQ]</p>
 
       <div className="flex flex-col md:flex-row gap-12">
         <motion.p
-          className="w-11/12 md:w-2/5 text-2xl md:text-3xl lg:text-4xl xl:text-7xl font-semibold leading-tight font-inter text-start"
+          className="w-11/12 md:w-2/5 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold leading-tight font-inter text-start"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}

@@ -108,12 +108,12 @@ export const slideFromLeft = {
 };
 export default function TestimonialsSection() {
   return (
-    <section className="overflow-hidden scroll-mt-28 mb-28 w-full min-h-[60vh] flex flex-col gap-16">
+    <section className=" overflow-hidden scroll-mt-36 mb-28 w-full min-h-[60vh] flex flex-col gap-16">
       <div className="w-11/12 mx-auto flex flex-col gap-12">
         <p className="font-semibold text-2xl">[04 Testimonials]</p>
         <div className="w-full flex justify-end">
           <motion.h2
-            className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-end break-words"
+            className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold text-end break-words"
             variants={slideFromRight}
             transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
             initial="hidden"
@@ -153,7 +153,7 @@ export default function TestimonialsSection() {
               className="!w-[300px]  md:!w-[700px] flex-shrink-0"
             >
               <div
-                className={`h-[300px] md:h-[350px] rounded-2xl backdrop-blur-sm border border-white/10`}
+                className={`h-[270px] md:h-[350px] rounded-2xl backdrop-blur-sm border border-white/10`}
               >
                 {testimonial.type === "image" ? (
                   <ImageCard testimonial={testimonial} />
@@ -178,7 +178,7 @@ function ImageCard({ testimonial }: { testimonial: Testimonial }) {
         src={testimonial.image}
         alt={testimonial.name}
         fill
-        className="object-cover rounded-2xl"
+        className="object-cover rounded-2xl "
         style={{ filter: "brightness(0.5)" }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl" />

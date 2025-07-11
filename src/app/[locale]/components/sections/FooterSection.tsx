@@ -172,7 +172,7 @@ export default function FooterSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <p className="w-10/12 lg:w-2/3 xl:w-3/4 2xl:w-3/5 text-white text-2xl md:text-5xl lg:text-5xl xl:text-7xl font-semibold leading-tight font-inter ">
+          <p className="w-10/12 lg:w-2/3 xl:w-3/4 2xl:w-3/5 text-white text-2xl md:text-5xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold leading-tight font-inter ">
             {t.rich("headline", {
               highlight: (chunks) => (
                 <span className="text-[#707070]">{chunks}</span>

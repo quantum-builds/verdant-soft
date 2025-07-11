@@ -33,12 +33,12 @@ export default function BlogSection() {
   return (
     <div
       id="blog"
-      className="min-h-[70vh] 3xl:min-h-[50vh] w-11/12 mx-auto mb-28 flex flex-col gap-12 overflow-hidden"
+      className="scroll-mt-28 min-h-[70vh] 3xl:min-h-[50vh] w-11/12 mx-auto mb-28 flex flex-col gap-12 overflow-hidden"
     >
       <p className="font-semibold text-2xl">[06 Blog]</p>
       <div className="w-full flex justify-end">
         <motion.h2
-          className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-semibold text-end break-words"
+          className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold text-end break-words"
           initial="hidden"
           whileInView="visible"
           variants={slideFromTop}
@@ -94,9 +94,11 @@ export default function BlogSection() {
               alt={`blog-${index}`}
               className="rounded-2xl h-[300px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
             />
-            <p className="text-2xl font-semibold text-center mb-2">
-              {blog.title}
-            </p>
+            <div className="w-11/12 ml-auto">
+              <p className="text-xl font-semibold text-start  mb-2">
+                {blog.title}
+              </p>
+            </div>
           </div>
         ))}
       </motion.div>

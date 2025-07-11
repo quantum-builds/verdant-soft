@@ -37,7 +37,7 @@ export default function HighlightSection() {
   return (
     <div
       id="projects"
-      className="h-[75vh] mb-28 flex flex-col gap-16 w-full overflow-hidden"
+      className="scroll-mt-28 h-[75vh] mb-28 flex flex-col gap-16 w-full overflow-hidden"
     >
       <motion.p
         className="text-center text-2xl sm:text-3xl lg:text-[40px] font-semibold"

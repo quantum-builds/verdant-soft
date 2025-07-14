@@ -63,7 +63,7 @@ export default function WorkFlowSection() {
   return (
     <div
       id="workflow"
-      className="scroll-mt-36 h-[67vh] md:h-[66vh] lg:h-[620px] xl:h-[78vh] 2xl:h-[80vh]  3xl:h-[74vh] 4xl:h-[700px] 5xl:h-[750px] w-11/12 mx-auto flex flex-col gap-12 mb-28 overflow-hidden"
+      className="scroll-mt-36 h-[530px] md:h-[550px] lg:h-[600px] xl:h-[650px] 2xl:h-[675px]  4xl:h-[700px] 5xl:h-[750px] w-11/12 mx-auto flex flex-col gap-12 mb-28 overflow-hidden"
     >
       <p className="font-semibold text-2xl">[03 Workflow]</p>
       <div className="flex flex-col gap-20 flex-1">
@@ -82,7 +82,7 @@ export default function WorkFlowSection() {
           })}
         </motion.p>
         <motion.div
-          className="w-full md:w-[700px] 2xl:w-[1270px] xl:w-[1130px] lg:w-[900px]  5xl:w-[1300px] mx-auto flex-1 relative h-[400px] pb-10"
+          className="w-full md:w-[670px] 2xl:w-[1270px] xl:w-[1130px] lg:w-[900px]  5xl:w-[1300px] mx-auto flex-1 relative h-[400px] pb-10"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}

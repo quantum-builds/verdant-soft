@@ -94,7 +94,7 @@ export default function FeaturesSection() {
                 Just saw the first draft - this is 🔥🔥🔥
               </motion.div>
               <motion.div
-                className="absolute w-1/2 bg-green-gradient text-white top-[36%] lg:top-[39%] xl:top-[42%] right-0 xl:-right-1 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px]  4xl:text-sm 5xl:text-md font-semibold shadow"
+                className="absolute w-1/2 bg-green-gradient text-white top-[36%] lg:top-[39%] xl:top-[43%] right-0 xl:-right-1 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px]  4xl:text-sm 5xl:text-md font-semibold shadow"
                 animate={{
                   y: [0, -8, 0],
                   transition: {

@@ -54,7 +54,7 @@ export default function HeroSection() {
           initial="hidden"
           whileInView="visible"
           variants={slideFromLeft}
-          transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           {t.rich("headline", {
@@ -68,7 +68,7 @@ export default function HeroSection() {
           initial="hidden"
           whileInView="visible"
           variants={slideFromRight}
-          transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           {t.rich("subheadline", {
@@ -82,7 +82,7 @@ export default function HeroSection() {
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}
-          transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           {CTAS.map((cta, index) => (

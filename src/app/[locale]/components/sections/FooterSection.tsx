@@ -141,7 +141,7 @@ export default function FooterSection() {
             ))}
           </motion.div>
           <motion.div
-            className="flex flex-row gap-4 lg:gap-7"
+            className="flex flex-row gap-3 lg:gap-4"
             initial="hidden"
             whileInView="visible"
             variants={slideFromRight}
@@ -158,7 +158,7 @@ export default function FooterSection() {
                 <Image
                   src={socialLink.image}
                   alt="social-image"
-                  className="w-8 h-8 lg:w-10 lg:h-10"
+                  className="w-6 h-6 lg:w-8 lg:h-8"
                 />
               </a>
             ))}

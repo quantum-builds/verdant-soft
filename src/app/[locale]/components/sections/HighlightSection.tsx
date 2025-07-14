@@ -156,8 +156,8 @@ export default function HighlightSection() {
                 onClick={() => swiperRef.current?.slideToLoop(index)}
                 className={`rounded-full cursor-pointer transition-all duration-300 ${
                   index === currentIndex
-                    ? "w-4 h-4 bg-green-gradient"
-                    : "w-3 h-3 bg-gray-300"
+                    ? "w-3 h-3 bg-green-gradient"
+                    : "w-2 h-2 bg-gray-300"
                 }`}
               />
             ));
@@ -194,8 +194,8 @@ export default function HighlightSection() {
                   onClick={() => swiperRef.current?.slideToLoop(i)}
                   className={`rounded-full cursor-pointer transition-all duration-300 ${
                     i === currentIndex
-                      ? "w-4 h-4 bg-green-gradient"
-                      : "w-3 h-3 bg-gray-300"
+                      ? "w-3 h-3 bg-green-gradient"
+                      : "w-2 h-2 bg-gray-300"
                   }`}
                 />
               );

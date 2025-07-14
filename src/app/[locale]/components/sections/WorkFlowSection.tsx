@@ -63,7 +63,7 @@ export default function WorkFlowSection() {
   return (
     <div
       id="workflow"
-      className="scroll-mt-36 h-[67vh] md:h-[66vh] lg:h-[74vh] xl:h-[82vh] 2xl:h-[85vh]  3xl:h-[78vh] 5xl:h-[52vh] w-11/12 mx-auto flex flex-col gap-12 mb-28 overflow-hidden"
+      className="scroll-mt-36 h-[67vh] md:h-[66vh] lg:h-[620px] xl:h-[78vh] 2xl:h-[80vh]  3xl:h-[74vh] 4xl:h-[700px] 5xl:h-[750px] w-11/12 mx-auto flex flex-col gap-12 mb-28 overflow-hidden"
     >
       <p className="font-semibold text-2xl">[03 Workflow]</p>
       <div className="flex flex-col gap-20 flex-1">
@@ -173,30 +173,30 @@ function StepCircles({
             {index % 2 === 0 ? (
               <motion.div
                 className="hidden md:block absolute -right-4 top-[30%]  lg:top-[37%] xl:-right-5 2xl:-right-5 xl:top-[37%] 2xl:top-[38%] 3xl:top-[40%] 4xl:top-[43%]  z-0"
-                initial={{ opacity: 0, scaleX: 0 }}
-                animate={{ opacity: 1, scaleX: 1 }}
-                style={{ transformOrigin: "left" }}
-                exit={{ opacity: 0, scaleX: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: getLineDelay(index),
-                  ease: "easeOut",
-                }}
+                // initial={{ opacity: 0, scaleX: 0 }}
+                // animate={{ opacity: 1, scaleX: 1 }}
+                // style={{ transformOrigin: "left" }}
+                // exit={{ opacity: 0, scaleX: 0 }}
+                // transition={{
+                //   duration: 0.3,
+                //   delay: getLineDelay(index),
+                //   ease: "easeOut",
+                // }}
               >
                 <Image src={LeftLine} alt="left-line" />
               </motion.div>
             ) : (
               <motion.div
                 className="hidden md:block absolute -right-4 bottom-12 lg:bottom-18 xl:-right-5 2xl:-right-5 xl:bottom-[40%] 3xl:bottom-[43%] 4xl:bottom-[47%]  z-0"
-                initial={{ opacity: 0, scaleX: 0 }}
-                animate={{ opacity: 1, scaleX: 1 }}
-                style={{ transformOrigin: "left" }}
-                exit={{ opacity: 0, scaleX: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: getLineDelay(index),
-                  ease: "easeOut",
-                }}
+                // initial={{ opacity: 0, scaleX: 0 }}
+                // animate={{ opacity: 1, scaleX: 1 }}
+                // style={{ transformOrigin: "left" }}
+                // exit={{ opacity: 0, scaleX: 0 }}
+                // transition={{
+                //   duration: 0.3,
+                //   delay: getLineDelay(index),
+                //   ease: "easeOut",
+                // }}
               >
                 <Image src={RightLine} alt="right-line" />
               </motion.div>

@@ -124,24 +124,21 @@ export default function ServiceSection() {
                   {service.title}
                 </motion.p>
               )}
-
-              <AnimatePresence>
-                {!isMobile && isActive && (
-                  <motion.div
-                    key="desktop-description"
-                    className=" flex-1 z-0 cursor-none"
-                    variants={descriptionMotion}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
+              {!isMobile && (
+                <div className="flex-1 z-0  overflow-hidden  min-h-[40px]">
+                  <motion.p
+                    className="lg:text-[12px] xl:text-sm text-[#707070] text-left"
+                    initial={false}
+                    animate={{
+                      opacity: isActive ? 1 : 0,
+                      x: isActive ? 0 : 50,
+                    }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
                   >
-                    <p className="lg:text-[12px] xl:text-sm text-[#707070] text-left">
-                      {service.description}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    {service.description}
+                  </motion.p>
+                </div>
+              )}
 
               {isMobile && isActive && (
                 <motion.p

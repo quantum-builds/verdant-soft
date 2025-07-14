@@ -31,7 +31,7 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className=" overflow-hidden scroll-mt-28 mb-28 min-h-[220vh] md:min-h-[125vh] lg:min-h-[100vh] xl:min-h-[110vh] 2xl:min-h-[140vh] 3xl:min-h-[128vh] 4xl:min-h-[140vh] 5xl:min-h-[105vh]  w-11/12 mx-auto flex flex-col gap-16"
+      className=" overflow-hidden scroll-mt-28 mb-28 min-h-[220vh] md:min-h-[125vh] lg:min-h-[100vh] xl:min-h-[110vh] 2xl:min-h-[140vh] 3xl:min-h-[128vh] 4xl:min-h-[125vh] 5xl:min-h-[115vh]  w-11/12 mx-auto flex flex-col gap-16"
     >
       <div className=" flex flex-col gap-12">
         <p className="font-semibold text-2xl">[02 Features]</p>
@@ -80,20 +80,60 @@ export default function FeaturesSection() {
                 alt="Phone"
                 className="w-80 md:w-90 lg:w-96 xl:w-104 2xl:w-120 3xl:w-150 4xl:w-190 5xl:w-220 h-auto"
               />
-              <div className="absolute top-1/5 md:top-1/4 xl:top-[30%] -left-4 md:left-0 xl:left-6 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px] 4xl:text-sm font-semibold bg-white shadow">
+              <motion.div
+                className="absolute top-1/5 md:top-1/4 xl:top-[30%] 2xl:top-1/3 -left-4 md:left-0 xl:left-6 2xl:left-10 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px] 4xl:text-sm 5xl:text-md font-semibold bg-white shadow"
+                animate={{
+                  y: [0, -8, 0],
+                  transition: {
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "easeInOut",
+                  },
+                }}
+              >
                 Just saw the first draft - this is 🔥🔥🔥
-              </div>
-              <div className="absolute w-1/2 bg-green-gradient text-white top-[36%] xl:top-[42%] right-0 xl:-right-1 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px]  4xl:text-sm font-semibold shadow">
+              </motion.div>
+              <motion.div
+                className="absolute w-1/2 bg-green-gradient text-white top-[36%] lg:top-[39%] xl:top-[42%] right-0 xl:-right-1 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px]  4xl:text-sm 5xl:text-md font-semibold shadow"
+                animate={{
+                  y: [0, -8, 0],
+                  transition: {
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "easeInOut",
+                  },
+                }}
+              >
                 Yes! So glad you like it. Want me to prep a second direction
                 too?
-              </div>
-              <div className="absolute top-[52%] md:top-[54%] -left-2  md:left-0 xl:left-6 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px] 4xl:text-sm font-semibold bg-white shadow">
+              </motion.div>
+              <motion.div
+                className="absolute top-[52%] md:top-[54%]  2xl:top-[52%] -left-2  md:left-0 xl:left-6 2xl:left-10 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px] 4xl:text-sm 5xl:text-md font-semibold bg-white shadow"
+                animate={{
+                  y: [0, -8, 0],
+                  transition: {
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "easeInOut",
+                  },
+                }}
+              >
                 That would be amazing. You&apos;re killing it.
-              </div>
+              </motion.div>
 
-              <div className="absolute w-1/2 bg-green-gradient text-white top-[68%] md:top-[67%] right-0 xl:-right-1 -translate-y-1/2 rounded-lg px-3 py-1  md:py-2 text-[10px] xl:text-[12px]  4xl:text-sm font-semibold shadow">
+              <motion.div
+                className="absolute w-1/2 bg-green-gradient text-white top-[68%] md:top-[67%] 2xl:top-[63%] right-0 xl:-right-1 -translate-y-1/2 rounded-lg px-3 py-1  md:py-2 text-[10px] xl:text-[12px]  4xl:text-sm 5xl:text-md font-semibold shadow"
+                animate={{
+                  y: [0, -8, 0],
+                  transition: {
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "easeInOut",
+                  },
+                }}
+              >
                 Already on it. You&apos;ll have it by tomorrow afternoon.
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -162,19 +202,49 @@ export default function FeaturesSection() {
               Rank higher, get found faster, and stay top-of-mind.
             </p>
             <div className="flex flex-col relative w-full h-full whitespace-nowrap ">
-              <div className="absolute mt-4 left-1/2 -translate-x-1/2 text-md xl:text-lg 2xl:text-xl 5xl:text-2xl font-semibold lg:px-2 2xl:px-4 lg:py-1 2xl:py-2 bg-white w-fit rounded-xl">
+              <motion.div
+                className="absolute mt-4 left-1/2 -translate-x-1/2 text-md xl:text-lg 2xl:text-xl 5xl:text-2xl font-semibold lg:px-2 2xl:px-4 lg:py-1 2xl:py-2 bg-white w-fit rounded-xl"
+                animate={{
+                  y: [0, -6, 0],
+                  transition: {
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "easeInOut",
+                  },
+                }}
+              >
                 <span className="text-green-gradient">90+</span> Completed
                 projects
-              </div>
+              </motion.div>
 
-              <div className="absolute left-2 top-18 2xl:top-20 3xl:top-30 text-md xl:text-lg 2xl:text-xl 5xl:text-2xl font-semibold lg:px-2 2xl:px-4 lg:py-1 2xl:py-2 bg-white w-fit rounded-xl -rotate-[10deg]">
+              <motion.div
+                className="absolute left-2 top-18 2xl:top-26 3xl:top-30 text-md xl:text-lg 2xl:text-xl 5xl:text-2xl font-semibold lg:px-2 2xl:px-4 lg:py-1 2xl:py-2 bg-white w-fit rounded-xl -rotate-[10deg]"
+                animate={{
+                  y: [0, -6, 0],
+                  transition: {
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "easeInOut",
+                  },
+                }}
+              >
                 <span className="text-green-gradient">5+</span> Years of
                 experience
-              </div>
+              </motion.div>
 
-              <div className="absolute right-2 top-32 2xl:top-40 3xl:top-52 text-md xl:text-lg 2xl:text-xl  5xl:text-2xl font-semibold lg:px-2 2xl:px-4 lg:py-1 2xl:py-2 bg-white w-fit rounded-xl rotate-[15deg]">
+              <motion.div
+                className="absolute right-2 top-32 2xl:top-48 3xl:top-52 text-md xl:text-lg 2xl:text-xl  5xl:text-2xl font-semibold lg:px-2 2xl:px-4 lg:py-1 2xl:py-2 bg-white w-fit rounded-xl rotate-[15deg]"
+                animate={{
+                  y: [0, -6, 0],
+                  transition: {
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "easeInOut",
+                  },
+                }}
+              >
                 <span className="text-green-gradient">92%</span> Happy clients
-              </div>
+              </motion.div>
             </div>
           </div>
         </motion.div>

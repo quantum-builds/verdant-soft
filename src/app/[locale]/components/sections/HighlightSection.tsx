@@ -28,7 +28,7 @@ export default function HighlightSection() {
     { text: t("cardTitle"), image: Highlight2 },
     { text: t("cardTitle"), image: Highlight3 },
     { text: t("cardTitle"), image: Highlight1 },
-    { text: t("cardTitle"), image: Highlight2 },
+    // { text: t("cardTitle"), image: Highlight2 },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -104,16 +104,106 @@ export default function HighlightSection() {
         </Swiper>
       </motion.div>
 
-      <div className="flex justify-center gap-2 mt-2">
-        {highlights.map((_, index) => (
-          <div
-            key={index}
-            onClick={() => swiperRef.current?.slideToLoop(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
-              index === currentIndex ? "bg-[#74AFAD]" : "bg-gray-300"
-            }`}
-          />
-        ))}
+      {/* <div className="flex justify-center items-center gap-2 mt-2">
+        {highlights.map((_, index) => {
+          // Show a max of 5 dots at a time
+          const half = 2; // for 5 items
+          const total = highlights.length;
+
+          let start = currentIndex - half;
+          let end = currentIndex + half;
+
+          if (start < 0) {
+            end += Math.abs(start);
+            start = 0;
+          }
+
+          if (end >= total) {
+            const over = end - total + 1;
+            start = Math.max(0, start - over);
+            end = total - 1;
+          }
+
+          // Show only indexes in the [start, end] range
+          if (index < start || index > end) return null;
+
+          console.log("index is ", index);
+          const isActive = index === currentIndex;
+
+          return (
+            <div
+              key={index}
+              onClick={() => swiperRef.current?.slideToLoop(index)}
+              className={`cursor-pointer rounded-full transition-all duration-300 ${
+                isActive
+                  ? "bg-green-gradient w-3 h-3"
+                  : "bg-gray-300 w-2 h-2 opacity-70"
+              }`}
+            />
+          );
+        })}
+      </div> */}
+      <div className="flex justify-center items-center gap-2 mt-2">
+        {(() => {
+          const totalSlides = highlights.length;
+          const windowSize = 5;
+          const overlap = 2;
+
+          if (totalSlides <= windowSize) {
+            return highlights.map((_, index) => (
+              <div
+                key={index}
+                onClick={() => swiperRef.current?.slideToLoop(index)}
+                className={`rounded-full cursor-pointer transition-all duration-300 ${
+                  index === currentIndex
+                    ? "w-4 h-4 bg-green-gradient"
+                    : "w-3 h-3 bg-gray-300"
+                }`}
+              />
+            ));
+          } else {
+            // Compute all windows
+            const windows = [];
+            let start = 0;
+
+            while (start < totalSlides) {
+              let end = start + windowSize;
+              if (end > totalSlides) {
+                start = Math.max(0, totalSlides - windowSize);
+                end = totalSlides;
+              }
+              windows.push({ start, end });
+              if (end === totalSlides) break;
+              start += windowSize - overlap;
+            }
+
+            // Find the active window
+            let activeWindow = windows[0];
+            for (const win of windows) {
+              if (currentIndex >= win.start && currentIndex < win.end) {
+                activeWindow = win;
+                break;
+              }
+            }
+
+            const dots = [];
+            for (let i = activeWindow.start; i < activeWindow.end; i++) {
+              dots.push(
+                <div
+                  key={i}
+                  onClick={() => swiperRef.current?.slideToLoop(i)}
+                  className={`rounded-full cursor-pointer transition-all duration-300 ${
+                    i === currentIndex
+                      ? "w-4 h-4 bg-green-gradient"
+                      : "w-3 h-3 bg-gray-300"
+                  }`}
+                />
+              );
+            }
+
+            return dots;
+          }
+        })()}
       </div>
     </div>
   );

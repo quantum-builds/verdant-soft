@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import FooterSection from "../components/sections/FooterSection";
-
+import Image from "next/image";
+import { DottedBG } from "@/assets";
 interface SectionProps {
   title: string;
   children: React.ReactNode;
@@ -9,10 +10,17 @@ interface SectionProps {
 export default function TermsPage() {
   return (
     <>
-      <main className="min-h-[110vh] flex flex-col mb-28 overflow-hidden">
+      <main className="relative min-h-[110vh] flex flex-col mb-28 overflow-hidden">
+        <div className="hidden absolute top-40 lg:-right-10 xl:-right-10 3xl:right-0 lg:flex items-end justify-end z-20">
+          <Image
+            src={DottedBG}
+            alt="Dotted Background"
+            className="w-4/5 md:w-3/4 lg:w-2/3 2xl:w-9/12 3xl:w-11/12 5xl:w-full h-auto object-center lg:rotate-110 xl:rotate-100 3xl:rotate-90"
+          />
+        </div>
         <Navbar />
         <section className="max-w-11/12 lg:max-w-10/12 xl:max-w-8/12  p-6 text-gray-800 mt-24 md:mt-32 xl:mt-40 ">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-6 text-green-gradient">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-6 text-green-gradient inline-block leading-tight">
             Terms & Conditions
           </h1>
 
@@ -138,7 +146,7 @@ export default function TermsPage() {
 function Section({ title, children }: SectionProps) {
   return (
     <section className="mb-10">
-      <h2 className="text-xl lg:text-2xl xl:text-2xl font-semibold text-green-gradient mb-4">
+      <h2 className="text-xl lg:text-2xl xl:text-3xl font-semibold text-green-gradient mb-4">
         {title}
       </h2>
       {children}

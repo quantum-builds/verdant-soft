@@ -32,22 +32,23 @@ export default function HeroSection() {
     <div className="relative min-h-screen flex flex-col space-y-6 overflow-hidden bg-white mb-28">
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#63aff5] rounded-full blur-[300px] z-0" />
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#85f3f1] rounded-full blur-[300px] z-0" />
-      <div className="absolute bottom-10 lg:-left-20 flex justify-center z-20">
-        <Image
-          src={DottedBG}
-          alt="Dotted Background"
-          className="w-3/5 h-auto object-center"
-        />
-      </div>
-      <div className="hidden absolute bottom-10 -right-20 lg:flex justify-center z-20 rotate-90">
-        <Image
-          src={DottedBG}
-          alt="Dotted Background"
-          className="w-2/3 h-auto object-center"
-        />
-      </div>
+
       <Navbar />
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center gap-5 mt-20 md:mt-24 xl:mt-28 mx-6 lg:mx-10 xl:mx-14 mb-5 bg-gray rounded-3xl">
+        <div className="absolute bottom-10 lg:-left-6 3xl:left-0 flex items-start justify-start z-20">
+          <Image
+            src={DottedBG}
+            alt="Dotted Background"
+            className="w-full md:w-5/6 lg:w-[56%] xl:w-2/3 3xl:w-9/12 5xl:w-11/12 h-auto object-center lg:-rotate-15 xl:-rotate-5 3xl:-rotate-15"
+          />
+        </div>
+        <div className="hidden absolute bottom-15 lg:-right-20 xl:-right-10 3xl:right-0 lg:flex items-end justify-end z-20">
+          <Image
+            src={DottedBG}
+            alt="Dotted Background"
+            className="w-4/5 md:w-3/4 lg:w-2/3 2xl:w-9/12 3xl:w-11/12 5xl:w-full h-auto object-center lg:rotate-110 xl:rotate-100 3xl:rotate-90"
+          />
+        </div>
         <motion.p
           className="text-3xl sm:text-4xl md:text-5xl 4xl:text-6xl font-bold leading-tight font-inter w-11/12 sm:w-3/5  md:w-4/5 lg:w-3/5 2xl:w-[45%] mx-auto text-center"
           initial="hidden"

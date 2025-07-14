@@ -1,7 +1,7 @@
 "use client";
 import { useIsMobile } from "@/hook/useIsMobile";
 import { slideFromLeft } from "@/uitls/sliderAnimation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useLayoutEffect, useRef, useState } from "react";
@@ -41,12 +41,6 @@ export default function ServiceSection() {
       opacity: 1,
       y: 0,
     },
-  };
-
-  const descriptionMotion = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 100 },
   };
 
   const ctaTextRef = useRef<HTMLParagraphElement>(null);

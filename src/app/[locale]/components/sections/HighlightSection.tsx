@@ -28,7 +28,7 @@ export default function HighlightSection() {
     { text: t("cardTitle"), image: Highlight2 },
     { text: t("cardTitle"), image: Highlight3 },
     { text: t("cardTitle"), image: Highlight1 },
-    // { text: t("cardTitle"), image: Highlight2 },
+    { text: t("cardTitle"), image: Highlight2 },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

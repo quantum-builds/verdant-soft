@@ -5,7 +5,6 @@ import FooterSection from "./components/sections/FooterSection";
 import BlogSection from "./components/sections/BlogSection";
 import FAQSection from "./components/sections/FAQSection";
 import TestimonialsSection from "./components/sections/TestimonialSection";
-import WorkFlowSection from "./components/sections/WorkFlowSection";
 import FeaturesSection from "./components/sections/FeaturesSection";
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
       <HighlightSection />
       <ServiceSection />
       <FeaturesSection />
-      <WorkFlowSection />
       <TestimonialsSection />
       <FAQSection />
       <BlogSection />

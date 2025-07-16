@@ -43,7 +43,7 @@ export default function Navbar() {
           </Link>
 
           <button
-            className=" lg:hidden text-black p-2 hover:bg-green-gradient hover:text-white"
+            className=" lg:hidden text-black p-2 "
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (

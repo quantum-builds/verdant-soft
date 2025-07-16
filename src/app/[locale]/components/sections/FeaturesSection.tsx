@@ -84,8 +84,9 @@ export default function FeaturesSection() {
                 className="absolute top-1/5 md:top-1/4 xl:top-[30%] 2xl:top-1/3 -left-4 md:left-0 xl:left-6 2xl:left-10 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px] 4xl:text-sm 5xl:text-md font-semibold bg-white shadow"
                 animate={{
                   y: [0, -8, 0],
+                  x: [0, -8, 0],
                   transition: {
-                    duration: 2,
+                    duration: 2.5,
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "easeInOut",
                   },
@@ -97,8 +98,9 @@ export default function FeaturesSection() {
                 className="absolute w-1/2 bg-green-gradient text-white top-[36%] lg:top-[39%] xl:top-[42%] right-0 xl:-right-1 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px]  4xl:text-sm 5xl:text-md font-semibold shadow"
                 animate={{
                   y: [0, -8, 0],
+                  x: [0, -8, 0],
                   transition: {
-                    duration: 2,
+                    duration: 2.2,
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "easeInOut",
                   },
@@ -111,8 +113,9 @@ export default function FeaturesSection() {
                 className="absolute top-[52%] md:top-[54%]  2xl:top-[52%] -left-2  md:left-0 xl:left-6 2xl:left-10 -translate-y-1/2 rounded-lg px-3 py-1 md:py-2 text-[10px] xl:text-[12px] 4xl:text-sm 5xl:text-md font-semibold bg-white shadow"
                 animate={{
                   y: [0, -8, 0],
+                  x: [0, -8, 0],
                   transition: {
-                    duration: 2,
+                    duration: 2.2,
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "easeInOut",
                   },
@@ -125,8 +128,9 @@ export default function FeaturesSection() {
                 className="absolute w-1/2 bg-green-gradient text-white top-[68%] md:top-[66%] 2xl:top-[63%] right-0 xl:-right-1 -translate-y-1/2 rounded-lg px-3 py-1  md:py-2 text-[10px] xl:text-[12px]  4xl:text-sm 5xl:text-md font-semibold shadow"
                 animate={{
                   y: [0, -8, 0],
+                  x: [0, -8, 0],
                   transition: {
-                    duration: 2,
+                    duration: 2.5,
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "easeInOut",
                   },
@@ -206,8 +210,9 @@ export default function FeaturesSection() {
                 className="absolute mt-4 left-1/2 -translate-x-1/2 text-md xl:text-lg 2xl:text-xl 5xl:text-2xl font-semibold lg:px-2 2xl:px-4 lg:py-1 2xl:py-2 bg-white w-fit rounded-xl"
                 animate={{
                   y: [0, -6, 0],
+                  x: [0, -6, 0],
                   transition: {
-                    duration: 2,
+                    duration: 1.5,
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "easeInOut",
                   },
@@ -221,6 +226,7 @@ export default function FeaturesSection() {
                 className="absolute left-2 top-18 2xl:top-26 3xl:top-30 text-md xl:text-lg 2xl:text-xl 5xl:text-2xl font-semibold lg:px-2 2xl:px-4 lg:py-1 2xl:py-2 bg-white w-fit rounded-xl -rotate-[10deg]"
                 animate={{
                   y: [0, -6, 0],
+                  x: [0, -6, 0],
                   transition: {
                     duration: 2,
                     repeat: Number.POSITIVE_INFINITY,
@@ -236,8 +242,9 @@ export default function FeaturesSection() {
                 className="absolute right-2 top-32 2xl:top-48 3xl:top-52 text-md xl:text-lg 2xl:text-xl  5xl:text-2xl font-semibold lg:px-2 2xl:px-4 lg:py-1 2xl:py-2 bg-white w-fit rounded-xl rotate-[15deg]"
                 animate={{
                   y: [0, -6, 0],
+                  x: [0, -6, 0],
                   transition: {
-                    duration: 2,
+                    duration: 2.5,
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "easeInOut",
                   },

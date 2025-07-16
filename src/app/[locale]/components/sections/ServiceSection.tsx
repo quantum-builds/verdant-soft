@@ -1,21 +1,21 @@
 "use client";
 import { useIsMobile } from "@/hook/useIsMobile";
+import { useRouter } from "@/i18n/navigation";
 import { slideFromLeft } from "@/uitls/sliderAnimation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
 import { useLayoutEffect, useRef, useState } from "react";
 
 interface Services {
+  url: string;
   title: string;
   description: string;
 }
 
 export default function ServiceSection() {
   const t = useTranslations("ServicesSection");
-
-  const services = t.raw("services") as Services[];
   const router = useRouter();
+  const services = t.raw("services") as Services[];
   const isMobile = useIsMobile();
   const [isHovered, setIsHovered] = useState(false);
   const [activeService, setActiveService] = useState<number | null>(null);
@@ -92,8 +92,9 @@ export default function ServiceSection() {
               onMouseEnter={() => !isMobile && setActiveService(index)}
               onMouseLeave={() => !isMobile && setActiveService(null)}
               onClick={() =>
-                isMobile &&
-                setActiveService((prev) => (prev === index ? null : index))
+                // isMobile &&
+                // setActiveService((prev) => (prev === index ? null : index))
+                router.push(service.url)
               }
             >
               {!isMobile && (
@@ -134,7 +135,7 @@ export default function ServiceSection() {
                 </div>
               )}
 
-              {isMobile && isActive && (
+              {/* {isMobile && isActive && (
                 <motion.p
                   key="mobile-description"
                   initial={{ opacity: 0, y: 20 }}
@@ -145,7 +146,7 @@ export default function ServiceSection() {
                 >
                   {service.description}
                 </motion.p>
-              )}
+              )} */}
             </motion.div>
           );
         })}

@@ -7,7 +7,7 @@ import {
   VerdantLogoLeft,
   VerdantLogoRight,
 } from "@/assets";
-import { slideFromBack, slideFromRight } from "@/uitls/sliderAnimation";
+import { slideFromBack } from "@/uitls/sliderAnimation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
@@ -86,6 +86,14 @@ export default function FooterSection() {
     },
   };
 
+  const slideFromRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
   return (
     <div className="overflow-hidden relative h-[100vh] md:h-[90vh] xl:h-[80vh] 2xl:h-[70vh] bg-black py-14">
       {/* Left Logo */}
@@ -141,7 +149,7 @@ export default function FooterSection() {
             ))}
           </motion.div>
           <motion.div
-            className="flex flex-row gap-3 lg:gap-4"
+            className="flex flex-row gap-3"
             initial="hidden"
             whileInView="visible"
             variants={slideFromRight}

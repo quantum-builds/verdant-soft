@@ -22,18 +22,22 @@
     "headline": " <highlight>Not just services - we deliver</highlight> growth, clarity, <highlight>and</highlight> real impact.",
     "services": [
       {
+        "url": "ui-ux-design",
         "title": "UI/UX Design",
         "description": "At our software house, we specialize in creating intuitive and visually stunning UI/UX designs that enhance user engagement. Our expert team crafts customized solutions to ensure a seamless and memorable digital experience for your users."
       },
       {
+        "url": "cloud-devops",
         "title": "Cloud & DevOps",
         "description": "We specialize in delivering seamless DevOps and cloud solutions to optimize your application's performance and scalability. Our expertise ensures reliable deployment, automation, and cloud management tailored to meet your business needs."
       },
       {
+        "url": "web-development",
         "title": "Web Development",
         "description": "We specialize in delivering innovative and custom web development solutions tailored to your business needs. Our expert team ensures seamless, responsive, and high-quality websites that help you stand out online."
       },
       {
+        "url": "it-team-outsourcing",
         "title": "IT Team Outsourcing",
         "description": "Our software house specializes in providing dedicated IT team outsourcing solutions tailored to your business needs. Empower your projects with skilled, reliable professionals committed to delivering high-quality technology services."
       }

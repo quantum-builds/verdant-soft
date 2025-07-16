@@ -13,6 +13,9 @@ interface IStepCircle {
   description: string;
 }
 
+interface WorkFlowSectionProps {
+  steps: IStepCircle[];
+}
 interface StepCircleProps {
   index: number;
   step: number;
@@ -23,47 +26,47 @@ interface StepCircleProps {
   setHoveredIndex: (index: number) => void;
 }
 
-const STEPS: IStepCircle[] = [
-  {
-    step: 1,
-    color: "#C72C91",
-    description: "Planning & Requirement Analysis",
-  },
-  {
-    step: 2,
-    color: "#0565FF",
-    description: "Design",
-  },
-  {
-    step: 3,
-    color: "#FF8800",
-    description: "Development",
-  },
-  {
-    step: 4,
-    color: "#4AA047",
-    description: "Testing",
-  },
-  {
-    step: 5,
-    color: "#1BBFCC",
-    description: "Deployment",
-  },
-  {
-    step: 6,
-    color: "#5B57C2",
-    description: "Maintenance & Updates",
-  },
-];
+// const STEPS: IStepCircle[] = [
+//   {
+//     step: 1,
+//     color: "#C72C91",
+//     description: "Planning & Requirement Analysis",
+//   },
+//   {
+//     step: 2,
+//     color: "#0565FF",
+//     description: "Design",
+//   },
+//   {
+//     step: 3,
+//     color: "#FF8800",
+//     description: "Development",
+//   },
+//   {
+//     step: 4,
+//     color: "#4AA047",
+//     description: "Testing",
+//   },
+//   {
+//     step: 5,
+//     color: "#1BBFCC",
+//     description: "Deployment",
+//   },
+//   {
+//     step: 6,
+//     color: "#5B57C2",
+//     description: "Maintenance & Updates",
+//   },
+// ];
 
-export default function WorkFlowSection() {
+export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
   const t = useTranslations("WorkFlowSection");
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   return (
     <div
       id="workflow"
-      className="scroll-mt-36 h-[530px] md:h-[550px] lg:h-[600px] xl:h-[650px] 2xl:h-[675px]  4xl:h-[700px] 5xl:h-[750px] w-11/12 mx-auto flex flex-col gap-12 mb-28 overflow-hidden"
+      className="scroll-mt-36 h-[530px] md:h-[550px] lg:h-[600px] xl:h-[650px] 2xl:h-[675px]  4xl:h-[700px] 5xl:h-[750px] w-11/12 mx-auto flex flex-col gap-12 mb-20 overflow-hidden"
     >
       <p className="font-semibold text-2xl">[03 Workflow]</p>
       <div className="flex flex-col gap-20 flex-1">
@@ -90,7 +93,7 @@ export default function WorkFlowSection() {
           viewport={{ once: true }}
         >
           <div className="hidden md:flex justify-between h-full w-full ">
-            {STEPS.map((step, index) => (
+            {steps.map((step, index) => (
               <div
                 key={index}
                 className={`flex-1 flex ${
@@ -101,7 +104,7 @@ export default function WorkFlowSection() {
                   index={index}
                   step={step.step}
                   color={step.color}
-                  total={STEPS.length}
+                  total={steps.length}
                   hoveredIndex={hoveredIndex}
                   description={step.description}
                   setHoveredIndex={setHoveredIndex}
@@ -110,7 +113,7 @@ export default function WorkFlowSection() {
             ))}
           </div>
           <div className="grid grid-cols-3 md:hidden gap-4 h-full w-full ">
-            {STEPS.map((step, index) => (
+            {steps.map((step, index) => (
               <div
                 key={index}
                 className={`flex-1 flex ${
@@ -121,7 +124,7 @@ export default function WorkFlowSection() {
                   index={index}
                   step={step.step}
                   color={step.color}
-                  total={STEPS.length}
+                  total={steps.length}
                   hoveredIndex={hoveredIndex}
                   description={step.description}
                   setHoveredIndex={setHoveredIndex}
@@ -278,7 +281,7 @@ function StepCircles({
 
       {index % 2 !== 0 && (
         <p
-          className="text-center text-[10px] lg:text-sm xl:text-lg  max-w-[100px]  4xl:max-w-[90px] transition-all duration-300 w-fit z-20"
+          className="text-center text-[10px] lg:text-sm   max-w-[100px]  4xl:max-w-[90px] transition-all duration-300 w-fit z-20"
           style={{
             color: isHovered ? color : "black",
           }}
@@ -310,7 +313,7 @@ function StepCircles({
       {/* Description below the circle */}
       {index % 2 === 0 && (
         <p
-          className=" text-center text-[10px] lg:text-sm xl:text-lg md:max-w-[40px] lg:max-w-[100px]  4xl:max-w-[90px] transition-all duration-300 w-fit z-20"
+          className=" text-center text-[10px] lg:text-sm  md:max-w-[40px] lg:max-w-[100px]  4xl:max-w-[90px] transition-all duration-300 w-fit z-20"
           style={{
             color: isHovered ? color : "black",
           }}

@@ -86,7 +86,7 @@ export default function ServiceSection() {
           return (
             <motion.div
               key={index}
-              className={`group flex flex-col md:flex-row justify-between items-start md:items-center bg-gray w-full py-6 md:py-8 px-4 md:px-6 rounded-xl overflow-hidden relative`}
+              className={`group flex flex-col md:flex-row justify-between items-start md:items-center bg-gray w-full py-6 md:py-8 px-4 md:px-6 rounded-xl overflow-hidden relative cursor-pointer`}
               variants={itemAnimation}
               transition={{ duration: 0.5, ease: "easeOut" }}
               onMouseEnter={() => !isMobile && setActiveService(index)}

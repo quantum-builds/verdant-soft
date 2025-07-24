@@ -109,7 +109,7 @@ export const slideFromLeft = {
 export default function TestimonialsSection() {
   return (
     <section className=" overflow-hidden scroll-mt-36 mb-28 w-full min-h-[60vh] 3xl:min-h-[45vh] flex flex-col gap-16">
-      <div className="w-11/12 xl:w-4/5  mx-auto flex flex-col gap-12">
+      <div className="w-11/12 xl:w-10/12  mx-auto flex flex-col gap-12">
         <p className="font-semibold text-2xl">[04 Testimonials]</p>
         <div className="w-full flex justify-end">
           <motion.h2

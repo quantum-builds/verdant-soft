@@ -128,7 +128,7 @@ export default function FooterSection() {
         />
       </motion.div>
 
-      <div className="px-4 lg:w-11/12 xl:w-4/5  mx-auto flex flex-col justify-between h-full">
+      <div className="px-4 lg:w-11/12 xl:w-10/12  mx-auto flex flex-col justify-between h-full">
         <div className="h-20 flex justify-between  lg:w-full gap-7 sm:gap-10 md:gap-20 ">
           <motion.div
             className="flex flex-col lg:flex-row gap-4 lg:gap-12"
@@ -219,7 +219,7 @@ export default function FooterSection() {
             ))}
           </div>
 
-          <div className="flex-1 flex flex-col 2xl:flex-row justify-end  2xl:items-end gap-2 2xl:gap-8 font-semibold">
+          <div className="flex-1 flex flex-col 3xl:flex-row justify-end  3xl:items-end gap-2 2xl:gap-8 font-semibold">
             <div className="flex flex-col gap-1">
               <p className="text-[#707070] text-xl">{t("Contact.email")}</p>
               <p className="text-white text-xl lg:text-2xl">

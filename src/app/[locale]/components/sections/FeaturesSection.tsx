@@ -71,7 +71,7 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className=" overflow-hidden scroll-mt-28 mb-28 md:h-[1390px] lg:h-[675px] xl:h-[760px] 2xl:h-[835px] 3xl:h-[860px] 4xl:h-[900px] 5xl:h-[1070px]  w-11/12 xl:w-4/5  mx-auto flex flex-col gap-16 lg:gap-42"
+      className=" overflow-hidden scroll-mt-28 mb-28 md:h-[1390px] lg:h-[675px] xl:h-[760px] 2xl:h-[835px] 3xl:h-[860px] 4xl:h-[900px] 5xl:h-[1070px]  w-11/12 xl:w-10/12  mx-auto flex flex-col gap-16 lg:gap-42"
     >
       <div className=" flex flex-col gap-12">
         <p className="font-semibold text-2xl">[02 Featured Insights]</p>
@@ -91,7 +91,7 @@ export default function FeaturesSection() {
           </motion.h2>
         </div>
       </div>
-      <div className="flex flex-wrap  justify-center gap-4 lg:gap-2 4xl:gap-6 lg:w-[900px] xl:w-[1050px] 2xl:w-[1270px] 3xl:w-[1300px] 4xl:w-[1500px] 5xl:w-[1700px] mx-auto">
+      <div className="flex flex-wrap  justify-center gap-4 lg:gap-2 4xl:gap-4 lg:w-[900px] xl:w-[1050px] 2xl:w-[1270px] 3xl:w-[1300px] 4xl:w-[1500px] 5xl:w-[1700px] mx-auto">
         {FEATURES.map((feature, index) => (
           <div
             key={index}

@@ -33,7 +33,7 @@ export default function BlogSection() {
   return (
     <div
       id="blog"
-      className="scroll-mt-28 min-h-[70vh] 3xl:min-h-[50vh] w-11/12 xl:w-4/5  mx-auto mb-28 flex flex-col gap-12 overflow-hidden"
+      className="scroll-mt-28 min-h-[70vh] 3xl:min-h-[50vh] w-11/12 xl:w-10/12  mx-auto mb-28 flex flex-col gap-12 overflow-hidden"
     >
       <p className="font-semibold text-2xl">[06 Blog]</p>
       <div className="w-full flex justify-end">
@@ -92,7 +92,7 @@ export default function BlogSection() {
             <Image
               src={blog.imageUrl}
               alt={`blog-${index}`}
-              className="rounded-2xl h-[300px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
+              className="rounded-2xl h-[270px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
             />
             <div className="w-11/12 ml-auto">
               <p className="text-xl font-semibold text-start  mb-2">

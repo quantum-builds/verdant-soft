@@ -39,14 +39,14 @@ export default function HeroSection() {
           <Image
             src={DottedBG}
             alt="Dotted Background"
-            className="w-full md:w-5/6 lg:w-[56%] xl:w-2/3 3xl:w-9/12 5xl:w-11/12 h-auto object-center lg:-rotate-15 xl:-rotate-5 3xl:-rotate-15"
+            className="w-full md:w-5/6 lg:w-[56%] xl:w-[62%] 3xl:w-[70%] 5xl:w-[87%] h-auto object-center lg:-rotate-15 xl:-rotate-5 3xl:-rotate-15"
           />
         </div>
         <div className="hidden absolute bottom-15 lg:-right-20 xl:-right-10 3xl:right-0 lg:flex items-end justify-end z-20">
           <Image
             src={DottedBG}
             alt="Dotted Background"
-            className="w-4/5 md:w-3/4 lg:w-2/3 2xl:w-9/12 3xl:w-11/12 5xl:w-full h-auto object-center lg:rotate-110 xl:rotate-100 3xl:rotate-90"
+            className="w-4/5 md:w-3/4 lg:w-[62%] 2xl:w-[70%] 3xl:w-[87%] 5xl:w-[97%] opacity-60 h-auto object-center lg:rotate-110 xl:rotate-100 3xl:rotate-90"
           />
         </div>
         <motion.p

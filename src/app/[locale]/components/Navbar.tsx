@@ -75,7 +75,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray backdrop-blur-sm font-inter">
-      <div className="max-w-4/5 mx-auto">
+      <div className="max-w-10/12 mx-auto">
         {/* Top bar */}
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link className="flex items-center gap-2" href={"/"}>
@@ -156,7 +156,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 max-w-4/5 mx-auto bg-gray backdrop-blur-lg border-y border-gray-200 z-40">
+          <div className="lg:hidden absolute top-full left-0 right-0 max-w-10/12 mx-auto bg-gray backdrop-blur-lg border-y border-gray-200 z-40">
             <div className="px-6 py-4 space-y-4">
               {navItems.map((item, index) =>
                 item.children ? (

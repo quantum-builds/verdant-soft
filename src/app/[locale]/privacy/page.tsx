@@ -22,7 +22,7 @@ function Section({ title, children }: SectionProps) {
 export default function PrivacyPage() {
   return (
     <>
-      <main className="relative min-h-[110vh] flex flex-col mb-28 overflow-hidden">
+      <main className="relative min-h-[110vh] flex flex-col mb-28 overflow-hidden w-11/12 xl:w-10/12 mx-auto">
         <Navbar />
         <div className="hidden absolute top-40 lg:-right-10 xl:-right-10 3xl:right-0 lg:flex items-end justify-end z-20">
           <Image

@@ -149,20 +149,6 @@ function StepCircles({
 }: StepCircleProps) {
   const isHovered = hoveredIndex === index;
 
-  const shouldShowLine =
-    hoveredIndex >= 0 && index < hoveredIndex && index < total - 1;
-  const shouldShowEllipse = hoveredIndex >= 0 && index <= hoveredIndex;
-
-  const getLineDelay = (lineIndex: number) => {
-    if (hoveredIndex < 0) return 0;
-    return lineIndex * 0.15;
-  };
-
-  const getEllipseDelay = (ellipseIndex: number) => {
-    if (hoveredIndex < 0) return 0;
-    return ellipseIndex === 0 ? 0 : (ellipseIndex - 1) * 0.15 + 0.3;
-  };
-
   return (
     <div
       className="relative flex flex-col items-center gap-3 cursor-pointer z-10"
@@ -170,114 +156,36 @@ function StepCircles({
       onMouseLeave={() => setHoveredIndex(-1)}
     >
       {/* Lines */}
-      <AnimatePresence>
-        {shouldShowLine && (
+      <>
+        {index < total - 1 && (
           <>
             {index % 2 === 0 ? (
-              <motion.div
-                className="hidden md:block absolute -right-4 top-[30%]  lg:top-[37%] xl:-right-5 2xl:-right-5 xl:top-[37%] 2xl:top-[38%] 3xl:top-[40%] 4xl:top-[43%]  z-0"
-                initial={{ opacity: 0, scaleX: 0 }}
-                animate={{ opacity: 1, scaleX: 1 }}
-                style={{ transformOrigin: "left" }}
-                exit={{ opacity: 0, scaleX: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: getLineDelay(index),
-                  ease: "easeOut",
-                }}
-              >
+              <div className="hidden md:block absolute -right-4 top-[30%]  lg:top-[37%] xl:-right-5 2xl:-right-5 xl:top-[37%] 2xl:top-[38%] 3xl:top-[40%] 4xl:top-[43%]  z-0">
                 <Image src={LeftLine} alt="left-line" />
-              </motion.div>
+              </div>
             ) : (
-              <motion.div
-                className="hidden md:block absolute -right-4 bottom-12 lg:bottom-18 xl:-right-5 2xl:-right-5 xl:bottom-[40%] 3xl:bottom-[43%] 4xl:bottom-[47%]  z-0"
-                initial={{ opacity: 0, scaleX: 0 }}
-                animate={{ opacity: 1, scaleX: 1 }}
-                style={{ transformOrigin: "left" }}
-                exit={{ opacity: 0, scaleX: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: getLineDelay(index),
-                  ease: "easeOut",
-                }}
-              >
+              <div className="hidden md:block absolute -right-4 bottom-12 lg:bottom-18 xl:-right-5 2xl:-right-5 xl:bottom-[40%] 3xl:bottom-[43%] 4xl:bottom-[47%]  z-0">
                 <Image src={RightLine} alt="right-line" />
-              </motion.div>
+              </div>
             )}
           </>
         )}
-      </AnimatePresence>
+      </>
 
-      {/* Ellipse animation */}
-      <AnimatePresence>
-        {shouldShowEllipse && (
-          <>
-            {index % 2 === 0 ? (
-              <motion.div
-                className={`hidden md:block absolute -top-2 xl:-top-3 -left-2 xl:-left-3 -right-2 xl:-right-3 z-0 `}
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{
-                  duration: 0.2,
-                  delay: getEllipseDelay(index),
-                }}
-              >
-                <div className="relative">
-                  <Image src={UpperElipse} alt="upper-ellipse" />
-                  <motion.div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{
-                      transformOrigin: "right",
-                      background: "transparent",
-                      clipPath: "polygon(0 0, 100% 0, 100% 40%, 0 40%)",
-                    }}
-                    initial={{ scaleX: 1 }}
-                    animate={{ scaleX: 0 }}
-                    exit={{ scaleX: 1 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: getEllipseDelay(index),
-                      ease: "easeOut",
-                    }}
-                  />
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div
-                className="hidden md:block absolute xl:-bottom-3 xl:-left-3 xl:-right-3 -left-2 -right-2 -bottom-2 z-0"
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{
-                  duration: 0.2,
-                  delay: getEllipseDelay(index),
-                }}
-              >
-                <div className="relative">
-                  <Image src={LowerElipse} alt="lower-ellipse" />
-                  <motion.div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{
-                      transformOrigin: "right",
-                      background: "transparent",
-                      clipPath: "polygon(0 60%, 100% 60%, 100% 100%, 0 100%)",
-                    }}
-                    initial={{ scaleX: 1 }}
-                    animate={{ scaleX: 0 }}
-                    exit={{ scaleX: 1 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: getEllipseDelay(index),
-                      ease: "easeOut",
-                    }}
-                  />
-                </div>
-              </motion.div>
-            )}
-          </>
+      {/* Ellipse */}
+      <>
+        {index % 2 === 0 ? (
+          <div
+            className={`hidden md:block absolute -top-2 xl:-top-3 -left-2 xl:-left-3 -right-2 xl:-right-3 z-0 `}
+          >
+            <Image src={UpperElipse} alt="upper-ellipse" />
+          </div>
+        ) : (
+          <div className="hidden md:block absolute xl:-bottom-3 xl:-left-3 xl:-right-3 -left-2 -right-2 -bottom-2 z-0">
+            <Image src={LowerElipse} alt="lower-ellipse" />
+          </div>
         )}
-      </AnimatePresence>
+      </>
 
       {index % 2 !== 0 && (
         <p

@@ -11,7 +11,7 @@ export default function FeatureCard({ title, link, image }: IFeatures) {
   const isAlwaysVisible = isMobile === true;
 
   return (
-    <div className="relative w-[280px] h-[240px] sm:w-[300px] sm:h-[260px] md:w-[320px] md:h-[280px] lg:w-[170px] lg:h-[150px] xl:w-[190px] xl:h-[160px]  2xl:w-[230px] 2xl:h-[190px] 3xl:w-[250px] 3xl:h-[210px]  4xl:w-[260px] 4xl:h-[220px]  5xl:w-[320px] 5xl:h-[280px] font-inter text-white overflow-hidden group rounded-3xl">
+    <div className="relative w-[280px] h-[240px] sm:w-[300px] sm:h-[260px] md:w-[320px] md:h-[280px] lg:w-[170px] lg:h-[150px] xl:w-[190px] xl:h-[160px]  2xl:w-[230px] 2xl:h-[190px] 3xl:w-[260px] 3xl:h-[220px]  4xl:w-[260px] 4xl:h-[220px]  5xl:w-[320px] 5xl:h-[280px] font-inter text-white overflow-hidden group rounded-3xl">
       <Image
         src={image}
         alt="feature-image"

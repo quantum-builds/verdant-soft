@@ -91,7 +91,7 @@ export default function FeaturesSection() {
           </motion.h2>
         </div>
       </div>
-      <div className="flex flex-wrap  justify-center gap-4 lg:gap-2 4xl:gap-4 lg:w-[900px] xl:w-[1050px] 2xl:w-[1270px] 3xl:w-[1300px] 4xl:w-[1500px] 5xl:w-[1700px] mx-auto">
+      <div className="flex flex-wrap  justify-center gap-4 lg:gap-2 4xl:gap-4 lg:w-[900px] xl:w-[1050px] 2xl:w-[1270px] 3xl:w-[1400px] 4xl:w-[1500px] 5xl:w-[1700px] mx-auto">
         {FEATURES.map((feature, index) => (
           <div
             key={index}

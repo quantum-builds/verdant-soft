@@ -128,7 +128,7 @@ export default function FooterSection() {
         />
       </motion.div>
 
-      <div className="px-4 lg:w-11/12 mx-auto flex flex-col justify-between h-full">
+      <div className="px-4 lg:w-11/12 xl:w-4/5  mx-auto flex flex-col justify-between h-full">
         <div className="h-20 flex justify-between  lg:w-full gap-7 sm:gap-10 md:gap-20 ">
           <motion.div
             className="flex flex-col lg:flex-row gap-4 lg:gap-12"
@@ -149,7 +149,7 @@ export default function FooterSection() {
             ))}
           </motion.div>
           <motion.div
-            className="flex flex-row gap-3"
+            className="flex flex-row gap-5"
             initial="hidden"
             whileInView="visible"
             variants={slideFromRight}
@@ -244,7 +244,7 @@ export default function FooterSection() {
           transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="flex-1 flex flex-col 2xl:flex-row justify-end  gap-2 2xl:gap-8 font-semibold ">
+          <div className="flex-1 flex flex-col 4xl:flex-row justify-end  gap-2 2xl:gap-8 font-semibold ">
             <div className="flex flex-col gap-1">
               <p className="text-[#707070] text-lg md:text-xl">
                 {t("Contact.email")}

@@ -1,10 +1,10 @@
 "use client";
 import { VerdantGreenLogo } from "@/assets";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface NavOption {
   label: string;
@@ -15,56 +15,125 @@ interface NavOption {
 export default function Navbar() {
   const t = useTranslations("Navigation");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const router = useRouter();
+  const dropdownRef = useRef(null);
 
-  const navItems: NavOption[] = [
+  const servicesList: NavOption[] = [
+    { label: "UI/UX Design", href: "/ui-ux-design" },
+    { label: "Cloud & DevOps", href: "/cloud-devops" },
+    { label: "Web Development", href: "/web-development" },
+    { label: "IT Team Outsourcing", href: "/it-team-outsourcing" },
+  ];
+
+  const navItems: (NavOption & { children?: NavOption[] })[] = [
     { label: t("projects"), hash: "projects" },
-    // { name: t("services"), hash: "services" },
+    { label: t("services"), children: servicesList },
     { label: t("features"), hash: "features" },
-    { label: t("workflow"), hash: "workflow" },
     { label: t("blog"), hash: "blog" },
   ];
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !(dropdownRef.current as HTMLElement).contains(event.target as Node)
+      ) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const handleNavigation = (option: NavOption) => {
+    console.log(option);
     if (option.href) {
       router.push(option.href);
-      setIsMobileMenuOpen(false);
-      return;
-    }
-
-    const targetPath = "/";
-    const targetHash = `#${option.hash}`;
-
-    if (pathname === targetPath && option.hash) {
-      const el = document.getElementById(option.hash);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
     } else if (option.hash) {
-      router.push(`${targetPath}${targetHash}`);
+      const targetPath = "/";
+      const targetHash = `#${option.hash}`;
+
+      if (pathname === targetPath) {
+        const el = document.getElementById(option.hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push(`${targetPath}${targetHash}`);
+      }
     }
 
     setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
   };
+
+  const toggleDropdown = (label: string) => {
+    setActiveDropdown((prev) => (prev === label ? null : label));
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray backdrop-blur-sm font-inter">
-      <div className="max-w-11/12  mx-auto ">
-        <div className="flex items-center justify-between h-16 md:h-20  ">
+      <div className="max-w-4/5 mx-auto">
+        {/* Top bar */}
+        <div className="flex items-center justify-between h-16 md:h-20">
           <Link className="flex items-center gap-2" href={"/"}>
             <Image src={VerdantGreenLogo} alt="logo-white" />
           </Link>
-          <div className="hidden lg:flex items-center lg:space-x-6 xl:space-x-10">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => handleNavigation(item)}
-                className=" hover:text-[#56aeff] transition-colors duration-200 text-lg scroll-smooth block w-fit"
-              >
-                {item.label}
-              </button>
-            ))}
+
+          {/* Desktop Nav */}
+          <div
+            ref={isMobileMenuOpen ? undefined : dropdownRef}
+            className="hidden lg:flex items-center lg:space-x-6 xl:space-x-10 relative"
+          >
+            {navItems.map((item) =>
+              item.children ? (
+                <div key={item.label} className="relative">
+                  <button
+                    onClick={() => toggleDropdown(item.label)}
+                    className="flex items-center gap-1 hover:text-[#56aeff] text-lg transition-colors duration-200"
+                  >
+                    {item.label}
+                    {activeDropdown === item.label ? (
+                      <ChevronUp className="w-4 h-4" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4" />
+                    )}
+                  </button>
+
+                  {activeDropdown === item.label && (
+                    <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg z-50">
+                      <div className="flex flex-col min-w-[200px]">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.label}
+                            href={child.href!}
+                            onClick={() => {
+                              setActiveDropdown(null);
+                            }}
+                            className="px-6 py-4 text-black hover:bg-gray-100 hover:text-[#56aeff] transition-colors duration-200 text-lg whitespace-nowrap text-start"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <button
+                  key={item.label}
+                  onClick={() => handleNavigation(item)}
+                  className="hover:text-[#56aeff] text-lg transition-colors duration-200"
+                >
+                  {item.label}
+                </button>
+              )
+            )}
           </div>
+
+          {/* Contact CTA */}
           <Link
             href="/contact-us"
             className="hidden lg:flex bg-black text-white lg:px-6 lg:py-2 xl:px-7 xl:py-3 rounded-lg items-center transition-all duration-200 text-xl hover:bg-green-gradient"
@@ -72,8 +141,9 @@ export default function Navbar() {
             {t("getInTouch")}
           </Link>
 
+          {/* Mobile Menu Toggle */}
           <button
-            className=" lg:hidden text-black p-2 "
+            className="lg:hidden text-black p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -84,27 +154,56 @@ export default function Navbar() {
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-gray  backdrop-blur-lg border-y-1 border-gray-200  ">
+          <div className="lg:hidden absolute top-full left-0 right-0 max-w-4/5 mx-auto bg-gray backdrop-blur-lg border-y border-gray-200 z-40">
             <div className="px-6 py-4 space-y-4">
-              {navItems.map((item, index) => (
-                <button
-                  key={index}
-                  className="block text-black hover:text-[#56aeff] transition-colors duration-200 text-lg font-medium py-2"
-                  onClick={() => handleNavigation(item)}
-                >
-                  {item.label}
-                </button>
-              ))}
-              <a
-                className="w-full  bg-black hover:bg-green-gradient text-white cursor-pointer px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4  text-lg font-inter"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                }}
-                href={"/contact-us"}
+              {navItems.map((item, index) =>
+                item.children ? (
+                  <div key={index} className="space-y-2">
+                    <button
+                      onClick={() => toggleDropdown(item.label)}
+                      className="flex items-center justify-between w-full text-black font-medium text-lg"
+                    >
+                      {item.label}
+                      {activeDropdown === item.label ? (
+                        <ChevronUp className="w-4 h-4" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4" />
+                      )}
+                    </button>
+                    {activeDropdown === item.label && (
+                      <div className="pl-4">
+                        {item.children.map((child) => (
+                          <button
+                            key={child.label}
+                            onClick={() => handleNavigation(child)}
+                            className="block w-full text-left text-black hover:text-[#56aeff] transition duration-200 text-base py-1"
+                          >
+                            {child.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <button
+                    key={index}
+                    className="block text-black hover:text-[#56aeff] transition-colors duration-200 text-lg font-medium py-2"
+                    onClick={() => handleNavigation(item)}
+                  >
+                    {item.label}
+                  </button>
+                )
+              )}
+
+              <Link
+                href="/contact-us"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full bg-black hover:bg-green-gradient text-white cursor-pointer px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4 text-lg"
               >
                 {t("getInTouch")}
-              </a>
+              </Link>
             </div>
           </div>
         )}

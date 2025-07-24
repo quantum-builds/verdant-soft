@@ -56,7 +56,7 @@ export default function ServiceSection() {
   return (
     <div
       id="services"
-      className=" scroll-mt-28 overflow-hidden min-h-[100vh] 3xl:min-h-[70vh] w-11/12 mx-auto flex flex-col mb-28 gap-12"
+      className=" scroll-mt-28 overflow-hidden min-h-[100vh] 3xl:min-h-[70vh] w-11/12 xl:w-4/5  mx-auto flex flex-col mb-28 gap-12"
     >
       <p className="font-semibold text-xl md:text-2xl">[01 Services]</p>
       <motion.p
@@ -203,7 +203,7 @@ export default function ServiceSection() {
                 initial={{ opacity: 0, x: 0 }}
                 animate={
                   isHovered
-                    ? { opacity: 1, x: -ctaWidth / 1.2 }
+                    ? { opacity: 1, x: -ctaWidth/1.2 }
                     : { opacity: 1, x: 0 }
                 }
                 transition={{ duration: 0.5, ease: "easeInOut" }}

@@ -1,8 +1,8 @@
-import Navbar from "../components/Navbar";
-import WorkFlowSection from "../components/sections/WorkFlowSection";
 import Image from "next/image";
 import { DottedBG } from "@/assets";
-import FooterSection from "../components/sections/FooterSection";
+import Navbar from "../../components/Navbar";
+import FooterSection from "../../components/sections/FooterSection";
+import WorkFlowSection from "../components/WorkFlowSection";
 
 const STEPS = [
   {
@@ -42,7 +42,7 @@ export default function CloudDevopsPage() {
     <main className="flex flex-col  overflow-hidden">
       <Navbar />
 
-      <section className="relative w-11/12 mx-auto min-h-[80vh] mb-20">
+      <section className="relative w-11/12 xl:w-10/12 mx-auto min-h-[80vh] mb-20">
         <div className="hidden absolute top-40 lg:-right-10 xl:-right-10 3xl:right-0 lg:flex items-end justify-end z-20">
           <Image
             src={DottedBG}
@@ -56,11 +56,11 @@ export default function CloudDevopsPage() {
           </h1>
           <p className="text-lg">
             At Verdant Soft, we specialize in delivering seamless DevOps and
-            cloud solutions designed to optimize your application&apos;s performance,
-            scalability, and reliability. Our team of experienced professionals
-            works closely with your organization to create tailored strategies
-            that streamline your development, deployment, and management
-            processes.
+            cloud solutions designed to optimize your application&apos;s
+            performance, scalability, and reliability. Our team of experienced
+            professionals works closely with your organization to create
+            tailored strategies that streamline your development, deployment,
+            and management processes.
             <br />
             <br /> Our DevOps services focus on integrating development and
             operations teams through automation, continuous integration and
@@ -80,9 +80,10 @@ export default function CloudDevopsPage() {
             <br /> By leveraging our expertise in automation, monitoring, and
             cloud architecture, we help you achieve a high level of operational
             excellence, reduce downtime, and enhance user experience. Whether
-            you&apos;re migrating to the cloud, optimizing existing infrastructure,
-            or implementing continuous deployment pipelines, Verdant Soft is
-            committed to delivering solutions that drive your business forward.
+            you&apos;re migrating to the cloud, optimizing existing
+            infrastructure, or implementing continuous deployment pipelines,
+            Verdant Soft is committed to delivering solutions that drive your
+            business forward.
             <br />
             <br />
             Let us help you unlock the full potential of DevOps and cloud

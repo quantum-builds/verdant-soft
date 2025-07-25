@@ -43,7 +43,7 @@ export default function FeatureCard({ title, link, image }: IFeatures) {
           >
             <Link
               href={link}
-              className="text-sm sm:text-base rounded-xl border-0 lg:border lg:border-white px-2 py-3 3xl:px-3 3xl:py-4 bg-green-gradient lg:bg-white/10 lg:hover:bg-white/20 w-fit lg:hover:bg-green-gradient hover:border-0 transition duration-800 ease-in-out"
+              className="text-sm sm:text-base rounded-xl border lg:border-white px-2 py-3 3xl:px-3 3xl:py-4 bg-transparent hover:bg-green-gradient w-fit  hover:border-0 transition duration-1000 ease-in-out"
             >
               Explore More
             </Link>

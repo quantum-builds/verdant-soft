@@ -2,7 +2,7 @@
 
 import { LeftLine, LowerElipse, RightLine, UpperElipse } from "@/assets";
 import { slideFromBottom, slideFromLeft } from "@/uitls/sliderAnimation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
@@ -26,39 +26,6 @@ interface StepCircleProps {
   setHoveredIndex: (index: number) => void;
 }
 
-// const STEPS: IStepCircle[] = [
-//   {
-//     step: 1,
-//     color: "#C72C91",
-//     description: "Planning & Requirement Analysis",
-//   },
-//   {
-//     step: 2,
-//     color: "#0565FF",
-//     description: "Design",
-//   },
-//   {
-//     step: 3,
-//     color: "#FF8800",
-//     description: "Development",
-//   },
-//   {
-//     step: 4,
-//     color: "#4AA047",
-//     description: "Testing",
-//   },
-//   {
-//     step: 5,
-//     color: "#1BBFCC",
-//     description: "Deployment",
-//   },
-//   {
-//     step: 6,
-//     color: "#5B57C2",
-//     description: "Maintenance & Updates",
-//   },
-// ];
-
 export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
   const t = useTranslations("WorkFlowSection");
   const [hoveredIndex, setHoveredIndex] = useState(-1);
@@ -66,7 +33,7 @@ export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
   return (
     <div
       id="workflow"
-      className="scroll-mt-36 h-[530px] md:h-[550px] lg:h-[600px] xl:h-[650px] 2xl:h-[675px]  4xl:h-[700px] 5xl:h-[750px] w-11/12 mx-auto flex flex-col gap-12 mb-20 overflow-hidden"
+      className="scroll-mt-36 h-[530px] md:h-[550px] lg:h-[600px] xl:h-[650px] 2xl:h-[675px]  4xl:h-[700px] 5xl:h-[750px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-12 mb-20 overflow-hidden"
     >
       <p className="font-semibold text-2xl">[03 Workflow]</p>
       <div className="flex flex-col gap-20 flex-1">

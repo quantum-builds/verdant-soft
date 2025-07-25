@@ -1,8 +1,28 @@
-import Navbar from "../components/Navbar";
-import WorkFlowSection from "../components/sections/WorkFlowSection";
+import Navbar from "../../components/Navbar";
 import Image from "next/image";
-import { DottedBG } from "@/assets";
-import FooterSection from "../components/sections/FooterSection";
+import {
+  AmazonAuroraIcon,
+  DjangoIcon,
+  DottedBG,
+  ExpressIcon,
+  JsIcon,
+  KonvaIcon,
+  KotlinIcon,
+  MongoDbIcon,
+  MySqlIcon,
+  NestIcon,
+  NextIcon,
+  NodeIcon,
+  PhpIcon,
+  PythonIcon,
+  ReactIcon,
+  SqLiteIcon,
+  VueIcon,
+} from "@/assets";
+import FooterSection from "../../components/sections/FooterSection";
+import { IUseCase } from "@/common";
+import WorkFlowSection from "../components/WorkFlowSection";
+import TechnologiesSection from "../components/TechnologiesSection";
 
 const STEPS = [
   {
@@ -37,12 +57,50 @@ const STEPS = [
   },
 ];
 
+const USE_CASES: IUseCase[] = [
+  {
+    title: "Frontend",
+    technologies: [
+      { title: "JavaScript", image: JsIcon },
+      { title: "Kotlin", image: KotlinIcon },
+    ],
+  },
+  {
+    title: "Backend",
+    technologies: [
+      { title: "Node", image: NodeIcon },
+      { title: "Python", image: PythonIcon },
+      { title: "Php", image: PhpIcon },
+    ],
+  },
+  {
+    title: "Frameworks",
+    technologies: [
+      { title: "React", image: ReactIcon },
+      { title: "Vue", image: VueIcon },
+      { title: "Next", image: NextIcon },
+      { title: "Django", image: DjangoIcon },
+      { title: "Nest", image: NestIcon },
+      { title: "Express", image: ExpressIcon },
+      { title: "Konva", image: KonvaIcon },
+    ],
+  },
+  {
+    title: "DataBase",
+    technologies: [
+      { title: "MySql", image: MySqlIcon },
+      { title: "MongoDb", image: MongoDbIcon },
+      { title: "Amazon Aurora", image: AmazonAuroraIcon },
+      { title: "SQLite", image: SqLiteIcon },
+    ],
+  },
+];
 export default function WebDevelopmentPage() {
   return (
     <main className="flex flex-col overflow-hidden">
       <Navbar />
 
-      <section className="relative w-11/12 mx-auto min-h-[70vh] mb-20">
+      <section className="relative w-11/12 xl:w-10/12 mx-auto min-h-[70vh] mb-20">
         <div className="hidden absolute top-40 lg:-right-10 xl:-right-10 3xl:right-0 lg:flex items-end justify-end z-20">
           <Image
             src={DottedBG}
@@ -83,6 +141,10 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
       <WorkFlowSection steps={STEPS} />
+      <TechnologiesSection
+        title="<highlight>Web </highlight>Developement Technologies"
+        useCases={USE_CASES}
+      />
       <FooterSection />
     </main>
   );

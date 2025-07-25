@@ -21,6 +21,7 @@ export default function HeroSection() {
       link: "/hire-us",
     },
   ];
+
   const slideFromBottom = {
     hidden: { opacity: 0, y: 100 },
     visible: {

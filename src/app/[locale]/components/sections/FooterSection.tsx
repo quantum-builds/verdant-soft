@@ -7,16 +7,13 @@ import {
   VerdantLogoLeft,
   VerdantLogoRight,
 } from "@/assets";
+import { NavOption } from "@/common";
+import { usePathname } from "@/i18n/navigation";
 import { slideFromBack } from "@/uitls/sliderAnimation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
-
-interface TextLinks {
-  text: string;
-  link: string;
-}
 
 interface SocialLinks {
   image: StaticImageData;
@@ -26,38 +23,39 @@ interface SocialLinks {
 export default function FooterSection() {
   const t = useTranslations("FooterSection");
   const router = useRouter();
+  const pathname = usePathname();
 
-  const NAVIGATION_LINKS: TextLinks[] = [
+  const NAVIGATION_LINKS: NavOption[] = [
     {
-      text: t("Navigation.projects"),
-      link: "#projects",
+      label: t("Navigation.features"),
+      hash: "features",
     },
     {
-      text: t("Navigation.services"),
-      link: "#services",
+      label: t("Navigation.services"),
+      hash: "services",
     },
     {
-      text: t("Navigation.features"),
-      link: "#features",
+      label: t("Navigation.faqs"),
+      hash: "faqs",
     },
     {
-      text: t("Navigation.workflow"),
-      link: "#workflow",
+      label: t("Navigation.blogs"),
+      hash: "blogs",
     },
     {
-      text: t("Navigation.contact"),
-      link: "#contact-us",
+      label: t("Navigation.contact"),
+      href: "/contact-us",
     },
   ];
 
-  const PAGES_LINKS: TextLinks[] = [
+  const PAGES_LINKS: NavOption[] = [
     {
-      text: t("Links.privacy"),
-      link: "/privacy",
+      label: t("Links.privacy"),
+      href: "/privacy",
     },
     {
-      text: t("Links.terms"),
-      link: "/terms",
+      label: t("Links.terms"),
+      href: "/terms",
     },
   ];
 
@@ -92,6 +90,22 @@ export default function FooterSection() {
       opacity: 1,
       x: 0,
     },
+  };
+
+  const handleNavigation = (option: NavOption) => {
+    if (option.href) {
+      router.push(option.href);
+    } else if (option.hash) {
+      const targetPath = "/";
+      const targetHash = `#${option.hash}`;
+
+      if (pathname === targetPath) {
+        const el = document.getElementById(option.hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push(`${targetPath}${targetHash}`);
+      }
+    }
   };
 
   return (
@@ -139,13 +153,13 @@ export default function FooterSection() {
             viewport={{ once: true }}
           >
             {NAVIGATION_LINKS.map((naviagtionLink, index) => (
-              <a
-                href={naviagtionLink.link}
+              <button
                 key={index}
-                className="text-white text-lg md:text-xl"
+                className="text-white text-lg md:text-xl cursor-pointer"
+                onClick={() => handleNavigation(naviagtionLink)}
               >
-                {naviagtionLink.text}
-              </a>
+                {naviagtionLink.label}
+              </button>
             ))}
           </motion.div>
           <motion.div
@@ -166,7 +180,7 @@ export default function FooterSection() {
                 <Image
                   src={socialLink.image}
                   alt="social-image"
-                  className="w-6 h-6 lg:w-8 lg:h-8"
+                  className="w-4 h-4 lg:w-6 lg:h-6"
                 />
               </a>
             ))}
@@ -209,24 +223,24 @@ export default function FooterSection() {
 
           <div className="flex-1 flex justify-center items-end gap-12">
             {PAGES_LINKS.map((pageLink, index) => (
-              <a
-                href={pageLink.link}
+              <button
                 key={index}
-                className="text-white text-xl whitespace-nowrap leading-none"
+                className="text-white text-xl whitespace-nowrap leading-none cursor-pointer"
+                onClick={() => handleNavigation(pageLink)}
               >
-                {pageLink.text}
-              </a>
+                {pageLink.label}
+              </button>
             ))}
           </div>
 
-          <div className="flex-1 flex flex-col 3xl:flex-row justify-end  3xl:items-end gap-2 2xl:gap-8 font-semibold">
-            <div className="flex flex-col gap-1">
+          <div className="flex-1 flex flex-col 3xl:flex-row justify-end  3xl:items-end gap-4 3xl:gap-8 font-semibold">
+            <div className="flex flex-col gap-2">
               <p className="text-[#707070] text-xl">{t("Contact.email")}</p>
-              <p className="text-white text-xl lg:text-2xl">
+              <p className="text-white text-xl lg:text-2xl leading-none">
                 query@verdantsoft.com
               </p>
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               <p className="text-[#707070] text-xl">{t("Contact.phone")}</p>
               <p className="text-white text-xl lg:text-2xl leading-none">
                 +92 000 000 000
@@ -264,13 +278,13 @@ export default function FooterSection() {
           </div>
           <div className="flex-1 flex flex-col justify-start items-start gap-6 ">
             {PAGES_LINKS.map((pageLink, index) => (
-              <a
-                href={pageLink.link}
+              <button
                 key={index}
-                className="text-white text-lg md:text-xl whitespace-nowrap leading-none"
+                className="text-white text-lg md:text-xl whitespace-nowrap leading-none cursor-pointer"
+                onClick={() => handleNavigation(pageLink)}
               >
-                {pageLink.text}
-              </a>
+                {pageLink.label}
+              </button>
             ))}
           </div>
           <div className="flex-1 flex items-end justify-center ">

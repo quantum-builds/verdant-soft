@@ -1,16 +1,11 @@
 "use client";
 import { VerdantGreenLogo } from "@/assets";
+import { NavOption } from "@/common";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-
-interface NavOption {
-  label: string;
-  href?: string;
-  hash?: string;
-}
 
 export default function Navbar() {
   const t = useTranslations("Navigation");
@@ -21,17 +16,17 @@ export default function Navbar() {
   const dropdownRef = useRef(null);
 
   const servicesList: NavOption[] = [
-    { label: "UI/UX Design", href: "/ui-ux-design" },
-    { label: "Cloud & DevOps", href: "/cloud-devops" },
-    { label: "Web Development", href: "/web-development" },
-    { label: "IT Team Outsourcing", href: "/it-team-outsourcing" },
+    { label: "UI/UX Design", href: "/services/ui-ux-design" },
+    { label: "Cloud & DevOps", href: "/services/cloud-devops" },
+    { label: "Web Development", href: "/services/web-development" },
+    { label: "IT Team Outsourcing", href: "/services/it-team-outsourcing" },
   ];
 
   const navItems: (NavOption & { children?: NavOption[] })[] = [
-    { label: t("projects"), hash: "projects" },
-    { label: t("services"), children: servicesList },
     { label: t("features"), hash: "features" },
-    { label: t("blog"), hash: "blog" },
+    { label: t("services"), children: servicesList },
+    { label: t("faqs"), hash: "faqs" },
+    { label: t("blogs"), hash: "blogs" },
   ];
 
   // Close dropdown when clicking outside
@@ -92,7 +87,7 @@ export default function Navbar() {
                 <div key={item.label} className="relative">
                   <button
                     onClick={() => toggleDropdown(item.label)}
-                    className="flex items-center gap-1 hover:text-[#56aeff] text-lg transition-colors duration-200"
+                    className="flex items-center gap-1 hover:text-[#56aeff] text-lg transition-colors duration-200 cursor-pointer"
                   >
                     {item.label}
                     {activeDropdown === item.label ? (
@@ -112,7 +107,7 @@ export default function Navbar() {
                             onClick={() => {
                               setActiveDropdown(null);
                             }}
-                            className="px-6 py-4 text-black hover:bg-gray-100 hover:text-[#56aeff] transition-colors duration-200 text-lg whitespace-nowrap text-start"
+                            className="px-6 py-4 text-black hover:bg-gray-100 hover:text-[#56aeff] transition-colors duration-200 text-lg whitespace-nowrap text-start cursor-pointer"
                           >
                             {child.label}
                           </Link>
@@ -125,7 +120,7 @@ export default function Navbar() {
                 <button
                   key={item.label}
                   onClick={() => handleNavigation(item)}
-                  className="hover:text-[#56aeff] text-lg transition-colors duration-200"
+                  className="hover:text-[#56aeff] text-lg transition-colors duration-200 cursor-pointer"
                 >
                   {item.label}
                 </button>

@@ -23,14 +23,14 @@ export default function ContactUsForm() {
       <Navbar />
       <div className="flex  flex-col md:flex-row items-start justify-between mt-24 md:mt-32 xl:mt-40  w-11/12 mx-auto gap-10">
         <div className="flex-1 flex-col gap-3 md:gap-4 lg:gap-6 w-11/12 xl:w-3/4 2xl:w-3/5 mx-auto">
-          <div className="flex flex-col gap-3 md:gap-4 lg:gap-6 w-11/12 xl:w-3/4 2xl:w-3/5 mx-auto ">
+          <div className="flex flex-col gap-3 md:gap-4 lg:gap-6 w-11/12 md:w-full xl:w-11/12 4xl:w-9/12 5xl:w-1/2  mx-auto ">
             <p className="text-xl lg:text-2xl xl:text-3xl font-semibold">
               Let’s Work Together
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-green-gradient font-semibold">
               Connect Us!
             </h2>
-            <p className="text-[#666666] text-sm md:text-md">
+            <p className="text-[#666666] text-sm md:text-md max-w-lg">
               Let’s create something amazing together! Reach out I’d love to
               hear about your project and ideas.
             </p>
@@ -45,8 +45,8 @@ export default function ContactUsForm() {
             />
           </div>
         </div>
-        <div className="flex-1 flex flex-col justify-start h-full gap-12">
-          <p className="font-medium text-2xl lg:text-3xl xl:text-[40px] leading-tight ">
+        <div className="flex-1 flex flex-col justify-start h-full gap-12 ">
+          <p className="font-medium text-2xl lg:text-3xl xl:text-[40px] leading-tight max-w-3xl">
             You can reach us by phone or mail, or you can just drop by the
             office.
           </p>

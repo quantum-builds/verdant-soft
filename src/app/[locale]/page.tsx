@@ -5,12 +5,13 @@ import BlogSection from "./components/sections/BlogSection";
 import FAQSection from "./components/sections/FAQSection";
 import TestimonialsSection from "./components/sections/TestimonialSection";
 import FeaturesSection from "./components/sections/FeaturesSection";
+import AchievementSection from "./components/sections/AchievementSection";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      {/* <HighlightSection /> */}
+      <AchievementSection />
       <ServiceSection />
       <FeaturesSection />
       <TestimonialsSection />

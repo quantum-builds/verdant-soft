@@ -69,43 +69,42 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section
-      id="features"
-      className=" overflow-hidden scroll-mt-28 mb-28 md:h-[1390px] lg:h-[675px] xl:h-[760px] 2xl:h-[835px] 3xl:h-[860px] 4xl:h-[900px] 5xl:h-[1070px]  w-11/12 xl:w-10/12  mx-auto flex flex-col gap-16 lg:gap-42"
-    >
-      <div className=" flex flex-col gap-12">
-        <p className="font-semibold text-2xl">[02 Featured Insights]</p>
-        <div className="w-full flex justify-end">
-          <motion.h2
-            className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-end break-words"
-            variants={slideFromRight}
-            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-          >
-            <span className=" text-green-gradient">Stories of our</span>{" "}
-            transformations <span className=" text-green-gradient">across</span>{" "}
-            Services <span className=" text-green-gradient">and</span>{" "}
-            Industries
-          </motion.h2>
-        </div>
-      </div>
-      <div className="flex flex-wrap  justify-center gap-4 lg:gap-2 4xl:gap-4 lg:w-[900px] xl:w-[1050px] 2xl:w-[1270px] 3xl:w-[1400px] 4xl:w-[1500px] 5xl:w-[1700px] mx-auto">
-        {FEATURES.map((feature, index) => (
-          <div
-            key={index}
-            className={`${
-              index % 2 === 0 ? "lg:translate-y-1/4 " : "lg:-translate-y-1/4 "
-            } transition-transform`}
-          >
-            <FeatureCard
-              title={feature.title}
-              link={feature.link}
-              image={feature.image}
-            />
+    <section id="features" className="scroll-mt-28">
+      <div className="overflow-hidden mb-28 md:h-[1390px] lg:h-[675px] xl:h-[760px] 2xl:h-[835px] 3xl:h-[860px] 4xl:h-[900px] 5xl:h-[1070px]  w-11/12 xl:w-10/12  mx-auto flex flex-col gap-16 lg:gap-42">
+        <div className=" flex flex-col gap-12">
+          <p className="font-semibold text-2xl">[02 Featured Insights]</p>
+          <div className="w-full flex justify-end">
+            <motion.h2
+              className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-end break-words"
+              variants={slideFromRight}
+              transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+            >
+              <span className=" text-green-gradient">Stories of our</span>{" "}
+              transformations{" "}
+              <span className=" text-green-gradient">across</span> Services{" "}
+              <span className=" text-green-gradient">and</span> Industries
+            </motion.h2>
           </div>
-        ))}
+        </div>
+        <div className="flex flex-wrap  justify-center gap-4 lg:gap-2 4xl:gap-4 lg:w-[900px] xl:w-[1050px] 2xl:w-[1270px] 3xl:w-[1400px] 4xl:w-[1500px] 5xl:w-[1700px] mx-auto">
+          {FEATURES.map((feature, index) => (
+            <div
+              key={index}
+              className={`${
+                index % 2 === 0 ? "lg:translate-y-1/4 " : "lg:-translate-y-1/4 "
+              } transition-transform`}
+            >
+              <FeatureCard
+                title={feature.title}
+                link={feature.link}
+                image={feature.image}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -58,8 +58,19 @@ const testimonials: Testimonial[] = [
     image: "/videos/alex-video-3.mp4",
     type: "video",
   },
+
   {
     id: 4,
+    name: "James Snow",
+    title: "Director",
+    rating: 5,
+    score: "4.5/5",
+    testimonial: "",
+    image: ImageTestimonial3,
+    type: "image",
+  },
+  {
+    id: 5,
     name: "Michael Chen",
     title: "Tech Lead",
     rating: 5,
@@ -70,24 +81,13 @@ const testimonials: Testimonial[] = [
     type: "text",
   },
   {
-    id: 5,
+    id: 6,
     name: "Alexa Snow",
     title: "Director",
     rating: 5,
     score: "4.5/5",
     testimonial: "",
     image: ImageTestimonial2,
-    type: "image",
-  },
-
-  {
-    id: 7,
-    name: "James Snow",
-    title: "Director",
-    rating: 5,
-    score: "4.5/5",
-    testimonial: "",
-    image: ImageTestimonial3,
     type: "image",
   },
 ];
@@ -150,10 +150,10 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <SwiperSlide
               key={testimonial.id}
-              className="!w-[300px]  md:!w-[700px] flex-shrink-0"
+              className="!w-[300px] md:!w-[500px] xl:!w-[600px] flex-shrink-0"
             >
               <div
-                className={`h-[270px] md:h-[350px] rounded-2xl backdrop-blur-sm border border-white/10`}
+                className={`h-[270px] md:h-[300px] xl:h-[320px] rounded-2xl backdrop-blur-sm border border-white/10`}
               >
                 {testimonial.type === "image" ? (
                   <ImageCard testimonial={testimonial} />
@@ -259,7 +259,7 @@ function TextCard({ testimonial }: { testimonial: Testimonial }) {
           </span>
         </div>
       </div>
-      <p className=" text-black text-md md:text-2xl md:font-semibold leading-tight tracking-normal">
+      <p className=" text-black text-md md:text-xl md:font-semibold leading-tight tracking-normal">
         {testimonial.testimonial}
       </p>
     </div>

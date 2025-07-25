@@ -1,8 +1,8 @@
 import { DottedBG } from "@/assets";
-import Navbar from "../components/Navbar";
-import WorkFlowSection from "../components/sections/WorkFlowSection";
 import Image from "next/image";
-import FooterSection from "../components/sections/FooterSection";
+import Navbar from "../../components/Navbar";
+import FooterSection from "../../components/sections/FooterSection";
+import WorkFlowSection from "../components/WorkFlowSection";
 
 const STEPS = [
   {
@@ -42,7 +42,7 @@ export default function ItTeamOutsourcingPage() {
     <main className="flex flex-col  overflow-hidden">
       <Navbar />
 
-      <section className="relative w-11/12 mx-auto min-h-[60vh] mb-20">
+      <section className="relative w-11/12 xl:w-10/12 mx-auto min-h-[60vh] mb-20">
         <div className="hidden absolute top-40 lg:-right-10 xl:-right-10 3xl:right-0 lg:flex items-end justify-end z-20">
           <Image
             src={DottedBG}

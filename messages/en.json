@@ -6,11 +6,10 @@
     "secondaryCTA": "Hire an Expert"
   },
   "Navigation": {
-    "projects": "Projects",
     "services": "Services",
     "features": "Features",
-    "workflow": "Workflow",
-    "blog": "Blog",
+    "faqs": "FAQs",
+    "blogs": "Blogs",
     "getInTouch": "Get in touch"
   },
   "HighlightSection": {
@@ -90,10 +89,10 @@
   "FooterSection": {
     "headline": "<highlight>Your brand deserves better.</highlight> Let’s build it right.",
     "Navigation": {
-      "projects": "Projects",
       "services": "Services",
       "features": "Features",
-      "workflow": "Workflow",
+      "faqs": "FAQs",
+      "blogs": "Blogs",
       "contact": "Contact"
     },
     "Links": {

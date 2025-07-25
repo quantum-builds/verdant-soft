@@ -22,7 +22,9 @@
     "react-hook-form": "^7.60.0",
     "react-hot-toast": "^2.5.2",
     "swiper": "^11.2.10",
-    "zod": "^3.25.76"
+    "zod": "^3.25.76",
+    "react-intersection-observer": "^9.16.0",
+    "react-countup": "^6.5.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

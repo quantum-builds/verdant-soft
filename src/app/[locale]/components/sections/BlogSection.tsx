@@ -20,17 +20,17 @@ export default function BlogSection() {
     {
       title: t("blogs.blog1"),
       imageUrl: Blog1,
-      link: "/",
+      link: "/blogs/strong-brand-identity",
     },
     {
       title: t("blogs.blog2"),
       imageUrl: Blog2,
-      link: "/",
+      link: "/blogs/consistent-design",
     },
     {
       title: t("blogs.blog3"),
       imageUrl: Blog3,
-      link: "/",
+      link: "/blogs/website-strategy",
     },
   ];
   return (
@@ -85,11 +85,8 @@ export default function BlogSection() {
           {BLOGS.map((blog, index) => (
             <div
               key={index}
-              className={`
-        group bg-[#F9F9F9] flex flex-col gap-4 rounded-xl
-        flex-[1_1_300px] max-w-[700px]
-        
-      `}
+              className="group bg-[#F9F9F9] flex flex-col gap-4 rounded-xl flex-[1_1_300px] max-w-[700px]"
+              onClick={() => router.push(blog.link)}
             >
               <Image
                 src={blog.imageUrl}

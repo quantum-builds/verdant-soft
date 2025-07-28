@@ -55,3 +55,24 @@ export { default as MySqlIcon } from "./my-sql-icon.svg";
 export { default as MongoDbIcon } from "./mongoDB-icon.svg";
 export { default as AmazonAuroraIcon } from "./amazon-aurora-icon.svg";
 export { default as SqLiteIcon } from "./sq-lite-icon.svg";
+
+export { default as StrongBrandImg1 } from "./strong-brand-img1.png";
+export { default as StrongBrandImg2 } from "./strong-brand-img2.png";
+export { default as StrongBrandImg3 } from "./strong-brand-img3.png";
+export { default as StrongBrandImg4 } from "./strong-brand-img4.png";
+export { default as StrongBrandImg5 } from "./strong-brand-img5.png";
+
+export { default as ConsistantDesignImg1 } from "./consistent-design-img1.png";
+export { default as ConsistantDesignImg2 } from "./consistent-desgin-img2.png";
+export { default as ConsistantDesignImg3 } from "./consistent-desgin-img3.png";
+export { default as ConsistantDesignImg4 } from "./consistent-desgin-img4.png";
+
+export { default as WebsiteStrategyImg1 } from "./website-strategy-img1.png";
+export { default as WebsiteStrategyImg2 } from "./website-strategy-img2.png";
+export { default as WebsiteStrategyImg3 } from "./website-strategy-img3.png";
+export { default as WebsiteStrategyImg4 } from "./website-strategy-img4.png";
+export { default as WebsiteStrategyImg5 } from "./website-strategy-img5.png";
+export { default as WebsiteStrategyImg6 } from "./website-strategy-img6.png";
+export { default as WebsiteStrategyImg7 } from "./website-strategy-img7.png";
+export { default as WebsiteStrategyImg8 } from "./website-strategy-img8.png";
+export { default as WebsiteStrategyImg9 } from "./website-strategy-img9.png";

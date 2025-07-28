@@ -237,7 +237,7 @@ export default function FooterSection() {
             <div className="flex flex-col gap-2">
               <p className="text-[#707070] text-xl">{t("Contact.email")}</p>
               <p className="text-white text-xl lg:text-2xl leading-none">
-                query@verdantsoft.com
+                info@verdantsoft.com
               </p>
             </div>
             <div className="flex flex-col gap-2">
@@ -264,7 +264,7 @@ export default function FooterSection() {
                 {t("Contact.email")}
               </p>
               <p className="text-white text-lg md:text-xl lg:text-2xl">
-                query@verdantsoft.com
+                info@verdantsoft.com
               </p>
             </div>
             <div className="flex flex-col gap-1">

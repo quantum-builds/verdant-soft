@@ -51,11 +51,11 @@ export default function FooterSection() {
   const PAGES_LINKS: NavOption[] = [
     {
       label: t("Links.privacy"),
-      href: "/privacy",
+      href: "/",
     },
     {
       label: t("Links.terms"),
-      href: "/terms",
+      href: "/",
     },
   ];
 

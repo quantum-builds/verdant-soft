@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  ImageTestimonial1,
-  ImageTestimonial2,
-  ImageTestimonial3,
-  TextTestimonial1,
-  TextTestimonial2,
-} from "@/assets";
+import { TextTestimonial1, TextTestimonial2 } from "@/assets";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Autoplay, Mousewheel, Pagination } from "swiper/modules";
 import { Star } from "lucide-react";
@@ -27,24 +21,24 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "Alex Smith",
-    title: "Head of Marketing, Nestle",
-    rating: 4,
-    score: "4.5/5",
-    testimonial: "",
-    image: ImageTestimonial1,
-    type: "image",
-  },
+  // {
+  //   id: 1,
+  //   name: "Alex Smith",
+  //   title: "Head of Marketing, Nestle",
+  //   rating: 4,
+  //   score: "4.5/5",
+  //   testimonial: "",
+  //   image: ImageTestimonial1,
+  //   type: "image",
+  // },
   {
     id: 2,
-    name: "Banny",
+    name: "Elia Essen",
     title: "General Manager",
-    rating: 5,
-    score: "4.5/5",
+    rating: 4.7,
+    score: "4.7/5",
     testimonial:
-      "Working with Nordisk Soft has been a transformative experience for our business. Their innovative solutions and attentive support have significantly boosted our operational efficiency.",
+      "Bilal is an absolute pleasure to work with. His expertise in the MERN stack, particularly in React.js, is outstanding. He took ownership of our AI SaaS platform, delivering high-quality, scalable, and visually stunning feature that exceeded our expectations.If you’re looking for a top quality full-stack developer with strong frontend skills and a deep understanding of SaaS/AI platforms, he is a good fit. I HIGHLY recommend Bilal and would gladly work with him again!",
     image: TextTestimonial1,
     type: "text",
   },
@@ -52,43 +46,54 @@ const testimonials: Testimonial[] = [
     id: 3,
     name: "Alex",
     title: "CEO",
-    rating: 5,
+    rating: 4.5,
     score: "4.5/5",
     testimonial: "",
     image: "/videos/alex-video-3.mp4",
     type: "video",
   },
 
-  {
-    id: 4,
-    name: "James Snow",
-    title: "Director",
-    rating: 5,
-    score: "4.5/5",
-    testimonial: "",
-    image: ImageTestimonial3,
-    type: "image",
-  },
+  // {
+  //   id: 4,
+  //   name: "James Snow",
+  //   title: "Director",
+  //   rating: 5,
+  //   score: "4.5/5",
+  //   testimonial: "",
+  //   image: ImageTestimonial3,
+  //   type: "image",
+  // },
   {
     id: 5,
-    name: "Michael Chen",
+    name: "Nick Kuijpers",
     title: "Tech Lead",
     rating: 5,
-    score: "5.0/5",
+    score: "5/5",
     testimonial:
-      "Outstanding service and exceptional results. The team at Nordisk Soft delivered beyond our expectations with their cutting-edge solutions and professional approach.",
+      "Bilal is a senior full stack developer which has proven to be very supportive in the development of our company. He analyzes issues and creates fixes. If you need a reliable full-stack developer, I definitely recommend this person!",
     image: TextTestimonial2,
     type: "text",
   },
+  // {
+  //   id: 6,
+  //   name: "Alexa Snow",
+  //   title: "Director",
+  //   rating: 5,
+  //   score: "4.5/5",
+  //   testimonial: "",
+  //   image: ImageTestimonial2,
+  //   type: "image",
+  // },
   {
-    id: 6,
-    name: "Alexa Snow",
-    title: "Director",
-    rating: 5,
-    score: "4.5/5",
-    testimonial: "",
-    image: ImageTestimonial2,
-    type: "image",
+    id: 7,
+    name: "Waqas Zahoor Pal",
+    title: "General Manager",
+    rating: 4.2,
+    score: "4.2/5",
+    testimonial:
+      "Job done perfectly with full cooperation and professional behaviour. Never expected an emergency job to be this efficient but he showed me that with hard work and dedication anything is possible. Will hire you again.",
+    image: TextTestimonial1,
+    type: "text",
   },
 ];
 
@@ -233,16 +238,17 @@ function VideoCard({ testimonial }: { testimonial: Testimonial }) {
 
 function TextCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div className="flex flex-col  justify-between w-full h-full bg-[#F9F9F9D9] rounded-2xl px-6 py-12">
-      <div className="flex flex-col md:flex-row  items-center justify-between gap-3">
+    <div className="flex flex-col  justify-between w-full h-full bg-[#F9F9F9D9] rounded-2xl px-3 py-8 md:px-6 md:py-12">
+      <div className="flex flex-col md:flex-row  lg:items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <Image
+          {/* <Image
             src={testimonial.image}
             alt={testimonial.name}
             width={80}
             height={100}
             className="object-cover rounded-lg"
           />
+           */}
           <div className="w-full">
             <h4 className=" font-semibold text-xl  md:text-2xl">
               {testimonial.name}
@@ -252,14 +258,14 @@ function TextCard({ testimonial }: { testimonial: Testimonial }) {
             </p>
           </div>
         </div>
-        <div className="flex items-start md:items-center gap-2 mb-4">
+        <div className="flex items-start md:items-center gap-2 mb-0 lg:mb-4">
           <Stars rating={testimonial.rating} />
-          <span className="text-white/80 text-sm font-medium">
+          <span className="text-black/80 text-sm font-medium">
             {testimonial.score}
           </span>
         </div>
       </div>
-      <p className=" text-black text-md md:text-xl md:font-semibold leading-tight tracking-normal">
+      <p className=" text-black text-md md:text-xl md:font-medium leading-tight tracking-normal line-clamp-4  lg:line-clamp-5">
         {testimonial.testimonial}
       </p>
     </div>
@@ -267,18 +273,42 @@ function TextCard({ testimonial }: { testimonial: Testimonial }) {
 }
 
 function Stars({ rating }: { rating: number }) {
+  const fullStars = Math.floor(rating);
+  const remainder = rating - fullStars;
+  const hasPartialStar = remainder > 0;
+  const emptyStars = 5 - fullStars - (hasPartialStar ? 1 : 0);
+
+  console.log("numbers are ", fullStars, remainder, hasPartialStar, emptyStars);
   return (
-    <>
-      {[...Array(5)].map((_, i) => (
+    <div className="flex items-center gap-[2px]">
+      {/* Full stars */}
+      {[...Array(fullStars)].map((_, i) => (
         <Star
-          key={i}
-          className={`w-5 h-5 ${
-            i < rating
-              ? "fill-[#FF8800] text-[#FF8800]"
-              : "fill-gray-400 text-gray-400"
-          }`}
+          key={`full-${i}`}
+          className="w-5 h-5 fill-yellow-400 text-yellow-400"
         />
       ))}
-    </>
+
+      {/* Partial star */}
+      {hasPartialStar && (
+        <div className="relative w-5 h-5">
+          <Star className="absolute w-5 h-5 fill-gray-300 text-gray-300" />
+          <div
+            className="absolute top-0 left-0 h-full overflow-hidden"
+            style={{ width: `${remainder * 100}%` }}
+          >
+            <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+          </div>
+        </div>
+      )}
+
+      {/* Empty stars */}
+      {[...Array(emptyStars)].map((_, i) => (
+        <Star
+          key={`empty-${i}`}
+          className="w-5 h-5 fill-gray-300 text-gray-300"
+        />
+      ))}
+    </div>
   );
 }

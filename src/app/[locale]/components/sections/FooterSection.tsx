@@ -143,7 +143,7 @@ export default function FooterSection() {
       </motion.div>
 
       <div className="px-4 lg:w-11/12 xl:w-10/12  mx-auto flex flex-col justify-between h-full">
-        <div className="h-20 flex justify-between  lg:w-full gap-7 sm:gap-10 md:gap-20 ">
+        <div className="h-20 flex justify-between lg:items-center lg:w-full gap-7 sm:gap-10 md:gap-20 ">
           <motion.div
             className="flex flex-col lg:flex-row gap-4 lg:gap-12"
             initial="hidden"

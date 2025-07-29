@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import FooterSection from "../../components/sections/FooterSection";
 import WorkFlowSection from "../components/WorkFlowSection";
+import FAQSection from "../../components/sections/FAQSection";
 
 const STEPS = [
   {
@@ -73,6 +74,7 @@ export default function ItTeamOutsourcingPage() {
         </div>
       </section>
       <WorkFlowSection steps={STEPS} />
+      <FAQSection />
       <FooterSection />
     </main>
   );

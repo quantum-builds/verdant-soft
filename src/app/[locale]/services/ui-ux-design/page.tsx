@@ -3,6 +3,7 @@ import { DottedBG } from "@/assets";
 import Navbar from "../../components/Navbar";
 import FooterSection from "../../components/sections/FooterSection";
 import WorkFlowSection from "../components/WorkFlowSection";
+import FAQSection from "../../components/sections/FAQSection";
 
 const STEPS = [
   {
@@ -93,6 +94,7 @@ export default function UiUxDesignPage() {
         </div>
       </section>
       <WorkFlowSection steps={STEPS} />
+      <FAQSection />
       <FooterSection />
     </main>
   );

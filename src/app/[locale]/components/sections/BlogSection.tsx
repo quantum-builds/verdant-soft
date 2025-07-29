@@ -75,6 +75,7 @@ export default function BlogSection() {
     md:grid-cols-2
     md:gap-8
     md:auto-rows-auto
+    w-11/12 xl:w-10/12 mx-auto
   "
           initial="hidden"
           whileInView="visible"

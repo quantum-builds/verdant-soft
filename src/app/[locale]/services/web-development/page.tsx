@@ -23,6 +23,7 @@ import FooterSection from "../../components/sections/FooterSection";
 import { IUseCase } from "@/common";
 import WorkFlowSection from "../components/WorkFlowSection";
 import TechnologiesSection from "../components/TechnologiesSection";
+import FAQSection from "../../components/sections/FAQSection";
 
 const STEPS = [
   {
@@ -145,6 +146,7 @@ export default function WebDevelopmentPage() {
         title="<highlight>Web </highlight>Developement Technologies"
         useCases={USE_CASES}
       />
+      <FAQSection />
       <FooterSection />
     </main>
   );

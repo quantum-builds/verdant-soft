@@ -4,7 +4,7 @@ import { useRouter } from "@/i18n/navigation";
 import { slideFromLeft } from "@/uitls/sliderAnimation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 interface Services {
   url: string;
@@ -17,7 +17,6 @@ export default function ServiceSection() {
   const router = useRouter();
   const services = t.raw("services") as Services[];
   const isMobile = useIsMobile();
-  const [isHovered, setIsHovered] = useState(false);
   const [activeService, setActiveService] = useState<number | null>(null);
 
   const staggerContainer = {
@@ -35,23 +34,23 @@ export default function ServiceSection() {
     visible: { opacity: 1, x: 0 },
   };
 
-  const slideFromBottom = {
-    hidden: { opacity: 0, y: 100 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
+  // const slideFromBottom = {
+  //   hidden: { opacity: 0, y: 100 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //   },
+  // };
 
-  const ctaTextRef = useRef<HTMLParagraphElement>(null);
-  const [ctaWidth, setCtaWidth] = useState(0);
+  // const ctaTextRef = useRef<HTMLParagraphElement>(null);
+  // const [ctaWidth, setCtaWidth] = useState(0);
 
-  useLayoutEffect(() => {
-    if (ctaTextRef.current) {
-      const rect = ctaTextRef.current.getBoundingClientRect();
-      setCtaWidth(rect.width / 2);
-    }
-  }, [t]);
+  // useLayoutEffect(() => {
+  //   if (ctaTextRef.current) {
+  //     const rect = ctaTextRef.current.getBoundingClientRect();
+  //     setCtaWidth(rect.width / 2);
+  //   }
+  // }, [t]);
 
   return (
     <section id="services" className=" scroll-mt-28 ">
@@ -133,7 +132,7 @@ export default function ServiceSection() {
           })}
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className={`relative group w-full py-12 px-6 rounded-xl flex justify-center items-center overflow-hidden  cursor-pointer ${
             isMobile ? "bg-green-gradient" : "bg-black"
           }`}
@@ -155,7 +154,6 @@ export default function ServiceSection() {
             </p>
           ) : (
             <>
-              {/* Gradient Layer with Opacity Transition */}
               <motion.div
                 className="absolute inset-0 bg-green-gradient z-0"
                 initial={{ opacity: 0 }}
@@ -194,7 +192,7 @@ export default function ServiceSection() {
               </div>
             </>
           )}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

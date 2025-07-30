@@ -1,9 +1,41 @@
 import Image from "next/image";
-import { DottedBG } from "@/assets";
+import {
+  AliBabaIcon,
+  AnsibleIcon,
+  AWSIcon,
+  AzureIcon,
+  BashIcon,
+  BitBucketIcon,
+  CircleCiIcon,
+  CloudFormationIcon,
+  DataLogIcon,
+  DigitalOceanIcon,
+  DockerIcon,
+  DottedBG,
+  DynatraceIcon,
+  ElasticSearchIcon,
+  GCPIcon,
+  GitHubIcon,
+  GitLabIcon,
+  GoIcon,
+  GrafanaIcon,
+  JavaSriptIcon,
+  JenkinsIcon,
+  KubernetesIcon,
+  LinuxIcon,
+  OpenShiftIcon,
+  PowerShellIcon,
+  PrometheousIcon,
+  PythonIcon,
+  TeraFormIcon,
+  WindowsIcon,
+} from "@/assets";
 import Navbar from "../../components/Navbar";
 import FooterSection from "../../components/sections/FooterSection";
 import WorkFlowSection from "../components/WorkFlowSection";
 import FAQSection from "../../components/sections/FAQSection";
+import { IUseCase } from "@/common";
+import TechnologiesSection from "../components/TechnologiesSection";
 
 const STEPS = [
   {
@@ -35,6 +67,72 @@ const STEPS = [
     step: 6,
     color: "#5B57C2",
     description: "Feedback & Improve",
+  },
+];
+
+const USE_CASES: IUseCase[] = [
+  {
+    title: "Clouds",
+    technologies: [
+      { title: "AWS", image: AWSIcon },
+      { title: "Azure", image: AzureIcon },
+      { title: "GCP", image: GCPIcon },
+      { title: "Digital Ocean", image: DigitalOceanIcon },
+      { title: "Alibaba", image: AliBabaIcon },
+    ],
+  },
+  {
+    title: "CICD",
+    technologies: [
+      { title: "GitHub", image: GitHubIcon },
+      { title: "BitBucket", image: BitBucketIcon },
+      { title: "GitLab", image: GitLabIcon },
+      { title: "Jenkins", image: JenkinsIcon },
+      { title: "CircleCI", image: CircleCiIcon },
+    ],
+  },
+  {
+    title: "Containerization & Orchestration",
+    technologies: [
+      { title: "Docker", image: DockerIcon },
+      { title: "Kubernetes", image: KubernetesIcon },
+      { title: "OpenShift", image: OpenShiftIcon },
+    ],
+  },
+  {
+    title: "IAC",
+    technologies: [
+      { title: "Terraform", image: TeraFormIcon },
+      { title: "CloudFormation", image: CloudFormationIcon },
+      { title: "Ansible", image: AnsibleIcon },
+    ],
+  },
+  {
+    title: "Monitoring & Logging",
+    technologies: [
+      { title: "DataDog", image: DataLogIcon },
+      { title: "Prometheous", image: PrometheousIcon },
+      { title: "Grafana", image: GrafanaIcon },
+      { title: "ElasticSearch", image: ElasticSearchIcon },
+      { title: "Dynatrace", image: DynatraceIcon },
+    ],
+  },
+  {
+    title: "Operating System",
+    technologies: [
+      { title: "Linux", image: LinuxIcon },
+      { title: "Windows", image: WindowsIcon },
+    ],
+  },
+  {
+    title: "Scripting & Automation",
+    technologies: [
+      { title: "Bash", image: BashIcon },
+      { title: "Powsershell", image: PowerShellIcon },
+      { title: "Python", image: PythonIcon },
+      { title: "JavaScript", image: JavaSriptIcon },
+      { title: "Go", image: GoIcon },
+    ],
   },
 ];
 
@@ -94,6 +192,10 @@ export default function CloudDevopsPage() {
         </div>
       </section>
       <WorkFlowSection steps={STEPS} />
+      <TechnologiesSection
+        title="<highlight>DevOps </highlight>Tools & Integrations"
+        useCases={USE_CASES}
+      />
       <FAQSection />
       <FooterSection />
     </main>

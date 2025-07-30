@@ -10,11 +10,11 @@ const INFO = [
   },
   {
     title: "Email",
-    content: "hello@verdentsoft.com",
+    content: "info@verdant-soft.com",
   },
   {
     title: "Phone",
-    content: "+92 000 0000 000",
+    content: "+92 300 837 3277",
   },
 ];
 export default function HireUsForm() {

@@ -5,22 +5,21 @@ import Navbar from "../Navbar";
 import CTAButton from "../CTAButton";
 import { motion } from "framer-motion";
 import { slideFromLeft, slideFromRight } from "@/uitls/sliderAnimation";
-import { DottedBG } from "@/assets";
-import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
 export default function HeroSection() {
   const t = useTranslations("HeroSection");
 
-  const CTAS = [
-    {
-      text: t("primaryCTA"),
-      link: "/contact-us",
-    },
-    {
-      text: t("secondaryCTA"),
-      link: "/hire-us",
-    },
-  ];
+  // const CTAS = [
+  //   {
+  //     text: t("primaryCTA"),
+  //     link: "/contact-us",
+  //   },
+  //   {
+  //     text: t("secondaryCTA"),
+  //     link: "/hire-us",
+  //   },
+  // ];
 
   const slideFromBottom = {
     hidden: { opacity: 0, y: 100 },
@@ -36,7 +35,7 @@ export default function HeroSection() {
 
       <Navbar />
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center gap-5 mt-20 md:mt-24 xl:mt-28 mx-6 lg:mx-10 xl:mx-14 mb-5 bg-gray rounded-3xl">
-        <div className="absolute bottom-10 lg:-left-6 3xl:left-0 flex items-start justify-start z-20">
+        {/* <div className="absolute bottom-10 lg:-left-6 3xl:left-0 flex items-start justify-start z-20">
           <Image
             src={DottedBG}
             alt="Dotted Background"
@@ -49,7 +48,7 @@ export default function HeroSection() {
             alt="Dotted Background"
             className="w-4/5 md:w-3/4 lg:w-[62%] 2xl:w-[70%] 3xl:w-[87%] 5xl:w-[97%] opacity-60 h-auto object-center lg:rotate-110 xl:rotate-100 3xl:rotate-90"
           />
-        </div>
+        </div> */}
         <motion.p
           className="text-3xl sm:text-4xl md:text-5xl 4xl:text-6xl font-bold leading-tight font-inter w-11/12 sm:w-3/5  md:w-4/5 lg:w-3/5 2xl:w-[45%] mx-auto text-center"
           initial="hidden"
@@ -86,9 +85,17 @@ export default function HeroSection() {
           transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {CTAS.map((cta, index) => (
-            <CTAButton key={index} text={cta.text} link={cta.link} />
-          ))}
+          <CTAButton text="Book a Meeting" />
+
+          <Link
+            href="/hire-us"
+            className="relative w-44 h-12 flex justify-center items-center border border-black hover:border-none font-medium cursor-pointer rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out"
+          >
+            <span className="absolute inset-0 w-0 group-hover:w-full bg-green-gradient transition-all duration-300 ease-in-out z-0" />
+            <span className="relative z-10 text-black group-hover:text-white transition-colors duration-200 ease-in-out">
+              Hire an Expert
+            </span>
+          </Link>
         </motion.div>
       </div>
     </div>

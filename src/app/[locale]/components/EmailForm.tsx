@@ -126,9 +126,12 @@ export default function EmailForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full text-2xl font-semibold bg-black text-white py-4 xl:py-6 rounded-lg hover:bg-gray-800 transition-colors max-w-3xl"
+        className="relative w-full text-2xl font-semibold py-4 xl:py-6 bg-black rounded-lg overflow-hidden transition-colors max-w-3xl disabled:opacity-60 disabled:cursor-not-allowed group"
       >
-        {isSubmitting ? "Submitting..." : "Submit"}
+        <span className="absolute inset-0 w-0 group-hover:w-full bg-green-gradient transition-all duration-300 ease-in-out z-0" />
+        <span className="relative z-10 text-white">
+          {isSubmitting ? "Submitting..." : "Submit"}
+        </span>
       </button>
     </form>
   );

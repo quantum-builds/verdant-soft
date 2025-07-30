@@ -66,7 +66,7 @@ const testimonials: Testimonial[] = [
   {
     id: 5,
     name: "Nick Kuijpers",
-    title: "Tech Lead",
+    title: "CEO Wemasy",
     rating: 5,
     score: "5/5",
     testimonial:
@@ -278,7 +278,6 @@ function Stars({ rating }: { rating: number }) {
   const hasPartialStar = remainder > 0;
   const emptyStars = 5 - fullStars - (hasPartialStar ? 1 : 0);
 
-  console.log("numbers are ", fullStars, remainder, hasPartialStar, emptyStars);
   return (
     <div className="flex items-center gap-[2px]">
       {/* Full stars */}

@@ -45,7 +45,6 @@ export default function Navbar() {
   }, []);
 
   const handleNavigation = (option: NavOption) => {
-    console.log(option);
     if (option.href) {
       router.push(option.href);
     } else if (option.hash) {
@@ -84,32 +83,33 @@ export default function Navbar() {
           >
             {navItems.map((item) =>
               item.children ? (
-                <div key={item.label} className="relative">
-                  <button
-                    onClick={() => toggleDropdown(item.label)}
-                    className="flex items-center gap-1 hover:text-[#56aeff] text-lg transition-colors duration-200 cursor-pointer"
-                  >
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setActiveDropdown(item.label)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <div className="flex items-center gap-1 hover:text-green-gradient  text-lg transition-colors duration-200 cursor-pointer">
                     {item.label}
-                    {activeDropdown === item.label ? (
-                      <ChevronUp className="w-4 h-4" />
-                    ) : (
-                      <ChevronDown className="w-4 h-4" />
-                    )}
-                  </button>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        activeDropdown === item.label ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
 
                   {activeDropdown === item.label && (
-                    <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg z-50">
+                    <div className="absolute top-full left-0  bg-white shadow-lg rounded-lg z-50">
                       <div className="flex flex-col min-w-[200px]">
                         {item.children.map((child) => (
                           <Link
                             key={child.label}
                             href={child.href!}
-                            onClick={() => {
-                              setActiveDropdown(null);
-                            }}
-                            className="px-6 py-4 text-black hover:bg-gray-100 hover:text-[#56aeff] transition-colors duration-200 text-lg whitespace-nowrap text-start cursor-pointer"
+                            onClick={() => setActiveDropdown(null)}
+                            className="group relative px-6 py-4 text-black hover:text-green-gradient transition-colors duration-200 text-lg whitespace-nowrap text-start cursor-pointer"
                           >
                             {child.label}
+                            <span className="absolute left-6 bottom-2 h-[2px] w-0 bg-green-gradient transition-all duration-300 group-hover:w-[calc(100%-3rem)]" />
                           </Link>
                         ))}
                       </div>
@@ -120,7 +120,7 @@ export default function Navbar() {
                 <button
                   key={item.label}
                   onClick={() => handleNavigation(item)}
-                  className="hover:text-[#56aeff] text-lg transition-colors duration-200 cursor-pointer"
+                  className="hover:text-green-gradient text-lg transition-colors duration-200 cursor-pointer"
                 >
                   {item.label}
                 </button>
@@ -131,9 +131,10 @@ export default function Navbar() {
           {/* Contact CTA */}
           <Link
             href="/contact-us"
-            className="hidden lg:flex bg-black text-white lg:px-6 lg:py-2 xl:px-7 xl:py-3 rounded-lg items-center transition-all duration-200 text-xl hover:bg-green-gradient"
+            className="relative hidden lg:flex text-white bg-black lg:px-6 lg:py-2 xl:px-7 xl:py-3 rounded-lg items-center text-xl overflow-hidden group"
           >
-            {t("getInTouch")}
+            <span className="absolute inset-0 bg-green-gradient w-0 group-hover:w-full transition-all duration-300 ease-in-out z-0" />
+            <span className="relative z-10">{t("getInTouch")}</span>
           </Link>
 
           {/* Mobile Menu Toggle */}
@@ -173,7 +174,7 @@ export default function Navbar() {
                           <button
                             key={child.label}
                             onClick={() => handleNavigation(child)}
-                            className="block w-full text-left text-black hover:text-[#56aeff] transition duration-200 text-base py-1"
+                            className="block w-full text-left text-black hover:text-green-gradient transition duration-200 text-base py-1"
                           >
                             {child.label}
                           </button>
@@ -184,7 +185,7 @@ export default function Navbar() {
                 ) : (
                   <button
                     key={index}
-                    className="block text-black hover:text-[#56aeff] transition-colors duration-200 text-lg font-medium py-2"
+                    className="block text-black hover:text-green-gradient transition-colors duration-200 text-lg font-medium py-2"
                     onClick={() => handleNavigation(item)}
                   >
                     {item.label}

@@ -52,7 +52,7 @@ export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
           })}
         </motion.p>
         <motion.div
-          className="w-full md:w-[670px] 2xl:w-[1270px] xl:w-[1130px] lg:w-[900px]  5xl:w-[1300px] mx-auto flex-1 relative h-[400px] pb-10"
+          className="w-full md:w-[670px] 2xl:w-[1270px] xl:w-[1050px] lg:w-[900px]  5xl:w-[1300px] mx-auto flex-1 relative h-[400px] pb-10"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}

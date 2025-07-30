@@ -23,38 +23,42 @@ export interface IFeatures {
 const FEATURES: IFeatures[] = [
   {
     title: "Psychiatric Clinic and Hospital Management System",
-    link: "/",
+    link: "/case-study/psychiatric-clinic",
     image: HospitalManagement,
   },
   {
     title: "E-commerce Platform",
-    link: "/",
+    link: "/case-study/psychiatric-clinic",
     image: ECommerce,
   },
   {
     title: "Real Estate Platform",
-    link: "/",
+    link: "/case-study/psychiatric-clinic",
     image: RealEstate,
   },
-  { title: "Parking Application", link: "/", image: ParkingApplication },
+  {
+    title: "Parking Application",
+    link: "/case-study/psychiatric-clinic",
+    image: ParkingApplication,
+  },
   {
     title: "VPN Extension & Subscription Management System",
-    link: "/",
+    link: "/case-study/psychiatric-clinic",
     image: VpnExtension,
   },
   {
     title: "Dental Care & Learning Management System",
-    link: "/",
+    link: "/case-study/psychiatric-clinic",
     image: DentalCare,
   },
   {
     title: "Shopify Sync Platform",
-    link: "/",
+    link: "/case-study/psychiatric-clinic",
     image: ShopifySync,
   },
   {
     title: "Clinic Management System",
-    link: "/",
+    link: "/case-study/psychiatric-clinic",
     image: ClinicManagement,
   },
 ];

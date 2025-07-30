@@ -1,26 +1,18 @@
 "use client";
-import { useRouter } from "@/i18n/navigation";
 import { X } from "lucide-react";
 import { useState } from "react";
 
 interface CTAButtonProps {
   text: string;
-  link: string;
 }
 
-export default function CTAButton({ text, link }: CTAButtonProps) {
-  const router = useRouter();
+export default function CTAButton({ text }: CTAButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    e.stopPropagation();
 
-    if (link === "/contact-us") {
-      setIsOpen(true);
-    } else {
-      router.push(link);
-    }
+    setIsOpen(true);
   };
 
   const handleCloseModal = () => {
@@ -31,10 +23,13 @@ export default function CTAButton({ text, link }: CTAButtonProps) {
     <>
       <button
         type="button"
-        className="w-44 h-12 text-center border border-black font-medium cursor-pointer rounded-xl text-lg hover:bg-green-gradient hover:border-transparent hover:text-white transition-all duration-200 ease-in-out"
         onClick={handleClick}
+        className="relative w-44 h-12 text-center border border-black hover:border-none font-medium cursor-pointer rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out"
       >
-        {text}
+        <span className="absolute inset-0 w-0 group-hover:w-full bg-green-gradient transition-all duration-300 ease-in-out z-0" />
+        <span className="relative z-10 text-black group-hover:text-white transition-colors duration-200 ease-in-out">
+          {text}
+        </span>
       </button>
 
       {isOpen && (

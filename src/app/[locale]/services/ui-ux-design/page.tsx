@@ -1,9 +1,27 @@
 import Image from "next/image";
-import { DottedBG } from "@/assets";
+import {
+  AdobeXDIcon,
+  AfterAffectsIcon,
+  AxureRpIcon,
+  BalsamiqIcom,
+  DottedBG,
+  FigmaIcon,
+  IllustratorIcon,
+  InVisionIcon,
+  LucideChartIcon,
+  MiroIcon,
+  MoqUpsIcon,
+  PhotoShopIcon,
+  SketchIcon,
+  WhimsicalIcon,
+  ZeplinIcon,
+} from "@/assets";
 import Navbar from "../../components/Navbar";
 import FooterSection from "../../components/sections/FooterSection";
 import WorkFlowSection from "../components/WorkFlowSection";
 import FAQSection from "../../components/sections/FAQSection";
+import { IUseCase } from "@/common";
+import TechnologiesSection from "../components/TechnologiesSection";
 
 const STEPS = [
   {
@@ -35,6 +53,43 @@ const STEPS = [
     step: 6,
     color: "#5B57C2",
     description: "Testing, Launch & Iteration",
+  },
+];
+
+const USE_CASES: IUseCase[] = [
+  {
+    title: "Design & Prototyping",
+    technologies: [
+      { title: "Figma", image: FigmaIcon },
+      { title: "Adobe XD", image: AdobeXDIcon },
+      { title: "Sketch", image: SketchIcon },
+      { title: "InVision", image: InVisionIcon },
+      { title: "Axure RP", image: AxureRpIcon },
+    ],
+  },
+  {
+    title: "Wireframing & Flowchart",
+    technologies: [
+      { title: "Balsamiq", image: BalsamiqIcom },
+      { title: "Whimsical", image: WhimsicalIcon },
+      { title: "Lucidchart", image: LucideChartIcon },
+    ],
+  },
+  {
+    title: "Collaboration & Handoff",
+    technologies: [
+      { title: "Miro", image: MiroIcon },
+      { title: "Zeplin", image: ZeplinIcon },
+    ],
+  },
+  {
+    title: "Additional Useful Tools",
+    technologies: [
+      { title: "Photoshop", image: PhotoShopIcon },
+      { title: "illustrator", image: IllustratorIcon },
+      { title: "After Affects", image: AfterAffectsIcon },
+      { title: "Moqups", image: MoqUpsIcon },
+    ],
   },
 ];
 
@@ -94,6 +149,10 @@ export default function UiUxDesignPage() {
         </div>
       </section>
       <WorkFlowSection steps={STEPS} />
+      <TechnologiesSection
+        title="<highlight>Web </highlight>Developement Technologies"
+        useCases={USE_CASES}
+      />
       <FAQSection />
       <FooterSection />
     </main>

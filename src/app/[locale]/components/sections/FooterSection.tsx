@@ -48,16 +48,16 @@ export default function FooterSection() {
     },
   ];
 
-  const PAGES_LINKS: NavOption[] = [
-    {
-      label: t("Links.privacy"),
-      href: "/",
-    },
-    {
-      label: t("Links.terms"),
-      href: "/",
-    },
-  ];
+  // const PAGES_LINKS: NavOption[] = [
+  //   {
+  //     label: t("Links.privacy"),
+  //     href: "/",
+  //   },
+  //   {
+  //     label: t("Links.terms"),
+  //     href: "/",
+  //   },
+  // ];
 
   const SOCIAL_LINKS: SocialLinks[] = [
     { image: LinkedInIcon, link: "https://www.linkedin.com/company/101573750" },
@@ -155,7 +155,7 @@ export default function FooterSection() {
             {NAVIGATION_LINKS.map((naviagtionLink, index) => (
               <button
                 key={index}
-                className="text-white text-lg md:text-xl cursor-pointer"
+                className="text-white text-lg md:text-xl text-start  cursor-pointer"
                 onClick={() => handleNavigation(naviagtionLink)}
               >
                 {naviagtionLink.label}
@@ -221,7 +221,7 @@ export default function FooterSection() {
             />
           </div>
 
-          <div className="flex-1 flex justify-center items-end gap-12">
+          {/* <div className="flex-1 flex justify-center items-end gap-12">
             {PAGES_LINKS.map((pageLink, index) => (
               <button
                 key={index}
@@ -231,19 +231,19 @@ export default function FooterSection() {
                 {pageLink.label}
               </button>
             ))}
-          </div>
+          </div> */}
 
-          <div className="flex-1 flex flex-col 3xl:flex-row justify-end  3xl:items-end gap-4 3xl:gap-8 font-semibold">
+          <div className="flex-1 flex flex-row justify-end  3xl:items-start gap-10 font-semibold">
             <div className="flex flex-col gap-2">
               <p className="text-[#707070] text-xl">{t("Contact.email")}</p>
-              <p className="text-white text-xl lg:text-2xl leading-none">
-                info@verdantsoft.com
+              <p className="text-white text-xl lg:text-2xl leading-none whitespace-nowrap">
+                info@verdant-soft.com
               </p>
             </div>
             <div className="flex flex-col gap-2">
               <p className="text-[#707070] text-xl">{t("Contact.phone")}</p>
-              <p className="text-white text-xl lg:text-2xl leading-none">
-                +92 000 000 000
+              <p className="text-white text-xl lg:text-2xl leading-none whitespace-nowrap">
+                +92 300 837 3277
               </p>
             </div>
           </div>
@@ -264,7 +264,7 @@ export default function FooterSection() {
                 {t("Contact.email")}
               </p>
               <p className="text-white text-lg md:text-xl lg:text-2xl">
-                info@verdantsoft.com
+                info@verdant-soft.com
               </p>
             </div>
             <div className="flex flex-col gap-1">
@@ -272,11 +272,11 @@ export default function FooterSection() {
                 {t("Contact.phone")}
               </p>
               <p className="text-white text-lg md:text-xl lg:text-2xl leading-none">
-                +92 000 000 000
+                +92 300 837 3277
               </p>
             </div>
           </div>
-          <div className="flex-1 flex flex-col justify-start items-start gap-6 ">
+          {/* <div className="flex-1 flex flex-col justify-start items-start gap-6 ">
             {PAGES_LINKS.map((pageLink, index) => (
               <button
                 key={index}
@@ -286,7 +286,7 @@ export default function FooterSection() {
                 {pageLink.label}
               </button>
             ))}
-          </div>
+          </div> */}
           <div className="flex-1 flex items-end justify-center ">
             <Image
               src={VerdantLightLogo}

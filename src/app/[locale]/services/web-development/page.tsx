@@ -96,6 +96,7 @@ const USE_CASES: IUseCase[] = [
     ],
   },
 ];
+
 export default function WebDevelopmentPage() {
   return (
     <main className="flex flex-col overflow-hidden">

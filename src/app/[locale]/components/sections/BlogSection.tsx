@@ -65,7 +65,6 @@ export default function BlogSection() {
         <motion.div
           className="flex-1 lg:flex
     lg:flex-row
-    lg:gap-8
     lg:overflow-x-auto
     lg:scroll-smooth
     lg:scrollbar-hide
@@ -74,8 +73,9 @@ export default function BlogSection() {
     gap-4
     md:grid-cols-2
     md:gap-8
+    xl:gap-16
     md:auto-rows-auto
-    w-11/12 xl:w-10/12 mx-auto
+    w-11/12 mx-auto
   "
           initial="hidden"
           whileInView="visible"
@@ -92,9 +92,9 @@ export default function BlogSection() {
               <Image
                 src={blog.imageUrl}
                 alt={`blog-${index}`}
-                className="rounded-2xl h-[270px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
+                className="rounded-2xl h-[270px] lg:h-[250px] xl:h-[270px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
               />
-              <div className="w-11/12 ml-auto">
+              <div className="w-11/12 mx-auto">
                 <p className="text-xl font-semibold text-start  mb-2">
                   {blog.title}
                 </p>

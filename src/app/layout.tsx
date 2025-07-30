@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
-import { routing } from "@/i18n/routing";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,21 +15,11 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    // notFound();
-  }
-
-  // Enable static rendering
-  setRequestLocale(locale);
-
   return (
-    <html lang={locale}>
+    <html lang="en">
       <head>
         <link
           href="https://assets.calendly.com/assets/external/widget.css"
@@ -45,9 +32,7 @@ export default async function RootLayout({
           async
         ></script>
       </head>
-      <body className={`${inter.variable} antialiased inter`}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
-      </body>
+      <body className={`${inter.variable} antialiased inter`}>{children}</body>
     </html>
   );
 }

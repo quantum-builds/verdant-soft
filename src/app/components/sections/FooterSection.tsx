@@ -140,9 +140,9 @@ export default function FooterSection() {
       </motion.div>
 
       <div className="px-4 lg:w-11/12 xl:w-10/12  mx-auto flex flex-col justify-between h-full">
-        <div className="h-20 flex justify-between lg:items-center lg:w-full gap-7 sm:gap-10 md:gap-20 ">
+        <div className="h-20 flex justify-between md:items-center lg:w-full gap-7 sm:gap-10 md:gap-20 ">
           <motion.div
-            className="flex flex-col lg:flex-row gap-4 lg:gap-12"
+            className="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-12"
             initial="hidden"
             whileInView="visible"
             variants={slideFromLeft}
@@ -177,7 +177,7 @@ export default function FooterSection() {
                 <Image
                   src={socialLink.image}
                   alt="social-image"
-                  className="w-4 h-4 lg:w-6 lg:h-6"
+                  className="w-6 h-6"
                 />
               </a>
             ))}

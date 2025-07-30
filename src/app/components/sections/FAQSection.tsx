@@ -1,7 +1,6 @@
 "use client";
 
 import { useIsMobile } from "@/hook/useIsMobile";
-import { slideFromBottom } from "@/uitls/sliderAnimation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { useState } from "react";
@@ -58,6 +57,14 @@ export default function FAQSection() {
     visible: { opacity: 1, x: 0 },
   };
 
+  const slideFromLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
   const handleToggle = (index: number) => {
     setActiveIndex((prev) => (prev === index ? null : index));
   };
@@ -72,7 +79,7 @@ export default function FAQSection() {
             className="w-11/12 md:w-2/5 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold leading-tight font-inter text-start"
             initial="hidden"
             whileInView="visible"
-            variants={slideFromBottom}
+            variants={slideFromLeft}
             transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >

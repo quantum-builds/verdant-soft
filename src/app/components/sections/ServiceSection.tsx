@@ -78,7 +78,7 @@ export default function ServiceSection() {
 
   return (
     <section id="services" className=" scroll-mt-28 ">
-      <div className="overflow-hidden min-h-[100vh] 3xl:min-h-[70vh] w-11/12 xl:w-10/12  mx-auto flex flex-col mb-28 gap-12">
+      <div className="overflow-hidden min-h-[60vh] 3xl:min-h-[50vh] w-11/12 xl:w-10/12  mx-auto flex flex-col mb-28 gap-12">
         <p className="font-semibold text-xl md:text-2xl">[01 Services]</p>
         <motion.p
           className="w-11/12 md:w-3/4 lg:w-2/3 xl:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold"

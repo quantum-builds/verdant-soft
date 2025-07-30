@@ -40,7 +40,7 @@ const slideFromRight = {
 
 export default function AchievementSection() {
   return (
-    <div className="h-[820px] md:h-[460px] lg:h-[500px] xl:h-[420px] 4xl:h-[460px]  mb-28 flex flex-col justify-center items-center gap-14 xl:gap-20 w-11/12 xl:w-10/12 mx-auto text-black">
+    <div className="overflow-x-hidden min-h-[820px] md:min-h-[460px] lg:min-h-[500px] xl:min-h-[420px] 4xl:min-h-[460px] mb-28 flex flex-col justify-center items-center gap-14 xl:gap-20 w-11/12 xl:w-10/12 mx-auto text-black">
       <div className="flex flex-col justify-center items-center gap-6  xl:gap-8 w-full">
         <p className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl 4xl:text-5xl text-center">
           Pioneering Trust and Innovation

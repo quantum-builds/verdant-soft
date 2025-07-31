@@ -83,7 +83,7 @@ export default function HeroSection() {
 
           <Link
             href="/hire-us"
-            className="relative w-46 h-12 flex justify-center items-center border border-black font-medium cursor-pointer rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out hover:bg-green-gradient hover:border-none hover:text-white btn-3 gap-2"
+            className="relative w-46 h-12 flex justify-center items-center border border-black font-medium cursor-pointer z-[30] rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out hover:bg-green-gradient hover:border-none hover:text-white btn-3 gap-2"
             style={{ "--clr": "#16a34a" } as React.CSSProperties}
           >
             <span className="button__icon-wrapper2">

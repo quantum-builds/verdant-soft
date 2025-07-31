@@ -154,3 +154,5 @@ export { default as OneNumber } from "./01.svg";
 export { default as TwoNumber } from "./02.svg";
 export { default as ThreeNumber } from "./03.svg";
 export { default as FourNumber } from "./04.svg";
+
+export { default as ExploreMoreArrow } from "./explore-more-arrow.svg";

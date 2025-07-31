@@ -76,7 +76,7 @@ export default function BlogSection() {
               <Image
                 src={blog.imageUrl}
                 alt={`blog-${index}`}
-                className="rounded-2xl h-[270px] lg:h-[250px] xl:h-[270px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
+                className="rounded-2xl h-[260px] lg:h-[250px] xl:h-[290px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
               />
               <div className="w-11/12 mx-auto">
                 <p className="text-xl font-semibold text-start  mb-4">

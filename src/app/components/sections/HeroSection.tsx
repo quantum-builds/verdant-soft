@@ -4,6 +4,8 @@ import CTAButton from "../CTAButton";
 import { motion } from "framer-motion";
 import { slideFromLeft, slideFromRight } from "@/uitls/sliderAnimation";
 import Link from "next/link";
+import Image from "next/image";
+import { DottedBG } from "@/assets";
 
 export default function HeroSection() {
   // const CTAS = [
@@ -25,13 +27,13 @@ export default function HeroSection() {
     },
   };
   return (
-    <div className="relative min-h-screen flex flex-col space-y-6 overflow-hidden bg-white mb-28">
+    <div className="relative h-[112vh] flex flex-col space-y-6 overflow-hidden bg-white mb-28">
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#63aff5] rounded-full blur-[300px] z-0" />
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#85f3f1] rounded-full blur-[300px] z-0" />
 
       <Navbar />
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center gap-5 mt-20 md:mt-24 xl:mt-28 mx-6 lg:mx-10 xl:mx-14 mb-5 bg-gray rounded-3xl">
-        {/* <div className="absolute bottom-10 lg:-left-6 3xl:left-0 flex items-start justify-start z-20">
+        <div className="absolute bottom-10 lg:-left-6 3xl:left-0 flex items-start justify-start z-20">
           <Image
             src={DottedBG}
             alt="Dotted Background"
@@ -44,7 +46,7 @@ export default function HeroSection() {
             alt="Dotted Background"
             className="w-4/5 md:w-3/4 lg:w-[62%] 2xl:w-[70%] 3xl:w-[87%] 5xl:w-[97%] opacity-60 h-auto object-center lg:rotate-110 xl:rotate-100 3xl:rotate-90"
           />
-        </div> */}
+        </div>
         <motion.p
           className="text-3xl sm:text-4xl md:text-5xl 4xl:text-6xl font-bold leading-tight font-inter w-11/12 sm:w-3/5  md:w-4/5 lg:w-3/5 2xl:w-[45%] mx-auto text-center"
           initial="hidden"
@@ -81,12 +83,36 @@ export default function HeroSection() {
 
           <Link
             href="/hire-us"
-            className="relative w-44 h-12 flex justify-center items-center border border-black hover:border-none font-medium cursor-pointer rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out"
+            className="relative w-46 h-12 flex justify-center items-center border border-black font-medium cursor-pointer rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out hover:bg-green-gradient hover:border-none hover:text-white btn-3 gap-2"
+            style={{ "--clr": "#16a34a" } as React.CSSProperties}
           >
-            <span className="absolute inset-0 w-0 group-hover:w-full bg-green-gradient transition-all duration-300 ease-in-out z-0" />
-            <span className="relative z-10 text-black group-hover:text-white transition-colors duration-200 ease-in-out">
-              Hire an Expert
+            <span className="button__icon-wrapper2">
+              <svg
+                width="10"
+                className="button__icon-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 15"
+              >
+                <path
+                  fill="currentColor"
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                />
+              </svg>
+              <svg
+                width="10"
+                className="button__icon-svg button__icon-svg--copy"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 15"
+              >
+                <path
+                  fill="currentColor"
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                />
+              </svg>
             </span>
+            <span>Hire an Expert</span>
           </Link>
         </motion.div>
       </div>

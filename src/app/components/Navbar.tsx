@@ -130,10 +130,36 @@ export default function Navbar() {
           {/* Contact CTA */}
           <Link
             href="/contact-us"
-            className="relative hidden lg:flex text-white bg-black lg:px-6 lg:py-2 xl:px-7 xl:py-3 rounded-lg items-center text-xl overflow-hidden group"
+            className="hidden lg:flex bg-black text-white lg:px-6 lg:py-2 xl:px-7 xl:py-3 rounded-lg items-center gap-2 transition-all duration-200 text-xl hover:bg-green-gradient btn-3"
+            style={{ "--clr": "#16a34a" } as React.CSSProperties}
           >
-            <span className="absolute inset-0 bg-green-gradient w-0 group-hover:w-full transition-all duration-300 ease-in-out z-0" />
-            <span className="relative z-10">Get in touch</span>
+            <span className="button__icon-wrapper">
+              <svg
+                width="10"
+                className="button__icon-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 15"
+              >
+                <path
+                  fill="currentColor"
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                />
+              </svg>
+              <svg
+                width="10"
+                className="button__icon-svg button__icon-svg--copy"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 15"
+              >
+                <path
+                  fill="currentColor"
+                  d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                />
+              </svg>
+            </span>
+            <span>Get in Touch</span>
           </Link>
 
           {/* Mobile Menu Toggle */}
@@ -195,9 +221,37 @@ export default function Navbar() {
               <Link
                 href="/contact-us"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full bg-black hover:bg-green-gradient text-white cursor-pointer px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4 text-lg"
+                className="w-full bg-black hover:bg-green-gradient text-white cursor-pointer px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4 text-lg btn-3"
+                style={{ "--clr": "#16a34a" } as React.CSSProperties}
               >
-                Get in touch
+                <span>Get in touch</span>
+
+                <span className="button__icon-wrapper">
+                  <svg
+                    width="10"
+                    className="button__icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 15"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    />
+                  </svg>
+                  <svg
+                    width="10"
+                    className="button__icon-svg button__icon-svg--copy"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 15"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    />
+                  </svg>
+                </span>
               </Link>
             </div>
           </div>

@@ -22,7 +22,7 @@ export default function FeatureCard({ title, link, image }: IFeatures) {
         fill
         priority
       />
-      <div className="absolute inset-0 z-10 p-4 lg:p-2 xl:p-3 2xl:p-4 4xl:p-4 flex flex-col justify-between">
+      <div className="absolute inset-0 z-10 p-4 lg:p-2 xl:p-3 2xl:p-4 4xl:p-4 flex flex-col justify-between group">
         <div>
           <p className="lg:text-lg 4xl:text-2xl font-semibold lg:mb-1">
             Case Study
@@ -30,6 +30,7 @@ export default function FeatureCard({ title, link, image }: IFeatures) {
           <p className="text-md 4xl:text-xl font-semibold line-clamp-2 mb-3">
             {title}
           </p>
+
           <div
             className={`transition-opacity duration-500 ${
               isAlwaysVisible
@@ -39,9 +40,36 @@ export default function FeatureCard({ title, link, image }: IFeatures) {
           >
             <Link
               href={link}
-              className="text-sm rounded-xl border lg:border-white px-4 py-2 bg-transparent hover:bg-green-gradient w-fit  hover:border-0 transition duration-1000 ease-in-out"
+              className="btn-3 text-base rounded-xl border lg:border-white px-4 py-3 bg-transparent hover:bg-green-gradient w-fit hover:border-0 transition duration-1000 ease-in-out group flex items-center gap-2"
+              style={{ "--clr": "#16a34a" } as React.CSSProperties}
             >
-              Explore More
+              <span className="button__icon-wrapper">
+                <svg
+                  width="10"
+                  className="button__icon-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 15"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  />
+                </svg>
+                <svg
+                  width="10"
+                  className="button__icon-svg button__icon-svg--copy"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 15"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                  />
+                </svg>
+              </span>
+              <span>Explore More</span>
             </Link>
           </div>
         </div>

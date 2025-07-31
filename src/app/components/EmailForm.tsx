@@ -122,16 +122,41 @@ export default function EmailForm() {
           <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
         )}
       </div>
-
       <button
         type="submit"
         disabled={isSubmitting}
-        className="relative w-full text-2xl font-semibold py-4 xl:py-6 bg-black rounded-lg overflow-hidden transition-colors max-w-3xl disabled:opacity-60 disabled:cursor-not-allowed group"
+        className="relative w-full bg-black text-white lg:px-6 lg:py-2 xl:px-7 xl:py-3 font-semibold rounded-lg items-center transition-all duration-200 text-xl hover:bg-green-gradient max-w-3xl disabled:opacity-60 disabled:cursor-not-allowed group flex justify-center gap-4 btn-3"
+        style={{ "--clr": "#16a34a" } as React.CSSProperties}
       >
-        <span className="absolute inset-0 w-0 group-hover:w-full bg-green-gradient transition-all duration-300 ease-in-out z-0" />
-        <span className="relative z-10 text-white">
-          {isSubmitting ? "Submitting..." : "Submit"}
-        </span>
+        {!isSubmitting && (
+          <span className="button__icon-wrapper">
+            <svg
+              width="10"
+              className="button__icon-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 15"
+            >
+              <path
+                fill="currentColor"
+                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+              />
+            </svg>
+            <svg
+              width="10"
+              className="button__icon-svg button__icon-svg--copy"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 15"
+            >
+              <path
+                fill="currentColor"
+                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+              />
+            </svg>
+          </span>
+        )}
+        <span>{isSubmitting ? "Submitting..." : "Submit"}</span>
       </button>
     </form>
   );

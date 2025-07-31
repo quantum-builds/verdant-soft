@@ -34,7 +34,9 @@ export default async function RootLayout({
           async
         ></script>
       </head>
-      <body className={`${inter.variable} antialiased inter`}>{children}</body>
+      <body className={`${inter.variable} antialiased inter zoom-out`}>
+        {children}
+      </body>
     </html>
   );
 }

@@ -24,12 +24,36 @@ export default function CTAButton({ text }: CTAButtonProps) {
       <button
         type="button"
         onClick={handleClick}
-        className="relative w-44 h-12 text-center border border-black hover:border-none font-medium cursor-pointer rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out"
+        className="relative w-50 h-12 flex justify-center items-center border border-black font-medium cursor-pointer rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out hover:bg-green-gradient hover:border-none hover:text-white btn-3 gap-2"
+        style={{ "--clr": "#16a34a" } as React.CSSProperties}
       >
-        <span className="absolute inset-0 w-0 group-hover:w-full bg-green-gradient transition-all duration-300 ease-in-out z-0" />
-        <span className="relative z-10 text-black group-hover:text-white transition-colors duration-200 ease-in-out">
-          {text}
+        <span className="button__icon-wrapper2">
+          <svg
+            width="10"
+            className="button__icon-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 15"
+          >
+            <path
+              fill="currentColor"
+              d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+            />
+          </svg>
+          <svg
+            width="10"
+            className="button__icon-svg button__icon-svg--copy"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 15"
+          >
+            <path
+              fill="currentColor"
+              d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+            />
+          </svg>
         </span>
+        <span>{text}</span>
       </button>
 
       {isOpen && (

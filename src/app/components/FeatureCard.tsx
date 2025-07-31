@@ -40,7 +40,7 @@ export default function FeatureCard({ title, link, image }: IFeatures) {
           >
             <Link
               href={link}
-              className="btn-3 text-base rounded-xl border lg:border-white px-4 py-3 bg-transparent hover:bg-green-gradient w-fit hover:border-0 transition duration-1000 ease-in-out group flex items-center gap-2"
+              className="btn-3 text-sm rounded-xl border lg:border-white px-3 py-3 bg-transparent hover:bg-green-gradient w-fit hover:border-0 transition duration-1000 ease-in-out group flex items-center gap-2"
               style={{ "--clr": "#16a34a" } as React.CSSProperties}
             >
               <span className="button__icon-wrapper">

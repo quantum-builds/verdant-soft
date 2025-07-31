@@ -54,26 +54,13 @@ export default function BlogSection() {
           className="flex gap-2 cursor-pointer items-center w-fit"
           onClick={() => router.push("/all-blogs")}
         >
-          <p className="text-[#707070] text-xl  md:text-2xl xl:text-4xl font-semibold">
+          <p className="text-[#707070] text-xl  md:text-2xl xl:text-4xl font-semibold hover:text-green-gradient">
             All Blogs
           </p>
           <Image src={Arrow} alt="arrow" width={30} />
         </div>
         <motion.div
-          className="flex-1 lg:flex
-    lg:flex-row
-    lg:overflow-x-auto
-    lg:scroll-smooth
-    lg:scrollbar-hide
-    cursor-pointer
-    grid
-    gap-4
-    md:grid-cols-2
-    md:gap-8
-    xl:gap-16
-    md:auto-rows-auto
-    w-11/12 mx-auto
-  "
+          className="flex-1 lg:flex lg:flex-row lg:overflow-x-auto lg:scroll-smooth lg:scrollbar-hide cursor-pointer grid gap-4 md:grid-cols-2 xl:gap-8 md:auto-rows-auto"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}
@@ -92,7 +79,7 @@ export default function BlogSection() {
                 className="rounded-2xl h-[270px] lg:h-[250px] xl:h-[270px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
               />
               <div className="w-11/12 mx-auto">
-                <p className="text-xl font-semibold text-start  mb-2">
+                <p className="text-xl font-semibold text-start  mb-4">
                   {blog.title}
                 </p>
               </div>

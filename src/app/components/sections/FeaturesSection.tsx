@@ -1,14 +1,14 @@
 "use client";
 
 import {
-  ClinicManagement,
-  DentalCare,
-  ECommerce,
-  HospitalManagement,
-  ParkingApplication,
-  RealEstate,
-  ShopifySync,
-  VpnExtension,
+  ClinicManagementBG,
+  DentalCareBg,
+  ECommerceBG,
+  ParkingAppBG,
+  PsychiatricClinicBG,
+  RealEstateBG,
+  ShopifyBg,
+  VPNExtensionBG,
 } from "@/assets";
 import { motion } from "framer-motion";
 import { StaticImageData } from "next/image";
@@ -24,42 +24,42 @@ const FEATURES: IFeatures[] = [
   {
     title: "Psychiatric Clinic and Hospital Management System",
     link: "/case-study/psychiatric-clinic",
-    image: HospitalManagement,
+    image: PsychiatricClinicBG,
   },
   {
     title: "E-commerce Platform",
-    link: "/case-study/psychiatric-clinic",
-    image: ECommerce,
+    link: "/case-study/e-commerce",
+    image: ECommerceBG,
   },
   {
     title: "Real Estate Platform",
-    link: "/case-study/psychiatric-clinic",
-    image: RealEstate,
+    link: "/case-study/real-estate",
+    image: RealEstateBG,
   },
   {
     title: "Parking Application",
-    link: "/case-study/psychiatric-clinic",
-    image: ParkingApplication,
+    link: "/case-study/parking-app",
+    image: ParkingAppBG,
   },
   {
     title: "VPN Extension & Subscription Management System",
-    link: "/case-study/psychiatric-clinic",
-    image: VpnExtension,
+    link: "/case-study/vpn-extension",
+    image: VPNExtensionBG,
   },
   {
     title: "Dental Care & Learning Management System",
-    link: "/case-study/psychiatric-clinic",
-    image: DentalCare,
+    link: "/case-study/dental-care",
+    image: DentalCareBg,
   },
   {
     title: "Shopify Sync Platform",
-    link: "/case-study/psychiatric-clinic",
-    image: ShopifySync,
+    link: "/case-study/shopify",
+    image: ShopifyBg,
   },
   {
     title: "Clinic Management System",
-    link: "/case-study/psychiatric-clinic",
-    image: ClinicManagement,
+    link: "/case-study/clinic-management",
+    image: ClinicManagementBG,
   },
 ];
 
@@ -74,7 +74,7 @@ export default function FeaturesSection() {
 
   return (
     <section id="features" className="scroll-mt-28">
-      <div className="overflow-hidden mb-28 md:h-[1390px] lg:h-[675px] xl:h-[760px] 2xl:h-[835px] 3xl:h-[860px] 4xl:h-[900px] 5xl:h-[1070px]  w-11/12 xl:w-10/12  mx-auto flex flex-col gap-16 lg:gap-42">
+      <div className="overflow-hidden mb-28 md:h-[1390px] lg:h-[675px] xl:h-[780px] 2xl:h-[835px] 3xl:h-[860px] 4xl:h-[900px] 5xl:h-[1070px]  w-11/12 xl:w-10/12  mx-auto flex flex-col gap-16 lg:gap-42">
         <div className=" flex flex-col gap-12">
           <p className="font-semibold text-2xl">[02 Featured Insights]</p>
           <div className="w-full flex justify-end">
@@ -93,7 +93,7 @@ export default function FeaturesSection() {
             </motion.h2>
           </div>
         </div>
-        <div className="flex flex-wrap  justify-center gap-4 lg:gap-2 4xl:gap-4 lg:w-[900px] xl:w-[1050px] 2xl:w-[1270px] 3xl:w-[1400px] 4xl:w-[1500px] 5xl:w-[1700px] mx-auto">
+        <div className="flex flex-wrap  justify-center gap-4 lg:gap-3 xl:gap-5 4xl:gap-8 lg:w-[900px] xl:w-[1090px] 2xl:w-[1270px] 3xl:w-[1420px] 4xl:w-[1500px] 5xl:w-[1800px] mx-auto">
           {FEATURES.map((feature, index) => (
             <div
               key={index}

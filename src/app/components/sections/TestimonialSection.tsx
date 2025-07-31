@@ -12,7 +12,7 @@ import { slideFromRight } from "@/uitls/sliderAnimation";
 interface Testimonial {
   id: number;
   name: string;
-  title: string;
+  title?: string;
   rating: number;
   score: string;
   testimonial: string;
@@ -34,18 +34,17 @@ const testimonials: Testimonial[] = [
   {
     id: 2,
     name: "Elia Essen",
-    title: "General Manager",
     rating: 4.7,
     score: "4.7/5",
     testimonial:
-      "Bilal is an absolute pleasure to work with. His expertise in the MERN stack, particularly in React.js, is outstanding. He took ownership of our AI SaaS platform, delivering high-quality, scalable, and visually stunning feature that exceeded our expectations.If you’re looking for a top quality full-stack developer with strong frontend skills and a deep understanding of SaaS/AI platforms, he is a good fit. I HIGHLY recommend Bilal and would gladly work with him again!",
+      "Working with Verdant Soft has been an absolute pleasure. Their expertise in the MERN stack, especially React.js, is truly impressive. They took full ownership of our AI SaaS platform, delivering high-quality, scalable, and visually stunning features that exceeded our expectations. If you’re looking for a top-tier development team with strong frontend capabilities and a deep understanding of SaaS and AI platforms, Verdant Soft is an excellent choice. I highly recommend them and would gladly collaborate again!",
     image: TextTestimonial1,
     type: "text",
   },
   {
     id: 3,
     name: "Alex",
-    title: "CEO",
+    title: "CEO B-Consulting",
     rating: 4.5,
     score: "4.5/5",
     testimonial: "",
@@ -67,31 +66,62 @@ const testimonials: Testimonial[] = [
     id: 5,
     name: "Nick Kuijpers",
     title: "CEO Wemasy",
-    rating: 5,
-    score: "5/5",
+    rating: 4.6,
+    score: "4.6/5",
     testimonial:
-      "Bilal is a senior full stack developer which has proven to be very supportive in the development of our company. He analyzes issues and creates fixes. If you need a reliable full-stack developer, I definitely recommend this person!",
+      "Verdant Soft has proven to be a highly supportive and reliable partner in the development of our company. Their team takes a thoughtful approach to analyzing issues and delivering effective solutions. If you're looking for a dependable full-stack development team, I definitely recommend Verdant Soft!",
     image: TextTestimonial2,
     type: "text",
   },
-  // {
-  //   id: 6,
-  //   name: "Alexa Snow",
-  //   title: "Director",
-  //   rating: 5,
-  //   score: "4.5/5",
-  //   testimonial: "",
-  //   image: ImageTestimonial2,
-  //   type: "image",
-  // },
+  {
+    id: 6,
+    name: " Hesham Elkouha",
+    rating: 4.5,
+    score: "4.5/5",
+    testimonial:
+      "It was a pleasure working with Verdant Soft — very professional and delivered the work as expected. Their response time was also amazing. Will definitely work with them again in the near future.",
+    image: TextTestimonial1,
+    type: "text",
+  },
   {
     id: 7,
     name: "Waqas Zahoor Pal",
-    title: "General Manager",
-    rating: 4.2,
-    score: "4.2/5",
+    rating: 4.3,
+    score: "4.3/5",
     testimonial:
-      "Job done perfectly with full cooperation and professional behaviour. Never expected an emergency job to be this efficient but he showed me that with hard work and dedication anything is possible. Will hire you again.",
+      "The job was completed perfectly with full cooperation and professional conduct. I never expected an emergency task to be handled this efficiently, but Verdant Soft demonstrated that with hard work and dedication, anything is possible. I would definitely work with them again.",
+    image: TextTestimonial1,
+    type: "text",
+  },
+
+  {
+    id: 8,
+    name: "Shervin Khanzadi",
+    title: "CEO Alogirft",
+    rating: 4.8,
+    score: "4.8/5",
+    testimonial:
+      "Verdant Soft is a team of highly professional front-end developers with a strong and diverse skill set. Their commitment to delivering high-quality results was evident throughout our collaboration. They not only met our requirements but also added valuable suggestions that improved the overall user experience. If you're looking for a dependable partner with a deep understanding of modern front-end technologies, Verdant Soft is a great choice",
+    image: TextTestimonial1,
+    type: "text",
+  },
+  {
+    id: 9,
+    name: "Isana Sebastian",
+    rating: 5,
+    score: "5/5",
+    testimonial:
+      "Working with Verdant Soft was a great experience. They quickly understood our problem, collaborated effectively with our team, and delivered a solid solution. Their proactive communication, thoughtful suggestions, and flexibility made the process smooth. We couldn't be happier with the results and highly recommend Verdant Soft for MVP development, architecture design, and web/mobile projects.",
+    image: TextTestimonial1,
+    type: "text",
+  },
+  {
+    id: 10,
+    name: "Ben Kemboi",
+    rating: 4.5,
+    score: "4.5/5",
+    testimonial:
+      "Verdant Soft completed the work in a timely manner. The team sought a clear understanding before starting the work. They maintained positive communication and were ready to edit the work when asked to do so.",
     image: TextTestimonial1,
     type: "text",
   },
@@ -238,7 +268,7 @@ function VideoCard({ testimonial }: { testimonial: Testimonial }) {
 
 function TextCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div className="flex flex-col  justify-between w-full h-full bg-[#F9F9F9D9] rounded-2xl px-3 py-8 md:px-6 md:py-12">
+    <div className="flex flex-col gap-6  w-full h-full bg-[#F9F9F9D9] rounded-2xl px-3 py-8 md:px-6 md:py-10">
       <div className="flex flex-col md:flex-row  lg:items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           {/* <Image
@@ -249,7 +279,7 @@ function TextCard({ testimonial }: { testimonial: Testimonial }) {
             className="object-cover rounded-lg"
           />
            */}
-          <div className="w-full">
+          <div className="w-full h-12">
             <h4 className=" font-semibold text-xl  md:text-2xl">
               {testimonial.name}
             </h4>
@@ -265,7 +295,7 @@ function TextCard({ testimonial }: { testimonial: Testimonial }) {
           </span>
         </div>
       </div>
-      <p className=" text-black text-md md:text-xl md:font-medium leading-tight tracking-normal line-clamp-4  lg:line-clamp-5">
+      <p className=" text-black text-md md:text-xl md:font-medium leading-tight tracking-normal line-clamp-4 md:line-clamp-5  xl:line-clamp-6 ">
         {testimonial.testimonial}
       </p>
     </div>

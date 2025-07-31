@@ -45,7 +45,7 @@ export default function AchievementCard({ label, title }: StatCardProps) {
   return (
     <motion.div
       ref={ref}
-      className="w-full flex flex-col justify-center items-center gap-3 sm:gap-4 font-inter"
+      className="w-full flex flex-col justify-center items-center gap-3 2xl:gap-4 font-inter"
       variants={slideFromBack}
       transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
       initial="hidden"
@@ -56,7 +56,7 @@ export default function AchievementCard({ label, title }: StatCardProps) {
         perspective: "1000px",
       }}
     >
-      <p className="font-semibold text-4xl lg:text-5xl text-green-gradient">
+      <p className="font-semibold text-4xl 3xl:text-5xl text-green-gradient">
         {startCount && (
           <CountUp
             end={parseFloat(numberPart.replace(/,/g, ""))}

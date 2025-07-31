@@ -1,10 +1,10 @@
 import {
+  DentalCareBg,
+  DentalCareImage1,
+  DentalCareImage2,
   FourNumber,
   NextIcon,
-  NodeIcon,
   OneNumber,
-  PsychiatricClinicBG,
-  PsychiatricClinicImage1,
   ThreeNumber,
   TwoNumber,
   TypeScriptIcon,
@@ -23,37 +23,33 @@ const TECH_USED = [
     icon: NextIcon,
   },
   {
-    text: "Node Js",
-    icon: NodeIcon,
-  },
-  {
     text: "Typescript",
     icon: TypeScriptIcon,
   },
 ];
 
 const PROJECT_CHALLENGES = [
-  "Addressing complex workflows for various mental health providers with differing documentation and treatment needs.",
-  "Ensuring secure handling of sensitive patient data while maintaining compliance with healthcare regulations.",
-  "Integrating clinical modules with seamless interaction between different parts of the system.",
-  "Implementing flexible and granular access control for diverse user roles.",
-  "Creating a user-friendly interface that enhances productivity without compromising accuracy.",
+  "Designing a platform that caters to both <highlight>patients</highlight> and <highlight>dental professionals</highlight>, each with distinct needs.",
+  "Ensuring <highlight>secure handling of digital consent forms</highlight> while meeting legal and compliance standards.",
+  "Creating an <highlight>admin panel</highlight> for managing educational content, user access, and course data.",
+  "Integrating with multiple <highlight>third-party APIs</highlight> for booking, learning tools, and authentication.",
+  "Delivering a consistent and intuitive user experience across all modules and user roles.",
 ];
 
 const SOLUTIONS = [
-  "Developed a modular and scalable architecture allow for rapid iteration and clean separation of features.",
-  "Designed intuitive and efficient UI/UX to support quick navigation and data entry for providers.",
-  "Built robust modules for medications, allergies, visits, and lab orders, integrated with patient records and clinical notes.",
-  "Implemented secure role-based access control (RBAC) to govern user permissions.",
-  "Embedded compliance-focused features, including audit logs and secure handling of clinical data.",
+  "Developed patient-facing features including <highlight>appointment booking, treatment information access,</highlight> and <highlight>service discovery,</highlight> all within a clean, user-friendly interface.",
+  "Built a <highlight>learning and training module</highlight> with support for courses, workshops, and educational resources tailored for dental professionals and students.",
+  "Designed and implemented a <highlight>custom admin panel</highlight> to manage course content, instructors, users, and reporting efficiently.",
+  "Integrated a <highlight>secure digital consent management system</highlight> to ensure legal compliance and eliminate paperwork.",
+  "Handled complete <highlight>frontend and backend development</highlight> using modern web technologies and optimized for scalability, speed, and security.",
 ];
 
 const RESULTS = [
-  "Streamlined clinical and administrative workflows, significantly improving the efficiency of daily operations.",
-  "Enabled faster documentation and reduced manual effort for providers and support staff.",
-  "Improved collaboration among psychiatrists and therapists through centralized access to patient information.",
-  "Enhanced data security and compliance, boosting trust in the system's integrity.",
-  "Delivered a flexible foundation that allows the clinic to scale and expand features over time.",
+  "Delivered a feature-rich platform that modernizes dental care delivery and professional education.",
+  "Enhanced patient engagement through simplified appointment booking and transparent treatment options.",
+  "Provided dental professionals with accessible, centralized training resources and credential tracking.",
+  "Reduced paperwork and administrative overhead through digital consent management.",
+  "Enabled seamless scalability and adaptability across clinics, educators, and institutions.",
 ];
 
 const PROOCESS = [
@@ -83,14 +79,14 @@ const PROOCESS = [
   },
 ];
 
-export default function PsychiatricClinicPage() {
+export default function DentalCarePage() {
   return (
     <div>
       <main className=" min-h-screen">
         <div className="absolute inset-0 z-0">
           <Image
             className="w-full h-2/3 object-cover"
-            src={PsychiatricClinicBG}
+            src={DentalCareBg}
             alt="hero background"
           />
           <div className="absolute inset-0 bg-hero-gradient"></div>
@@ -103,30 +99,9 @@ export default function PsychiatricClinicPage() {
             <div className="bg-white max-w-7xl mx-auto rounded-xl">
               <div className="flex flex-col gap-16 lg:gap-32 w-full">
                 <div className="flex flex-col gap-16 lg:gap-24 p-4 md:p-12  w-full lg:w-11/12 mx-auto">
-                  <div className="flex flex-col  justify-center gap-12 lg:gap-16">
-                    <h1 className="text-[60px] xl:text-[80px] leading-tight font-semibold text-center break-words text-light-green-gradient mb-10">
-                      Project Case Study
-                    </h1>
-                    <h1 className="font-bold text-3xl xl:text-[40px]  text-green-gradient"></h1>
-                    <p className="text-lg lg:text-xl"></p>
-                  </div>
-
                   <CaseStudyHeader
-                    title="Psychiatric Clinic and Hospital Management System"
-                    description=" We developed a comprehensive healthcare management system
-                      for a psychiatrist and therapist clinic, aimed at
-                      streamlining mental health service delivery. The platform
-                      enables efficient handling of patient records, appointment
-                      scheduling, clinical documentation, billing, and
-                      medication tracking. It supports multiple provider types
-                      including psychiatrists and therapists and offers detailed
-                      functionality for managing patient visits, clinical notes,
-                      prescriptions, allergies, and lab orders. With built-in
-                      compliance features, role-based access control, and
-                      optimized workflows for outpatient care and insurance
-                      verification, the system centralizes the entire behavioral
-                      health care process. Our team specifically contributed by
-                      building the <highlight>medications, allergies, visits, and lab orders modules</highlight>"
+                    title="Dental Care & Learning Management System"
+                    description="We built a comprehensive digital platform specifically designed for the dental industry, bringing together <highlight>patient services, professional education,</highlight> and <highlight>digital consent management</highlight> into a single, unified ecosystem. The platform streamlines access to dental care for patients while supporting dental professionals and students through specialized learning resources. It also introduces secure digital consent workflows, modernizing how patient approvals are collected and managed."
                   />
                   <TechUsed techUsed={TECH_USED} />
                   <ListPoints
@@ -134,14 +109,16 @@ export default function PsychiatricClinicPage() {
                     challenges={PROJECT_CHALLENGES}
                   />
                 </div>
+                <Image
+                  src={DentalCareImage1}
+                  alt="dental-care-image"
+                  className="object-contain"
+                />
                 <ProcessCard process={PROOCESS} />
                 <div className="flex flex-col gap-16 lg:gap-24 p-4 md:p-12  w-full lg:w-11/12 mx-auto">
                   <ListPoints title="Solutions" challenges={SOLUTIONS} />
                   <div className="bg-gray md:px-10 lg:px-14 xl:px-20 md:py-8 lg:py-12 xl:py-16">
-                    <Image
-                      src={PsychiatricClinicImage1}
-                      alt="psychiatric-image"
-                    />
+                    <Image src={DentalCareImage2} alt="dental-care-image" />
                   </div>
                   <ListPoints
                     title="Results and  Impact"

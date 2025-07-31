@@ -1,13 +1,13 @@
 import {
+  ClinicManagementBG,
+  ClinicManagementImage1,
+  ClinicManagementImage2,
   FourNumber,
-  NextIcon,
   NodeIcon,
   OneNumber,
-  PsychiatricClinicBG,
-  PsychiatricClinicImage1,
+  ReactIcon,
   ThreeNumber,
   TwoNumber,
-  TypeScriptIcon,
 } from "@/assets";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
@@ -19,41 +19,37 @@ import CaseStudyHeader from "../components/CaseStudyHeader";
 
 const TECH_USED = [
   {
-    text: "Next Js",
-    icon: NextIcon,
+    text: "React Js",
+    icon: ReactIcon,
   },
   {
     text: "Node Js",
     icon: NodeIcon,
   },
-  {
-    text: "Typescript",
-    icon: TypeScriptIcon,
-  },
 ];
 
 const PROJECT_CHALLENGES = [
-  "Addressing complex workflows for various mental health providers with differing documentation and treatment needs.",
-  "Ensuring secure handling of sensitive patient data while maintaining compliance with healthcare regulations.",
-  "Integrating clinical modules with seamless interaction between different parts of the system.",
-  "Implementing flexible and granular access control for diverse user roles.",
-  "Creating a user-friendly interface that enhances productivity without compromising accuracy.",
+  "Building a flexible and intuitive <highlight>slot management module</highlight> that accommodates varying doctor schedules.",
+  "Creating a <highlight>patient-friendly booking flow</highlight> with minimal friction.",
+  "Supporting <highlight>subscription management</highlight> with flexible plan configurations and renewals.",
+  "Ensuring real-time updates and accurate availability across users.",
+  "Delivering a system that enhances both <highlight>administrative efficiency</highlight> and <highlight>patient satisfaction</highlight>.",
 ];
 
 const SOLUTIONS = [
-  "Developed a modular and scalable architecture allow for rapid iteration and clean separation of features.",
-  "Designed intuitive and efficient UI/UX to support quick navigation and data entry for providers.",
-  "Built robust modules for medications, allergies, visits, and lab orders, integrated with patient records and clinical notes.",
-  "Implemented secure role-based access control (RBAC) to govern user permissions.",
-  "Embedded compliance-focused features, including audit logs and secure handling of clinical data.",
+  "Developed a responsive frontend using <highlight>React</highlight> for a smooth, user-centric experience.",
+  "Built the backend with <highlight>Node.js</highlight>, handling real-time slot availability, appointment bookings, and subscription workflows.",
+  "Implemented logic for <highlight>recurring visit plans</highlight>, subscription activation, and service-based billing.",
+  "Designed intuitive admin views for doctors to manage availability, patient history, and upcoming appointments.",
+  "Focused on clean UX/UI to reduce booking time and improve overall clinic operations.",
 ];
 
 const RESULTS = [
-  "Streamlined clinical and administrative workflows, significantly improving the efficiency of daily operations.",
-  "Enabled faster documentation and reduced manual effort for providers and support staff.",
-  "Improved collaboration among psychiatrists and therapists through centralized access to patient information.",
-  "Enhanced data security and compliance, boosting trust in the system's integrity.",
-  "Delivered a flexible foundation that allows the clinic to scale and expand features over time.",
+  "Delivered an all-in-one platform that simplifies appointment and subscription management for clinics.",
+  "Improved scheduling accuracy and reduced administrative load through automation.",
+  "Enabled doctors to manage their time more effectively and offer consistent care options.",
+  "Enhanced patient experience with quick booking, subscription access, and clear scheduling.",
+  "Laid a scalable foundation for adding more advanced healthcare modules in the future.",
 ];
 
 const PROOCESS = [
@@ -83,14 +79,14 @@ const PROOCESS = [
   },
 ];
 
-export default function PsychiatricClinicPage() {
+export default function ClinicManagement() {
   return (
     <div>
       <main className=" min-h-screen">
         <div className="absolute inset-0 z-0">
           <Image
             className="w-full h-2/3 object-cover"
-            src={PsychiatricClinicBG}
+            src={ClinicManagementBG}
             alt="hero background"
           />
           <div className="absolute inset-0 bg-hero-gradient"></div>
@@ -103,30 +99,9 @@ export default function PsychiatricClinicPage() {
             <div className="bg-white max-w-7xl mx-auto rounded-xl">
               <div className="flex flex-col gap-16 lg:gap-32 w-full">
                 <div className="flex flex-col gap-16 lg:gap-24 p-4 md:p-12  w-full lg:w-11/12 mx-auto">
-                  <div className="flex flex-col  justify-center gap-12 lg:gap-16">
-                    <h1 className="text-[60px] xl:text-[80px] leading-tight font-semibold text-center break-words text-light-green-gradient mb-10">
-                      Project Case Study
-                    </h1>
-                    <h1 className="font-bold text-3xl xl:text-[40px]  text-green-gradient"></h1>
-                    <p className="text-lg lg:text-xl"></p>
-                  </div>
-
                   <CaseStudyHeader
-                    title="Psychiatric Clinic and Hospital Management System"
-                    description=" We developed a comprehensive healthcare management system
-                      for a psychiatrist and therapist clinic, aimed at
-                      streamlining mental health service delivery. The platform
-                      enables efficient handling of patient records, appointment
-                      scheduling, clinical documentation, billing, and
-                      medication tracking. It supports multiple provider types
-                      including psychiatrists and therapists and offers detailed
-                      functionality for managing patient visits, clinical notes,
-                      prescriptions, allergies, and lab orders. With built-in
-                      compliance features, role-based access control, and
-                      optimized workflows for outpatient care and insurance
-                      verification, the system centralizes the entire behavioral
-                      health care process. Our team specifically contributed by
-                      building the <highlight>medications, allergies, visits, and lab orders modules</highlight>"
+                    title="Clinic Management System"
+                    description="We developed a comprehensive <highlight>clinical management platform</highlight> aimed at streamlining clinic operations and enhancing the patient booking experience. Designed for doctor-led clinics, the platform simplifies appointment scheduling through a flexible <highlight>slot management system</highlight>, allowing doctors to set their availability and patients to book visits effortlessly. In addition, it supports <highlight>subscription-based services,</highlight> enabling clinics to offer recurring plans or specialized care packages with ease."
                   />
                   <TechUsed techUsed={TECH_USED} />
                   <ListPoints
@@ -134,13 +109,18 @@ export default function PsychiatricClinicPage() {
                     challenges={PROJECT_CHALLENGES}
                   />
                 </div>
+                <Image
+                  src={ClinicManagementImage1}
+                  alt="clinic-management-image"
+                  className="object-contain"
+                />
                 <ProcessCard process={PROOCESS} />
                 <div className="flex flex-col gap-16 lg:gap-24 p-4 md:p-12  w-full lg:w-11/12 mx-auto">
                   <ListPoints title="Solutions" challenges={SOLUTIONS} />
                   <div className="bg-gray md:px-10 lg:px-14 xl:px-20 md:py-8 lg:py-12 xl:py-16">
                     <Image
-                      src={PsychiatricClinicImage1}
-                      alt="psychiatric-image"
+                      src={ClinicManagementImage2}
+                      alt="clinic-management-image"
                     />
                   </div>
                   <ListPoints

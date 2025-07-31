@@ -6,7 +6,7 @@ import Navbar from "./../../components/Navbar";
 const INFO = [
   {
     title: "Location",
-    content: "Square, Tashkent 10009, Lahore, Pakistan",
+    content: "772/A, G4 block, Johar Town, Lahore Pakistan.",
   },
   {
     title: "Email",

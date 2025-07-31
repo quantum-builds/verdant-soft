@@ -1,10 +1,11 @@
 import {
+  ECommerceBG,
+  ECommerceImage1,
+  ECommerceImage2,
   FourNumber,
   NextIcon,
   NodeIcon,
   OneNumber,
-  PsychiatricClinicBG,
-  PsychiatricClinicImage1,
   ThreeNumber,
   TwoNumber,
   TypeScriptIcon,
@@ -33,27 +34,27 @@ const TECH_USED = [
 ];
 
 const PROJECT_CHALLENGES = [
-  "Addressing complex workflows for various mental health providers with differing documentation and treatment needs.",
-  "Ensuring secure handling of sensitive patient data while maintaining compliance with healthcare regulations.",
-  "Integrating clinical modules with seamless interaction between different parts of the system.",
-  "Implementing flexible and granular access control for diverse user roles.",
-  "Creating a user-friendly interface that enhances productivity without compromising accuracy.",
+  "Supporting <highlight>multi-store management</highlight> with consistent performance across varying business sizes.",
+  "Implementing a <highlight>secure and flexible role-based access system</highlight> to accommodate different user levels.",
+  "Designing <highlight>intuitive and responsive UI</highlight> for non-technical users, handling complex backend operations.",
+  "Building <highlight>real-time analytics and visualizations</highlight> that are both informative and performant.",
+  "Ensuring system-wide <highlight>auditability and traceability</highlight> through a detailed activity log.",
 ];
 
 const SOLUTIONS = [
-  "Developed a modular and scalable architecture allow for rapid iteration and clean separation of features.",
-  "Designed intuitive and efficient UI/UX to support quick navigation and data entry for providers.",
-  "Built robust modules for medications, allergies, visits, and lab orders, integrated with patient records and clinical notes.",
-  "Implemented secure role-based access control (RBAC) to govern user permissions.",
-  "Embedded compliance-focused features, including audit logs and secure handling of clinical data.",
+  "Designed a <highlight>modular CMS system</highlight> to allow scalability and adaptability for various business needs.",
+  "Developed a <highlight>dynamic role and permission management system</highlight>, enabling fine-grained access control.",
+  "Designed and implemented an interactive <highlight>analytics dashboard</highlight> featuring charts and visualizations for real-time sales, orders, and performance tracking.",
+  "Integrated an <highlight>activity log module</highlight> for real-time audit trails of user and system actions.",
+  "Ensured a seamless user experience through clean, responsive interfaces and efficient backend logic.",
 ];
 
 const RESULTS = [
-  "Streamlined clinical and administrative workflows, significantly improving the efficiency of daily operations.",
-  "Enabled faster documentation and reduced manual effort for providers and support staff.",
-  "Improved collaboration among psychiatrists and therapists through centralized access to patient information.",
-  "Enhanced data security and compliance, boosting trust in the system's integrity.",
-  "Delivered a flexible foundation that allows the clinic to scale and expand features over time.",
+  "Delivered a powerful CMS that allows businesses to manage products, inventory, and operations effortlessly.",
+  "Improved operational efficiency through a user-friendly interface and streamlined workflows.",
+  "Enhanced decision-making through live analytics and business intelligence features.",
+  "Strengthened security and accountability via detailed access controls and activity tracking.",
+  "Enabled scalability for businesses to manage multiple stores from a single, centralized platform.",
 ];
 
 const PROOCESS = [
@@ -83,14 +84,14 @@ const PROOCESS = [
   },
 ];
 
-export default function PsychiatricClinicPage() {
+export default function ECommercePage() {
   return (
     <div>
       <main className=" min-h-screen">
         <div className="absolute inset-0 z-0">
           <Image
             className="w-full h-2/3 object-cover"
-            src={PsychiatricClinicBG}
+            src={ECommerceBG}
             alt="hero background"
           />
           <div className="absolute inset-0 bg-hero-gradient"></div>
@@ -103,30 +104,9 @@ export default function PsychiatricClinicPage() {
             <div className="bg-white max-w-7xl mx-auto rounded-xl">
               <div className="flex flex-col gap-16 lg:gap-32 w-full">
                 <div className="flex flex-col gap-16 lg:gap-24 p-4 md:p-12  w-full lg:w-11/12 mx-auto">
-                  <div className="flex flex-col  justify-center gap-12 lg:gap-16">
-                    <h1 className="text-[60px] xl:text-[80px] leading-tight font-semibold text-center break-words text-light-green-gradient mb-10">
-                      Project Case Study
-                    </h1>
-                    <h1 className="font-bold text-3xl xl:text-[40px]  text-green-gradient"></h1>
-                    <p className="text-lg lg:text-xl"></p>
-                  </div>
-
                   <CaseStudyHeader
-                    title="Psychiatric Clinic and Hospital Management System"
-                    description=" We developed a comprehensive healthcare management system
-                      for a psychiatrist and therapist clinic, aimed at
-                      streamlining mental health service delivery. The platform
-                      enables efficient handling of patient records, appointment
-                      scheduling, clinical documentation, billing, and
-                      medication tracking. It supports multiple provider types
-                      including psychiatrists and therapists and offers detailed
-                      functionality for managing patient visits, clinical notes,
-                      prescriptions, allergies, and lab orders. With built-in
-                      compliance features, role-based access control, and
-                      optimized workflows for outpatient care and insurance
-                      verification, the system centralizes the entire behavioral
-                      health care process. Our team specifically contributed by
-                      building the <highlight>medications, allergies, visits, and lab orders modules</highlight>"
+                    title="E-Commerce Platform"
+                    description="We developed a robust, role-based e-commerce CMS platform designed to empower businesses in efficiently managing the backend operations of their online stores. The system allows users to oversee multiple storefronts, manage product catalogs, track inventory, and streamline daily administrative tasks. A comprehensive analytics dashboard offers real-time insights into key business metrics such as sales performance, order trends, and store activity. The platform supports multiple user types with a flexible role and permission structure, ensuring secure, controlled access to sensitive features. Additionally, an integrated activity log module promotes transparency and accountability by tracking system-wide actions."
                   />
                   <TechUsed techUsed={TECH_USED} />
                   <ListPoints
@@ -134,14 +114,16 @@ export default function PsychiatricClinicPage() {
                     challenges={PROJECT_CHALLENGES}
                   />
                 </div>
+                <Image
+                  src={ECommerceImage1}
+                  alt="e-commerce-image"
+                  className="object-contain"
+                />
                 <ProcessCard process={PROOCESS} />
                 <div className="flex flex-col gap-16 lg:gap-24 p-4 md:p-12  w-full lg:w-11/12 mx-auto">
                   <ListPoints title="Solutions" challenges={SOLUTIONS} />
                   <div className="bg-gray md:px-10 lg:px-14 xl:px-20 md:py-8 lg:py-12 xl:py-16">
-                    <Image
-                      src={PsychiatricClinicImage1}
-                      alt="psychiatric-image"
-                    />
+                    <Image src={ECommerceImage2} alt="e-commerce-image" />
                   </div>
                   <ListPoints
                     title="Results and  Impact"

@@ -56,7 +56,7 @@ export default function BlogSection() {
         </motion.h2>
 
         <motion.div
-          className="flex-1 overflow-hidden lg:flex lg:flex-row lg:overflow-x-auto lg:scroll-smooth lg:scrollbar-hide cursor-pointer grid gap-4 md:grid-cols-2 xl:gap-8 md:auto-rows-auto"
+          className="flex-1 overflow-hidden lg:flex lg:flex-row  lg:scroll-smooth lg:scrollbar-hide cursor-pointer grid gap-4 md:grid-cols-2 xl:gap-8 md:auto-rows-auto"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}

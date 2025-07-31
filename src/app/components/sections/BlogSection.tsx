@@ -60,7 +60,7 @@ export default function BlogSection() {
           <Image src={Arrow} alt="arrow" width={30} />
         </div>
         <motion.div
-          className="flex-1 lg:flex lg:flex-row lg:overflow-x-auto lg:scroll-smooth lg:scrollbar-hide cursor-pointer grid gap-4 md:grid-cols-2 xl:gap-8 md:auto-rows-auto"
+          className="flex-1 lg:flex overflow-hidden lg:flex-row lg:overflow-x-auto lg:scroll-smooth lg:scrollbar-hide cursor-pointer grid gap-4 md:grid-cols-2 xl:gap-8 md:auto-rows-auto"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}

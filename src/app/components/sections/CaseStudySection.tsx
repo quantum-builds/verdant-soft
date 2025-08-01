@@ -1,14 +1,14 @@
 "use client";
 
 import {
-  ClinicManagementBG,
-  DentalCareBg,
-  ECommerceBG,
-  ParkingAppBG,
-  PsychiatricClinicBG,
-  RealEstateBG,
-  ShopifyBg,
-  VPNExtensionBG,
+  ClinicManagement,
+  DentalCare,
+  ECommerce,
+  HospitalManagement,
+  ParkingApplication,
+  RealEstate,
+  ShopifySync,
+  VpnExtension,
 } from "@/assets";
 import { motion } from "framer-motion";
 import { StaticImageData } from "next/image";
@@ -24,42 +24,42 @@ const CASE_STUDIES: ICaseStudies[] = [
   {
     title: "Psychiatric Clinic and Hospital Management System",
     link: "/case-study/psychiatric-clinic",
-    image: PsychiatricClinicBG,
+    image: HospitalManagement,
   },
   {
     title: "E-commerce Platform",
     link: "/case-study/e-commerce",
-    image: ECommerceBG,
+    image: ECommerce,
   },
   {
     title: "Real Estate Platform",
     link: "/case-study/real-estate",
-    image: RealEstateBG,
+    image: RealEstate,
   },
   {
     title: "Parking Application",
     link: "/case-study/parking-app",
-    image: ParkingAppBG,
+    image: ParkingApplication,
   },
   {
     title: "VPN Extension & Subscription Management System",
     link: "/case-study/vpn-extension",
-    image: VPNExtensionBG,
+    image: VpnExtension,
   },
   {
     title: "Dental Care & Learning Management System",
     link: "/case-study/dental-care",
-    image: DentalCareBg,
+    image: DentalCare,
   },
   {
     title: "Shopify Sync Platform",
     link: "/case-study/shopify",
-    image: ShopifyBg,
+    image: ShopifySync,
   },
   {
     title: "Clinic Management System",
     link: "/case-study/clinic-management",
-    image: ClinicManagementBG,
+    image: ClinicManagement,
   },
 ];
 
@@ -79,7 +79,7 @@ export default function CaseStudySection() {
           <p className="font-semibold text-2xl">[02 Case Studies]</p>
           <div className="w-full flex justify-end">
             <motion.h2
-              className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-end break-words text-green-gradient"
+              className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-end break-words text-green-gradient"
               variants={slideFromRight}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
               initial="hidden"

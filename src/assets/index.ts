@@ -137,6 +137,7 @@ export { default as ShopifyImage1 } from "./shopify-image-1.png";
 export { default as ParkingAppBG } from "./parking-app-bg.png";
 export { default as ParkingAppImage1 } from "./parking-app-image-1.png";
 export { default as ParkingAppImage2 } from "./parking-app-image-2.png";
+
 export { default as ClinicManagementBG } from "./clinic-management-bg.png";
 export { default as ClinicManagementImage1 } from "./clinic-management-image-1.png";
 export { default as ClinicManagementImage2 } from "./clinic-management-image-2.png";

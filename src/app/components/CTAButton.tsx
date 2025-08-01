@@ -27,6 +27,8 @@ export default function CTAButton({ text }: CTAButtonProps) {
         className="relative w-50 h-12   z-[30] flex justify-center items-center border border-black font-medium cursor-pointer rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out hover:bg-green-gradient hover:border-none hover:text-white btn-3 gap-2"
         style={{ "--clr": "#16a34a" } as React.CSSProperties}
       >
+        <span>{text}</span>
+
         <span className="button__icon-wrapper2">
           <svg
             width="10"
@@ -53,7 +55,6 @@ export default function CTAButton({ text }: CTAButtonProps) {
             />
           </svg>
         </span>
-        <span>{text}</span>
       </button>
 
       {isOpen && (

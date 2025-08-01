@@ -130,9 +130,10 @@ export default function Navbar() {
           {/* Contact CTA */}
           <Link
             href="/contact-us"
-            className="hidden lg:flex bg-footer-black text-white lg:px-6 lg:py-2 xl:px-5 xl:py-3 rounded-lg items-center gap-2 transition-all duration-200 text-xl hover:bg-green-gradient btn-3"
+            className="hidden lg:flex bg-footer-black text-white lg:px-6 lg:py-2 xl:px-5 xl:py-3 rounded-lg items-center gap-3 transition-all duration-200 text-xl hover:bg-green-gradient btn-3"
             style={{ "--clr": "#16a34a" } as React.CSSProperties}
           >
+            <span>Get in Touch</span>
             <span className="button__icon-wrapper">
               <svg
                 width="10"
@@ -159,7 +160,6 @@ export default function Navbar() {
                 />
               </svg>
             </span>
-            <span>Get in Touch</span>
           </Link>
 
           {/* Mobile Menu Toggle */}

@@ -21,9 +21,9 @@ export default function HireUsForm() {
   return (
     <section className="min-h-[114vh] flex flex-col mb-28 overflow-hidden">
       <Navbar />
-      <div className="flex  flex-col md:flex-row items-start justify-between mt-24 md:mt-32 xl:mt-40  w-11/12 mx-auto gap-10">
-        <div className="flex-1 flex-col gap-3 md:gap-4 lg:gap-6 w-11/12 xl:w-3/4 2xl:w-3/5 mx-auto ">
-          <div className="flex flex-col gap-3 md:gap-4 lg:gap-6 w-11/12 md:w-full xl:w-11/12 4xl:w-9/12 5xl:w-1/2  mx-auto ">
+      <div className="flex  flex-col md:flex-row items-start justify-between mt-24 md:mt-32 xl:mt-40  w-11/12 xl:w-10/12 mx-auto gap-10">
+        <div className="flex-1 flex-col gap-3 md:gap-4 lg:gap-6 5xl:w-3/5 mx-auto">
+          <div className="flex flex-col gap-3 md:gap-4 lg:gap-6 w-11/12 md:w-full  5xl:w-1/2  mx-auto ">
             <p className="text-xl lg:text-2xl xl:text-3xl font-semibold">
               Team Outsourcing
             </p>

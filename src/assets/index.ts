@@ -56,6 +56,7 @@ export { default as MongoDbIcon } from "./mongoDB-icon.svg";
 export { default as AmazonAuroraIcon } from "./amazon-aurora-icon.svg";
 export { default as SqLiteIcon } from "./sq-lite-icon.svg";
 export { default as TypeScriptIcon } from "./typescript-icon.svg";
+export { default as PostgreSQLIcon } from "./postgre-sql-icon.svg";
 
 export { default as AWSIcon } from "./aws-icon.svg";
 export { default as AzureIcon } from "./azure-icon.svg";

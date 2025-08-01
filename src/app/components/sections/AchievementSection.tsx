@@ -46,7 +46,7 @@ export default function AchievementSection() {
           Pioneering Trust and Innovation
         </p>
         <motion.p
-          className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl 4xl:text-6xl font-semibold text-center"
+          className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl 4xl:text-6xl font-semibold text-center text-green-gradient"
           variants={slideFromLeft}
           transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
           initial="hidden"

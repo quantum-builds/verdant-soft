@@ -148,7 +148,7 @@ export default function TestimonialsSection() {
         <p className="font-semibold text-2xl">[04 Testimonials]</p>
         <div className="w-full flex justify-end">
           <motion.h2
-            className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold text-end break-words"
+            className="w-11/12 md:w-2/3 lg:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold text-end break-words text-green-gradient"
             variants={slideFromRight}
             transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
             initial="hidden"

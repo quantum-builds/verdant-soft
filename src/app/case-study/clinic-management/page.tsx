@@ -2,9 +2,11 @@ import {
   ClinicManagementBG,
   ClinicManagementImage1,
   ClinicManagementImage2,
+  ExpressIcon,
   FourNumber,
   NodeIcon,
   OneNumber,
+  PostgreSQLIcon,
   ReactIcon,
   ThreeNumber,
   TwoNumber,
@@ -25,6 +27,14 @@ const TECH_USED = [
   {
     text: "Node Js",
     icon: NodeIcon,
+  },
+  {
+    text: "Nest Js",
+    icon: ExpressIcon,
+  },
+  {
+    text: "Postgre SQL",
+    icon: PostgreSQLIcon,
   },
 ];
 
@@ -95,7 +105,7 @@ export default function ClinicManagement() {
         <div className=" z-10 h-full flex flex-col">
           <Navbar />
 
-          <div className="relative z-10 w-full px-4 mt-[50vh] mb-20">
+          <div className="relative z-10 w-full px-4 mt-[60vh] mb-20">
             <div className="bg-white max-w-7xl mx-auto rounded-xl">
               <div className="flex flex-col gap-16 lg:gap-32 w-full">
                 <div className="flex flex-col gap-16 lg:gap-24 p-4 md:p-12  w-full lg:w-11/12 mx-auto">

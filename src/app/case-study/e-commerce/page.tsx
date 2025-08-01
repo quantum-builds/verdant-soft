@@ -3,12 +3,13 @@ import {
   ECommerceImage1,
   ECommerceImage2,
   FourNumber,
+  NestIcon,
   NextIcon,
   NodeIcon,
   OneNumber,
+  PostgreSQLIcon,
   ThreeNumber,
   TwoNumber,
-  TypeScriptIcon,
 } from "@/assets";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
@@ -28,8 +29,12 @@ const TECH_USED = [
     icon: NodeIcon,
   },
   {
-    text: "Typescript",
-    icon: TypeScriptIcon,
+    text: "Nest Js",
+    icon: NestIcon,
+  },
+  {
+    text: "Postgre SQL",
+    icon: PostgreSQLIcon,
   },
 ];
 
@@ -100,7 +105,7 @@ export default function ECommercePage() {
         <div className=" z-10 h-full flex flex-col">
           <Navbar />
 
-          <div className="relative z-10 w-full px-4 mt-[50vh] mb-20">
+          <div className="relative z-10 w-full px-4 mt-[60vh] mb-20">
             <div className="bg-white max-w-7xl mx-auto rounded-xl">
               <div className="flex flex-col gap-16 lg:gap-32 w-full">
                 <div className="flex flex-col gap-16 lg:gap-24 p-4 md:p-12  w-full lg:w-11/12 mx-auto">

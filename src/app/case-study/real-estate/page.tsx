@@ -1,8 +1,9 @@
 import {
+  DjangoIcon,
   FourNumber,
   MongoDbIcon,
-  NodeIcon,
   OneNumber,
+  PythonIcon,
   ReactIcon,
   RealEstateBG,
   RealEstateImage1,
@@ -23,8 +24,12 @@ const TECH_USED = [
     icon: ReactIcon,
   },
   {
-    text: "Node Js",
-    icon: NodeIcon,
+    text: "Python",
+    icon: PythonIcon,
+  },
+  {
+    text: "Django",
+    icon: DjangoIcon,
   },
   {
     text: "MongoDB",
@@ -99,7 +104,7 @@ export default function RealEstatePage() {
         <div className=" z-10 h-full flex flex-col">
           <Navbar />
 
-          <div className="relative z-10 w-full px-4 mt-[50vh] mb-20">
+          <div className="relative z-10 w-full px-4 mt-[60vh] mb-20">
             <div className="bg-white max-w-7xl mx-auto rounded-xl">
               <div className="flex flex-col gap-16 lg:gap-32 w-full">
                 <div className="flex flex-col gap-16 lg:gap-24 p-4 md:p-12  w-full lg:w-11/12 mx-auto">

@@ -9,7 +9,8 @@
 @theme {
   --color-gray: #f9f9f9;
   --font-inter: "Inter";
-  --color-black: #1b1b1b;
+  --color-black: #5e5e5e;
+  --color-footer-black: #1b1b1b;
   --color-white: #ffffff;
 
   --breakpoint-3xl: 101.875rem;

@@ -48,7 +48,7 @@ export default function HeroSection() {
           />
         </div>
         <motion.p
-          className="text-3xl sm:text-4xl md:text-5xl 4xl:text-6xl font-bold leading-tight font-inter w-11/12 sm:w-3/5  md:w-4/5 lg:w-3/5 2xl:w-[45%] mx-auto text-center"
+          className="text-3xl sm:text-4xl md:text-5xl 4xl:text-6xl font-bold leading-tight font-inter w-11/12 sm:w-3/5  md:w-4/5 lg:w-3/5 2xl:w-[45%] mx-auto text-center text-green-gradient"
           initial="hidden"
           whileInView="visible"
           variants={slideFromLeft}

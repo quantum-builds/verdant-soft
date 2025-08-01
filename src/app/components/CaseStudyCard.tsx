@@ -13,13 +13,12 @@ export default function CaseStudyCard({ title, link, image }: ICaseStudies) {
       <Image
         src={image}
         alt="feature-image"
-        className={`object-cover filter grayscale-100 group-hover:grayscale-50 transition-all duration-500 ease-in-out 
+        className={`relative w-[280px] h-[240px] sm:w-[300px] sm:h-[260px] md:w-[320px] md:h-[280px] lg:w-[170px] lg:h-[150px] xl:w-[200px] xl:h-[180px] 2xl:w-[230px] 2xl:h-[190px] 3xl:w-[240px] 3xl:h-[220px] 4xl:w-[260px] 4xl:h-[220px] 5xl:w-[320px] 5xl:h-[280px] filter grayscale-100 group-hover:grayscale-50 transition-all duration-500 ease-in-out 
           ${
             isAlwaysVisible
               ? "brightness-70"
               : "brightness-50 group-hover:brightness-70"
           }`}
-        fill
         priority
       />
       <div className="absolute inset-0 z-10 p-4 lg:p-2 xl:p-3 2xl:p-4 4xl:p-4 flex flex-col justify-between group">

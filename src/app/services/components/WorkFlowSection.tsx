@@ -36,7 +36,7 @@ export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
       <p className="font-semibold text-2xl">[03 Workflow]</p>
       <div className="flex flex-col gap-20 flex-1">
         <motion.p
-          className="w-11/12 md:w-3/4 lg:w-2/3 xl:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold"
+          className="w-11/12 md:w-3/4 lg:w-2/3 xl:w-3/5 2xl:w-8/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-green-gradient"
           initial="hidden"
           whileInView="visible"
           variants={slideFromLeft}

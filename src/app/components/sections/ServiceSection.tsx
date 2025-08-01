@@ -117,7 +117,7 @@ export default function ServiceSection() {
                 {!isMobile && (
                   <p
                     className={`flex-1 text-3xl md:text-[40px] font-semibold z-10 transition-colors duration-300 ${
-                      isActive ? "text-green-gradient" : "text-[#5e5e5e]"
+                      isActive ? "text-green-gradient" : "text-black"
                     }`}
                   >
                     {service.title}
@@ -131,7 +131,7 @@ export default function ServiceSection() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="flex-1 text-3xl font-semibold z-10 text-[#5e5e5e]"
+                    className="flex-1 text-3xl font-semibold z-10 text-black"
                   >
                     {service.title}
                   </motion.p>
@@ -139,7 +139,7 @@ export default function ServiceSection() {
                 {!isMobile && (
                   <div className="flex-1 z-0  overflow-hidden  min-h-[40px]">
                     <motion.p
-                      className="lg:text-[12px] xl:text-sm text-[#707070] text-left"
+                      className="lg:text-[12px] xl:text-sm text-black text-left"
                       initial={false}
                       animate={{
                         opacity: isActive ? 1 : 0,

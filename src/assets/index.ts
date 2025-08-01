@@ -34,7 +34,7 @@ export { default as ClinicManagement } from "./clinic-management.jpg";
 export { default as DentalCare } from "./dental-care.png";
 export { default as ECommerce } from "./e-commerce.png";
 export { default as ParkingApplication } from "./parking-application.png";
-export { default as RealEstate } from "./real-estate.png";
+export { default as RealEstate } from "./real-estate.jpg";
 export { default as ShopifySync } from "./shopify-sync.png";
 export { default as VpnExtension } from "./vpn-extension.jpg";
 export { default as HospitalManagement } from "./hospital-management.jpg";

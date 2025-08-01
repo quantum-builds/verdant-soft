@@ -27,7 +27,7 @@ export default function HeroSection() {
     },
   };
   return (
-    <div className="relative h-[112vh] flex flex-col space-y-6 overflow-hidden bg-white mb-28">
+    <div className="relative h-[126vh] flex flex-col space-y-6 overflow-hidden bg-white mb-28">
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#63aff5] rounded-full blur-[300px] z-0" />
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#85f3f1] rounded-full blur-[300px] z-0" />
 
@@ -72,7 +72,7 @@ export default function HeroSection() {
           customer satisfaction.
         </motion.p>
         <motion.div
-          className="flex flex-col sm:flex-row gap-8 justify-between "
+          className="flex flex-col sm:flex-row gap-8 justify-between items-center sm:items-start "
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}

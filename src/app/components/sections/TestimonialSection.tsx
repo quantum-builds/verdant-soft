@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Autoplay, Mousewheel, Pagination } from "swiper/modules";
 import { Star } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { slideFromRight } from "@/uitls/sliderAnimation";
 
@@ -79,7 +79,7 @@ const testimonials: Testimonial[] = [
     rating: 4.5,
     score: "4.5/5",
     testimonial:
-      "It was a pleasure working with Verdant Soft — very professional and delivered the work as expected. Their response time was also amazing. Will definitely work with them again in the near future.",
+      "It was a pleasure working with Verdant Soft very professional and delivered the work as expected. Their response time was also amazing. Will definitely work with them again in the near future.",
     image: TextTestimonial1,
     type: "text",
   },
@@ -267,23 +267,47 @@ function VideoCard({ testimonial }: { testimonial: Testimonial }) {
 }
 
 function TextCard({ testimonial }: { testimonial: Testimonial }) {
+  const textRef = useRef<HTMLParagraphElement | null>(null);
+  const measureRef = useRef<HTMLParagraphElement | null>(null);
+  const [displayText, setDisplayText] = useState(testimonial.testimonial);
+
+  useEffect(() => {
+    const originalText = testimonial.testimonial;
+    const sentences = originalText
+      .split(".")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const el = textRef.current;
+    const measurer = measureRef.current;
+
+    if (!el || !measurer) return;
+
+    const maxHeight = el.clientHeight;
+
+    let fittedText = "";
+    for (let i = 0; i < sentences.length; i++) {
+      const testText = sentences.slice(0, i + 1).join(". ") + ".";
+      measurer.textContent = testText;
+
+      if (measurer.scrollHeight <= maxHeight) {
+        fittedText = testText;
+      } else {
+        break;
+      }
+    }
+
+    setDisplayText(fittedText || sentences[0] + ".");
+  }, [testimonial.testimonial]);
+
   return (
-    <div className="flex flex-col gap-6  w-full h-full bg-[#F9F9F9D9] rounded-2xl px-3 py-8 md:px-6 md:py-10">
-      <div className="flex flex-col md:flex-row  lg:items-center justify-between gap-3">
+    <div className="relative flex flex-col gap-6 w-full h-full bg-[#F9F9F9D9] rounded-2xl px-3 py-8 md:px-6 md:py-10">
+      <div className="flex flex-col md:flex-row lg:items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          {/* <Image
-            src={testimonial.image}
-            alt={testimonial.name}
-            width={80}
-            height={100}
-            className="object-cover rounded-lg"
-          />
-           */}
           <div className="w-full h-12">
-            <h4 className=" font-semibold text-xl  md:text-2xl">
+            <h4 className="font-semibold text-xl md:text-2xl">
               {testimonial.name}
             </h4>
-            <p className="text-[#707070] text-lg md:text-xl ">
+            <p className="text-[#707070] text-lg md:text-xl">
               {testimonial.title}
             </p>
           </div>
@@ -295,9 +319,27 @@ function TextCard({ testimonial }: { testimonial: Testimonial }) {
           </span>
         </div>
       </div>
-      <p className=" text-black text-md md:text-xl md:font-medium leading-tight tracking-normal line-clamp-4 md:line-clamp-5  xl:line-clamp-6 ">
-        {testimonial.testimonial}
+
+      {/* visible text */}
+      <p
+        ref={textRef}
+        className="text-black text-md md:text-xl md:font-medium leading-tight tracking-normal line-clamp-4 md:line-clamp-5 xl:line-clamp-6"
+      >
+        {displayText}
       </p>
+
+      {/* hidden text measurer */}
+      <p
+        ref={measureRef}
+        className="invisible absolute z-[-9999] w-full text-md md:text-xl md:font-medium leading-tight tracking-normal whitespace-pre-wrap"
+        style={{
+          visibility: "hidden",
+          pointerEvents: "none",
+          position: "absolute",
+          top: 0,
+          left: 0,
+        }}
+      />
     </div>
   );
 }

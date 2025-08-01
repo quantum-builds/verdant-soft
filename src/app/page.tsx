@@ -4,8 +4,8 @@ import FooterSection from "./components/sections/FooterSection";
 import BlogSection from "./components/sections/BlogSection";
 import FAQSection from "./components/sections/FAQSection";
 import TestimonialsSection from "./components/sections/TestimonialSection";
-import FeaturesSection from "./components/sections/FeaturesSection";
 import AchievementSection from "./components/sections/AchievementSection";
+import CaseStudySection from "./components/sections/CaseStudySection";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <HeroSection />
       <AchievementSection />
       <ServiceSection />
-      <FeaturesSection />
+      <CaseStudySection />
       <TestimonialsSection />
       <FAQSection />
       <BlogSection />

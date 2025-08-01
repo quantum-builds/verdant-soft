@@ -22,7 +22,7 @@ export default function Navbar() {
   ];
 
   const navItems: (NavOption & { children?: NavOption[] })[] = [
-    { label: "Features", hash: "features" },
+    { label: "Case Studies", hash: "case-studies" },
     { label: "Services", children: servicesList },
     { label: "FAQs", hash: "faqs" },
     { label: "Blogs", hash: "blogs" },
@@ -68,7 +68,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray backdrop-blur-sm font-inter">
-      <div className="max-w-10/12 mx-auto">
+      <div className="w-11/12 xl:w-10/12 mx-auto">
         {/* Top bar */}
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link className="flex items-center gap-2" href={"/"}>

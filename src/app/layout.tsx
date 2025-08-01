@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,11 +8,19 @@ const inter = Inter({
   weight: "400",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Verdant Soft",
   description:
     "Verdant Soft is a technology solutions company empowering businesses through innovative software, digital transformation, and scalable web and mobile applications.",
-  icons: { icon: "/verdant-white-logo.svg" },
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default async function RootLayout({
@@ -27,14 +35,29 @@ export default async function RootLayout({
           href="https://assets.calendly.com/assets/external/widget.css"
           rel="stylesheet"
         />
-
-        <script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          type="text/javascript"
-          async
-        ></script>
       </head>
+
       <body className={`${inter.variable} antialiased inter zoom-out`}>
+        {/* Calendly script */}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
+
+        {/* Google Analytics script */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F88C2VW0VY"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-F88C2VW0VY');
+          `}
+        </Script>
+
         {children}
       </body>
     </html>

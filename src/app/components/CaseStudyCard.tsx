@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import { IFeatures } from "./sections/FeaturesSection";
 import { useIsMobile } from "@/hook/useIsMobile";
 import Link from "next/link";
+import { ICaseStudies } from "./sections/CaseStudySection";
 
-export default function FeatureCard({ title, link, image }: IFeatures) {
+export default function CaseStudyCard({ title, link, image }: ICaseStudies) {
   const isMobile = useIsMobile();
   const isAlwaysVisible = isMobile === true;
 
@@ -24,9 +24,6 @@ export default function FeatureCard({ title, link, image }: IFeatures) {
       />
       <div className="absolute inset-0 z-10 p-4 lg:p-2 xl:p-3 2xl:p-4 4xl:p-4 flex flex-col justify-between group">
         <div>
-          <p className="lg:text-lg 4xl:text-2xl font-semibold lg:mb-1">
-            Case Study
-          </p>
           <p className="text-md 4xl:text-xl font-semibold line-clamp-2 mb-3">
             {title}
           </p>

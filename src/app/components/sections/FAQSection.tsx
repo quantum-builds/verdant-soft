@@ -2,6 +2,7 @@
 
 import { useIsMobile } from "@/hook/useIsMobile";
 import { AnimatePresence, motion } from "framer-motion";
+import useMeasure from "react-use-measure";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
@@ -11,6 +12,10 @@ interface IQuestions {
 }
 
 export default function FAQSection() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const isMobile = useIsMobile();
+  const [ref, { height }] = useMeasure();
+
   const QUESTIONS: IQuestions[] = [
     {
       question: "How long does a typical project take?",
@@ -38,9 +43,6 @@ export default function FAQSection() {
         "If you need changes after a project ends, contact us to discuss possible revisions or support options. Additional fees or a new agreement may apply.",
     },
   ];
-
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const isMobile = useIsMobile();
 
   const staggerContainer = {
     hidden: {},
@@ -90,13 +92,13 @@ export default function FAQSection() {
           </motion.p>
 
           <motion.div
-            className="w-full md:w-3/5 flex flex-col justify-between gap-6"
+            className="w-full md:w-3/5 flex flex-col justify-between gap-3"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            {QUESTIONS.map((question, index) => (
+            {/* {QUESTIONS.map((question, index) => (
               <motion.div
                 key={index}
                 variants={itemAnimation}
@@ -132,29 +134,88 @@ export default function FAQSection() {
                 <AnimatePresence>
                   {activeIndex === index && (
                     <motion.div
-                      initial={{ opacity: 0, height: 0, y: 20 }}
-                      animate={{ opacity: 1, height: "auto", y: 0 }}
-                      exit={{ opacity: 0, height: 0, y: 20 }}
+                      initial={{ height: 0 }}
+                      animate={{ height: "auto" }}
+                      exit={{ height: 0 }}
                       transition={{
-                        duration: 0.4,
-                        ease: [0.1, 0.62, 0.23, 0.98],
+                        duration: 0.3,
+                        ease: [0.4, 0, 0.2, 1],
                       }}
-                      className="overflow-hidden"
+                      style={{ overflow: "hidden" }}
                     >
-                      <motion.div
-                        initial={{ y: -5, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -5, opacity: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                        className="py-2 text-sm sm:text-base text-gray-600 leading-relaxed"
-                      >
-                        {question.answer}
-                      </motion.div>
+                      <div className="pt-3">
+                        <motion.p
+                          initial={{ opacity: 0, y: 5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 5 }}
+                          transition={{ duration: 0.3 }}
+                          className="text-sm sm:text-base text-gray-600 leading-relaxed"
+                        >
+                          {question.answer}
+                        </motion.p>
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </motion.div>
-            ))}
+            ))} */}
+            {QUESTIONS.map((question, index) => {
+              const isOpen = activeIndex === index;
+
+              return (
+                <motion.div
+                  key={index}
+                  variants={itemAnimation}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="group bg-[#F9F9F9] rounded-xl p-10 cursor-pointer transition-colors duration-300 hover:bg-[#F2F2F2]"
+                  onMouseEnter={() => {
+                    if (!isMobile) setActiveIndex(index);
+                  }}
+                  onMouseLeave={() => {
+                    if (!isMobile) setActiveIndex(null);
+                  }}
+                  onClick={() => {
+                    if (isMobile) handleToggle(index);
+                  }}
+                >
+                  <div className="flex justify-between items-center">
+                    <p
+                      className={`text-xl md:text-2xl font-semibold transition-colors duration-300 ${
+                        isOpen ? "text-blue" : "text-black"
+                      }`}
+                    >
+                      {question.question}
+                    </p>
+                    <motion.div
+                      className="transition-transform duration-300"
+                      animate={{ rotate: isOpen ? 45 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Plus className="text-green-gradient h-5 w-5 flex-shrink-0" />
+                    </motion.div>
+                  </div>
+
+                  {/* Collapsible Answer */}
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0 }}
+                        animate={{ height }}
+                        exit={{ height: 0 }}
+                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div ref={ref}>
+                          <p className="pt-4 text-sm sm:text-base text-gray-600 leading-relaxed">
+                            {question.answer}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </div>

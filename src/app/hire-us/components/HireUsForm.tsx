@@ -19,7 +19,7 @@ const INFO = [
 ];
 export default function HireUsForm() {
   return (
-    <section className="min-h-[110vh] flex flex-col mb-28 overflow-hidden">
+    <section className="min-h-[114vh] flex flex-col mb-28 overflow-hidden">
       <Navbar />
       <div className="flex  flex-col md:flex-row items-start justify-between mt-24 md:mt-32 xl:mt-40  w-11/12 mx-auto gap-10">
         <div className="flex-1 flex-col gap-3 md:gap-4 lg:gap-6 w-11/12 xl:w-3/4 2xl:w-3/5 mx-auto ">
@@ -46,7 +46,7 @@ export default function HireUsForm() {
             />
           </div>
         </div>
-        <div className="flex-1 flex flex-col justify-start h-full gap-12 ">
+        <div className="flex-1 flex flex-col justify-start h-full gap-8 ">
           <p className="font-medium text-2xl lg:text-3xl xl:text-[40px] leading-tight max-w-3xl">
             You can reach us by phone or mail, or you can just drop by the
             office.

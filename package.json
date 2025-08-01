@@ -11,20 +11,21 @@
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
     "@hookform/resolvers": "^5.1.1",
+    "@sendgrid/mail": "^8.1.5",
     "framer-motion": "^12.20.5",
     "lucide-react": "^0.511.0",
     "next": "15.3.4",
     "next-intl": "^4.1.0",
     "postcss": "^8.5.6",
     "react": "^19.0.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
-    "@sendgrid/mail": "^8.1.5",
     "react-hook-form": "^7.60.0",
     "react-hot-toast": "^2.5.2",
-    "swiper": "^11.2.10",
-    "zod": "^3.25.76",
     "react-intersection-observer": "^9.16.0",
-    "react-countup": "^6.5.3"
+    "react-use-measure": "^2.1.7",
+    "swiper": "^11.2.10",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

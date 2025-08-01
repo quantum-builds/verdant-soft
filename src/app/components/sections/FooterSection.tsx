@@ -24,8 +24,8 @@ export default function FooterSection() {
 
   const NAVIGATION_LINKS: NavOption[] = [
     {
-      label: "Features",
-      hash: "features",
+      label: "Case Studies",
+      hash: "case-studies",
     },
     {
       label: "Services",

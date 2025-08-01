@@ -12,14 +12,14 @@ export const metadata = {
   title: "Verdant Soft",
   description:
     "Verdant Soft is a technology solutions company empowering businesses through innovative software, digital transformation, and scalable web and mobile applications.",
-  manifest: "/manifest.webmanifest",
+  // manifest: "/manifest.webmanifest",
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      // { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      // { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    // apple: "/apple-touch-icon.png",
   },
 };
 
@@ -31,20 +31,6 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link
           href="https://assets.calendly.com/assets/external/widget.css"
           rel="stylesheet"

@@ -80,7 +80,7 @@ export default function EmailForm() {
             nameRef.current = e;
           }}
           onKeyDown={(e) => handleKeyDown(e, "name")}
-          className="w-full bg-[#F4F4F5]  text-lg lg:text-xl font-medium px-3 py-6 xl:px-4 xl:py-7 focus:outline-none focus:ring-0 focus:border-transparent rounded-lg max-w-5xl placeholder:text-md lg:placeholder:text-lg"
+          className="w-full bg-[#F4F4F5]  text-lg lg:text-xl font-medium px-3 py-6 xl:px-4 xl:py-9 focus:outline-none focus:ring-0 focus:border-transparent rounded-lg max-w-5xl placeholder:text-md lg:placeholder:text-lg"
         />
         {errors.name && (
           <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
@@ -98,7 +98,7 @@ export default function EmailForm() {
             emailRef.current = e;
           }}
           onKeyDown={(e) => handleKeyDown(e, "email")}
-          className="w-full bg-[#F4F4F5] text-lg lg:text-xl font-medium px-3 py-6 xl:px-4 xl:py-7  max-w-5xl focus:outline-none focus:ring-0 focus:border-transparent rounded-lg placeholder:text-md lg:placeholder:text-lg"
+          className="w-full bg-[#F4F4F5] text-lg lg:text-xl font-medium px-3 py-6 xl:px-4 xl:py-9  max-w-5xl focus:outline-none focus:ring-0 focus:border-transparent rounded-lg placeholder:text-md lg:placeholder:text-lg"
         />
         {errors.email && (
           <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -115,7 +115,7 @@ export default function EmailForm() {
             messageRef.current = e;
           }}
           onKeyDown={(e) => handleKeyDown(e, "message")}
-          className="w-full bg-[#F4F4F5] text-lg lg:text-xl font-medium px-3 py-6 xl:px-4 xl:py-6 rounded-lg focus:outline-none focus:ring-0 focus:border-transparent  max-w-5xl placeholder:text-md lg:placeholder:text-lg"
+          className="w-full bg-[#F4F4F5] text-lg lg:text-xl font-medium px-3 py-6 xl:px-4 xl:py-8 rounded-lg focus:outline-none focus:ring-0 focus:border-transparent  max-w-5xl placeholder:text-md lg:placeholder:text-lg"
           rows={4}
         ></textarea>
         {errors.message && (
@@ -125,7 +125,7 @@ export default function EmailForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="relative w-full bg-footer-black text-white px-6 py-3 xl:px-7 xl:py-4 font-semibold rounded-lg items-center transition-all duration-200 text-xl hover:bg-green-gradient max-w-5xl disabled:opacity-60 disabled:cursor-not-allowed group flex justify-center gap-4 btn-3"
+        className="relative w-full bg-footer-black text-white px-6 py-3 xl:px-7 xl:py-5 font-semibold rounded-lg items-center transition-all duration-200 text-xl hover:bg-green-gradient max-w-5xl disabled:opacity-60 disabled:cursor-not-allowed group flex justify-center gap-4 btn-3"
         style={{ "--clr": "#16a34a" } as React.CSSProperties}
       >
         {!isSubmitting && (

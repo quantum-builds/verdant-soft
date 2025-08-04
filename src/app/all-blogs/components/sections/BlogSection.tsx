@@ -1,6 +1,6 @@
 "use client";
 import Navbar from "@/app/components/Navbar";
-import { Blog1, Blog2, Blog3 } from "@/assets";
+import { CustomSoftwareBG, CloudOptimizationBG, DesignToDevBG } from "@/assets";
 import { slideFromBottom } from "@/uitls/sliderAnimation";
 import { motion } from "framer-motion";
 import { StaticImageData } from "next/image";
@@ -18,17 +18,17 @@ export default function BlogSection() {
   const BLOGS: IBlog[] = [
     {
       title: "Why Cloud Optimization Matters",
-      imageUrl: Blog1,
+      imageUrl: CloudOptimizationBG,
       link: "/blogs/cloud-optimization",
     },
     {
       title: "Why You Should Invest in Custom Software Development",
-      imageUrl: Blog2,
+      imageUrl: CustomSoftwareBG,
       link: "/blogs/custom-software",
     },
     {
       title: "⁠How Our Team Builds Digital Products: From Design to Deployment",
-      imageUrl: Blog3,
+      imageUrl: DesignToDevBG,
       link: "/blogs/design-to-deployment",
     },
   ];
@@ -72,7 +72,7 @@ export default function BlogSection() {
               <Image
                 src={blog.imageUrl}
                 alt={`blog-${index}`}
-                className="rounded-2xl h-[270px] lg:h-[250px] xl:h-[270px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
+                className="w-full rounded-2xl h-[270px] lg:h-[250px] xl:h-[270px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
               />
               <div className="w-11/12 mx-auto">
                 <p className="text-xl font-semibold text-start  mb-2">

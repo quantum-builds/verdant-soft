@@ -185,22 +185,22 @@ export default function BlogSection() {
         </div>
 
         <div className="flex flex-col  justify-between gap-10 lg:gap-20 w-full">
-          <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-30 3xl:gap-40 w-full">
-            <div className="flex-1 flex flex-col gap-10 w-full">
-              <h2 className="max-w-3xl text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
-                Thoughts
-              </h2>
+          <div className="flex-1 flex flex-col gap-10 w-full">
+            <h2 className="max-w-3xl text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
+              Thoughts
+            </h2>
+            <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-30 3xl:gap-40 w-full">
               <p className="texl-lg xl:text-xl max-w-3xl">
                 Building a digital product isn’t just about writing code it’s
                 about solving problems, improving lives, and supporting business
                 growth.
               </p>
+              <p className="flex-1 texl-lg xl:text-xl lg:text-end max-w-4xl">
+                At Verdant Soft, we bring together designers, developers, and
+                DevOps engineers to deliver end-to-end solutions that not only
+                work but work beautifully.
+              </p>
             </div>
-            <p className="flex-1 texl-lg xl:text-xl lg:text-end ">
-              At Verdant Soft, we bring together designers, developers, and
-              DevOps engineers to deliver end-to-end solutions that not only
-              work but work beautifully.
-            </p>
           </div>
           <div className="flex-1">
             <div className="w-full h-full min-h-[100px] md:min-h-[200px] lg:min-h-[300px] xl:min-h-[400px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">

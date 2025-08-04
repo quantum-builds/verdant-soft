@@ -13,9 +13,7 @@ export { default as ImageTestimonial3 } from "./image-testimonial-3.png";
 export { default as TextTestimonial1 } from "./text-testimonial-1.png";
 export { default as TextTestimonial2 } from "./text-testimonial-2.png";
 export { default as WorkFlowImage } from "./work-flow.svg";
-export { default as Blog1 } from "./blog-1.png";
-export { default as Blog2 } from "./blog-2.png";
-export { default as Blog3 } from "./blog-3.png";
+
 export { default as Arrow } from "./arrow.svg";
 export { default as DottedBG } from "./dotted-bg.svg";
 export { default as PhoneImage } from "./phone.png";
@@ -38,6 +36,10 @@ export { default as RealEstate } from "./real-estate.jpg";
 export { default as ShopifySync } from "./shopify-sync.png";
 export { default as VpnExtension } from "./vpn-extension.jpg";
 export { default as HospitalManagement } from "./hospital-management.jpg";
+
+export { default as CustomSoftwareBG } from "./custom-software-bg.png";
+export { default as CloudOptimizationBG } from "./cloud-optimization-bg.png";
+export { default as DesignToDevBG } from "./design-to-dev-bg.png";
 
 export { default as JsIcon } from "./js-icon.svg";
 export { default as KotlinIcon } from "./kotlin-icon.svg";

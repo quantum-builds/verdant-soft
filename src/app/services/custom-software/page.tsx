@@ -112,7 +112,8 @@ export default function CustomSoftwarePage() {
         </div>
         <div className="max-w-11/12 lg:max-w-3/5 xl:max-w-1/2  mt-24 md:mt-32 xl:mt-40">
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-6 text-footer-black inline-block leading-tight">
-            <span className="text-green-gradient">Web</span> Development
+            <span className="text-green-gradient">Custom Software</span>{" "}
+            Development
           </h1>
           <p>
             At Verdant Soft, we are passionate about delivering innovative and
@@ -144,7 +145,7 @@ export default function CustomSoftwarePage() {
       </section>
       <WorkFlowSection steps={STEPS} />
       <TechnologiesSection
-        title="<highlight>Web </highlight>Developement Technologies"
+        title="<highlight>Custom Software </highlight>Developement Technologies"
         useCases={USE_CASES}
       />
       <FAQSection />

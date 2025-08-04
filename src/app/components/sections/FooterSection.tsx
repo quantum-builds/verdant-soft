@@ -152,7 +152,7 @@ export default function FooterSection() {
             {NAVIGATION_LINKS.map((naviagtionLink, index) => (
               <button
                 key={index}
-                className="text-white text-lg md:text-xl text-start  cursor-pointer"
+                className="text-white text-lg md:text-xl text-start  cursor-pointer hover:text-green-gradient"
                 onClick={() => handleNavigation(naviagtionLink)}
               >
                 {naviagtionLink.label}

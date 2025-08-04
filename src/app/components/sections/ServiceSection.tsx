@@ -17,26 +17,26 @@ export default function ServiceSection() {
       url: "custom-software",
       title: "Custom Software Development",
       description:
-        "We are creating tailored software solutions designed to meet your unique business needs, ensuring flexibility, scalability, and efficiency. Our team focuses on delivering custom applications that enhance your workflows and drive growth.",
+        "We create customized software solutions tailored to your business needs, enhancing flexibility, scalability, and efficiency to drive growth.",
     },
     {
       url: "cloud-devops",
       title: "Cloud & DevOps",
       description:
-        "We specialize in delivering seamless DevOps and cloud solutions to optimize your application's performance and scalability. Our expertise ensures reliable deployment, automation, and cloud management tailored to meet your business needs.",
+        "We provide seamless DevOps and cloud solutions to optimize your application's performance, scalability, and reliability through tailored deployment, automation, and management.",
     },
     {
       url: "it-team-outsourcing",
       title: "IT Team Outsourcing",
       description:
-        "Our software house specializes in providing dedicated IT team outsourcing solutions tailored to your business needs. Empower your projects with skilled, reliable professionals committed to delivering high-quality technology services.",
+        "Our software house offers dedicated IT team outsourcing solutions, providing skilled professionals to empower your projects with high-quality technology services.",
     },
 
     {
       url: "ui-ux-design",
       title: "UI/UX Design",
       description:
-        "At our software house, we specialize in creating intuitive and visually stunning UI/UX designs that enhance user engagement. Our expert team crafts customized solutions to ensure a seamless and memorable digital experience for your users.",
+        "At our software house, we craft intuitive, visually stunning UI/UX designs that enhance user engagement and deliver seamless digital experiences.",
     },
   ];
 
@@ -140,7 +140,7 @@ export default function ServiceSection() {
                 {!isMobile && (
                   <div className="flex-1 z-0  overflow-hidden  min-h-[40px]">
                     <motion.p
-                      className="lg:text-[12px] xl:text-sm text-black text-left"
+                      className="lg:text-[12px] xl:text-xl text-black text-left"
                       initial={false}
                       animate={{
                         opacity: isActive ? 1 : 0,

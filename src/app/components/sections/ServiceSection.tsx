@@ -17,7 +17,7 @@ export default function ServiceSection() {
       url: "custom-software",
       title: "Custom Software Development",
       description:
-        "We specialize in delivering innovative and custom web development solutions tailored to your business needs. Our expert team ensures seamless, responsive, and high-quality websites that help you stand out online.",
+        "We are creating tailored software solutions designed to meet your unique business needs, ensuring flexibility, scalability, and efficiency. Our team focuses on delivering custom applications that enhance your workflows and drive growth.",
     },
     {
       url: "cloud-devops",

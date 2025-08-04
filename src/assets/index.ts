@@ -101,29 +101,25 @@ export { default as IllustratorIcon } from "./illustrator-icon.svg";
 export { default as AfterAffectsIcon } from "./after-affects-icon.svg";
 export { default as MoqUpsIcon } from "./moq-ups-icon.svg";
 
-export { default as StrongBrandImg1 } from "./strong-brand-img1.png";
-export { default as StrongBrandImg2 } from "./strong-brand-img2.png";
-export { default as StrongBrandImg3 } from "./strong-brand-img3.png";
-export { default as StrongBrandImg4 } from "./strong-brand-img4.png";
-export { default as StrongBrandImg5 } from "./strong-brand-img5.png";
-export { default as StrongBrandImg6 } from "./strong-brand-img6.png";
-export { default as StrongBrandImg7 } from "./strong-brand-img7.png";
-export { default as StrongBrandImg8 } from "./strong-brand-img9.png";
+export { default as CloudOptimizationImage1 } from "./cloud-optimization-image-1.png";
+export { default as CloudOptimizationImage2 } from "./cloud-optimization-image-2.png";
+export { default as CloudOptimizationImage3 } from "./cloud-optimization-image-3.png";
+export { default as CloudOptimizationImage4 } from "./cloud-optimization-image-4.png";
+export { default as CloudOptimizationImage5 } from "./cloud-optimization-image-5.png";
+export { default as CloudOptimizationImage6 } from "./cloud-optimization-image-6.png";
 
-export { default as ConsistantDesignImg1 } from "./consistent-design-img1.png";
-export { default as ConsistantDesignImg2 } from "./consistent-desgin-img2.png";
-export { default as ConsistantDesignImg3 } from "./consistent-desgin-img3.png";
-export { default as ConsistantDesignImg4 } from "./consistent-desgin-img4.png";
+export { default as CustomSoftwareImage1 } from "./custom-software-image-1.png";
+export { default as CustomSoftwareImage2 } from "./custom-software-image-2.png";
+export { default as CustomSoftwareImage3 } from "./custom-software-image-3.png";
+export { default as CustomSoftwareImage4 } from "./custom-software-image-4.png";
+export { default as CustomSoftwareImage5 } from "./custom-software-image-5.png";
+export { default as CustomSoftwareImage6 } from "./custom-software-image-6.png";
 
-export { default as WebsiteStrategyImg1 } from "./website-strategy-img1.png";
-export { default as WebsiteStrategyImg2 } from "./website-strategy-img2.png";
-export { default as WebsiteStrategyImg3 } from "./website-strategy-img3.png";
-export { default as WebsiteStrategyImg4 } from "./website-strategy-img4.png";
-export { default as WebsiteStrategyImg5 } from "./website-strategy-img5.png";
-export { default as WebsiteStrategyImg6 } from "./website-strategy-img6.png";
-export { default as WebsiteStrategyImg7 } from "./website-strategy-img7.png";
-export { default as WebsiteStrategyImg8 } from "./website-strategy-img8.png";
-export { default as WebsiteStrategyImg9 } from "./website-strategy-img9.png";
+export { default as DesignToDevImage1 } from "./design-to-development-image-1.png";
+export { default as DesignToDevImage2 } from "./design-to-development-image-2.png";
+export { default as DesignToDevImage3 } from "./design-to-development-image-3.png";
+export { default as DesignToDevImage4 } from "./design-to-development-image-4.png";
+export { default as DesignToDevImage5 } from "./design-to-development-image-5.png";
 
 export { default as PsychiatricClinicBG } from "./psychiatric-clinic-bg.png";
 export { default as PsychiatricClinicImage1 } from "./psychiatric-image-1.png";

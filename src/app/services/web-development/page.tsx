@@ -1,4 +1,4 @@
-import Navbar from "./../../components/Navbar";
+import Navbar from "../../components/Navbar";
 import Image from "next/image";
 import {
   AmazonAuroraIcon,
@@ -19,11 +19,11 @@ import {
   SqLiteIcon,
   VueIcon,
 } from "@/assets";
-import FooterSection from "./../../components/sections/FooterSection";
+import FooterSection from "../../components/sections/FooterSection";
 import { IUseCase } from "@/common";
 import WorkFlowSection from "../components/WorkFlowSection";
 import TechnologiesSection from "../components/TechnologiesSection";
-import FAQSection from "./../../components/sections/FAQSection";
+import FAQSection from "../../components/sections/FAQSection";
 
 const STEPS = [
   {

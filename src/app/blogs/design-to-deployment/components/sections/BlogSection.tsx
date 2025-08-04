@@ -1,9 +1,10 @@
 import Navbar from "@/app/components/Navbar";
 import {
-  ConsistantDesignImg2,
-  StrongBrandImg1,
-  StrongBrandImg3,
-  StrongBrandImg4,
+  DesignToDevImage1,
+  DesignToDevImage2,
+  DesignToDevImage3,
+  DesignToDevImage4,
+  DesignToDevImage5,
 } from "@/assets";
 import Image from "next/image";
 
@@ -12,26 +13,24 @@ const MID_CONTENT = [
     title: "Phase 1: Understanding & UX/UI Design",
     description: `
       Every great product starts with understanding the problem.<br/>
-      We kick off with discovery sessions to dive deep into your business, your users, and your goals. 
+      We kick off with discovery sessions to dive deep into your business, your users, and your goals.
       From there, our UI/UX designers create wireframes and prototypes to map out the user journey.<br/><br/>
       ✦ <strong>Focus:</strong> Clear navigation, intuitive interfaces, user-first design<br/>
       ✦ <strong>Tools:</strong> Figma, Adobe XD, user personas, moodboards<br/><br/>
       At this stage, we ensure the look and feel of the product aligns perfectly with both user expectations and business objectives.
     `,
-    image: StrongBrandImg3,
   },
   {
     title: "Phase 2: Development & Engineering",
     description: `
-      Once the design is approved, our developers get to work turning those ideas into a fully functioning product. 
+      Once the design is approved, our developers get to work turning those ideas into a fully functioning product.
       At Verdant Soft, we use modern web technologies and best practices to build clean, efficient, and scalable code.<br/><br/>
       ✦ <strong>Frontend:</strong> React, Vue, HTML/CSS, Tailwind<br/>
       ✦ <strong>Backend:</strong> Node.js, Laravel, Django, custom APIs<br/>
       ✦ <strong>Database:</strong> MySQL, PostgreSQL, MongoDB<br/><br/>
-      Our DevOps team works alongside developers to set up continuous integration, automated testing, and scalable deployment pipelines. 
+      Our DevOps team works alongside developers to set up continuous integration, automated testing, and scalable deployment pipelines.
       Everything is built to grow with your business.
     `,
-    image: StrongBrandImg4,
   },
   {
     title: "Phase 3: Testing & Feedback Loops",
@@ -42,19 +41,17 @@ const MID_CONTENT = [
       ✦ <strong>Cross-Browser & Cross-Device Testing</strong><br/><br/>
       We also include feedback loops with clients to tweak and refine any last-minute user flows or design interactions.
     `,
-    image: StrongBrandImg4,
   },
   {
     title: "Phase 4: Deployment & Launch",
     description: `
-      When everything’s ready, we push to production using cloud platforms like AWS, Azure, or Vercel. 
+      When everything’s ready, we push to production using cloud platforms like AWS, Azure, or Vercel.
       Our DevOps team ensures the deployment is secure, automated, and monitorable from day one.<br/><br/>
       ✦ <strong>CI/CD Pipelines</strong><br/>
       ✦ <strong>Version Control with Git</strong><br/>
       ✦ <strong>Staging Environments for Previews</strong><br/><br/>
       We also provide training, documentation, and post-launch support, so you're never left guessing how to use or manage your new digital product.
     `,
-    image: StrongBrandImg4,
   },
 ];
 
@@ -81,30 +78,33 @@ export default function BlogSection() {
           Blogs
         </h1>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 w-full">
-          <div className="flex-1">
-            <Image
-              src={StrongBrandImg1}
-              alt="strong-brand-img1"
-              className="w-full h-[500px] object-cover rounded-2xl"
-            />
-          </div>
-          <div className="flex-1 flex flex-col gap-10 w-full">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-26 xl:gap-30 3xl:gap-40 w-full">
+          <div className="flex-1 flex flex-col gap-7 lg:gap-10 w-full">
+            <h2 className="max-w-3xl text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
               ⁠How Our Team Builds Digital Products: From Design to Deployment
             </h2>
-            <p className="texl-lg xl:text-xl">
-              Bringing a digital product to life from the first sketch to a
+            <p className="texl-lg xl:text-xl max-w-3xl">
+              Bringing a digital product to life—from the first sketch to a
               live, working platform is an exciting journey. At Verdant Soft, we
               make that journey smooth, strategic, and collaborative.
               <br />
-              <br /> Whether we’re building a web app, SaaS platform, or
-              internal business tool, our goal is the same: to deliver a digital
-              product that’s functional, scalable, and delightful to use.
               <br />
-              <br /> So, how do we do it? Here’s a behind-the-scenes look at how
-              our team takes a product from idea to deployment and beyond.
+              Whether we’re building a web app, SaaS platform, or internal
+              business tool, our goal is the same: to deliver a digital product
+              that’s functional, scalable, and delightful to use.
+              <br />
+              So, how do we do it? Here’s a behind-the-scenes look at how our
+              team takes a product from idea to deployment and beyond.
             </p>
+          </div>
+          <div className="flex-1">
+            <div className="w-full min-h-[250px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[600px] flex justify-center items-center rounded-2xl overflow-hidden  opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+              <Image
+                src={DesignToDevImage1}
+                alt="custom-software-img1"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
 
@@ -120,85 +120,96 @@ export default function BlogSection() {
                   dangerouslySetInnerHTML={{ __html: content.description }}
                 />
               </div>
-
-              <div className="relative w-full h-[300px] lg:h-[400px]">
-                <Image
-                  src={content.image}
-                  alt={content.title}
-                  className="w-full h-full object-cover grayscale-100 z-0 rounded-2xl"
-                />
-              </div>
             </div>
           ))}
         </div>
 
-        {/* <div className="flex flex-col gap-10 lg:gap-20 w-full">
-          <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 ">
-            <h2 className="flex-1 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words leading-tight text-green-gradient">
-              Effective Market Positioning
-            </h2>
-            <p className="flex-1 texl-lg xl:text-xl text-start lg:text-end">
-              Your brand identity communicates your unique value proposition. It
-              helps position your business within the industry and target
-              market, ensuring that your message attracts the right audience and
-              aligns with their needs and preferences.
-            </p>
-          </div>
+        <div className="w-full min-h-[100px] md:min-h-[200px] lg:min-h-[300px] xl:min-h-[400px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 grayscale-100 transition-all duration-300 ease-in-out">
           <Image
-            src={StrongBrandImg5}
-            alt="strong-brand-img2"
-            className="w-full h-[300px] lg:h-[450px] object-cover grayscale-100 z-0 rounded-2xl"
+            src={DesignToDevImage2}
+            alt="custom-software-img3"
+            className="w-full h-full object-contain"
           />
-        </div> */}
-        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 w-full">
-          <div className="flex-1 order-2 lg:order-1">
-            <Image
-              src={ConsistantDesignImg2}
-              alt="strong-brand-img1"
-              className="w-10/12 h-[500px] object-cover rounded-2xl"
-            />
+        </div>
+
+        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 3xl:gap-40 w-full">
+          <div className="flex flex-col  justify-between gap-10 lg:gap-20 w-full">
+            <div className="flex-1 flex flex-col gap-7 w-full max-w-3xl">
+              <h2 className="text-2xl md:text-3xl xl:text-4xl w-full md:w-10/12 lg:w-9/12 leading-tight font-semibold break-words text-green-gradient">
+                What Sets Verdant Soft Apart{" "}
+              </h2>
+              <p className="text-lg xl:text-xl">
+                Here’s what clients love about working with us:
+              </p>
+              <ul className="list-disc pl-6 space-y-3 text-lg xl:text-xl">
+                {BRING_LIST.map((text, index) => (
+                  <li key={index}>
+                    <span dangerouslySetInnerHTML={{ __html: text }} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex-1">
+              <div className="w-full  min-h-[200px] md:h-[400px] lg:h-[500px] 5xl:h-[550px]flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+                <Image
+                  src={DesignToDevImage3}
+                  alt="design-to-dev-image4"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+            </div>
           </div>
 
-          <div className="flex-1 flex flex-col gap-7 w-full order-1 lg:order-2">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl w-full md:w-10/12 lg:w-9/12 leading-tight font-semibold break-words text-green-gradient">
-              What Sets Verdant Soft Apart
-            </h2>
-            <p className="text-lg xl:text-xl">
-              Here’s what clients love about working with us:
-            </p>
-            <ul className="list-disc pl-6 space-y-3 text-lg xl:text-xl">
-              {BRING_LIST.map((text, index) => (
-                <li key={index}>{text}</li>
-              ))}
-            </ul>
-            <p className=" text-lg xl:text-xl">
-              Whether it’s a web app, internal dashboard, customer portal, or
-              mobile platform, we bring the expertise to build it right.
-            </p>
+          <div className="flex flex-col  justify-between gap-10 lg:gap-20 w-full">
+            <div className="flex-1 flex flex-col gap-7 w-full max-w-3xl">
+              <h2 className=" text-2xl md:text-3xl xl:text-4xl w-full md:w-10/12 lg:w-9/12 leading-tight font-semibold break-words text-green-gradient">
+                Real Results from Verdant Soft Projects
+              </h2>
+
+              <ul className="list-disc pl-6 space-y-3 text-lg xl:text-xl ">
+                {RESULT_LIST.map((text, index) => (
+                  <li key={index}>{text}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex-1">
+              <div className="w-full  min-h-[200px] md:h-[400px] lg:h-[500px] 5xl:h-[550px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+                <Image
+                  src={DesignToDevImage4}
+                  alt="design-to-dev-image4"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 w-full">
-          <div className="flex-1 flex flex-col gap-7 w-full ">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl w-full md:w-10/12 lg:w-9/12 leading-tight font-semibold break-words text-green-gradient">
-              Real Results from Verdant Soft Projects
-            </h2>
-            <ul className="list-disc pl-6 space-y-3 text-lg xl:text-xl">
-              {RESULT_LIST.map((text, index) => (
-                <li key={index}>{text}</li>
-              ))}
-            </ul>
-            <p className=" text-lg xl:text-xl">
-              Whether it’s a web app, internal dashboard, customer portal, or
-              mobile platform, we bring the expertise to build it right.
+        <div className="flex flex-col  justify-between gap-10 lg:gap-20 w-full">
+          <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-30 3xl:gap-40 w-full">
+            <div className="flex-1 flex flex-col gap-10 w-full">
+              <h2 className="max-w-3xl text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
+                Thoughts
+              </h2>
+              <p className="texl-lg xl:text-xl max-w-3xl">
+                Building a digital product isn’t just about writing code it’s
+                about solving problems, improving lives, and supporting business
+                growth.
+              </p>
+            </div>
+            <p className="flex-1 texl-lg xl:text-xl lg:text-end ">
+              At Verdant Soft, we bring together designers, developers, and
+              DevOps engineers to deliver end-to-end solutions that not only
+              work but work beautifully.
             </p>
           </div>
-          <div className="flex-1 ">
-            <Image
-              src={ConsistantDesignImg2}
-              alt="strong-brand-img1"
-              className="w-10/12 h-[500px] object-cover rounded-2xl"
-            />
+          <div className="flex-1">
+            <div className="w-full h-full min-h-[100px] md:min-h-[200px] lg:min-h-[300px] xl:min-h-[400px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+              <Image
+                src={DesignToDevImage5}
+                alt="custom-software-img6"
+                className="w-full h-full object-contain rounded-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>

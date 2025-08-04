@@ -1,47 +1,40 @@
 import Navbar from "@/app/components/Navbar";
 import {
-  ConsistantDesignImg2,
-  StrongBrandImg1,
-  StrongBrandImg2,
-  StrongBrandImg3,
-  StrongBrandImg4,
-  StrongBrandImg5,
-  StrongBrandImg6,
-  StrongBrandImg7,
-  StrongBrandImg8,
+  CloudOptimizationImage1,
+  CloudOptimizationImage2,
+  CloudOptimizationImage3,
+  CloudOptimizationImage4,
+  CloudOptimizationImage5,
+  CloudOptimizationImage6,
 } from "@/assets";
 import Image from "next/image";
+import Link from "next/link";
 
 const MID_CONTENT = [
   {
     title: "Right-Sizing Your Resources",
     description:
       "Often, companies pay for more than they use. We help analyze your actual needs and adjust resources (like storage and compute power) so you’re only paying for what brings value. No waste. Just smart usage.",
-    image: StrongBrandImg3,
   },
   {
     title: "Smarter Scaling",
     description:
-      "Your cloud should grow with your business—but only when needed. We set up autoscaling and load balancing so your system can handle spikes in traffic without draining your budget during quiet times.",
-    image: StrongBrandImg4,
+      "Your cloud should grow with your business but only when needed. We set up autoscaling and load balancing so your system can handle spikes in traffic without draining your budget during quiet times.",
   },
   {
     title: "Modern Architecture: Containers & Microservices",
     description:
       "By breaking your applications into containers and microservices, we help make them faster, easier to maintain, and more affordable to run. Our team works with tools like Docker, Kubernetes, and serverless technologies to future-proof your setup.",
-    image: StrongBrandImg5,
   },
   {
     title: "Multi-Cloud & Hybrid Strategies",
     description:
       "Not every business fits into one cloud provider. We help companies explore multi-cloud or hybrid options giving you flexibility, backup plans, and control over where and how your data lives.",
-    image: StrongBrandImg6,
   },
   {
     title: "Real-Time Monitoring & Proactive Alerts",
     description:
       "With tools like CloudWatch, Grafana, and custom dashboards, we track your system's health and spending. You’ll always know what’s working, what needs attention, and where you can save.",
-    image: StrongBrandImg7,
   },
 ];
 
@@ -67,26 +60,18 @@ export default function BlogSection() {
           Blogs
         </h1>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 w-full">
-          <div className="flex-1">
-            <Image
-              src={StrongBrandImg8}
-              alt="strong-brand-img1"
-              className="w-full h-[500px] object-cover rounded-2xl"
-            />
-          </div>
-          <div className="flex-1 flex flex-col gap-10 w-full">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-26 xl:gap-30 3xl:gap-40 w-full">
+          <div className="flex-1 flex flex-col gap-7 lg:gap-10 w-full">
+            <h2 className="max-w-3xl text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
               Optimizing Cost and Performance in Cloud Architecture
             </h2>
-            <p className="texl-lg xl:text-xl">
+            <p className="texl-lg xl:text-xl max-w-3xl">
               In today’s fast-moving digital world, cloud architecture plays a
               major role in how businesses scale, grow, and stay competitive.
               But here’s the truth: just moving to the cloud isn’t enough.
               Without a smart approach, you could end up spending more than
               necessary or dealing with performance issues that slow everything
               down.
-              <br />
               <br /> At Verdant Soft, we work with companies every day to make
               sure their cloud setups aren’t just functional, but efficient,
               cost-effective, and built to perform. In this post, let’s break
@@ -94,18 +79,28 @@ export default function BlogSection() {
               businesses get it right.
             </p>
           </div>
+          <div className="flex-1">
+            <div className="w-full h-full min-h-[250px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[600px] flex justify-center items-center 3xl:items-end 5xl:items-center rounded-2xl overflow-hidden  opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+              <Image
+                src={CloudOptimizationImage1}
+                alt="cloud-optimize-img1"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 w-full">
-          <div className="flex-1 flex flex-col gap-10 w-full">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
-              Why Cloud Optimization Matters
-            </h2>
-            <p className="texl-lg xl:text-xl">
+        <div className="flex flex-col justify-between gap-10 lg:gap-20 w-full">
+          <div className="flex-1 flex flex-col lg:flex-row gap-7 lg:gap-10 w-full">
+            <div className="flex-1">
+              <h2 className=" text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight w-full max-w-3xl">
+                Why Cloud Optimization Matters
+              </h2>
+            </div>
+            <p className="flex-1  texl-lg xl:text-xl text-start lg:text-end">
               The cloud offers a lot flexibility, scalability, access to
               powerful tools. But with that freedom comes a challenge: how do
               you make sure you’re not overpaying or underperforming?
-              <br />
               <br /> Think of it like this: You wouldn’t rent a massive office
               space for a 3-person team. The same logic applies to your cloud
               setup. Using more than you need, or not using the right tools, can
@@ -113,119 +108,150 @@ export default function BlogSection() {
             </p>
           </div>
           <div className="flex-1">
-            <Image
-              src={StrongBrandImg1}
-              alt="strong-brand-img1"
-              className="w-full h-[500px] object-cover rounded-2xl"
-            />
+            <div className="w-full h-full min-h-[250px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[800px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 grayscale-100 transition-all duration-300 ease-in-out">
+              <Image
+                src={CloudOptimizationImage2}
+                alt="cloud-optimization-img2"
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-10 lg:gap-20 w-full">
-          <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30">
-            <h2 className="flex-1 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-26 xl:gap-30 3xl:gap-40  w-full">
+          <div className="flex-1 flex flex-col gap-7 lg:gap-10 w-full">
+            <h2 className="max-w-3xl text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
               How Verdant Soft Helps You Balance Cost and Performance
             </h2>
-            <p className="flex-1 texl-lg xl:text-xl text-start lg:text-end">
+            <p className="texl-lg xl:text-xl max-w-3xl">
               Here’s how we approach cloud optimization at Verdant Soft. It’s
               not one-size-fits-all it’s about understanding your business and
               building the right solution around it.
             </p>
           </div>
-          <Image
-            src={StrongBrandImg2}
-            alt="strong-brand-img2"
-            className="w-full h-[300px] lg:h-[400px] object-cover"
-          />
+          <div className="flex-1">
+            <div className="w-full h-full min-h-[200px] md:min-h-[390px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+              <Image
+                src={CloudOptimizationImage3}
+                alt="cloud-optimize-img3"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-10 lg:gap-20 justify-content">
+        <div className="grid grid-cols-2 gap-10 lg:gap-x-30 lg:gap-y-20 justify-content">
           {MID_CONTENT.map((content, index) => (
             <div key={index} className="flex flex-col ">
-              <div className="flex flex-col gap-3 min-h-70 xl:min-h-50">
-                <h3 className="text-2xl lg:text-[28px] 2xl:text-[32px] 5xl:text-[40px] font-semibold text-green-gradient">
+              <div className="flex flex-col gap-3 max-w-3xl">
+                <h3 className="text-2xl font-semibold text-green-gradient">
                   {content.title}
                 </h3>
                 <p className="texl-md xl:text-xl">{content.description}</p>
-              </div>
-
-              <div className="relative w-full h-[300px] lg:h-[400px]">
-                <Image
-                  src={content.image}
-                  alt={content.title}
-                  className="w-full h-full object-cover grayscale-100 z-0 rounded-2xl"
-                />
               </div>
             </div>
           ))}
         </div>
 
-        {/* <div className="flex flex-col gap-10 lg:gap-20 w-full">
-          <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 ">
-            <h2 className="flex-1 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words leading-tight text-green-gradient">
-              Effective Market Positioning
-            </h2>
-            <p className="flex-1 texl-lg xl:text-xl text-start lg:text-end">
-              Your brand identity communicates your unique value proposition. It
-              helps position your business within the industry and target
-              market, ensuring that your message attracts the right audience and
-              aligns with their needs and preferences.
-            </p>
-          </div>
-          <Image
-            src={StrongBrandImg5}
-            alt="strong-brand-img2"
-            className="w-full h-[300px] lg:h-[450px] object-cover grayscale-100 z-0 rounded-2xl"
-          />
-        </div> */}
-        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 w-full">
-          <div className="flex-1 order-2 lg:order-1">
-            <Image
-              src={ConsistantDesignImg2}
-              alt="strong-brand-img1"
-              className="w-10/12 h-[500px] object-cover rounded-2xl"
-            />
+        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 3xl:gap-40 w-full">
+          <div className="flex flex-col  justify-between gap-10 lg:gap-20 w-full">
+            <div className="flex-1 flex flex-col gap-7 w-full max-w-3xl">
+              <h2 className="text-2xl md:text-3xl xl:text-4xl w-full md:w-10/12 lg:w-9/12 leading-tight font-semibold break-words text-green-gradient">
+                What Makes Verdant Soft Different?
+              </h2>
+              <p className="text-lg xl:text-xl">
+                We don’t just &quot;move&quot; businesses to the cloud we work
+                as your long-term technology partner. Whether you’re starting
+                from scratch or refining an existing setup, we bring a mix of:
+              </p>
+              <ul className="list-disc pl-6 space-y-3 text-lg xl:text-xl">
+                {DIFFERENT_LIST.map((text, index) => (
+                  <li key={index}>
+                    <span dangerouslySetInnerHTML={{ __html: text }} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex-1">
+              <div className="w-full  min-h-[200px] md:h-[400px] lg:h-[500px] 5xl:h-[550px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+                <Image
+                  src={CloudOptimizationImage4}
+                  alt="cloud-optimization-img4"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+            </div>
           </div>
 
-          <div className="flex-1 flex flex-col gap-7 w-full order-1 lg:order-2">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl w-full md:w-10/12 lg:w-9/12 leading-tight font-semibold break-words text-green-gradient">
-              What Makes Verdant Soft Different?
-            </h2>
-            <p className="text-lg xl:text-xl">
-              We don’t just &quot;move&quot; businesses to the cloud we work as
-              your long-term technology partner. Whether you’re starting from
-              scratch or refining an existing setup, we bring a mix of:
-            </p>
-            <ul className="list-disc pl-6 space-y-3 text-lg xl:text-xl">
-              {DIFFERENT_LIST.map((text, index) => (
-                <li key={index}>
-                  <span dangerouslySetInnerHTML={{ __html: text }} />
-                </li>
-              ))}
-            </ul>
+          <div className="flex flex-col  justify-between gap-10 lg:gap-20 w-full">
+            <div className="flex-1 flex flex-col gap-7 w-full max-w-3xl">
+              <h2 className="text-2xl md:text-3xl xl:text-4xl w-full md:w-10/12 lg:w-9/12 leading-tight font-semibold break-words text-green-gradient">
+                Real Results Our Clients See
+              </h2>
+              <p className="text-lg xl:text-xl">
+                With Verdant Soft’s support, businesses have:
+              </p>
+              <ul className="list-disc pl-6 space-y-3 text-lg xl:text-xl ">
+                {RESULT_LIST.map((text, index) => (
+                  <li key={index}>{text}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex-1">
+              <div className="w-full min-h-[200px] md:h-[400px] lg:h-[500px] 5xl:h-[550px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+                <Image
+                  src={CloudOptimizationImage5}
+                  alt="cloud-optimization-img5"
+                  className="w-full h-full object-cocoverntain rounded-2xl"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-30 w-full">
-          <div className="flex-1 flex flex-col gap-7 w-full ">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl w-full md:w-10/12 lg:w-9/12 leading-tight font-semibold break-words text-green-gradient">
-              Real Results Our Clients See
-            </h2>
-            <p className="text-lg xl:text-xl">
-              With Verdant Soft’s support, businesses have:
-            </p>
-            <ul className="list-disc pl-6 space-y-3 text-lg xl:text-xl">
-              {RESULT_LIST.map((text, index) => (
-                <li key={index}>{text}</li>
-              ))}
-            </ul>
+        <div className="flex flex-col  justify-between gap-10 lg:gap-20 w-full">
+          <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-30 3xl:gap-40 w-full">
+            <div className="flex-1 flex flex-col gap-10 w-full">
+              <h2 className="max-w-3xl text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold break-words text-green-gradient leading-tight">
+                Thoughts
+              </h2>
+              <p className="texl-lg xl:text-xl max-w-3xl">
+                Optimizing your cloud architecture doesn’t mean cutting corners.
+                It means being intentional about the tools you use, the way you
+                build, and how your system grows.
+                <br />
+                Want to learn more about how our DevOps team helps businesses
+                save time and money in the cloud?
+              </p>
+            </div>
+            <div className="flex-1 flex flex-col justify-end ">
+              <Link
+                href={"/services/cloud-devops"}
+                className="texl-lg xl:text-xl lg:text-end "
+              >
+                👉{" "}
+                <span className="ml-1 underline">
+                  Explore our DevOps services
+                </span>
+              </Link>
+              <p className="texl-lg xl:text-xl lg:text-end ">
+                If you’re ready to explore how cloud optimization can improve
+                your business performance and save costs, we’re here to help.
+                <br />
+                Let’s chat about your cloud setup and where we can make it
+                better. Contact Verdant Soft for a quick, no-pressure
+                consultation.
+              </p>
+            </div>
           </div>
-          <div className="flex-1 ">
-            <Image
-              src={ConsistantDesignImg2}
-              alt="strong-brand-img1"
-              className="w-10/12 h-[500px] object-cover rounded-2xl"
-            />
+          <div className="flex-1">
+            <div className="w-full h-full min-h-[100px] md:min-h-[200px] lg:min-h-[300px] xl:min-h-[400px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+              <Image
+                src={CloudOptimizationImage6}
+                alt="cloud-optimization-img6"
+                className="w-full h-full object-contain rounded-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>

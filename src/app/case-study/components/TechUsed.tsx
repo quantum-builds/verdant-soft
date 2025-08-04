@@ -10,9 +10,9 @@ export default function TechUsed({ techUsed }: TechUsedProps) {
       <h3 className="text-2xl lg:text-[28px] 2xl:text-[32px] 5xl:text-[40px] font-semibold text-green-gradient">
         Technologies
       </h3>
-      <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex flex-col md:flex-row gap-5">
         {techUsed.map((tech, index) => (
-          <div key={index} className="flex items-center gap-3 text-black">
+          <div key={index} className="flex items-center gap-2 text-black">
             <Image src={tech.icon} className="w-9 h-9" alt="text" />
             <p className="text-xl 2xl:text-2xl">{tech.text}</p>
           </div>

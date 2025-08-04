@@ -69,7 +69,7 @@ export default function CTAButton({ text }: CTAButtonProps) {
               <X size={24} />
             </button>
             <iframe
-              src="https://calendly.com/tahacheema29"
+              src="https://calendly.com/verdant-soft-info/"
               className="w-full h-full border-0 bg-white"
               title="Calendly Scheduling"
             />

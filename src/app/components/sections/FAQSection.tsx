@@ -80,7 +80,7 @@ export default function FAQSection() {
 
         <div className="flex flex-col md:flex-row gap-12">
           <motion.p
-            className="w-11/12 md:w-2/5 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold leading-tight font-inter text-start text-green-gradient"
+            className="w-11/12 md:w-2/5 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold leading-tight font-inter text-start text-footer-black"
             initial="hidden"
             whileInView="visible"
             variants={slideFromLeft}

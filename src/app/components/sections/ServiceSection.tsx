@@ -14,10 +14,10 @@ interface Services {
 export default function ServiceSection() {
   const services: Services[] = [
     {
-      url: "ui-ux-design",
-      title: "UI/UX Design",
+      url: "custom-software",
+      title: "Custom Software Development",
       description:
-        "At our software house, we specialize in creating intuitive and visually stunning UI/UX designs that enhance user engagement. Our expert team crafts customized solutions to ensure a seamless and memorable digital experience for your users.",
+        "We specialize in delivering innovative and custom web development solutions tailored to your business needs. Our expert team ensures seamless, responsive, and high-quality websites that help you stand out online.",
     },
     {
       url: "cloud-devops",
@@ -26,16 +26,17 @@ export default function ServiceSection() {
         "We specialize in delivering seamless DevOps and cloud solutions to optimize your application's performance and scalability. Our expertise ensures reliable deployment, automation, and cloud management tailored to meet your business needs.",
     },
     {
-      url: "web-development",
-      title: "Web Development",
-      description:
-        "We specialize in delivering innovative and custom web development solutions tailored to your business needs. Our expert team ensures seamless, responsive, and high-quality websites that help you stand out online.",
-    },
-    {
       url: "it-team-outsourcing",
       title: "IT Team Outsourcing",
       description:
         "Our software house specializes in providing dedicated IT team outsourcing solutions tailored to your business needs. Empower your projects with skilled, reliable professionals committed to delivering high-quality technology services.",
+    },
+
+    {
+      url: "ui-ux-design",
+      title: "UI/UX Design",
+      description:
+        "At our software house, we specialize in creating intuitive and visually stunning UI/UX designs that enhance user engagement. Our expert team crafts customized solutions to ensure a seamless and memorable digital experience for your users.",
     },
   ];
 
@@ -81,7 +82,7 @@ export default function ServiceSection() {
       <div className="overflow-hidden min-h-[60vh] 3xl:min-h-[50vh] w-11/12 xl:w-10/12  mx-auto flex flex-col mb-28 gap-12">
         <p className="font-semibold text-xl md:text-2xl">[01 Services]</p>
         <motion.p
-          className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl leading-tight font-semibold text-green-gradient"
+          className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl leading-tight font-semibold text-footer-black"
           initial="hidden"
           whileInView="visible"
           variants={slideFromLeft}

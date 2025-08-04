@@ -106,6 +106,9 @@ export { default as StrongBrandImg2 } from "./strong-brand-img2.png";
 export { default as StrongBrandImg3 } from "./strong-brand-img3.png";
 export { default as StrongBrandImg4 } from "./strong-brand-img4.png";
 export { default as StrongBrandImg5 } from "./strong-brand-img5.png";
+export { default as StrongBrandImg6 } from "./strong-brand-img6.png";
+export { default as StrongBrandImg7 } from "./strong-brand-img7.png";
+export { default as StrongBrandImg8 } from "./strong-brand-img9.png";
 
 export { default as ConsistantDesignImg1 } from "./consistent-design-img1.png";
 export { default as ConsistantDesignImg2 } from "./consistent-desgin-img2.png";

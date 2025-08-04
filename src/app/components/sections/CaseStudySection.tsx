@@ -79,7 +79,7 @@ export default function CaseStudySection() {
           <p className="font-semibold text-2xl">[02 Case Studies]</p>
           <div className="w-full flex justify-end">
             <motion.h2
-              className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-end break-words text-green-gradient"
+              className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-end break-words text-footer-black"
               variants={slideFromRight}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
               initial="hidden"

@@ -52,7 +52,7 @@ export default function ItTeamOutsourcingPage() {
           />
         </div>
         <div className="max-w-11/12 lg:max-w-3/5 xl:max-w-1/2   mt-24 md:mt-32 xl:mt-40">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-6 text-green-gradient inline-block leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-6 text-footer-black inline-block leading-tight">
             <span className="text-green-gradient">IT Team</span> Outsourcing
           </h1>
           <p className="text-lg">

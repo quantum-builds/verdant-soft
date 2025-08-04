@@ -16,19 +16,19 @@ export default function BlogSection() {
 
   const BLOGS: IBlog[] = [
     {
-      title: "Why a strong brand identity is essential",
+      title: "Why Cloud Optimization Matters",
       imageUrl: Blog1,
-      link: "/blogs/strong-brand-identity",
+      link: "/blogs/cloud-optimization",
     },
     {
-      title: "The power of consistent design",
+      title: "Why You Should Invest in Custom Software Development",
       imageUrl: Blog2,
-      link: "/blogs/consistent-design",
+      link: "/blogs/custom-software",
     },
     {
-      title: "How to nail your website strategy",
+      title: "⁠How Our Team Builds Digital Products: From Design to Deployment",
       imageUrl: Blog3,
-      link: "/blogs/website-strategy",
+      link: "/blogs/design-to-deployment",
     },
   ];
   return (
@@ -37,7 +37,7 @@ export default function BlogSection() {
         <p className="font-semibold text-2xl">[06 Blog]</p>
         <div className="w-full flex justify-end">
           <motion.h2
-            className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold text-end break-words text-green-gradient"
+            className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold text-end break-words text-footer-black"
             initial="hidden"
             whileInView="visible"
             variants={slideFromTop}

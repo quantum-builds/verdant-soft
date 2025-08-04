@@ -17,7 +17,7 @@ export default function Navbar() {
   const servicesList: NavOption[] = [
     { label: "UI/UX Design", href: "/services/ui-ux-design" },
     { label: "Cloud & DevOps", href: "/services/cloud-devops" },
-    { label: "Web Development", href: "/services/web-development" },
+    { label: "Custom Software Development", href: "/services/custom-software" },
     { label: "IT Team Outsourcing", href: "/services/it-team-outsourcing" },
   ];
 

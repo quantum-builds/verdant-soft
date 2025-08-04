@@ -17,19 +17,19 @@ export default function BlogSection() {
 
   const BLOGS: IBlog[] = [
     {
-      title: "Why a strong brand identity is essential",
+      title: "Why Cloud Optimization Matters",
       imageUrl: Blog1,
-      link: "/blogs/strong-brand-identity",
+      link: "/blogs/cloud-optimization",
     },
     {
-      title: "The power of consistent design",
+      title: "Why You Should Invest in Custom Software Development",
       imageUrl: Blog2,
-      link: "/blogs/consistent-design",
+      link: "/blogs/custom-software",
     },
     {
-      title: "How to nail your website strategy",
+      title: "⁠How Our Team Builds Digital Products: From Design to Deployment",
       imageUrl: Blog3,
-      link: "/blogs/website-strategy",
+      link: "/blogs/design-to-deployment",
     },
   ];
 

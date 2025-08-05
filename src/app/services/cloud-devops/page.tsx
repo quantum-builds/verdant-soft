@@ -27,6 +27,12 @@ import {
   PowerShellIcon,
   PrometheousIcon,
   PythonIcon,
+  Step1Line,
+  Step2Line,
+  Step3Line,
+  Step4Line,
+  Step5Line,
+  Step6Line,
   TeraFormIcon,
   WindowsIcon,
 } from "@/assets";
@@ -41,32 +47,50 @@ const STEPS = [
   {
     step: 1,
     color: "#C72C91",
-    description: "Plan & Develop",
+    title: "Plan & Develop",
+    lineImage: Step1Line,
+    description:
+      "Define project scope, user stories, and acceptance criteria. Create high-level architecture diagrams. Plan infrastructure, data flows, and integrations.",
   },
   {
     step: 2,
     color: "#0565FF",
-    description: "Build & Test",
+    title: "Build & Test",
+    lineImage: Step2Line,
+    description:
+      "Automate builds using CI tools like Jenkins, GitLab CI, Travis CI. Run automated tests. Use testing frameworks and tools like Selenium, JUnit, TestNG.",
   },
   {
     step: 3,
     color: "#FF8800",
-    description: "Integrate & Deploy",
+    title: "Integrate & Deploy",
+    lineImage: Step3Line,
+    description:
+      "Continuously integrate code changes and deploy them to staging or production environments through automated pipelines.",
   },
   {
     step: 4,
     color: "#4AA047",
-    description: "Release",
+    title: "Release",
+    lineImage: Step4Line,
+    description:
+      "Deploy to staging environment. Perform acceptance testing. Automate deployment for production release.",
   },
   {
     step: 5,
     color: "#1BBFCC",
-    description: "Operate & Monitor",
+    title: "Operate & Monitor",
+    lineImage: Step5Line,
+    description:
+      "Monitor applications in real-time, track performance, and manage infrastructure to ensure stability and availability.",
   },
   {
     step: 6,
     color: "#5B57C2",
-    description: "Feedback & Improve",
+    title: "Feedback & Improve",
+    lineImage: Step6Line,
+    description:
+      "Gather feedback from monitoring and users, then iterate on development to improve performance, security, and features.",
   },
 ];
 

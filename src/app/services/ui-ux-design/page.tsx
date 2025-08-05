@@ -15,6 +15,12 @@ import {
   UiUxServiceBG,
   WhimsicalIcon,
   ZeplinIcon,
+  Step1Line,
+  Step2Line,
+  Step3Line,
+  Step4Line,
+  Step5Line,
+  Step6Line,
 } from "@/assets";
 import Navbar from "./../../components/Navbar";
 import FooterSection from "./../../components/sections/FooterSection";
@@ -27,32 +33,50 @@ const STEPS = [
   {
     step: 1,
     color: "#C72C91",
-    description: "Research & Discovery",
+    title: "Research & Discovery",
+    lineImage: Step1Line,
+    description:
+      "Understand the users, business goals, and market context through interviews, surveys, and competitor analysis.",
   },
   {
     step: 2,
     color: "#0565FF",
-    description: "Define & Plan",
+    title: "User Personas",
+    lineImage: Step2Line,
+    description:
+      "Create detailed user personas and map out user journeys to identify needs, pain points, and key interactions.",
   },
   {
     step: 3,
     color: "#FF8800",
-    description: "Wireframing & Prototyping",
+    title: "Architecture & Wireframing",
+    lineImage: Step3Line,
+    description:
+      "Organize content and structure through sitemaps and develop low-fidelity wireframes to outline layout and functionality.",
   },
   {
     step: 4,
     color: "#4AA047",
-    description: "Visual Design",
+    title: "Design & Prototyping",
+    lineImage: Step4Line,
+    description:
+      "Develop high-fidelity visual designs and interactive prototypes to visualize the user interface and experience.",
   },
   {
     step: 5,
     color: "#1BBFCC",
-    description: "Development & Implementation",
+    title: "Testing & Validation",
+    lineImage: Step5Line,
+    description:
+      "Conduct usability testing with real users, gather feedback, and identify areas for improvement.",
   },
   {
     step: 6,
     color: "#5B57C2",
-    description: "Testing, Launch & Iteration",
+    title: "Implementation & Iteration",
+    lineImage: Step6Line,
+    description:
+      "Collaborate with developers for implementation, monitor performance post-launch, and iterate based on user feedback and analytics.",
   },
 ];
 

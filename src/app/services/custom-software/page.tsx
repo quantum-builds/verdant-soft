@@ -20,6 +20,12 @@ import {
   ReactIcon,
   RealEstate,
   SqLiteIcon,
+  Step1Line,
+  Step2Line,
+  Step3Line,
+  Step4Line,
+  Step5Line,
+  Step6Line,
   VueIcon,
 } from "@/assets";
 import FooterSection from "../../components/sections/FooterSection";
@@ -33,32 +39,46 @@ const STEPS = [
   {
     step: 1,
     color: "#C72C91",
-    description: "Planning & Requirement Analysis",
+    title: "Requirement Analysis",
+    lineImage: Step1Line,
+    description: "Understanding client needs and defining project scope.",
   },
   {
     step: 2,
     color: "#0565FF",
-    description: "Design",
+    title: "Design & Planning",
+    lineImage: Step2Line,
+    description: "Creating wireframes, prototypes, and project timelines.",
   },
   {
     step: 3,
     color: "#FF8800",
-    description: "Development",
+    title: "Development",
+    lineImage: Step3Line,
+    description: "Agile development cycles with continuous feedback.",
   },
   {
     step: 4,
     color: "#4AA047",
-    description: "Testing",
+    title: "Testing",
+    lineImage: Step4Line,
+    description: "Rigorous testing to ensure quality and performance.",
   },
   {
     step: 5,
     color: "#1BBFCC",
-    description: "Deployment",
+    title: "Deployment",
+    lineImage: Step5Line,
+    description:
+      "Launch the website to a live server, configure hosting, and ensure everything is functioning correctly in the production environment.",
   },
   {
     step: 6,
     color: "#5B57C2",
-    description: "Maintenance & Updates",
+    title: "Maintenance & Updates",
+    lineImage: Step6Line,
+    description:
+      "Monitor performance, fix bugs, update content, and add new features as needed for continuous improvement.",
   },
 ];
 

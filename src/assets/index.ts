@@ -169,3 +169,10 @@ export { default as ItTeamImage2 } from "./it-team-image-2.png";
 export { default as ItTeamImage3 } from "./it-team-image-3.png";
 export { default as ItTeamImage4 } from "./it-team-image-4.png";
 export { default as ItTeamImage5 } from "./it-team-image-5.png";
+
+export { default as Step1Line } from "./step-1-line.jpg";
+export { default as Step2Line } from "./step-2-line.jpg";
+export { default as Step3Line } from "./step-3-line.jpg";
+export { default as Step4Line } from "./step-4-line.jpg";
+export { default as Step5Line } from "./step-5-line.jpg";
+export { default as Step6Line } from "./step-6-line.jpg";

@@ -3,13 +3,15 @@
 import { LeftLine, LowerElipse, RightLine, UpperElipse } from "@/assets";
 import { slideFromBottom, slideFromLeft } from "@/uitls/sliderAnimation";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
 interface IStepCircle {
   step: number;
   color: string;
+  title: string;
   description: string;
+  lineImage: StaticImageData;
 }
 
 interface WorkFlowSectionProps {
@@ -20,8 +22,10 @@ interface StepCircleProps {
   step: number;
   color: string;
   total: number;
-  hoveredIndex: number;
+  title: string;
   description: string;
+  hoveredIndex: number;
+  lineImage: StaticImageData;
   setHoveredIndex: (index: number) => void;
 }
 
@@ -31,10 +35,10 @@ export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
   return (
     <div
       id="workflow"
-      className="scroll-mt-36 h-[530px] md:h-[550px] lg:h-[600px] xl:h-[650px] 2xl:h-[675px]  4xl:h-[700px] 5xl:h-[750px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-12 mb-20 overflow-hidden"
+      className="scroll-mt-36 h-[530px] md:h-[890px] lg:h-[970px] xl:h-[1010px] 2xl:h-[1010px] 3xl:h-[1030px]  4xl:h-[1050px] 5xl:h-[1100px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-12  mb-20 overflow-hidden  "
     >
       <p className="font-semibold text-2xl">[01 Workflow]</p>
-      <div className="flex flex-col gap-20 flex-1">
+      <div className="flex flex-col gap-20 md:gap-60 flex-1">
         <motion.p
           className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-footer-black"
           initial="hidden"
@@ -49,7 +53,7 @@ export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
           ideas → results.
         </motion.p>
         <motion.div
-          className="w-full md:w-[670px] 2xl:w-[1270px] xl:w-[1050px] lg:w-[900px]  5xl:w-[1300px] mx-auto flex-1 relative h-[400px] pb-10"
+          className="w-full md:w-[670px] lg:w-[900px] xl:w-[1150px] 2xl:w-[1270px]   5xl:w-[1280px] mx-auto  h-[260px] md:h-[320px] lg:h-[370px] xl:h-[386px] 2xl:h-[410px]  4xl:h-[420px] 5xl:h-[410px]  relative  pb-10"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}
@@ -69,8 +73,10 @@ export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
                   step={step.step}
                   color={step.color}
                   total={steps.length}
-                  hoveredIndex={hoveredIndex}
                   description={step.description}
+                  lineImage={step.lineImage}
+                  hoveredIndex={hoveredIndex}
+                  title={step.title}
                   setHoveredIndex={setHoveredIndex}
                 />
               </div>
@@ -89,8 +95,10 @@ export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
                   step={step.step}
                   color={step.color}
                   total={steps.length}
-                  hoveredIndex={hoveredIndex}
                   description={step.description}
+                  lineImage={step.lineImage}
+                  hoveredIndex={hoveredIndex}
+                  title={step.title}
                   setHoveredIndex={setHoveredIndex}
                 />
               </div>
@@ -107,6 +115,8 @@ function StepCircles({
   step,
   color,
   description,
+  lineImage,
+  title,
   total,
   hoveredIndex,
   setHoveredIndex,
@@ -152,14 +162,28 @@ function StepCircles({
       </>
 
       {index % 2 !== 0 && (
-        <p
-          className="text-center text-[10px] lg:text-sm   max-w-[100px]  4xl:max-w-[90px] transition-all duration-300 w-fit z-20"
-          style={{
-            color: isHovered ? color : "black",
-          }}
-        >
-          {description}
-        </p>
+        <div className="flex flex-col gap-4 items-center ">
+          <div className="absolute -top-65 ">
+            <Image src={lineImage} alt="left-line" />
+          </div>
+          <div
+            className="absolute -top-97 2xl:-top-100 text-center text-base lg:text-lg  whitespace-nowrap font-semibold leading-tight"
+            style={{ color: color }}
+          >
+            {title}
+          </div>
+          <div className="absolute -top-90 w-[170px] lg:w-[210px] xl:w-[290px] text-center text-[12px] lg:text-sm 2xl:text-base leading-tight">
+            {description}
+          </div>
+          <p
+            className="absolute -top-12 font-medium text-lg lg:text-xl text-center leading-tight"
+            style={{
+              color: isHovered ? color : "black",
+            }}
+          >
+            {title}
+          </p>
+        </div>
       )}
       {/* Circle */}
       <div
@@ -184,14 +208,29 @@ function StepCircles({
 
       {/* Description below the circle */}
       {index % 2 === 0 && (
-        <p
-          className=" text-center text-[10px] lg:text-sm  md:max-w-[40px] lg:max-w-[100px]  4xl:max-w-[90px] transition-all duration-300 w-fit z-20"
-          style={{
-            color: isHovered ? color : "black",
-          }}
-        >
-          {description}
-        </p>
+        <div className="flex flex-col gap-4 items-center ">
+          <p
+            className=" absolute top-22 lg:top-32 xl:top-40 2xl:top-45 font-medium text-lg lg:text-xl text-center leading-tight"
+            style={{
+              color: isHovered ? color : "black",
+            }}
+          >
+            {title}
+          </p>
+          <div className="absolute -bottom-65 ">
+            <Image src={lineImage} alt="left-line " />
+          </div>
+
+          <div
+            className="absolute -bottom-75  text-center text-base lg:text-lg  whitespace-nowrap font-semibold leading-tight"
+            style={{ color: color }}
+          >
+            {title}
+          </div>
+          <div className="absolute top-102 lg:top-112 xl:top-119  2xl:top-125 w-[170px] lg:w-[210px] xl:w-[290px] flex text-[12px] lg:text-sm 2xl:text-base leading-tight  ">
+            <p className="text-center">{description}</p>
+          </div>
+        </div>
       )}
     </div>
   );

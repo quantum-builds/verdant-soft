@@ -159,3 +159,13 @@ export { default as ThreeNumber } from "./03.svg";
 export { default as FourNumber } from "./04.svg";
 
 export { default as ExploreMoreArrow } from "./explore-more-arrow.svg";
+
+export { default as CustomSoftwareServiceBG } from "./custom-software-service-bg.png";
+export { default as CloudDevOpsServiceBG } from "./cloud-devOps-service-bg.png";
+export { default as UiUxServiceBG } from "./ui-ux-service-bg.png";
+
+export { default as ItTeamImage1 } from "./it-team-image-1.png";
+export { default as ItTeamImage2 } from "./it-team-image-2.png";
+export { default as ItTeamImage3 } from "./it-team-image-3.png";
+export { default as ItTeamImage4 } from "./it-team-image-4.png";
+export { default as ItTeamImage5 } from "./it-team-image-5.png";

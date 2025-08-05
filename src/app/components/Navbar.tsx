@@ -15,10 +15,10 @@ export default function Navbar() {
   const dropdownRef = useRef(null);
 
   const servicesList: NavOption[] = [
-    { label: "UI/UX Design", href: "/services/ui-ux-design" },
-    { label: "Cloud & DevOps", href: "/services/cloud-devops" },
     { label: "Custom Software Development", href: "/services/custom-software" },
+    { label: "Cloud & DevOps", href: "/services/cloud-devops" },
     { label: "IT Team Outsourcing", href: "/services/it-team-outsourcing" },
+    { label: "UI/UX Design", href: "/services/ui-ux-design" },
   ];
 
   const navItems: (NavOption & { children?: NavOption[] })[] = [

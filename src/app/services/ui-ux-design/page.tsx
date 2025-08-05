@@ -4,7 +4,6 @@ import {
   AfterAffectsIcon,
   AxureRpIcon,
   BalsamiqIcom,
-  DottedBG,
   FigmaIcon,
   IllustratorIcon,
   InVisionIcon,
@@ -13,6 +12,7 @@ import {
   MoqUpsIcon,
   PhotoShopIcon,
   SketchIcon,
+  UiUxServiceBG,
   WhimsicalIcon,
   ZeplinIcon,
 } from "@/assets";
@@ -98,56 +98,33 @@ export default function UiUxDesignPage() {
     <main className="flex flex-col  overflow-hidden">
       <Navbar />
 
-      <section className="relative w-11/12 xl:w-10/12 mx-auto min-h-[80vh] mb-20">
-        <div className="hidden absolute top-40 lg:-right-10 xl:-right-10 3xl:right-0 lg:flex items-end justify-end z-20">
+      <section className="relative mb-20">
+        {/* Background image with overlay */}
+        <div className="relative inset-0 z-0">
           <Image
-            src={DottedBG}
-            alt="Dotted Background"
-            className="w-4/5 md:w-3/4 lg:w-2/3 2xl:w-9/12 3xl:w-11/12 5xl:w-full h-auto object-center lg:rotate-110 xl:rotate-100 3xl:rotate-90"
+            className="w-full h-[80vh] object-cover"
+            src={UiUxServiceBG}
+            alt="hero background"
           />
+          <div className="absolute inset-0 bg-hero-gradient z-10" />
         </div>
-        <div className="max-w-11/12 lg:max-w-3/5 xl:max-w-1/2  text-gray-800 mt-24 md:mt-32 xl:mt-40">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-6 text-footer-black inline-block leading-tight">
-            <span className="text-green-gradient">UI UX</span> Design
+
+        {/* Text content - centered vertically, aligned to the right */}
+        <div className="absolute top-1/2 left-1/12 transform -translate-y-1/2  z-20 max-w-11/12 md:max-w-3/5 lg:max-w-[45%] 2xl:max-w-1/3 pr-4">
+          <h1 className="text-center text-[40px] lg:text-[54px] xl:text-[70px] 2xl:text-[80px] font-bold mb-2 xl:mb-6 text-white leading-tight">
+            UI UX Design
           </h1>
-          <p className="text-lg">
-            At our software house, we are dedicated to delivering exceptional
-            UI/UX design solutions that not only look stunning but also provide
-            an intuitive and engaging experience for users. Our team of skilled
-            designers and developers work collaboratively to understand your
-            unique business needs and target audience, ensuring that every
-            design element aligns perfectly with your brand identity and goals.
-            <br />
-            <br />
-            We specialize in creating customized user interfaces that are both
-            visually appealing and highly functional. From wireframing and
-            prototyping to final implementation, we prioritize user-centered
-            design principles to craft seamless digital experiences. Our designs
-            are optimized for usability across various devices and platforms,
-            ensuring your users enjoy a consistent and enjoyable experience
-            whether they access your product on a desktop, tablet, or mobile
-            device.
-            <br />
-            <br /> Our approach is iterative and collaborative, involving you at
-            every stage to incorporate feedback and refine the design. This
-            ensures that the end product not only meets but exceeds your
-            expectations. We pay close attention to detail, from color schemes
-            and typography to interactive elements, making sure each component
-            contributes to an engaging and memorable user journey.
-            <br />
-            <br /> Beyond aesthetics, we focus on enhancing functionality and
-            usability, aiming to increase user engagement, retention, and
-            satisfaction. Our solutions are tailored to your specific industry
-            and target demographic, helping you stand out in a competitive
-            market.
-            <br />
-            <br /> Partner with us to transform your digital presence with
-            innovative, user-friendly, and visually stunning UI/UX designs that
-            leave a lasting impression on your users and drive your business
-            success.
+          <p className="text-lg lg:text-xl text-white text-start">
+            At our software house, we craft stunning, user-friendly UI/UX
+            designs tailored to your brand and audience. Our collaborative
+            process ensures seamless, responsive experiences across all devices.
+            We focus on aesthetics, functionality, and user engagement to boost
+            satisfaction and retention. Partner with us to elevate your digital
+            presence and drive business success.
           </p>
         </div>
       </section>
+
       <WorkFlowSection steps={STEPS} />
       <TechnologiesSection
         title="<highlight>UI UX </highlight>Design

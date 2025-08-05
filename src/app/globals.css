@@ -55,6 +55,32 @@
   .marker\:bg-green-gradient:marker {
     background-image: linear-gradient(102.32deg, #416d95 0%, #74afad 100%);
   }
+  /* CSS for gradient border */
+  .border-gradient-right-rounded {
+    position: relative;
+    background: white; /* Your card bg */
+    border-radius: 1rem; /* Rounded corners */
+    padding: 2rem; /* Adjust as needed */
+    z-index: 0;
+  }
+
+  .border-gradient-right-rounded::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px; /* Border thickness */
+    border-radius: 1rem; /* Match the container */
+    background: linear-gradient(
+      270deg,
+      #59b7bd 0%,
+      rgba(102, 102, 102, 0) 83.52%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
 }
 
 :root {

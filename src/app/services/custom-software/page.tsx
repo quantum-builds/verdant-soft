@@ -2,8 +2,8 @@ import Navbar from "../../components/Navbar";
 import Image from "next/image";
 import {
   AmazonAuroraIcon,
+  CustomSoftwareServiceBG,
   DjangoIcon,
-  DottedBG,
   ExpressIcon,
   JsIcon,
   KonvaIcon,
@@ -97,52 +97,53 @@ const USE_CASES: IUseCase[] = [
   },
 ];
 
+const POINTS_LIST = [
+  "We create tailored solutions specifically designed to meet your unique business needs.",
+  "Our applications are built to grow with your business and adapt to changing requirements.",
+  "We focus on streamlining workflows to improve productivity and operational performance.",
+  "Our solutions empower your organization to innovate, expand, and stay competitive.",
+];
+
 export default function CustomSoftwarePage() {
   return (
     <main className="flex flex-col overflow-hidden">
       <Navbar />
 
-      <section className="relative w-11/12 xl:w-10/12 mx-auto min-h-[70vh] mb-20">
-        <div className="hidden absolute top-40 lg:-right-10 xl:-right-10 3xl:right-0 lg:flex items-end justify-end z-20">
-          <Image
-            src={DottedBG}
-            alt="Dotted Background"
-            className="w-4/5 md:w-3/4 lg:w-2/3 2xl:w-9/12 3xl:w-11/12 5xl:w-full h-auto object-center lg:rotate-110 xl:rotate-100 3xl:rotate-90"
-          />
-        </div>
-        <div className="max-w-11/12 lg:max-w-3/5 xl:max-w-1/2  mt-24 md:mt-32 xl:mt-40">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-6 text-footer-black inline-block leading-tight">
+      <section className=" w-11/12 xl:w-10/12 mx-auto  mb-20">
+        <div className="w-full md:max-w-3/5 lg:max-w-3/5 xl:max-w-1/2 mt-24 md:mt-32 xl:mt-40 h-fit   relative">
+          <div className="w-auto h-[400px] md:h-[600px] lg:h-[700px] 5xl:h-[750px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out mb-6">
+            <Image
+              src={CustomSoftwareServiceBG}
+              alt="custom-software-img4"
+              className="relative w-full h-full object-cover rounded-2xl"
+            />
+          </div>
+
+          {/* Desktop text card - centered horizontally and positioned from center top */}
+          <div className="hidden md:block absolute top-1/2 -right-11/12 -translate-x-[16%] -translate-y-[120%] lg:-translate-y-[140%] 4xl:-translate-y-[200%] bg-white shadow-2xl px-10 py-20 w-[calc(90%)] lg:w-[calc(70%)] xl:w-[calc(100%)] rounded-2xl border-gradient-right-rounded z-10">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-footer-black inline-block leading-tight">
+              <span className="text-green-gradient">Custom Software</span>{" "}
+              Development
+            </h1>
+            <ul className="list-disc pl-6 space-y-3 text-lg xl:text-xl">
+              {POINTS_LIST.map((text, index) => (
+                <li key={index}>{text}</li>
+              ))}
+            </ul>
+          </div>
+
+          <h1 className="md:hidden text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-footer-black inline-block leading-tight">
             <span className="text-green-gradient">Custom Software</span>{" "}
             Development
           </h1>
-          <p>
-            At Verdant Soft, we are passionate about delivering innovative and
-            customized web development solutions that empower your business to
-            thrive in the digital landscape. Our expert team of designers,
-            developers, and strategists collaborates closely with you to craft
-            websites that are not only visually stunning but also highly
-            functional and tailored to your unique needs.
-            <br />
-            <br /> We specialize in creating seamless, responsive websites that
-            provide an exceptional user experience across all devices—desktops,
-            tablets, and smartphones. Our solutions leverage the latest
-            technologies and industry best practices to ensure your website is
-            fast, secure, and scalable, helping you stay ahead of the
-            competition.
-            <br />
-            <br /> From initial concept and design to development, testing, and
-            deployment, Verdant Soft is committed to delivering high-quality,
-            professional websites that reflect your brand’s identity and values.
-            We also offer ongoing support and maintenance to keep your website
-            current, secure, and optimized for performance.
-            <br />
-            <br /> Partner with Verdant Soft to elevate your online presence
-            with a custom web solution designed specifically for your business.
-            Let us help you attract more visitors, generate leads, and achieve
-            your growth objectives in today’s digital-first world.
-          </p>
+          <ul className="md:hidden list-disc pl-6 space-y-3 text-lg xl:text-xl">
+            {POINTS_LIST.map((text, index) => (
+              <li key={index}>{text}</li>
+            ))}
+          </ul>
         </div>
       </section>
+
       <WorkFlowSection steps={STEPS} />
       <TechnologiesSection
         title="<highlight>Custom Software </highlight>Developement Technologies"

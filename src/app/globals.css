@@ -57,7 +57,7 @@
   }
   /* CSS for gradient border */
   .border-gradient-right-rounded {
-    position: relative;
+    /* position: relative; */
     background: white; /* Your card bg */
     border-radius: 1rem; /* Rounded corners */
     padding: 2rem; /* Adjust as needed */
@@ -65,9 +65,9 @@
   }
 
   .border-gradient-right-rounded::before {
-    content: "";
+    /* content: "";
     position: absolute;
-    inset: 0;
+    inset: 0; */
     padding: 2px; /* Border thickness */
     border-radius: 1rem; /* Match the container */
     background: linear-gradient(

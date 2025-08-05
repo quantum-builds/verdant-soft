@@ -10,9 +10,11 @@ import {
   ShopifySync,
   VpnExtension,
 } from "@/assets";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { StaticImageData } from "next/image";
+import { useRef } from "react";
 import CaseStudyCard from "../CaseStudyCard";
+import { useIsMobile } from "@/hook/useIsMobile";
 
 export interface ICaseStudies {
   title: string;
@@ -64,8 +66,19 @@ const CASE_STUDIES: ICaseStudies[] = [
 ];
 
 export default function CaseStudySection() {
+  const containerRef = useRef(null);
+  const isMobile = useIsMobile();
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const evenY = useTransform(scrollYProgress, [0, 0.5, 1], [50, 0, -50]);
+  const oddY = useTransform(scrollYProgress, [0, 0.5, 1], [-30, 0, 30]);
+
   const slideFromRight = {
-    hidden: { opacity: 0, x: 100 },
+    hidden: { opacity: 0, x: 50 },
     visible: {
       opacity: 1,
       x: 0,
@@ -73,9 +86,9 @@ export default function CaseStudySection() {
   };
 
   return (
-    <section id="case-studies" className="scroll-mt-28">
-      <div className="overflow-hidden mb-28 md:h-[1390px] lg:h-[675px] xl:h-[780px] 2xl:h-[835px] 3xl:h-[860px] 4xl:h-[900px] 5xl:h-[1070px]  w-11/12 xl:w-10/12  mx-auto flex flex-col gap-16 lg:gap-42">
-        <div className=" flex flex-col gap-12">
+    <section id="case-studies" className="scroll-mt-28" ref={containerRef}>
+      <div className="overflow-hidden mb-28 lg:mb-0 md:h-[1390px] lg:h-[775px] xl:h-[870px] 2xl:h-[905px] 3xl:h-[970px] 4xl:h-[1010px] 5xl:h-[1180px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-16 lg:gap-52">
+        <div className="flex flex-col gap-12">
           <p className="font-semibold text-2xl">[02 Case Studies]</p>
           <div className="w-full flex justify-end">
             <motion.h2
@@ -86,28 +99,43 @@ export default function CaseStudySection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
             >
-              <span className=" text-green-gradient">Stories of our</span>{" "}
+              <span className="text-green-gradient">Stories of our</span>{" "}
               transformations{" "}
-              <span className=" text-green-gradient">across</span> Services{" "}
-              <span className=" text-green-gradient">and</span> Industries
+              <span className="text-green-gradient">across</span> Services{" "}
+              <span className="text-green-gradient">and</span> Industries
             </motion.h2>
           </div>
         </div>
-        <div className="flex flex-wrap  justify-center gap-4 lg:gap-3 xl:gap-5 4xl:gap-8 lg:w-[900px] xl:w-[1090px] 2xl:w-[1270px] 3xl:w-[1420px] 4xl:w-[1500px] 5xl:w-[1800px] mx-auto">
-          {CASE_STUDIES.map((feature, index) => (
-            <div
-              key={index}
-              className={`${
-                index % 2 === 0 ? "lg:translate-y-1/4 " : "lg:-translate-y-1/4 "
-              } transition-transform`}
-            >
-              <CaseStudyCard
-                title={feature.title}
-                link={feature.link}
-                image={feature.image}
-              />
-            </div>
-          ))}
+
+        <div className="flex flex-wrap justify-center gap-4 lg:gap-3 xl:gap-5 4xl:gap-8 lg:w-[900px] xl:w-[1090px] 2xl:w-[1270px] 3xl:w-[1420px] 4xl:w-[1500px] 5xl:w-[1800px] mx-auto">
+          {CASE_STUDIES.map((feature, index) => {
+            const isEven = index % 2 === 0;
+
+            const transformClass =
+              index === 2 || index === 6
+                ? "lg:-translate-y-[10%]"
+                : isEven
+                ? "lg:translate-y-1/4"
+                : "lg:-translate-y-1/2";
+
+            const yValue = isEven ? evenY : oddY;
+
+            return (
+              <motion.div
+                key={index}
+                className={`${transformClass} transition-transform`}
+                style={{
+                  y: isMobile === false ? yValue : 0,
+                }}
+              >
+                <CaseStudyCard
+                  title={feature.title}
+                  link={feature.link}
+                  image={feature.image}
+                />
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

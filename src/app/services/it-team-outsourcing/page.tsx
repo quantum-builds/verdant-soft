@@ -159,21 +159,25 @@ export default function ItTeamOutsourcingPage() {
             </ul>
           </div>
         </div>
-        <div className="relative w-fit  pb-[200px] ">
-          <div className="rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-300 ease-in-out w-[500px] h-[350px]">
-            <Image
-              src={ItTeamImage4}
-              alt="custom-software-img1"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <div className="w-full lg:w-10/12 2xl:w-8/12 5xl:w-1/2 mx-auto">
+          <div className=" mb-30 md:mb-45  lg:mb-50">
+            <div className="relative w-fit">
+              <div className="rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-300 ease-in-out w-[250px] md:w-[500px] lg:w-[650px] xl:w-[700px] 2xl:w-[750px] 3xl:w-[800px]  h-[200px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px] ">
+                <Image
+                  src={ItTeamImage4}
+                  alt="custom-software-img1"
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-          <div className="absolute -bottom-20 -right-90 w-[500px] h-[350px] rounded-2xl overflow-hidden shadow-lg grayscale hover:grayscale-0 transition-all duration-300 ease-in-out z-10">
-            <Image
-              src={ItTeamImage5}
-              alt="custom-software-img2"
-              className="w-full h-full object-cover"
-            />
+              <div className="absolute -bottom-30 md:-bottom-45 3xl:-bottom-40 -right-30 md:-right-80 lg:-right-110 xl:-right-120 2xl:-right-130 3xl:-right-140 w-[250px] md:w-[500px] lg:w-[650px] xl:w-[700px] 2xl:w-[750px] 3xl:w-[800px]  h-[200px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px]  rounded-2xl overflow-hidden  grayscale hover:grayscale-0 transition-all duration-300 ease-in-out z-10 p-4 bg-white">
+                <Image
+                  src={ItTeamImage5}
+                  alt="custom-software-img2"
+                  className="w-full h-full object-cover rounded-3xl"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

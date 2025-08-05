@@ -4,6 +4,7 @@ import {
   AmazonAuroraIcon,
   CustomSoftwareServiceBG,
   DjangoIcon,
+  ECommerce,
   ExpressIcon,
   JsIcon,
   KonvaIcon,
@@ -13,9 +14,11 @@ import {
   NestIcon,
   NextIcon,
   NodeIcon,
+  ParkingApplication,
   PhpIcon,
   PythonIcon,
   ReactIcon,
+  RealEstate,
   SqLiteIcon,
   VueIcon,
 } from "@/assets";
@@ -24,6 +27,7 @@ import { IUseCase } from "@/common";
 import WorkFlowSection from "../components/WorkFlowSection";
 import TechnologiesSection from "../components/TechnologiesSection";
 import FAQSection from "../../components/sections/FAQSection";
+import CaseStudySection from "../components/CaseStudySection";
 
 const STEPS = [
   {
@@ -104,14 +108,32 @@ const POINTS_LIST = [
   "Our solutions empower your organization to innovate, expand, and stay competitive.",
 ];
 
+const CASE_STUDIES = [
+  {
+    title: "E-commerce Platform",
+    link: "/case-study/e-commerce",
+    image: ECommerce,
+  },
+  {
+    title: "Real Estate Platform",
+    link: "/case-study/real-estate",
+    image: RealEstate,
+  },
+  {
+    title: "Parking Application",
+    link: "/case-study/parking-app",
+    image: ParkingApplication,
+  },
+];
+
 export default function CustomSoftwarePage() {
   return (
     <main className="flex flex-col overflow-hidden">
       <Navbar />
 
       <section className=" w-11/12 xl:w-10/12 mx-auto  mb-20">
-        <div className="w-full md:max-w-3/5 lg:max-w-3/5 xl:max-w-1/2 mt-24 md:mt-32 xl:mt-40 h-fit   relative">
-          <div className="w-auto h-[400px] md:h-[600px] lg:h-[700px] 5xl:h-[750px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out mb-6">
+        <div className="w-full md:max-w-3/5 lg:max-w-3/5 xl:max-w-1/2 mt-24 md:mt-32 xl:mt-40 h-fit relative">
+          <div className="w-auto h-[400px] md:h-[600px] lg:h-[700px] 5xl:h-[750px] flex justify-center items-center rounded-2xl overflow-hidden  hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out mb-6">
             <Image
               src={CustomSoftwareServiceBG}
               alt="custom-software-img4"
@@ -119,13 +141,12 @@ export default function CustomSoftwarePage() {
             />
           </div>
 
-          {/* Desktop text card - centered horizontally and positioned from center top */}
-          <div className="hidden md:block absolute top-1/2 -right-11/12 -translate-x-[16%] -translate-y-[120%] lg:-translate-y-[140%] 4xl:-translate-y-[200%] bg-white shadow-2xl px-10 py-20 w-[calc(90%)] lg:w-[calc(70%)] xl:w-[calc(100%)] rounded-2xl border-gradient-right-rounded z-10">
+          <div className="hidden md:block absolute -right-[60%] lg:-right-1/2 xl:-right-[80%] top-[8%] xl:top-[15%]   bg-white shadow-2xl px-10 py-20 w-[calc(90%)] lg:w-[calc(70%)] xl:w-[calc(100%)] rounded-2xl border-gradient-right-rounded z-10">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-footer-black inline-block leading-tight">
               <span className="text-green-gradient">Custom Software</span>{" "}
               Development
             </h1>
-            <ul className="list-disc pl-6 space-y-3 text-lg xl:text-xl">
+            <ul className="list-disc pl-6 space-y-5 text-lg xl:text-xl">
               {POINTS_LIST.map((text, index) => (
                 <li key={index}>{text}</li>
               ))}
@@ -149,6 +170,15 @@ export default function CustomSoftwarePage() {
         title="<highlight>Custom Software </highlight>Developement Technologies"
         useCases={USE_CASES}
       />
+      <div className="min-h-[70vh] 3xl:min-h-[50vh] w-11/12 xl:w-10/12  mx-auto mb-28 flex flex-col gap-12 overflow-hidden">
+        <p className="font-semibold text-2xl">[02 Case Studies]</p>
+        <div className="w-full ">
+          <h2 className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold  break-words text-footer-black">
+            Projects <span className="text-green-gradient">Highlights</span>
+          </h2>
+        </div>
+        <CaseStudySection caseStuies={CASE_STUDIES} />
+      </div>
       <FAQSection />
       <FooterSection />
     </main>

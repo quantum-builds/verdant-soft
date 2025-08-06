@@ -44,7 +44,7 @@ const STEPS = [
     title: "User Personas",
     lineImage: Step2Line,
     description:
-      "Create detailed user personas and map out user journeys to identify needs, pain points, and key interactions.",
+      "Develop detailed user personas and map their journeys to understand needs, pain points, and key interactions for improved user experience.",
   },
   {
     step: 3,
@@ -60,7 +60,7 @@ const STEPS = [
     title: "Design & Prototyping",
     lineImage: Step4Line,
     description:
-      "Develop high-fidelity visual designs and interactive prototypes to visualize the user interface and experience.",
+      "Design and prototyping in UI/UX involve creating visual layouts and interactive models to optimize user experience and functionality before development.",
   },
   {
     step: 5,

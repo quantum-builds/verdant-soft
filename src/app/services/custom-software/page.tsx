@@ -41,28 +41,32 @@ const STEPS = [
     color: "#C72C91",
     title: "Requirement Analysis",
     lineImage: Step1Line,
-    description: "Understanding client needs and defining project scope.",
+    description:
+      "Requirement analysis is the process of identifying, understanding, and documenting stakeholder needs to guide system development.",
   },
   {
     step: 2,
     color: "#0565FF",
     title: "Design & Planning",
     lineImage: Step2Line,
-    description: "Creating wireframes, prototypes, and project timelines.",
+    description:
+      "Design & planning involve systematically creating and organizing ideas, strategies, and solutions to achieve specific goals effectively.",
   },
   {
     step: 3,
     color: "#FF8800",
     title: "Development",
     lineImage: Step3Line,
-    description: "Agile development cycles with continuous feedback.",
+    description:
+      "The Development Phase involves coding, integrating, and building the software according to design specifications to create a functional product.",
   },
   {
     step: 4,
     color: "#4AA047",
     title: "Testing",
     lineImage: Step4Line,
-    description: "Rigorous testing to ensure quality and performance.",
+    description:
+      "Custom software testing is tailored testing designed to verify that unique software features meet specific business requirements and quality standards.",
   },
   {
     step: 5,

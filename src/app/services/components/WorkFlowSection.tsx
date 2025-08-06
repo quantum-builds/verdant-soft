@@ -182,25 +182,25 @@ function StepCircles({
           )}
           {index !== 1 ? (
             <div
-              className="absolute top-60  md:-top-97 2xl:-top-100 text-center text-sm md:text-base lg:text-lg  md:whitespace-nowrap font-semibold leading-tight"
+              className="absolute top-60  md:-top-100 2xl:-top-102 text-center text-sm md:text-base lg:text-lg  md:whitespace-nowrap font-semibold leading-tight"
               style={{ color: color }}
             >
               {title}
             </div>
           ) : (
             <div
-              className="absolute bottom-126  md:-top-97 2xl:-top-100 text-center text-sm md:text-base lg:text-lg  md:whitespace-nowrap font-semibold leading-tight"
+              className="absolute bottom-126  md:-top-100 2xl:-top-102 text-center text-sm md:text-base lg:text-lg  md:whitespace-nowrap font-semibold leading-tight"
               style={{ color: color }}
             >
               {title}
             </div>
           )}
           {index !== 1 ? (
-            <div className="absolute top-72  md:-top-90 w-auto md:w-[170px] lg:w-[210px] xl:w-[290px] text-center text-[12px] lg:text-sm 2xl:text-base leading-tight">
+            <div className="absolute top-72  md:-top-92 w-auto md:w-[170px] lg:w-[210px] xl:w-[290px] text-center text-[12px] lg:text-sm 2xl:text-base leading-tight">
               {description}
             </div>
           ) : (
-            <div className="absolute bottom-80  md:-top-90 w-auto md:w-[170px] lg:w-[210px] xl:w-[290px] text-center text-[12px] lg:text-sm 2xl:text-base leading-tight">
+            <div className="absolute bottom-80  md:-top-92 w-auto md:w-[170px] lg:w-[210px] xl:w-[290px] text-center text-[12px] lg:text-sm 2xl:text-base leading-tight">
               {description}
             </div>
           )}

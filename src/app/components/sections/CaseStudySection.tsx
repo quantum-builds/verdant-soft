@@ -74,50 +74,20 @@ export default function CaseStudySection() {
     offset: ["start end", "end start"],
   });
 
-  const evenY = useTransform(scrollYProgress, [0, 0.5, 1], [50, 0, -50]);
-  const oddY = useTransform(scrollYProgress, [0, 0.5, 1], [-30, 0, 30]);
-
-  const slideFromRight = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-    },
-  };
-
-  // Get animation initial position based on index
-  const getCardAnimation = () => {
-    return {
-      hidden: {
-        opacity: 0,
-        y: isMobile ? 0 : 30, // Start 30px below original position on desktop
-      },
-      visible: {
-        opacity: 1,
-        y: 0,
-      },
-    };
-  };
+  const evenY = useTransform(scrollYProgress, [0, 0.5, 1], [80, 0, -80]);
+  const oddY = useTransform(scrollYProgress, [0, 0.5, 1], [-60, 0, 60]);
 
   return (
     <section id="case-studies" className="scroll-mt-28" ref={containerRef}>
       <div className="overflow-hidden mb-28 lg:mb-0 md:h-[1390px] lg:h-[775px] xl:h-[870px] 2xl:h-[905px] 3xl:h-[970px] 4xl:h-[1010px] 5xl:h-[1180px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-16 lg:gap-52">
         <div className="flex flex-col gap-12">
-          <p className="font-semibold text-2xl">[02 Case Studies]</p>
           <div className="w-full flex justify-end">
-            <motion.h2
-              className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-end break-words text-footer-black"
-              variants={slideFromRight}
-              transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.4 }}
-            >
+            <h2 className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-end break-words text-footer-black">
               <span className="text-green-gradient">Stories of our</span>{" "}
               transformations{" "}
               <span className="text-green-gradient">across</span> Services{" "}
               <span className="text-green-gradient">and</span> Industries
-            </motion.h2>
+            </h2>
           </div>
         </div>
 
@@ -127,9 +97,9 @@ export default function CaseStudySection() {
 
             const transformClass =
               index === 2 || index === 6
-                ? "lg:-translate-y-[10%]"
+                ? "lg:-translate-y-1/2"
                 : isEven
-                ? "lg:translate-y-1/4"
+                ? "lg:translate-y-[1%]"
                 : "lg:-translate-y-1/2";
 
             const yValue = isEven ? evenY : oddY;
@@ -137,26 +107,14 @@ export default function CaseStudySection() {
             return (
               <motion.div
                 key={index}
-                className={`${transformClass} transition-transform`}
+                className={transformClass}
                 style={{
-                  y: isMobile === false ? yValue : 0,
+                  y: !isMobile ? yValue : 0,
                 }}
-                variants={getCardAnimation()}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
                 transition={{
-                  delay: !isMobile
-                    ? index === 1
-                      ? 0.2
-                      : index === 3
-                      ? 0.3
-                      : index !== 6
-                      ? 0.5 + [0, 2, 4, 5, 7].indexOf(index) * 0.1
-                      : 1.0
-                    : 0,
-                  duration: 0.6,
-                  ease: "easeOut",
+                  type: "spring",
+                  stiffness: 60,
+                  damping: 18,
                 }}
               >
                 <CaseStudyCard

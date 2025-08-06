@@ -72,7 +72,7 @@ export default function BlogSection() {
               <Image
                 src={blog.imageUrl}
                 alt={`blog-${index}`}
-                className="w-full rounded-2xl h-[270px] lg:h-[250px] xl:h-[270px] opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
+                className="w-full rounded-2xl h-[270px] lg:h-[250px] xl:h-[270px] "
               />
               <div className="w-11/12 mx-auto">
                 <p className="text-xl font-semibold text-start  mb-2">
@@ -86,3 +86,5 @@ export default function BlogSection() {
     </section>
   );
 }
+
+// opacity-50 group-hover:opacity-100 group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out

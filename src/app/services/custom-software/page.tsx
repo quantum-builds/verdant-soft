@@ -157,7 +157,7 @@ export default function CustomSoftwarePage() {
 
       <section className=" w-11/12 xl:w-10/12 mx-auto  mb-20">
         <div className="w-full md:max-w-3/5 lg:max-w-3/5 xl:max-w-1/2 mt-24 md:mt-32 xl:mt-40 h-fit relative">
-          <div className="w-auto h-[400px] md:h-[600px] lg:h-[700px] 5xl:h-[750px] flex justify-center items-center rounded-2xl overflow-hidden  hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out mb-6">
+          <div className="w-auto h-[400px] md:h-[600px] lg:h-[700px] 5xl:h-[750px] flex justify-center items-center rounded-2xl overflow-hidden   mb-6">
             <Image
               src={CustomSoftwareServiceBG}
               alt="custom-software-img4"
@@ -195,7 +195,7 @@ export default function CustomSoftwarePage() {
         useCases={USE_CASES}
       />
       <div className="min-h-[70vh] 3xl:min-h-[50vh] w-11/12 xl:w-10/12  mx-auto mb-28 flex flex-col gap-12 overflow-hidden">
-        <p className="font-semibold text-2xl">[02 Case Studies]</p>
+        {/* <p className="font-semibold text-2xl">[02 Case Studies]</p> */}
         <div className="w-full ">
           <h2 className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl  font-semibold  break-words text-footer-black">
             Projects <span className="text-green-gradient">Highlights</span>

@@ -1,7 +1,7 @@
 "use client";
 
 import { LeftLine, LowerElipse, RightLine, UpperElipse } from "@/assets";
-import { slideFromBottom, slideFromLeft } from "@/uitls/sliderAnimation";
+import { slideFromBottom } from "@/uitls/sliderAnimation";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
@@ -32,12 +32,19 @@ interface StepCircleProps {
 export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
+  const slideFromLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
   return (
     <div
       id="workflow"
       className="scroll-mt-36 h-[1450px] md:h-[890px] lg:h-[970px] xl:h-[1010px] 2xl:h-[1010px] 3xl:h-[1030px]  4xl:h-[1050px] 5xl:h-[1100px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-12  mb-20 overflow-hidden  "
     >
-      <p className="font-semibold text-2xl">[01 Workflow]</p>
+      {/* <p className="font-semibold text-2xl">[01 Workflow]</p> */}
       <div className="flex flex-col gap-110 md:gap-60 flex-1">
         <motion.p
           className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-footer-black"

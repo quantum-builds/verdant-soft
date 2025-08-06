@@ -5,7 +5,6 @@ import {
   CloudOptimizationImage3,
   CloudOptimizationImage4,
   CloudOptimizationImage5,
-  CloudOptimizationImage6,
 } from "@/assets";
 import Image from "next/image";
 import Link from "next/link";
@@ -80,7 +79,7 @@ export default function BlogSection() {
             </p>
           </div>
           <div className="flex-1">
-            <div className="w-full h-full min-h-[250px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[600px] flex justify-center items-center 3xl:items-end 5xl:items-center rounded-2xl overflow-hidden  opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+            <div className="w-full h-full min-h-[250px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[600px] flex justify-center items-center 3xl:items-end 5xl:items-center rounded-2xl overflow-hidden  ">
               <Image
                 src={CloudOptimizationImage1}
                 alt="cloud-optimize-img1"
@@ -130,7 +129,7 @@ export default function BlogSection() {
             </p>
           </div>
           <div className="flex-1">
-            <div className="w-full h-full min-h-[200px] md:min-h-[390px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+            <div className="w-full h-full min-h-[200px] md:min-h-[390px] flex justify-center items-center rounded-2xl overflow-hidden ">
               <Image
                 src={CloudOptimizationImage3}
                 alt="cloud-optimize-img3"
@@ -173,7 +172,7 @@ export default function BlogSection() {
               </ul>
             </div>
             <div className="flex-1">
-              <div className="w-full  min-h-[200px] md:h-[400px] lg:h-[500px] 5xl:h-[550px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+              <div className="w-full  min-h-[200px] md:h-[400px] lg:h-[500px] 5xl:h-[550px] flex justify-center items-center rounded-2xl overflow-hidden t">
                 <Image
                   src={CloudOptimizationImage4}
                   alt="cloud-optimization-img4"
@@ -198,7 +197,7 @@ export default function BlogSection() {
               </ul>
             </div>
             <div className="flex-1">
-              <div className="w-full min-h-[200px] md:h-[400px] lg:h-[500px] 5xl:h-[550px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+              <div className="w-full min-h-[200px] md:h-[400px] lg:h-[500px] 5xl:h-[550px] flex justify-center items-center rounded-2xl overflow-hidden ">
                 <Image
                   src={CloudOptimizationImage5}
                   alt="cloud-optimization-img5"
@@ -244,15 +243,15 @@ export default function BlogSection() {
               </p>
             </div>
           </div>
-          <div className="flex-1">
-            <div className="w-full h-full min-h-[100px] md:min-h-[200px] lg:min-h-[300px] xl:min-h-[400px] flex justify-center items-center rounded-2xl overflow-hidden opacity-50 hover:opacity-100 hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+          {/* <div className="flex-1">
+            <div className="w-full h-full min-h-[100px] md:min-h-[200px] lg:min-h-[300px] xl:min-h-[400px] flex justify-center items-center rounded-2xl overflow-hidden ">
               <Image
                 src={CloudOptimizationImage6}
                 alt="cloud-optimization-img6"
                 className="w-full h-full object-contain rounded-2xl"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

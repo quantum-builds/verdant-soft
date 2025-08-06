@@ -37,9 +37,9 @@ export { default as ShopifySync } from "./shopify-sync.png";
 export { default as VpnExtension } from "./vpn-extension.jpg";
 export { default as HospitalManagement } from "./hospital-management.jpg";
 
-export { default as CustomSoftwareBG } from "./custom-software-bg.png";
+export { default as CustomSoftwareBG } from "./custom-software-bg.jpg";
 export { default as CloudOptimizationBG } from "./cloud-optimization-bg.png";
-export { default as DesignToDevBG } from "./design-to-dev-bg.png";
+export { default as DesignToDevBG } from "./design-to-dev-bg.jpg";
 
 export { default as JsIcon } from "./js-icon.svg";
 export { default as KotlinIcon } from "./kotlin-icon.svg";

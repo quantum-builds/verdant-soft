@@ -20,7 +20,7 @@ export default function CaseStudySection({
           <Image
             src={caseStudy.image}
             alt={`blog-${index}`}
-            className="w-full rounded-2xl h-[380px] lg:h-[250px] xl:h-[330px]  group-hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out"
+            className="w-full rounded-2xl h-[380px] lg:h-[250px] xl:h-[330px] "
           />
           <div className="w-11/12 mx-auto">
             <p className="text-xl font-semibold text-start  mb-4">

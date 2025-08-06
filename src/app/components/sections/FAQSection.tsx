@@ -76,7 +76,7 @@ export default function FAQSection() {
   return (
     <section id="faqs" className="scroll-mt-28">
       <div className="overflow-hidden flex flex-col gap-12 md:min-h-[70vh] 3xl:min-h-[50vh] w-11/12 xl:w-10/12 mx-auto mb-28">
-        <p className="font-semibold text-2xl">[05 FAQ]</p>
+        {/* <p className="font-semibold text-2xl">[05 FAQ]</p> */}
 
         <div className="flex flex-col md:flex-row gap-12">
           <motion.p

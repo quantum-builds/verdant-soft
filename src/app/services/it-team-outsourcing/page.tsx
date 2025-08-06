@@ -8,6 +8,7 @@ import {
 import Image from "next/image";
 import Navbar from "./../../components/Navbar";
 import FooterSection from "@/app/components/sections/FooterSection";
+import FAQSection from "@/app/components/sections/FAQSection";
 
 const BENEFITS = [
   "Efficiency",
@@ -66,7 +67,7 @@ export default function ItTeamOutsourcingPage() {
             </p>
           </div>
           <div className="flex-1">
-            <div className="w-full min-h-[200px]  md:h-[300px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px] flex justify-center items-center rounded-2xl overflow-hidden   hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+            <div className="w-full min-h-[200px]  md:h-[300px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px] flex justify-center items-center rounded-2xl overflow-hidden  ">
               <Image
                 src={ItTeamImage1}
                 alt="custom-software-img1"
@@ -77,7 +78,7 @@ export default function ItTeamOutsourcingPage() {
         </div>
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-30 justify-center">
           <div className="flex-1 order-2 lg:order-1">
-            <div className="w-full min-h-[400px]  md:h-[500px] lg:h-[800px] xl:h-[850px] 2xl:h-[900px] flex justify-center items-center rounded-2xl overflow-hidden   hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+            <div className="w-full min-h-[400px]  md:h-[500px] lg:h-[800px] xl:h-[850px] 2xl:h-[900px] flex justify-center items-center rounded-2xl overflow-hidden  ">
               <Image
                 src={ItTeamImage2}
                 alt="custom-software-img1"
@@ -86,7 +87,7 @@ export default function ItTeamOutsourcingPage() {
             </div>
           </div>
           <div className="flex-1 order-1 lg:order-2 flex flex-col justify-center">
-            <h2 className="max-w-3xl text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-8 text-footer-black inline-block leading-tight">
+            <h2 className="max-w-3xl text-[28px] md:text-[30px] lg:text-[40px] xl:text-[52px] 2xl:text-[64px] font-bold mb-8 text-footer-black inline-block leading-tight">
               Benefits of Partnering with
               <span className="text-green-gradient"> Verdant Soft</span>
             </h2>
@@ -99,7 +100,7 @@ export default function ItTeamOutsourcingPage() {
         </div>
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-30 justify-center ">
           <div className="flex-1 flex flex-col gap-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-footer-black inline-block leading-tight">
+            <h2 className="text-[28px] md:text-[30px] lg:text-[40px] xl:text-[52px] 2xl:text-[64px] font-bold text-footer-black inline-block leading-tight">
               IT{" "}
               <span className="text-green-gradient">
                 Team Outsourcing Services
@@ -128,7 +129,7 @@ export default function ItTeamOutsourcingPage() {
             </div>
           </div>
           <div className="flex-1 flex items-end">
-            <div className="w-full min-h-[300px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px] flex justify-center items-center rounded-2xl overflow-hidden   hover:grayscale-0 grayscale-100 transition-all duration-300 ease-in-out">
+            <div className="w-full min-h-[300px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px] flex justify-center items-center rounded-2xl overflow-hidden  ">
               <Image
                 src={ItTeamImage3}
                 alt="custom-software-img1"
@@ -162,7 +163,7 @@ export default function ItTeamOutsourcingPage() {
         <div className="w-full lg:w-10/12 2xl:w-8/12 5xl:w-1/2 mx-auto">
           <div className=" mb-30 md:mb-45  lg:mb-50">
             <div className="relative w-fit">
-              <div className="rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-300 ease-in-out w-[250px] md:w-[500px] lg:w-[650px] xl:w-[700px] 2xl:w-[750px] 3xl:w-[800px]  h-[200px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px] ">
+              <div className="rounded-2xl overflow-hidden  w-[250px] md:w-[500px] lg:w-[650px] xl:w-[700px] 2xl:w-[750px] 3xl:w-[800px]  h-[200px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px] ">
                 <Image
                   src={ItTeamImage4}
                   alt="custom-software-img1"
@@ -170,7 +171,7 @@ export default function ItTeamOutsourcingPage() {
                 />
               </div>
 
-              <div className="absolute -bottom-30 md:-bottom-45 3xl:-bottom-40 -right-30 md:-right-80 lg:-right-110 xl:-right-120 2xl:-right-130 3xl:-right-140 w-[250px] md:w-[500px] lg:w-[650px] xl:w-[700px] 2xl:w-[750px] 3xl:w-[800px]  h-[200px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px]  rounded-2xl overflow-hidden  grayscale hover:grayscale-0 transition-all duration-300 ease-in-out z-10 p-4 bg-white">
+              <div className="absolute -bottom-30 md:-bottom-45 3xl:-bottom-40 -right-30 md:-right-80 lg:-right-110 xl:-right-120 2xl:-right-130 3xl:-right-140 w-[250px] md:w-[500px] lg:w-[650px] xl:w-[700px] 2xl:w-[750px] 3xl:w-[800px]  h-[200px]  md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[550px]  rounded-2xl overflow-hidden   z-10 p-4 bg-white">
                 <Image
                   src={ItTeamImage5}
                   alt="custom-software-img2"
@@ -181,6 +182,7 @@ export default function ItTeamOutsourcingPage() {
           </div>
         </div>
       </section>
+      <FAQSection />
       <FooterSection />
     </main>
   );

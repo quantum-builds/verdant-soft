@@ -35,10 +35,10 @@ export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
   return (
     <div
       id="workflow"
-      className="scroll-mt-36 h-[530px] md:h-[890px] lg:h-[970px] xl:h-[1010px] 2xl:h-[1010px] 3xl:h-[1030px]  4xl:h-[1050px] 5xl:h-[1100px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-12  mb-20 overflow-hidden  "
+      className="scroll-mt-36 h-[1450px] md:h-[890px] lg:h-[970px] xl:h-[1010px] 2xl:h-[1010px] 3xl:h-[1030px]  4xl:h-[1050px] 5xl:h-[1100px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-12  mb-20 overflow-hidden  "
     >
       <p className="font-semibold text-2xl">[01 Workflow]</p>
-      <div className="flex flex-col gap-20 md:gap-60 flex-1">
+      <div className="flex flex-col gap-110 md:gap-60 flex-1">
         <motion.p
           className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-footer-black"
           initial="hidden"
@@ -53,7 +53,7 @@ export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
           ideas → results.
         </motion.p>
         <motion.div
-          className="w-full md:w-[670px] lg:w-[900px] xl:w-[1150px] 2xl:w-[1270px]   5xl:w-[1280px] mx-auto  h-[260px] md:h-[320px] lg:h-[370px] xl:h-[386px] 2xl:h-[410px]  4xl:h-[420px] 5xl:h-[410px]  relative  pb-10"
+          className="w-full md:w-[670px] lg:w-[900px] xl:w-[1150px] 2xl:w-[1270px]   5xl:w-[1280px] mx-auto  h-[500px] md:h-[320px] lg:h-[370px] xl:h-[386px] 2xl:h-[410px]  4xl:h-[420px] 5xl:h-[410px]  relative  pb-10"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}
@@ -163,18 +163,47 @@ function StepCircles({
 
       {index % 2 !== 0 && (
         <div className="flex flex-col gap-4 items-center ">
-          <div className="absolute -top-65 ">
-            <Image src={lineImage} alt="left-line" />
-          </div>
-          <div
-            className="absolute -top-97 2xl:-top-100 text-center text-base lg:text-lg  whitespace-nowrap font-semibold leading-tight"
-            style={{ color: color }}
-          >
-            {title}
-          </div>
-          <div className="absolute -top-90 w-[170px] lg:w-[210px] xl:w-[290px] text-center text-[12px] lg:text-sm 2xl:text-base leading-tight">
-            {description}
-          </div>
+          {index !== 1 ? (
+            <div className="absolute top-25 md:-top-65 ">
+              <Image
+                src={lineImage}
+                alt="left-line"
+                className="w-2/3 md:w-full rotate-180 md:rotate-0"
+              />
+            </div>
+          ) : (
+            <div className="absolute bottom-37 md:-top-65 ">
+              <Image
+                src={lineImage}
+                alt="left-line"
+                className="w-2/3 md:w-full"
+              />
+            </div>
+          )}
+          {index !== 1 ? (
+            <div
+              className="absolute top-60  md:-top-97 2xl:-top-100 text-center text-sm md:text-base lg:text-lg  md:whitespace-nowrap font-semibold leading-tight"
+              style={{ color: color }}
+            >
+              {title}
+            </div>
+          ) : (
+            <div
+              className="absolute bottom-126  md:-top-97 2xl:-top-100 text-center text-sm md:text-base lg:text-lg  md:whitespace-nowrap font-semibold leading-tight"
+              style={{ color: color }}
+            >
+              {title}
+            </div>
+          )}
+          {index !== 1 ? (
+            <div className="absolute top-72  md:-top-90 w-auto md:w-[170px] lg:w-[210px] xl:w-[290px] text-center text-[12px] lg:text-sm 2xl:text-base leading-tight">
+              {description}
+            </div>
+          ) : (
+            <div className="absolute bottom-80  md:-top-90 w-auto md:w-[170px] lg:w-[210px] xl:w-[290px] text-center text-[12px] lg:text-sm 2xl:text-base leading-tight">
+              {description}
+            </div>
+          )}
           <p
             className="absolute -top-12 font-medium text-lg lg:text-xl text-center leading-tight"
             style={{
@@ -217,19 +246,47 @@ function StepCircles({
           >
             {title}
           </p>
-          <div className="absolute -bottom-65 ">
-            <Image src={lineImage} alt="left-line " />
-          </div>
-
-          <div
-            className="absolute -bottom-75  text-center text-base lg:text-lg  whitespace-nowrap font-semibold leading-tight"
-            style={{ color: color }}
-          >
-            {title}
-          </div>
-          <div className="absolute top-102 lg:top-112 xl:top-119  2xl:top-125 w-[170px] lg:w-[210px] xl:w-[290px] flex text-[12px] lg:text-sm 2xl:text-base leading-tight  ">
-            <p className="text-center">{description}</p>
-          </div>
+          {index !== 4 ? (
+            <div className="absolute -top-35 md:-bottom-65 md:top-40 lg:top-50 xl:top-58 ">
+              <Image
+                src={lineImage}
+                alt="left-line "
+                className="w-2/3 md:w-auto rotate-180 md:rotate-0"
+              />
+            </div>
+          ) : (
+            <div className="absolute top-35 md:-bottom-65 md:top-40 lg:top-50 xl:top-58">
+              <Image
+                src={lineImage}
+                alt="left-line "
+                className="w-2/3 md:w-full"
+              />
+            </div>
+          )}
+          {index !== 4 ? (
+            <div
+              className="absolute -top-96  md:-bottom-75 md:top-92 lg:top-102 xl:top-111 text-center text-sm md:text-base lg:text-lg md:whitespace-nowrap font-semibold leading-tight"
+              style={{ color: color }}
+            >
+              {title}
+            </div>
+          ) : (
+            <div
+              className="absolute top-70  md:-bottom-75 md:top-92 lg:top-102  xl:top-111 text-center text-sm md:text-base lg:text-lg md:whitespace-nowrap font-semibold leading-tight"
+              style={{ color: color }}
+            >
+              {title}
+            </div>
+          )}
+          {index !== 4 ? (
+            <div className="absolute -top-80  md:top-100 lg:top-110 xl:top-120  w-auto  md:w-[170px] lg:w-[210px] xl:w-[290px] flex text-[12px] lg:text-sm 2xl:text-base leading-tight  ">
+              <p className="text-center">{description}</p>
+            </div>
+          ) : (
+            <div className="absolute top-82  md:top-100 lg:top-110 xl:top-120  w-auto md:w-[170px] lg:w-[210px] xl:w-[290px] flex text-[12px] lg:text-sm 2xl:text-base leading-tight  ">
+              <p className="text-center">{description}</p>
+            </div>
+          )}
         </div>
       )}
     </div>

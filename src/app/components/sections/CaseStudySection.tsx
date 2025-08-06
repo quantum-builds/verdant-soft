@@ -85,24 +85,8 @@ export default function CaseStudySection() {
     },
   };
 
-  // Get animation delay and initial position based on index
-  const getCardAnimation = (index: number) => {
-    let delay = 0;
-
-    if (!isMobile) {
-      // First wave: indices 1, 3 (0.2s, 0.3s)
-      if (index === 1) delay = 0.2;
-      else if (index === 3) delay = 0.3;
-      // Second wave: all others except 6, 1, 3 (0.5s - 0.9s)
-      else if (index !== 6) {
-        const otherIndices = [0, 2, 4, 5, 7];
-        const position = otherIndices.indexOf(index);
-        delay = 0.5 + position * 0.1;
-      }
-      // Third wave: index 6 (1.0s)
-      else if (index === 6) delay = 1.0;
-    }
-
+  // Get animation initial position based on index
+  const getCardAnimation = () => {
     return {
       hidden: {
         opacity: 0,
@@ -157,7 +141,7 @@ export default function CaseStudySection() {
                 style={{
                   y: isMobile === false ? yValue : 0,
                 }}
-                variants={getCardAnimation(index)}
+                variants={getCardAnimation()}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}

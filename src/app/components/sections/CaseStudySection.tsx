@@ -85,6 +85,36 @@ export default function CaseStudySection() {
     },
   };
 
+  // Get animation delay and initial position based on index
+  const getCardAnimation = (index: number) => {
+    let delay = 0;
+
+    if (!isMobile) {
+      // First wave: indices 1, 3 (0.2s, 0.3s)
+      if (index === 1) delay = 0.2;
+      else if (index === 3) delay = 0.3;
+      // Second wave: all others except 6, 1, 3 (0.5s - 0.9s)
+      else if (index !== 6) {
+        const otherIndices = [0, 2, 4, 5, 7];
+        const position = otherIndices.indexOf(index);
+        delay = 0.5 + position * 0.1;
+      }
+      // Third wave: index 6 (1.0s)
+      else if (index === 6) delay = 1.0;
+    }
+
+    return {
+      hidden: {
+        opacity: 0,
+        y: isMobile ? 0 : 30, // Start 30px below original position on desktop
+      },
+      visible: {
+        opacity: 1,
+        y: 0,
+      },
+    };
+  };
+
   return (
     <section id="case-studies" className="scroll-mt-28" ref={containerRef}>
       <div className="overflow-hidden mb-28 lg:mb-0 md:h-[1390px] lg:h-[775px] xl:h-[870px] 2xl:h-[905px] 3xl:h-[970px] 4xl:h-[1010px] 5xl:h-[1180px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-16 lg:gap-52">
@@ -126,6 +156,23 @@ export default function CaseStudySection() {
                 className={`${transformClass} transition-transform`}
                 style={{
                   y: isMobile === false ? yValue : 0,
+                }}
+                variants={getCardAnimation(index)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{
+                  delay: !isMobile
+                    ? index === 1
+                      ? 0.2
+                      : index === 3
+                      ? 0.3
+                      : index !== 6
+                      ? 0.5 + [0, 2, 4, 5, 7].indexOf(index) * 0.1
+                      : 1.0
+                    : 0,
+                  duration: 0.6,
+                  ease: "easeOut",
                 }}
               >
                 <CaseStudyCard

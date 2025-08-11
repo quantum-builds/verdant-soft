@@ -14,8 +14,10 @@ const MID_CONTENT = [
       Every great product starts with understanding the problem.<br/>
       We kick off with discovery sessions to dive deep into your business, your users, and your goals.
       From there, our UI/UX designers create wireframes and prototypes to map out the user journey.<br/><br/>
-      ✦ <strong>Focus:</strong> Clear navigation, intuitive interfaces, user-first design<br/>
-      ✦ <strong>Tools:</strong> Figma, Adobe XD, user personas, moodboards<br/><br/>
+      <ul>
+        <li><strong>Focus:</strong> Clear navigation, intuitive interfaces, user-first design</li>
+        <li><strong>Tools:</strong> Figma, Adobe XD, user personas, moodboards</li>
+      </ul>
       At this stage, we ensure the look and feel of the product aligns perfectly with both user expectations and business objectives.
     `,
   },
@@ -24,9 +26,11 @@ const MID_CONTENT = [
     description: `
       Once the design is approved, our developers get to work turning those ideas into a fully functioning product.
       At Verdant Soft, we use modern web technologies and best practices to build clean, efficient, and scalable code.<br/><br/>
-      ✦ <strong>Frontend:</strong> React, Vue, HTML/CSS, Tailwind<br/>
-      ✦ <strong>Backend:</strong> Node.js, Laravel, Django, custom APIs<br/>
-      ✦ <strong>Database:</strong> MySQL, PostgreSQL, MongoDB<br/><br/>
+      <ul>
+        <li><strong>Frontend:</strong> React, Vue, HTML/CSS, Tailwind</li>
+        <li><strong>Backend:</strong> Node.js, Laravel, Django, custom APIs</li>
+        <li><strong>Database:</strong> MySQL, PostgreSQL, MongoDB</li>
+      </ul>
       Our DevOps team works alongside developers to set up continuous integration, automated testing, and scalable deployment pipelines.
       Everything is built to grow with your business.
     `,
@@ -35,9 +39,11 @@ const MID_CONTENT = [
     title: "Phase 3: Testing & Feedback Loops",
     description: `
       Before launch, we run extensive testing—because the last thing anyone wants is bugs in production.<br/><br/>
-      ✦ <strong>Functional Testing</strong><br/>
-      ✦ <strong>Performance Testing</strong><br/>
-      ✦ <strong>Cross-Browser & Cross-Device Testing</strong><br/><br/>
+      <ul>
+        <li><strong>Functional Testing</strong></li>
+        <li><strong>Performance Testing</strong></li>
+        <li><strong>Cross-Browser & Cross-Device Testing</strong></li>
+      </ul>
       We also include feedback loops with clients to tweak and refine any last-minute user flows or design interactions.
     `,
   },
@@ -46,9 +52,11 @@ const MID_CONTENT = [
     description: `
       When everything’s ready, we push to production using cloud platforms like AWS, Azure, or Vercel.
       Our DevOps team ensures the deployment is secure, automated, and monitorable from day one.<br/><br/>
-      ✦ <strong>CI/CD Pipelines</strong><br/>
-      ✦ <strong>Version Control with Git</strong><br/>
-      ✦ <strong>Staging Environments for Previews</strong><br/><br/>
+      <ul>
+        <li><strong>CI/CD Pipelines</strong></li>
+        <li><strong>Version Control with Git</strong></li>
+        <li><strong>Staging Environments for Previews</strong></li>
+      </ul>
       We also provide training, documentation, and post-launch support, so you're never left guessing how to use or manage your new digital product.
     `,
   },
@@ -114,8 +122,8 @@ export default function BlogSection() {
                 <h3 className="text-2xl lg:text-[28px] 2xl:text-[32px] 5xl:text-[40px] font-semibold text-green-gradient">
                   {content.title}
                 </h3>
-                <p
-                  className="text-md xl:text-xl"
+                <div
+                  className="text-md xl:text-xl [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2"
                   dangerouslySetInnerHTML={{ __html: content.description }}
                 />
               </div>

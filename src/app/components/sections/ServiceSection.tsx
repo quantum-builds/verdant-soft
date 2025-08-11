@@ -17,7 +17,7 @@ export default function ServiceSection() {
       url: "custom-software",
       title: "Custom Software Development",
       description:
-        "We create customized software solutions tailored to your business needs, enhancing flexibility, scalability, and efficiency to drive growth.",
+        "We create innovatively customized software solutions precisely, tailored to your business needs, enhancing flexibility, scalability, and efficiency to drive sustainable growth.",
     },
     {
       url: "cloud-devops",
@@ -36,7 +36,7 @@ export default function ServiceSection() {
       url: "ui-ux-design",
       title: "UI/UX Design",
       description:
-        "At our software house, we craft intuitive, visually stunning UI/UX designs that enhance user engagement and deliver seamless digital experiences.",
+        "At our software house, we craft intuitive, visually stunning, innovative UI/UX designs that significantly enhance user engagement and deliver seamless, impactful digital experiences.",
     },
   ];
 

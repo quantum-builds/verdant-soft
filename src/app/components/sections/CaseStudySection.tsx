@@ -79,7 +79,7 @@ export default function CaseStudySection() {
 
   return (
     <section id="case-studies" className="scroll-mt-28" ref={containerRef}>
-      <div className="overflow-hidden mb-28 lg:mb-0 md:h-[1390px] lg:h-[775px] xl:h-[870px] 2xl:h-[905px] 3xl:h-[970px] 4xl:h-[1010px] 5xl:h-[1180px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-16 lg:gap-52">
+      <div className="overflow-hidden mb-20 md:mb-0 md:h-[1410px] lg:h-[680px] xl:h-[770px] 2xl:h-[810px] 3xl:h-[880px] 4xl:h-[880px] 5xl:h-[1080px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-16 lg:gap-52">
         <div className="flex flex-col gap-12">
           <div className="w-full flex justify-end">
             <h2 className="w-11/12 md:w-[57%] lg:w-[55%] xl:w-3/5 2xl:w-7/12 text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold text-end break-words text-footer-black">

@@ -44,8 +44,8 @@ export default function BlogSection() {
     <section className="relative flex flex-col space-y-6 overflow-hidden bg-white mb-28 ">
       <Navbar />
       <div className="min-h-[30vh] mt-24 md:mt-30 xl:mt-36  w-11/12 xl:w-10/12  mx-auto flex flex-col gap-12 xl:gap-16 overflow-hidden">
-        <motion.h2
-          className="text-3xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl leading-tight font-semibold text-start break-words text-green-gradient"
+        <motion.h1
+          className="whitespace-nowrap text-[90px] md:text-[100px] lg:text-[130px] xl:text-[120px] 3xl:text-[145px] 4xl:text-[160px] 5xl:text-[170px] leading-tight font-semibold text-end break-words text-light-green-gradient"
           initial="hidden"
           whileInView="visible"
           variants={slideFromTop}
@@ -53,7 +53,7 @@ export default function BlogSection() {
           viewport={{ once: true }}
         >
           All Blogs
-        </motion.h2>
+        </motion.h1>
 
         <motion.div
           className="flex-1 overflow-hidden lg:flex lg:flex-row  lg:scroll-smooth lg:scrollbar-hide cursor-pointer grid gap-4 md:grid-cols-2 xl:gap-8 md:auto-rows-auto mx-auto"

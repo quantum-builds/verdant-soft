@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { MailDataRequired } from "@sendgrid/mail"; 
-import sendgrid from "@/config/sendgrid-config";
+import postmarkClient from "@/config/postmark-config";
 
 interface EmailRequest {
   email: string;
@@ -38,25 +37,21 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const emailData: MailDataRequired = {
-      to: toEmail,
-      from: fromEmail,
-      replyTo: {
-        email: from,
-        name: name,
-      },
-      subject: `Message from ${name} - Contact Form`,
-      text,
-      html: html || undefined,
-    };
-    await sendgrid.send(emailData);
+    await postmarkClient.sendEmail({
+      From: fromEmail,
+      To: toEmail,
+      ReplyTo: from,
+      Subject: `Message from ${name} - Contact Form`,
+      TextBody: text,
+      HtmlBody: html || undefined,
+    });
 
     return NextResponse.json(
       { message: "Email sent successfully!", success: true },
       { status: 200 }
     );
   } catch (error) {
-    console.error("SendGrid Error:", JSON.stringify(error, null, 2));
+    console.error("Postmark Error:", error);
     return NextResponse.json(
       { message: "Failed to send email.", success: false },
       { status: 500 }

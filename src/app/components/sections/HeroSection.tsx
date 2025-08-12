@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { slideFromLeft, slideFromRight } from "@/uitls/sliderAnimation";
 import Image from "next/image";
 import { DottedBG } from "@/assets";
+import Link from "next/link";
 
 export default function HeroSection() {
   // const CTAS = [
@@ -80,7 +81,7 @@ export default function HeroSection() {
         >
           <CTAButton text="Book a Meeting" />
 
-          {/* <Link
+          <Link
             href="/hire-us"
             className="relative w-46 h-12 flex justify-center items-center border border-black font-medium cursor-pointer z-[30] rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out hover:bg-green-gradient hover:border-none hover:text-white btn-3 gap-2"
             style={{ "--clr": "#16a34a" } as React.CSSProperties}
@@ -113,7 +114,7 @@ export default function HeroSection() {
                 />
               </svg>
             </span>
-          </Link> */}
+          </Link>
         </motion.div>
       </div>
     </div>

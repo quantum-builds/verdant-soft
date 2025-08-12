@@ -176,3 +176,5 @@ export { default as Step3Line } from "./step-3-line.jpg";
 export { default as Step4Line } from "./step-4-line.jpg";
 export { default as Step5Line } from "./step-5-line.jpg";
 export { default as Step6Line } from "./step-6-line.jpg";
+
+export { default as CareerBG } from "./career-img.jpg";

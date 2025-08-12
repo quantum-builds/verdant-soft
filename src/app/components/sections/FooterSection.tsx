@@ -12,7 +12,6 @@ import { slideFromBack } from "@/uitls/sliderAnimation";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
 
 interface SocialLinks {
   image: StaticImageData;
@@ -20,8 +19,6 @@ interface SocialLinks {
 }
 
 export default function FooterSection() {
-  const [isOpen, setIsOpen] = useState(false);
-  const modalRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -96,31 +93,6 @@ export default function FooterSection() {
       }
     }
   };
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setIsOpen(true);
-  };
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    }
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
 
   return (
     <>
@@ -171,14 +143,8 @@ export default function FooterSection() {
                 <button
                   key={index}
                   className="text-white text-lg md:text-xl text-start  cursor-pointer hover:text-green-gradient"
-                  onClick={(e) => {
-                    switch (naviagtionLink.href) {
-                      case "/contact-us":
-                        handleClick(e);
-                        break;
-                      default:
-                        handleNavigation(naviagtionLink);
-                    }
+                  onClick={() => {
+                    handleNavigation(naviagtionLink);
                   }}
                 >
                   {naviagtionLink.label}
@@ -318,20 +284,6 @@ export default function FooterSection() {
           </motion.div>
         </div>
       </div>
-      {isOpen && (
-        <div className="fixed inset-0 bg-transparent bg-opacity-50 z-50 flex items-center justify-center">
-          <div
-            ref={modalRef}
-            className=" w-full max-w-4xl relative shadow-2xl  h-[600px] md:h-[600px]"
-          >
-            <iframe
-              src="https://calendly.com/verdant-soft-info/"
-              className="w-full h-full border-0 bg-white"
-              title="Calendly Scheduling"
-            />
-          </div>
-        </div>
-      )}
     </>
   );
 }

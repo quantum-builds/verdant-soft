@@ -26,9 +26,9 @@ export default function HeroSection() {
     },
   };
   return (
-    <div className="relative h-[126vh] flex flex-col space-y-6 overflow-hidden bg-white mb-28">
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#63aff5] rounded-full blur-[300px] z-0" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#85f3f1] rounded-full blur-[300px] z-0" />
+    <div className=" h-[126vh] flex flex-col space-y-6 overflow-hidden bg-white mb-28">
+      {/* <div className="absolute  -bottom-50 left-0 w-[400px] h-[400px] bg-[#406C94] rounded-full blur-[300px] z-0" /> */}
+      {/* <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#26615E] rounded-full blur-[300px] z-0" /> */}
 
       <Navbar />
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center gap-5 mt-20 md:mt-24 xl:mt-28 mx-6 lg:mx-10 xl:mx-14 mb-5 bg-gray rounded-3xl">

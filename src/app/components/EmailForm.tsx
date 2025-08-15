@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRef } from "react";
-import toast from "react-hot-toast";
+import { showToast } from "@/utils/defaultToastOption";
 
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -57,13 +57,13 @@ export default function EmailForm() {
       if (result.success) {
         reset();
         nameRef.current?.focus();
-        toast.success("Email sent successfully");
+        showToast("success", "Email sent successfully");
       } else {
         throw new Error(result.error || "Unknown error");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast.error("Error sending message. Please try again.");
+      showToast("error", "Error sending message. Please try again.");
     }
   };
 

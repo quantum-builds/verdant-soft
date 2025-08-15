@@ -178,3 +178,8 @@ export { default as Step5Line } from "./step-5-line.jpg";
 export { default as Step6Line } from "./step-6-line.jpg";
 
 export { default as CareerBG } from "./career-img.jpg";
+export { default as ArrowBlack } from "./arrow-black.svg";
+export { default as FormIcon } from "./form-icon.svg";
+
+export { default as ResumeUploadIcon } from "./resume-upload.svg";
+export { default as BackIcon } from "./back-icon.svg";

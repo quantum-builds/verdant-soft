@@ -36,6 +36,10 @@ export default function FooterSection() {
       hash: "faqs",
     },
     {
+      label: "Careers",
+      href: "/career",
+    },
+    {
       label: "Blogs",
       hash: "blogs",
     },

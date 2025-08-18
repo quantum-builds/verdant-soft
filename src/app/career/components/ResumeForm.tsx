@@ -284,7 +284,7 @@ export function ResumeForm({
       </div>
 
       <button
-        className="w-fit cursor-pointer flex bg-footer-black text-white px-4 py-2 xl:px-7 xl:py-5 rounded-lg items-center gap-3 transition-all duration-200 text-xl xl:text-2xl hover:bg-green-gradient btn-3"
+        className="w-fit cursor-pointer flex bg-footer-black text-white px-4 py-2 xl:px-7 xl:py-4 rounded-2xl items-center gap-3 transition-all duration-200 text-xl xl:text-2xl hover:bg-green-gradient btn-3"
         style={{ "--clr": "#16a34a" } as React.CSSProperties}
         type="submit"
         disabled={isSubmitting}

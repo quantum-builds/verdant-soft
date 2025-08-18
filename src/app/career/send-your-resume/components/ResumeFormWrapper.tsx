@@ -41,8 +41,8 @@ const Fields: FormField[] = [
 export default function ResumeFormWrapper() {
   const router = useRouter();
   return (
-    <div className="flex-[70%] flex flex-col gap-6 w-11/12 sm:w-4/5 md:w-full">
-      <h4 className="text-green-gradient text-2xl 3xl:text-3xl 4xl:text-4xl font-semibold">
+    <div className="flex-[70%] flex flex-col gap-8 w-11/12 sm:w-4/5 md:w-full">
+      <h4 className="text-green-gradient text-2xl lg:text-3xl 3xl:text-4xl font-semibold">
         Enter your details
       </h4>
       <ResumeForm

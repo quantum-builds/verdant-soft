@@ -42,7 +42,7 @@ export default function WorkFlowSection({ steps }: WorkFlowSectionProps) {
   return (
     <div
       id="workflow"
-      className="scroll-mt-36 h-[1450px] md:h-[890px] lg:h-[970px] xl:h-[1010px] 2xl:h-[1010px] 3xl:h-[1030px]  4xl:h-[1050px] 5xl:h-[1100px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-12  mb-20 overflow-hidden  "
+      className="scroll-mt-36 h-[1450px] md:h-[890px] lg:h-[970px] xl:h-[1010px] 2xl:h-[1010px] 3xl:h-[980px]  4xl:h-[1000px] 5xl:h-[1500px] w-11/12 xl:w-10/12 mx-auto flex flex-col gap-12  mb-20 overflow-hidden  "
     >
       {/* <p className="font-semibold text-2xl">[01 Workflow]</p> */}
       <div className="flex flex-col gap-110 md:gap-60 flex-1">

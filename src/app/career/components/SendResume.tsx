@@ -17,7 +17,7 @@ export default function SendResume() {
         <div className="flex items-center justify-center">
           <button
             onClick={handleCLick}
-            className="cursor-pointer w-fit bg-footer-black hover:bg-green-gradient text-white  px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4 text-lg btn-3"
+            className="cursor-pointer w-fit bg-footer-black hover:bg-green-gradient text-white  px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 font-medium mt-4 text-xl btn-3"
             style={{ "--clr": "#16a34a" } as React.CSSProperties}
           >
             <span>Send Your Resume</span>

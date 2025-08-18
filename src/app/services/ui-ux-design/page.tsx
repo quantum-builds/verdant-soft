@@ -122,7 +122,7 @@ export default function UiUxDesignPage() {
     <main className="flex flex-col  overflow-hidden">
       <Navbar />
 
-      <section className="relative mb-20">
+      <section className="relative mb-24">
         {/* Background image with overlay */}
         <div className="relative inset-0 z-0 mt-20 md:mt-24 xl:mt-28">
           <Image

@@ -12,7 +12,6 @@ export default async function Page({
   searchParams: Promise<{ role: string }>;
 }) {
   const { role } = await searchParams;
-  console.log("Role:", role);
   const BREAD_CRUMBS = [
     { label: "Careers", href: "/career", isActive: false },
     {

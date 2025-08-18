@@ -11,7 +11,6 @@ export default async function Page({
   searchParams: Promise<{ ref: string }>;
 }) {
   const { ref } = await searchParams;
-  console.log("Ref: ", ref);
 
   const BREAD_CRUMBS = [
     { label: "Careers", href: "/career", isActive: false },

@@ -134,7 +134,6 @@ export function ResumeForm({
 
   const handleFormSubmit = async (data: FormData) => {
     try {
-      console.log(data);
       const formData = new FormData();
       formData.append("firstName", data.firstName);
       formData.append("lastName", data.lastName);
@@ -208,7 +207,13 @@ export function ResumeForm({
         </div>
 
         {!fieldValues[field.id] && !focusedFields[field.id] && (
-          <span className="absolute left-6 top-[45%] -translate-y-1/2 text-gray-400 pointer-events-none text-lg">
+          <span
+            className={`absolute left-6  text-gray-400 pointer-events-none text-lg ${
+              errors[field.id]
+                ? "top-[35%] -translate-y-1/2"
+                : "top-[45%] -translate-y-1/2"
+            }`}
+          >
             {field.label}{" "}
             {field.required && <span className="text-red-500">*</span>}
           </span>
@@ -225,7 +230,7 @@ export function ResumeForm({
   return (
     <form
       onSubmit={handleSubmit(handleFormSubmit)}
-      className={cn("space-y-8", className)}
+      className={cn("flex flex-col gap-8", className)}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-7 gap-y-4">
         {fields.map((field) => renderField(field))}
@@ -240,7 +245,7 @@ export function ResumeForm({
               }}
             >
               <p
-                className={`relative text-xl lg:text-2xl font-semibold text-green-gradient ${
+                className={`relative text-lg lg:text-xl font-semibold text-green-gradient ${
                   !resumeFile
                     ? "after:content-[''] after:block after:w-full after:h-[2px] after:bg-green-gradient after:-mt-1"
                     : ""
@@ -252,9 +257,9 @@ export function ResumeForm({
               <Image
                 src={ResumeUploadIcon}
                 alt="resume-upload-icon"
-                width={32}
-                height={32}
-                className="w-8 h-8"
+                width={26}
+                height={26}
+                className="w-7 h-7"
               />
             </div>
             {resumeFile && (
@@ -279,7 +284,7 @@ export function ResumeForm({
       </div>
 
       <button
-        className="cursor-pointer flex bg-footer-black text-white px-4 py-2 xl:px-6 xl:py-3 rounded-lg items-center gap-3 transition-all duration-200 text-xl hover:bg-green-gradient btn-3"
+        className="w-fit cursor-pointer flex bg-footer-black text-white px-4 py-2 xl:px-7 xl:py-5 rounded-lg items-center gap-3 transition-all duration-200 text-xl xl:text-2xl hover:bg-green-gradient btn-3"
         style={{ "--clr": "#16a34a" } as React.CSSProperties}
         type="submit"
         disabled={isSubmitting}

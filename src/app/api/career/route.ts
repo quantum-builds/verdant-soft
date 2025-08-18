@@ -22,7 +22,6 @@ export async function POST(req: NextRequest) {
       experience: formData.get("experienceLevel")?.toString() || undefined,
       resume: formData.get("resume") as File,
     };
-    console.log("data is ",data)
     if (
       !data.firstName ||
       !data.lastName ||

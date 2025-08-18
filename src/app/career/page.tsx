@@ -11,10 +11,10 @@ export default function CareerPage() {
       <main className=" min-h-screen">
         <div className=" z-10 h-full flex flex-col">
           <Navbar />
-          <div className="w-full mt-16 md:mt-20 mb-28 flex flex-col gap-28 ">
+          <div className="w-full mt-20 md:mt-24 xl:mt-28 mb-28 flex flex-col gap-20 xl:gap-28 ">
             <div className="relative z-0 flex items-center justify-center">
               <Image
-                className="w-full object-cover"
+                className="w-full h-[200px] md:h-[270px] xl:h-[390px] object-cover"
                 src={CareerBG}
                 alt="career background"
               />

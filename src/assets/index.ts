@@ -183,3 +183,5 @@ export { default as FormIcon } from "./form-icon.svg";
 
 export { default as ResumeUploadIcon } from "./resume-upload.svg";
 export { default as BackIcon } from "./back-icon.svg";
+
+export { default as PrivacyBg } from "./privacy-bg.jpg";

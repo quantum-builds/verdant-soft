@@ -22,6 +22,11 @@ export default function FooterSection() {
   const router = useRouter();
   const pathname = usePathname();
 
+  const PAGE_LINKS: NavOption[] = [
+    { label: "Privacy", href: "privacy" },
+    { label: "Terms", href: "terms" },
+  ];
+
   const NAVIGATION_LINKS: NavOption[] = [
     {
       label: "Case Studies",
@@ -213,17 +218,17 @@ export default function FooterSection() {
               />
             </div>
 
-            {/* <div className="flex-1 flex justify-center items-end gap-12">
-            {PAGES_LINKS.map((pageLink, index) => (
-              <button
-                key={index}
-                className="text-white text-xl whitespace-nowrap leading-none cursor-pointer"
-                onClick={() => handleNavigation(pageLink)}
-              >
-                {pageLink.label}
-              </button>
-            ))}
-          </div> */}
+            <div className="flex-1 flex justify-center items-end gap-12">
+              {PAGE_LINKS.map((pageLink, index) => (
+                <button
+                  key={index}
+                  className="text-white text-xl whitespace-nowrap leading-none cursor-pointer"
+                  onClick={() => handleNavigation(pageLink)}
+                >
+                  {pageLink.label}
+                </button>
+              ))}
+            </div>
 
             <div className="flex-1 flex flex-row justify-end  3xl:items-start gap-10 font-semibold">
               <div className="flex flex-col gap-2">
@@ -264,17 +269,17 @@ export default function FooterSection() {
                 </p>
               </div>
             </div>
-            {/* <div className="flex-1 flex flex-col justify-start items-start gap-6 ">
-            {PAGES_LINKS.map((pageLink, index) => (
-              <button
-                key={index}
-                className="text-white text-lg md:text-xl whitespace-nowrap leading-none cursor-pointer"
-                onClick={() => handleNavigation(pageLink)}
-              >
-                {pageLink.label}
-              </button>
-            ))}
-          </div> */}
+            <div className="flex-1 flex flex-col justify-start items-start gap-6 ">
+              {PAGE_LINKS.map((pageLink, index) => (
+                <button
+                  key={index}
+                  className="text-white text-lg md:text-xl whitespace-nowrap leading-none cursor-pointer"
+                  onClick={() => handleNavigation(pageLink)}
+                >
+                  {pageLink.label}
+                </button>
+              ))}
+            </div>
             <div className="flex-1 flex items-end justify-center ">
               <Image
                 src={VerdantLightLogo}

@@ -165,7 +165,7 @@ export default function CloudDevopsPage() {
     <main className="flex flex-col  overflow-hidden">
       <Navbar />
       <section className="min-h-screen">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 mt-20 md:mt-24 xl:mt-28">
           <Image
             className="w-full h-2/3 object-cover"
             src={CloudDevOpsServiceBG}

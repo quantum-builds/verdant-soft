@@ -124,7 +124,7 @@ export default function UiUxDesignPage() {
 
       <section className="relative mb-20">
         {/* Background image with overlay */}
-        <div className="relative inset-0 z-0">
+        <div className="relative inset-0 z-0 mt-20 md:mt-24 xl:mt-28">
           <Image
             className="w-full h-[80vh] object-cover"
             src={UiUxServiceBG}

@@ -1,7 +1,7 @@
 "use client";
 
 import { LeftLine, LowerElipse, RightLine, UpperElipse } from "@/assets";
-import { slideFromBottom } from "@/uitls/sliderAnimation";
+import { slideFromBottom } from "@/utils/sliderAnimation";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";

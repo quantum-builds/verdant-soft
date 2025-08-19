@@ -5,7 +5,7 @@ import {
   CloudOptimizationBG,
   DesignToDevBG,
 } from "@/assets";
-import { slideFromBottom, slideFromTop } from "@/uitls/sliderAnimation";
+import { slideFromBottom, slideFromTop } from "@/utils/sliderAnimation";
 import { motion } from "framer-motion";
 import { StaticImageData } from "next/image";
 import Image from "next/image";

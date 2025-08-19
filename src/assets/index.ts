@@ -138,6 +138,12 @@ export { default as ShopifyImage1 } from "./shopify-image-1.png";
 export { default as ParkingAppBG } from "./parking-app-bg.png";
 export { default as ParkingAppImage1 } from "./parking-app-image-1.png";
 export { default as ParkingAppImage2 } from "./parking-app-image-2.png";
+export { default as ETLManagementBG } from "./etl-management-bg.png";
+export { default as ETLManagementImage1 } from "./etl-management-image-1.png";
+export { default as ETLManagementImage2 } from "./etl-management-image-2.png";
+export { default as CanvasBG } from "./canvas-bg.png";
+export { default as CanvasImage1 } from "./canvas-image-1.png";
+export { default as CanvasImage2 } from "./canvas-image-2.png";
 
 export { default as ClinicManagementBG } from "./clinic-management-bg.png";
 export { default as ClinicManagementImage1 } from "./clinic-management-image-1.png";
@@ -145,10 +151,6 @@ export { default as ClinicManagementImage2 } from "./clinic-management-image-2.p
 
 export { default as VPNExtensionBG } from "./vpn-extension-bg.png";
 export { default as VPNExtensionImage1 } from "./vpn-extension-image-1.png";
-export { default as ETLManagementBG } from "./etl-management-bg.png";
-export { default as ETLManagementImage1 } from "./etl-management-image-1.png";
-export { default as CanvasBG } from "./canvas-bg.png";
-export { default as CanvasImage1 } from "./canvas-image-1.png";
 
 export { default as ProcessBGUp } from "./the-process-bg-up.png";
 export { default as ProcessBGDown } from "./the-process-bg-down.png";
@@ -185,3 +187,5 @@ export { default as ResumeUploadIcon } from "./resume-upload.svg";
 export { default as BackIcon } from "./back-icon.svg";
 
 export { default as PrivacyBg } from "./privacy-bg.jpg";
+export { default as NewsLetterBG } from "./newsletter-bg.jpg";
+export { default as NewsLetterImage1 } from "./newsletter-image-1.jpg";

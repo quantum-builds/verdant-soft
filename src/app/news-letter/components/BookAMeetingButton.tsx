@@ -1,11 +1,11 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 
-interface CTAButtonProps {
+interface BookAMettingProps {
   text: string;
 }
 
-export default function CTAButton({ text }: CTAButtonProps) {
+export default function BookAMeeting({ text }: BookAMettingProps) {
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -39,14 +39,13 @@ export default function CTAButton({ text }: CTAButtonProps) {
   return (
     <>
       <button
-        type="button"
-        onClick={handleClick}
-        className="relative w-50 h-12 z-[30] flex justify-center items-center border border-black font-medium cursor-pointer rounded-xl text-lg overflow-hidden group transition-all duration-200 ease-in-out hover:bg-green-gradient hover:border-none hover:text-white btn-3 gap-2"
+        // href="/contact-us"
+        className="cursor-pointer flex bg-footer-black text-white px-6 py-3 rounded-lg  gap-3 transition-all duration-200 text-xl hover:bg-green-gradient btn-3"
         style={{ "--clr": "#16a34a" } as React.CSSProperties}
+        onClick={handleClick}
       >
         <span>{text}</span>
-
-        <span className="button__icon-wrapper2">
+        <span className="button__icon-wrapper">
           <svg
             width="10"
             className="button__icon-svg"
@@ -73,7 +72,6 @@ export default function CTAButton({ text }: CTAButtonProps) {
           </svg>
         </span>
       </button>
-
       {isOpen && (
         <div className="fixed inset-0 bg-transparent bg-opacity-50 z-50 flex items-center justify-center">
           <div

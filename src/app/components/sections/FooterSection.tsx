@@ -8,7 +8,7 @@ import {
   VerdantLogoRight,
 } from "@/assets";
 import { NavOption } from "@/common";
-import { slideFromBack } from "@/uitls/sliderAnimation";
+import { slideFromBack } from "@/utils/sliderAnimation";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { usePathname, useRouter } from "next/navigation";

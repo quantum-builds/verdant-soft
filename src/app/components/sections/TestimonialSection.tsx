@@ -7,7 +7,7 @@ import { Star } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { slideFromRight } from "@/uitls/sliderAnimation";
+import { slideFromRight } from "@/utils/sliderAnimation";
 
 interface Testimonial {
   id: number;

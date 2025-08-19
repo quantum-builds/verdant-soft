@@ -2,7 +2,7 @@
 import Navbar from "../Navbar";
 import CTAButton from "../CTAButton";
 import { motion } from "framer-motion";
-import { slideFromLeft, slideFromRight } from "@/uitls/sliderAnimation";
+import { slideFromLeft, slideFromRight } from "@/utils/sliderAnimation";
 import Image from "next/image";
 import { DottedBG } from "@/assets";
 import Link from "next/link";

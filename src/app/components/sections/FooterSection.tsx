@@ -240,7 +240,7 @@ export default function FooterSection() {
               <div className="flex flex-col gap-2">
                 <p className="text-[#707070] text-xl">Phone</p>
                 <p className="text-white text-xl lg:text-2xl leading-none whitespace-nowrap">
-                  +92 300 837 3277
+                  +92 3268 282 488
                 </p>
               </div>
             </div>
@@ -265,7 +265,7 @@ export default function FooterSection() {
               <div className="flex flex-col gap-1">
                 <p className="text-[#707070] text-lg md:text-xl">Phone</p>
                 <p className="text-white text-lg md:text-xl lg:text-2xl leading-none">
-                  +92 300 837 3277
+                  +92 3268 282 488
                 </p>
               </div>
             </div>

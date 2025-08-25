@@ -14,7 +14,7 @@ const INFO = [
   },
   {
     title: "Phone",
-    content: "+92 300 837 3277",
+    content: "+92 3268 282 488",
   },
 ];
 export default function ContactUsForm() {

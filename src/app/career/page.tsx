@@ -4,23 +4,7 @@ import Navbar from "../components/Navbar";
 import FooterSection from "../components/sections/FooterSection";
 import JobRoleSection from "./components/JobRoleSection";
 import SendResume from "./components/SendResume";
-import axios from "axios";
-import { Job } from "@/types/JobTypes";
-
-export async function fetchJobs() {
-  try {
-    const response = await axios.get(process.env.CACHE_CONNECT_API_URL || "", {
-      headers: {
-        Authorization: `Bearer ${process.env.CACHE_CONNECT_API_KEY}`,
-      },
-    });
-    const jobs: Job[] = response.data.jobs;
-    return jobs;
-  } catch (error) {
-    console.error("Error fetching jobs:", error);
-    return "Something when wrong. Please check back later" as string;
-  }
-}
+import { fetchJobs } from "@/hook/fetchJobs";
 
 export default async function CareerPage() {
   const jobs = await fetchJobs();

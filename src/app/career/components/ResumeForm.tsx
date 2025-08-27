@@ -151,7 +151,7 @@ export function ResumeForm({
         reset();
         showToast("success", "Email sent successfully");
       } else {
-        throw new Error(result.error || "Unknown error");
+        showToast("error", "Error sending resume. Please try again.");
       }
       onSubmit();
     } catch (error) {

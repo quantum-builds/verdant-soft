@@ -4,8 +4,26 @@ import Navbar from "../components/Navbar";
 import FooterSection from "../components/sections/FooterSection";
 import JobRoleSection from "./components/JobRoleSection";
 import SendResume from "./components/SendResume";
+import axios from "axios";
+import { Job } from "@/types/JobTypes";
 
-export default function CareerPage() {
+export async function fetchJobs() {
+  try {
+    const response = await axios.get(process.env.CACHE_CONNECT_API_URL || "", {
+      headers: {
+        Authorization: `Bearer ${process.env.CACHE_CONNECT_API_KEY}`,
+      },
+    });
+    const jobs: Job[] = response.data.jobs;
+    return jobs;
+  } catch (error) {
+    console.error("Error fetching jobs:", error);
+    return "Something when wrong. Please check back later" as string;
+  }
+}
+
+export default async function CareerPage() {
+  const jobs = await fetchJobs();
   return (
     <div>
       <main className=" min-h-screen">
@@ -23,7 +41,7 @@ export default function CareerPage() {
               </h1>
             </div>
             <div className="w-11/12 xl:w-10/12 mx-auto flex flex-col gap-36">
-              <JobRoleSection />
+              <JobRoleSection jobs={jobs} />
               <SendResume />
             </div>
           </div>

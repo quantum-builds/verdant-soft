@@ -10,8 +10,8 @@ import { useEffect, useRef, useState } from "react";
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const modalRef = useRef<HTMLDivElement>(null);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const modalRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const router = useRouter();
   const dropdownRef = useRef(null);
@@ -33,7 +33,8 @@ export default function Navbar() {
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setIsOpen(true);
+    // setIsOpen(true);
+    router.push("/contact-us");
   };
 
   // Close dropdown when clicking outside
@@ -51,26 +52,26 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    }
+  // useEffect(() => {
+  //   function handleClickOutside(event: MouseEvent) {
+  //     if (
+  //       modalRef.current &&
+  //       !modalRef.current.contains(event.target as Node)
+  //     ) {
+  //       setIsOpen(false);
+  //     }
+  //   }
 
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
+  //   if (isOpen) {
+  //     document.addEventListener("mousedown", handleClickOutside);
+  //   } else {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   }
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [isOpen]);
 
   const handleNavigation = (option: NavOption) => {
     if (option.href) {
@@ -291,7 +292,7 @@ export default function Navbar() {
           )}
         </div>
       </nav>
-      {isOpen && (
+      {/* {isOpen && (
         <div className="fixed inset-0 bg-transparent bg-opacity-50 z-50 flex items-center justify-center">
           <div
             ref={modalRef}
@@ -304,7 +305,7 @@ export default function Navbar() {
             />
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }

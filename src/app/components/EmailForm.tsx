@@ -59,7 +59,7 @@ export default function EmailForm() {
         nameRef.current?.focus();
         showToast("success", "Email sent successfully");
       } else {
-        throw new Error(result.error || "Unknown error");
+        showToast("error", "Error sending message. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);

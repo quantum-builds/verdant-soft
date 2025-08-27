@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import postmarkClient from "@/config/postmark-config";
+import { sendEmail } from "@/utils/sendBrevo";
 
 interface EmailRequest {
   email: string;
@@ -37,21 +37,21 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    await postmarkClient.sendEmail({
-      From: fromEmail,
-      To: toEmail,
-      ReplyTo: from,
-      Subject: `Message from ${name} - Contact Form`,
-      TextBody: text,
-      HtmlBody: html || undefined,
-    });
+    const res = await sendEmail(
+      fromEmail,
+      toEmail,
+      from,
+      `Message from ${name} - Contact Form`,
+      text,
+      html
+    );
 
     return NextResponse.json(
-      { message: "Email sent successfully!", success: true },
+      { message: "Email sent successfully!", success: true, response: res },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Postmark Error:", error);
+    console.error("Brevo Error:", error);
     return NextResponse.json(
       { message: "Failed to send email.", success: false },
       { status: 500 }

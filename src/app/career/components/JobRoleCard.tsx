@@ -73,10 +73,12 @@ export default function JobRoleCard({ ...props }: JobRoleCardProps) {
           </motion.div>
         )}
       </AnimatePresence>
-      <button
+      <a
+        href={props.link}
+        target="_blank"
+        rel="noopener noreferrer"
         className="cursor-pointer w-fit flex bg-green-gradient text-white px-5 2xl:px-6 py-2.5 2xl:py-3 rounded-lg items-center gap-3 transition-all duration-200 text-xl btn-3"
         style={{ "--clr": "#16a34a" } as React.CSSProperties}
-        onClick={() => router.push(props.link)}
       >
         <span>Apply Now</span>
         <span className="button__icon-wrapper">
@@ -105,7 +107,7 @@ export default function JobRoleCard({ ...props }: JobRoleCardProps) {
             />
           </svg>
         </span>
-      </button>
+      </a>
     </div>
   );
 }

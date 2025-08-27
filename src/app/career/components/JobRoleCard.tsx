@@ -1,5 +1,4 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useState, useLayoutEffect } from "react";
 
@@ -14,7 +13,6 @@ interface JobRoleCardProps {
 }
 
 export default function JobRoleCard({ ...props }: JobRoleCardProps) {
-  const router = useRouter();
   const ref = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 

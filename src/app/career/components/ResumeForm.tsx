@@ -150,10 +150,10 @@ export function ResumeForm({
       if (result.success) {
         reset();
         showToast("success", "Email sent successfully");
+        onSubmit();
       } else {
         showToast("error", "Error sending resume. Please try again.");
       }
-      onSubmit();
     } catch (error) {
       console.error("Error submitting form:", error);
       showToast("error", "Error sending resume. Please try again.");
@@ -245,7 +245,7 @@ export function ResumeForm({
               }}
             >
               <p
-                className={`relative text-lg lg:text-xl font-semibold text-green-gradient ${
+                className={`relative text-md lg:text-lg font-semibold text-green-gradient ${
                   !resumeFile
                     ? "after:content-[''] after:block after:w-full after:h-[2px] after:bg-green-gradient after:-mt-1"
                     : ""
@@ -263,7 +263,7 @@ export function ResumeForm({
               />
             </div>
             {resumeFile && (
-              <span className="text-[#0ACF83] text-base cursor-default">
+              <span className="text-[#0ACF83] text-base cursor-default whitespace-nowrap">
                 ✓ Resume Submitted
               </span>
             )}

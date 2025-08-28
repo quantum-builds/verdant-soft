@@ -8,11 +8,10 @@ export async function sendEmail(
   text: string,
   html?: string
 ) {
-  console.log("key is ", process.env.BREVO_API_KEY);
   const res = await axios.post(
     "https://api.brevo.com/v3/smtp/email",
     {
-      sender: { email: fromEmail, name: "Website Contact" }, // must be verified in Brevo
+      sender: { email: fromEmail, name: "Verdant Soft" },
       to: [{ email: toEmail }],
       replyTo: { email: replyTo },
       subject,
@@ -22,7 +21,7 @@ export async function sendEmail(
     {
       headers: {
         accept: "application/json",
-        "api-key": process.env.BREVO_API_KEY, // set in .env
+        "api-key": process.env.BREVO_API_KEY,
         "content-type": "application/json",
       },
     }

@@ -125,7 +125,7 @@ export default function EmailForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="relative w-full bg-footer-black text-white px-6 py-3 xl:px-7 xl:py-5 font-semibold rounded-lg items-center transition-all duration-200 text-xl hover:bg-green-gradient max-w-5xl disabled:opacity-60 disabled:cursor-not-allowed group flex justify-center gap-4 btn-3"
+        className="relative w-full bg-footer-black text-white px-6 py-3 xl:px-7 xl:py-5 font-semibold rounded-lg items-center transition-all duration-200 text-2xl hover:bg-green-gradient max-w-5xl disabled:opacity-60 disabled:cursor-not-allowed group flex justify-center gap-4 btn-3"
         style={{ "--clr": "#16a34a" } as React.CSSProperties}
       >
         <span>{isSubmitting ? "Submitting..." : "Submit"}</span>

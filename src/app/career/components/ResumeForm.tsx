@@ -257,9 +257,9 @@ export function ResumeForm({
               <Image
                 src={ResumeUploadIcon}
                 alt="resume-upload-icon"
-                width={26}
-                height={26}
-                className="w-7 h-7"
+                width={20}
+                height={20}
+                className="w-6 h-6"
               />
             </div>
             {resumeFile && (
@@ -284,7 +284,7 @@ export function ResumeForm({
       </div>
 
       <button
-        className="w-fit cursor-pointer flex bg-footer-black text-white px-4 py-2 xl:px-7 xl:py-4 rounded-2xl items-center gap-3 transition-all duration-200 text-xl xl:text-2xl hover:bg-green-gradient btn-3"
+        className="w-fit cursor-pointer flex bg-footer-black text-white px-5 py-3 xl:px-9 xl:py-5 rounded-2xl items-center gap-3 transition-all duration-200 text-xl xl:text-2xl hover:bg-green-gradient btn-3"
         style={{ "--clr": "#16a34a" } as React.CSSProperties}
         type="submit"
         disabled={isSubmitting}

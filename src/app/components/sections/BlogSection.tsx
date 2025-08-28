@@ -65,7 +65,7 @@ export default function BlogSection() {
           <Image src={Arrow} alt="arrow" width={30} />
         </div>
         <motion.div
-          className="flex-1 lg:flex overflow-hidden lg:flex-row  lg:scroll-smooth lg:scrollbar-hide cursor-pointer grid gap-4 md:grid-cols-2 xl:gap-8 md:auto-rows-auto mx-auto "
+          className="flex-1 lg:flex overflow-hidden lg:flex-row lg:scroll-smooth lg:scrollbar-hide cursor-pointer grid gap-4 md:grid-cols-2 xl:gap-8 md:auto-rows-auto mx-auto"
           initial="hidden"
           whileInView="visible"
           variants={slideFromBottom}
@@ -81,10 +81,10 @@ export default function BlogSection() {
               <Image
                 src={blog.imageUrl}
                 alt={`blog-${index}`}
-                className=" w-full rounded-2xl h-[260px] lg:h-[250px] xl:h-[290px] "
+                className="w-full rounded-2xl h-[260px] lg:h-[250px] xl:h-[290px] opacity-50 grayscale transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:grayscale-0"
               />
               <div className="w-11/12 mx-auto">
-                <p className="text-xl font-semibold text-start  mb-4">
+                <p className="text-xl font-semibold text-start mb-4">
                   {blog.title}
                 </p>
               </div>

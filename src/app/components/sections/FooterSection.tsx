@@ -23,8 +23,8 @@ export default function FooterSection() {
   const pathname = usePathname();
 
   const PAGE_LINKS: NavOption[] = [
-    { label: "Privacy", href: "privacy" },
-    { label: "Terms", href: "terms" },
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
   ];
 
   const NAVIGATION_LINKS: NavOption[] = [

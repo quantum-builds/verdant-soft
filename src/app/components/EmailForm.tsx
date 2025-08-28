@@ -130,7 +130,7 @@ export default function EmailForm() {
       >
         <span>{isSubmitting ? "Submitting..." : "Submit"}</span>
 
-        {!isSubmitting && (
+        {/* {!isSubmitting && (
           <span className="button__icon-wrapper">
             <svg
               width="10"
@@ -157,7 +157,7 @@ export default function EmailForm() {
               />
             </svg>
           </span>
-        )}
+        )} */}
       </button>
     </form>
   );

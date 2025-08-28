@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ArrowBlack } from "@/assets";
-import { cn } from "@/lib/utls";
+import { cn } from "@/lib/utils";
 import { useRouter, usePathname } from "next/navigation";
 
 interface BreadcrumbItem {

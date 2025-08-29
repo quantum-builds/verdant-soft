@@ -37,7 +37,7 @@ export function ResumeForm({
   className,
   role,
   fields,
-  submitButtonText = "Submit Application",
+  submitButtonText = "Submit",
 }: ResumeFormProps) {
   const baseSchema = z.object({
     resume: resumeFileSchema,
@@ -236,7 +236,7 @@ export function ResumeForm({
         {fields.map((field) => renderField(field))}
 
         {/* Resume Upload Section */}
-        <div className="flex flex-col justify-center gap-2">
+        <div className="flex flex-col justify-center gap-2 md:col-span-2">
           <div className="flex gap-5 items-center w-fit">
             <div
               className="flex gap-5 items-center w-fit cursor-pointer"
@@ -284,16 +284,15 @@ export function ResumeForm({
             </p>
           )}
         </div>
+        <button
+          className="mt-4 w-full cursor-pointer flex bg-footer-black text-white   h-[70px] rounded-2xl items-center justify-center gap-3 transition-all duration-200 text-xl xl:text-2xl hover:bg-green-gradient btn-3"
+          style={{ "--clr": "#16a34a" } as React.CSSProperties}
+          type="submit"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Submitting..." : submitButtonText}
+        </button>
       </div>
-
-      <button
-        className="w-fit cursor-pointer flex bg-footer-black text-white px-5 py-3 xl:px-9 xl:py-5 rounded-2xl items-center gap-3 transition-all duration-200 text-xl xl:text-2xl hover:bg-green-gradient btn-3"
-        style={{ "--clr": "#16a34a" } as React.CSSProperties}
-        type="submit"
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? "Submitting..." : submitButtonText}
-      </button>
     </form>
   );
 }

@@ -123,7 +123,7 @@ export function ResumeForm({
         showToast("error", "File size must be less than 5MB");
         e.target.value = "";
         setResumeFile(null);
-        setValue("resume", null as any, { shouldValidate: true });
+        setValue("resume", null, { shouldValidate: true });
         return;
       }
 

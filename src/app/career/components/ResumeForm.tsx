@@ -78,6 +78,7 @@ export function ResumeForm({
     return acc;
   }, {} as Record<string, boolean>);
 
+  const MAX_FILE_SIZE = 5 * 1024 * 1024;
   const [fieldValues, setFieldValues] = useState(initialFieldValues);
   const [focusedFields, setFocusedFields] = useState(initialFocusedFields);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
@@ -94,7 +95,6 @@ export function ResumeForm({
     defaultValues: initialFieldValues, // Set default values including experienceLevel
   });
 
-  // Set the initial value for experienceLevel when role changes
   useEffect(() => {
     if (role) {
       const experienceField = fields.find((f) => f.id === "experienceLevel");
@@ -117,20 +117,20 @@ export function ResumeForm({
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
-    setResumeFile(file);
-    setValue("resume", file as File, { shouldValidate: true });
-  };
 
-  // const handleFormSubmit = async (data: FormData) => {
-  //   try {
-  //     await new Promise((resolve) => setTimeout(resolve, 1000));
-  //     const newRole = data.experienceLevel || role || "";
-  //     onSubmit();
-  //     console.log("Form submitted:", data);
-  //   } catch (error) {
-  //     console.error("Form submission error:", error);
-  //   }
-  // };
+    if (file) {
+      if (file.size > MAX_FILE_SIZE) {
+        showToast("error", "File size must be less than 5MB");
+        e.target.value = "";
+        setResumeFile(null);
+        setValue("resume", null as any, { shouldValidate: true });
+        return;
+      }
+
+      setResumeFile(file);
+      setValue("resume", file as File, { shouldValidate: true });
+    }
+  };
 
   const handleFormSubmit = async (data: FormData) => {
     try {
@@ -275,6 +275,9 @@ export function ResumeForm({
             className="hidden"
             onChange={handleFileChange}
           />
+          <p className="text-gray-500 text-sm">
+            Only PDF or Word files are allowed (Max size: 5MB).
+          </p>
           {errors.resume && (
             <p className="text-sm text-red-500">
               {errors.resume.message as string}
@@ -290,32 +293,6 @@ export function ResumeForm({
         disabled={isSubmitting}
       >
         {isSubmitting ? "Submitting..." : submitButtonText}
-        {/* <span className="button__icon-wrapper">
-          <svg
-            width="10"
-            className="button__icon-svg"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 15"
-          >
-            <path
-              fill="currentColor"
-              d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-            />
-          </svg>
-          <svg
-            width="10"
-            className="button__icon-svg button__icon-svg--copy"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 15"
-          >
-            <path
-              fill="currentColor"
-              d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-            />
-          </svg>
-        </span> */}
       </button>
     </form>
   );

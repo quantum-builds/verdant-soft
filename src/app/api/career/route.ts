@@ -51,6 +51,15 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const MAX_FILE_SIZE = 5 * 1024 * 1024;
+
+    if (data.resume.size > MAX_FILE_SIZE) {
+      return NextResponse.json(
+        { message: "File size must be less than 5MB.", success: false },
+        { status: 400 }
+      );
+    }
+
     const buffer = Buffer.from(await data.resume.arrayBuffer());
 
     const res = await axios.post(

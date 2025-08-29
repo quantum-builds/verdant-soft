@@ -20,7 +20,7 @@ const sections = [
 export default function TermsPage() {
   return (
     <>
-      <main className="relative min-h-[110vh] flex flex-col mb-28 overflow-hidden mx-auto">
+      <main className="relative min-h-[110vh] flex flex-col mb-28  mx-auto">
         <Navbar />
         <div className="bg-green-gradient flex flex-col text-center justify-center mt-20 md:mt-24 xl:mt-28 py-8 mb-18">
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-white inline-block leading-tight">

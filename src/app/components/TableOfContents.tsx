@@ -22,14 +22,16 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
   );
 
   return (
-    <aside className="hidden lg:block lg:w-3/12 xl:w-1/4 sticky top-28 h-fit p-4 rounded-lg bg-gray">
+    <aside
+      className="hidden lg:block lg:w-3/12 xl:w-1/4 h-fit p-4 rounded-lg bg-gray 
+             sticky top-28 self-start"
+    >
       <h3 className="text-xl md:text-2xl xl:text-3xl font-semibold mb-3 text-green-gradient">
         Table of Contents
       </h3>
       <ul className="list-disc pl-5 space-y-2 text-md md:text-lg xl:text-xl font-medium">
         {sections.map((section) => (
           <li key={section.id} className="flex items-start gap-2">
-            {/* Gradient dot */}
             <span className="text-green-gradient leading-none mt-1">•</span>
             <a
               href={`#${section.id}`}

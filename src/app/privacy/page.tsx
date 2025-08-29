@@ -20,7 +20,7 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <main className="relative min-h-[110vh] flex flex-col mb-28 overflow-hidden">
+      <main className="relative min-h-[110vh] flex flex-col mb-28 ">
         <Navbar />
 
         {/* Hero Section */}

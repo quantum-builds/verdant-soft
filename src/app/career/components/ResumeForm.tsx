@@ -78,7 +78,7 @@ export function ResumeForm({
     return acc;
   }, {} as Record<string, boolean>);
 
-  const MAX_FILE_SIZE = 5 * 1024 * 1024;
+  const MAX_FILE_SIZE = 4 * 1024 * 1024;
   const [fieldValues, setFieldValues] = useState(initialFieldValues);
   const [focusedFields, setFocusedFields] = useState(initialFocusedFields);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
@@ -276,7 +276,7 @@ export function ResumeForm({
             onChange={handleFileChange}
           />
           <p className="text-gray-500 text-sm">
-            Only PDF or Word files are allowed (Max size: 5MB).
+            Only PDF or Word files are allowed (Max size: 4MB).
           </p>
           {errors.resume && (
             <p className="text-sm text-red-500">

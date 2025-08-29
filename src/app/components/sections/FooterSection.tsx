@@ -105,7 +105,7 @@ export default function FooterSection() {
 
   return (
     <>
-      <div className="overflow-hidden relative h-[100vh] md:h-[90vh] xl:h-[80vh] 2xl:h-[70vh] bg-footer-black py-14">
+      <div className="overflow-hidden relative h-[100vh] sm:h-[100vh] md:h-[90vh] xl:h-[80vh] 2xl:h-[70vh] bg-footer-black py-14">
         {/* Left Logo */}
         <motion.div
           className="hidden md:block absolute top-[45%] left-0  -translate-y-2/3 md:-translate-x-[15%] lg:-translate-x-1/4 pointer-events-none z-0 h-[160vh]"
@@ -192,8 +192,8 @@ export default function FooterSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="w-10/12 lg:w-2/3 xl:w-3/4 2xl:w-1/2 5xl:w-2/5 text-white text-3xl md:text-5xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold leading-tight font-inter ">
-              <span className="text-green-gradient">
+            <p className="mt-12 w-10/12 sm:w-1/2 md:w-8/12  lg:w-[40%] xl:w-[60%] 2xl:w-1/2 5xl:w-2/5 text-white text-3xl md:text-5xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold leading-tight font-inter ">
+              <span className="text-[#707070]">
                 Your brand deserves better.
               </span>{" "}
               Let’s build it right.

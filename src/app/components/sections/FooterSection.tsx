@@ -192,7 +192,7 @@ export default function FooterSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="mt-12 w-10/12 sm:w-1/2 md:w-8/12  lg:w-[40%] xl:w-[60%] 2xl:w-1/2 5xl:w-2/5 text-white text-3xl md:text-5xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold leading-tight font-inter ">
+            <p className="mt-12 sm:mt-0 w-10/12 sm:w-1/2 md:w-8/12  lg:w-[40%] xl:w-[60%] 2xl:w-1/2 5xl:w-2/5 text-white text-3xl md:text-5xl lg:text-4xl xl:text-5xl 3xl:text-[54px] 4xl:text-6xl 5xl:text-7xl font-semibold leading-tight font-inter ">
               <span className="text-[#707070]">
                 Your brand deserves better.
               </span>{" "}
